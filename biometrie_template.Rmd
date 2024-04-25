@@ -270,11 +270,15 @@ Bespreek in je groep de volgende vragen en voeg de antwoorden toe aan je uitgewe
 
 1. Zijn de metingen tussen de verschillende meters ook (significant) verschillend? Zo ja, waardoor zou je de verschillen kunnen verklaren?
 
+Er is een klein verschil tussen de twee meters. Dit zou kunnen doordat ze de start plaats van de pols anders hebben geïnterpreteerd. 
+
 2. Onderzoek de verschillen tussen mannen en vrouwen met betrekking tot hand lengte, handbreedte en de ratio.
 
 Aan de hand van de resultaten van het onderzoek kunnen we concluderen dat mannen gemiddeld een grotere hand hebben, zowel in de lengte als breedte. Het lengte/breedte ratio is echter bijna even groot tussen de sexe.
 
 3. Zou je het protocol aanpassen na deze ervaring, of was hij voldoende duidelijk en reproduceerbaar?
+
+Om nog een duidelijker protocol te maken zou er een voorbeeld foto kunnen worden toegevoegd ( of video ) van de meet wijze zodat deze exact kan worden gerepliceerd 
 :::
 
 
