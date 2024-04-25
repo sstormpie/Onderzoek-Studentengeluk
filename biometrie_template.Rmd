@@ -78,20 +78,21 @@ Ga door totdat van voldoende proefpersonen de gegevens zijn verzameld.
 :::
 
 
-## Uitvoering
+## Analyse
 
 :::attention
 De data is opgeslagen in het format hieronder:  
 
 <pre>
 laborant_ID,subject_ID,handlengte,handbreedte,sexe
+</pre>
+
+Voorbeeld:
+
+<pre>
 3241,G1_03,113,104,m
-<meer rijen met data>
 </pre>
 :::
-
-
-## Analyse
 
 ### Data inlezen
 
@@ -195,15 +196,15 @@ ggplot(data = hist_data,
 **Dit _experiment_ met de argumenten van `rnorm()` en `hist()` moet je opnemen in je eigen RMarkdown.**  
 Beantwoord deze vragen:
 
-1. Wat gebeurt er met de vorm van de verdeling als `n` groter wordt?
+1. Wat gebeurt er met de vorm van de verdeling als `n` groter wordt?\
    A: De vorm is steeds meer even en lijkt op een hele egale normaal verdeling
-2. Wat gebeurt er met de spreiding van de data (x-as) als `n` groter wordt, en kan je dat verklaren?
+2. Wat gebeurt er met de spreiding van de data (x-as) als `n` groter wordt, en kan je dat verklaren?\
     A: Als N groter wordt, wordt de spreiding van de x as ook groter. N is steekproef groote wanneer deze        groter is geeft dit meer resultaten waar meer verschillen in kunnen zitten dus krijg je een              bredere x as
-3. Waarom is bij zelfde instellingen voor `n` en `breaks` de uitkomst toch verschillend?
+3. Waarom is bij zelfde instellingen voor `n` en `breaks` de uitkomst toch verschillend?\
     A: Omdat bij N de steekproef omgang bepaald wordt en bij breaks kies je hoeveels bin's je het opdeeld
-4. Welke minimale `n` geeft het meeste kans om een echte normaalverdeling te zien?
+4. Welke minimale `n` geeft het meeste kans om een echte normaalverdeling te zien?\
     A: wij hebben bevonden dat 100 het minimale is om op oogopervlak te zien dat het een normaal                verdeling is
-5. Wat voor bijzonders is er aan de hand met het `breaks` argument? Geeft de documentatie daar een verklaring voor?
+5. Wat voor bijzonders is er aan de hand met het `breaks` argument? Geeft de documentatie daar een verklaring voor?\
     A: Het heet bin inplaats van break,  
 :::
 
