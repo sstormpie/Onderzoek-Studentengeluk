@@ -18,6 +18,9 @@ knitr::opts_chunk$set(echo = TRUE)
 library(ggplot2)
 
 ```
+### Auteurs: 
+J.J. Duiker - 448413\
+S. Steller - 469092
 
 
 ## Inleiding
@@ -205,7 +208,7 @@ Beantwoord deze vragen:
 4. Welke minimale `n` geeft het meeste kans om een echte normaalverdeling te zien?\
     A: wij hebben bevonden dat 100 het minimale is om op oogopervlak te zien dat het een normaal                verdeling is
 5. Wat voor bijzonders is er aan de hand met het `breaks` argument? Geeft de documentatie daar een verklaring voor?\
-    A: Het heet bin inplaats van break,  
+    A: Het breaks argument is anders dan het bins argument. In het bins argument geef je het aantal bins in een histogram aan. Bij het breaks argument kan je een vector meegeven met de grenswaardes van de bins erin.
 :::
 
 ### Bronnen van variatie
@@ -262,7 +265,7 @@ t.test(vrouw_ratio,man_ratio)
 wilcox.test(vrouw_ratio,man_ratio)
 ```
 
-Hierboven worden 3 verschillende tests gedaan: Een Shapiro test, een T-test, en een Welch Two Sample T-test. In deze tests worden meerdere dingen berekend. Wij moeten kijken naar de p-value, als die niet 0 is, is er een verschil en kunnen wij de hypothese aannemen. En zoals te zien is in de tests hierboven is de p-value niet 0, dus kunnen wij de hypothese aannemen.
+Hierboven worden 3 verschillende tests gedaan: Een Shapiro test, een T-test, en een Welch Two Sample T-test. In deze tests worden meerdere dingen berekend. Wij moeten kijken naar de p-value, als die niet 0 is, is er een verschil en kunnen wij de hypothese aannemen. En zoals te zien is in de tests hierboven is de p-value niet 0, dus kunnen wij de hypothese aannemen. De mannelijke hand is dus gemiddeld groter dan de vrouwlijke hand.
 
 ## Reflectie op het experiment
 
@@ -282,9 +285,3 @@ Aan de hand van de resultaten van het onderzoek kunnen we concluderen dat mannen
 Om nog een duidelijker protocol te maken zou er een voorbeeld foto kunnen worden toegevoegd ( of video ) van de meetwijze zodat deze exact kan worden gerepliceerd.
 :::
 
-
-:::attention
-#### Wat je moet inleveren
-Voor de verwerking en analyse van je eigen data maak je gebruik van het aangeleverde template RMarkdown document. Daarin doorloop je dezelfde onderzoek stappen als hieronder, maar dan met je eigen data. Aan het einde van de dag gaat dat document, in originele en "geknitte" vorm, samen met je databestand, in een git repo die is opgezet volgens voorschift in de cursushandleiding. De link hiernaar toe gaat in je portfolio op eJournal. Let op dat je _alle_ stappen hebt doorlopen voordat je inlevert. Gebruik ook de RStudio spellingscontrole!  
-Vergeet niet jullie namen en studentnummers bovenaan de markdown te zetten!
-:::
