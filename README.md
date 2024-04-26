@@ -27,11 +27,12 @@ Voor vragen kan je ons contacteren op https://github.com/sstormpie/Onderzoek-Stu
 
 ## Auteurs
 
-J.J. Duiker
-S. Steller
+* J.J. Duiker - Github: azzipxonraj
+* S. Steller - Github: sstormpie
 
 
 ## Acknowledgments
 
 * Ronald Wedema
 * Michiel Noback
+* Emile Apol
