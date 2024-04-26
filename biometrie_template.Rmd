@@ -212,8 +212,7 @@ Beantwoord deze vragen:
 
 Tot nu toe hebben we alleen maar gekeken naar de biologische variatie, de verschillen tussen man en vrouw. Dus is het tijd om te kijken naar de experimentele variatie. Dat is net zo belangrijk als de biologische variatie. Het is belangrijk om het onderzoek reproduceerbaar te maken. Invloed op de experimentele variatie kan bijvoorbeeld het meetinstument zelf zijn. Lang niet alle linialen op aarde zijn precies hetzelfde gefabriceerd.
 
-ONDERZOEK BRONNEN VAN VARIATIE
-BESPREEK DIT KORT
+
 ```{r}
 #plot voor handbreedte tussen de sexe
 
@@ -241,6 +240,8 @@ In de bovenstaande boxplot zie je hetzelfde als de boxplot erboven, maar dan met
 
 ### De hypothese aannemen?
 
+Nu hebben we naar de data gekeken, maar moeten we de hypothese aannemen? Dat kunnen wij beslissen met deze tests.
+
 ```{r}
 shapiro.test(biometric_data$ratio)
 ```
@@ -261,7 +262,7 @@ t.test(vrouw_ratio,man_ratio)
 wilcox.test(vrouw_ratio,man_ratio)
 ```
 
-
+Hierboven worden 3 verschillende tests gedaan: Een Shapiro test, een T-test, en een Welch Two Sample T-test. In deze tests worden meerdere dingen berekend. Wij moeten kijken naar de p-value, als die niet 0 is, is er een verschil en kunnen wij de hypothese aannemen. En zoals te zien is in de tests hierboven is de p-value niet 0, dus kunnen wij de hypothese aannemen.
 
 ## Reflectie op het experiment
 
@@ -270,7 +271,7 @@ Bespreek in je groep de volgende vragen en voeg de antwoorden toe aan je uitgewe
 
 1. Zijn de metingen tussen de verschillende meters ook (significant) verschillend? Zo ja, waardoor zou je de verschillen kunnen verklaren?
 
-Er is een klein verschil tussen de twee meters. Dit zou kunnen doordat ze de start plaats van de pols anders hebben geïnterpreteerd. 
+Er is een klein verschil tussen de twee meters. Dit zou kunnen doordat ze de startplaats van de pols anders hebben geïnterpreteerd. 
 
 2. Onderzoek de verschillen tussen mannen en vrouwen met betrekking tot hand lengte, handbreedte en de ratio.
 
@@ -278,7 +279,7 @@ Aan de hand van de resultaten van het onderzoek kunnen we concluderen dat mannen
 
 3. Zou je het protocol aanpassen na deze ervaring, of was hij voldoende duidelijk en reproduceerbaar?
 
-Om nog een duidelijker protocol te maken zou er een voorbeeld foto kunnen worden toegevoegd ( of video ) van de meet wijze zodat deze exact kan worden gerepliceerd 
+Om nog een duidelijker protocol te maken zou er een voorbeeld foto kunnen worden toegevoegd ( of video ) van de meetwijze zodat deze exact kan worden gerepliceerd.
 :::
 
 
