@@ -18,17 +18,86 @@ Waarom, Hoe (zoektermen op googlescholar), Waarmee + uitkomst (critisch interpre
 Beredeneringen om waarom je dit uitvoert op de manier waarop je het doet. (gedachte gang)
 literatuur lijst + kleine samenvatting waarom hij wel geschikt is (laat dingen zien uit het artikel)
 
+## template-Elke dag
+
+Doel vandaag
+**Vinden bronnen**
+
+- Task 1
+- Task 2
+- Task 3
+
+Waarom wil je bronnen - literatuur vinden (gedachte gang ook waarom voer je het uit op manier dat je het doet. dus de gedachte gang)
+Hoe heb je de bronnen - literatuur gevonden
+Waarmee en wat heb je gevonden (critisch uitleggen waarom gebruik je dit en wat voegt dit toe aan je onderzoek.)
+
+
+
 ## 22-04-2024
 
-Vandaag heb ik de uitleg gekregen over wat in dit blok ik moet doen daarnaast ben ik bezig geweest met een begin van een plan. Dit plan gaat over wat storm en ik willen onderzoeken en hoe we dit met gekozen methodes kunnen en mogen doen. Hier is uitgekomen dat we het geluk van studenten gaan meten. Hier hebben in de les dus over gebrainstormed.
+Het Doel vandaag is 
+**Vinden onderzoeks vraag**
+
+- Team maken 
+- De Vraag bedenken
+- De Vraag laten goedkeuren door 1 van de leraren
+- Plan maken hoe en waarmee we het onderzoek gaan doen
+
+Ik heb een groepje gemaakt met Storm. Wij samen dachten eerst aan het onderzoeken van dingen die iets met sporten te maken hebben. Dit was echter niet mogelijk door budget en grote van steekproef.
+
+Wij hebben toen gedacht om iets te onderzoeken wat met mentale gezondheid heeft te maken. Hierover zijn we gaan sparren en we kwamen uit op Geluk. Wij hebben daarna met de leraar staan praten die ons heeft geholpen met het meer een vraag maken. We denken hoe kan je geluk nou vergelijken. Als je kijkt naar verschillende steden heb je al een factor, Wanneer je kijkt naar steden die specifiek met studenten hebben te maken zit je in een kleiner veld wat goede resultaten zou kunnen werven. Ik stel voor om te kijken tussen de verschillen in geluk van de studenten steden. Hier zijn we het beiden over eens. We zoeken op google naar "Welke steden zijn studenten steden" We komen op de volgende website https://www.hallmark.nl/magazine/huis/de-leukste-studentensteden-van-nederland/ (22-04-2024)
+Hier op staat een top 10 lijst met steden. Wij halen er uit dat Groningen, Leiden, Utrecht boven aan staan en dus nemen we deze in ons lijstje op Amsterdam staat lager en deze nemen we dus ook mee. Dit omdat er ook naar studenten steden moeten gekeken worden waar het niet compleet alleen voor de studenten is.
+Ik opende ook de website van https://www.studiekeuzelab.nl/kies/welke-studentenstad-past-bij-mij-top-5 (22-04-2024) dit is een studie keuze website waar dus ook allemaal studenten steden op stonden. Ik zag dat hier dezelfde steden ook weer opstonden echter stonden deze niet op een top 10 volgorde. Hierdoor heb ik met storm overlegt en we houden het bij deze steden. Leiden, Groningen, Utrecht en Amsterdam. 
+
+Het Doel van de dag is dus Redelijk behaald. De onderzoeksvraag is half gevonden maar moet nog worden uitgewerkt verder
+
+De Tasks
+- Team maken = Gedaan
+- De Vraag bedenken = Gedaan
+- De Vraag laten goedkeuren door 1 van de leraren = Half gedaan
+- Plan maken hoe en waarmee we het onderzoek gaan doen = nog niet af
 
 ## 23-04-2024
+Het doel van vandaag
+**Het afmaken van de onderzoeksvraag & meet methode vinden.**
+Tasks
+- Onderzoeksvraag beter en duidelijker maken
+- Verschillende methoden bekijken waarmee we geluk kunnen meten
+- Wat is nodig voor deze methoden
+- Wat is het eind doel?
 
-Vandaag heb ik de hoofdvraag uitgewerkt wat er nodig is om een goed beeld te krijgen om deze te beantwoorden en welke literatuur er nodig en natuurlijk de hypothese en 0 hypothese. De hoofdvraag waar storm & ik het uiteindelijk over eens waren was
+Ik heb samen met storm besproken hoe we de hoofdvraag moeten formuleren. We zijn gaan brainstormen met de keywords. "Studenten", "Geluk", "Stad / Studentenstad" Hier kwamen een aantal vragen uit.
+- Welke stad heeft de gelukkigste studenten
+- Waar zijn studenten het gelukkigste
+- In welke studenten stad zijn studenten het gelukkigste?
 
-**“In welke studenten stad zijn studenten het gelukkigst?“**
+Na het praten met de leraar hebben wij besloten om **“In welke studenten stad zijn studenten het gelukkigst?“**
+Als onze onderzoeksvraag te gebruiken. 
 
-Om deze vraag te kunnen beantwoorden moesten wij een manier verzinnen voor het meten van geluk. Storm & ik hebben hier over nagedacht en wij kwamen uit op een enquete die meerdere factoren behandeld over geluk. Deze factoren waar geluk van af hangt heb ik in de literatuur gevonden. Ook waren er 2 vragen die wij voor de achtergrond info moesten beantwoorden. Mijn 2 vragen waren “Wat is geluk (op een moleculair niveau)" & "Welke factoren dragen bij aan geluk?" Ik heb dus na school in de literatuur gekeken die te vinden is in de bronnen lijst en deze in eigenwoorden naar wat wij nodig hebben in een document gezet. Hiermee kon ik dus ook beginnen met het bedenken van de vragen
+De hyptothese en 0-hypothese moeten we hiermee ook maken. De hypthose waar we op komen is: Het maakt voor het geluk van de student niet uit in welke stad deze studeert. De gedachte gang hier achter is dat een stad niet bepaald hoe gelukkig iemand is de algemene ervaring is dus het leidende.
+
+Nu gaan we kijken wat hebben we nodig en hoe gaan we deze vraag beantwoorden. Storm en ik hebben wat onderzoeks methoden bekeken https://www.scribbr.nl/category/onderzoeksmethoden/ (23-04-2024) deze website heeft ons een paar ideeën gegeven, ook hebben wij onze leraar gevraagd die met ons sparde met wat past
+De opties die er uitkwamen waren een test op cortisol of een enquete. De cortisol test was echter te duur en complex. Dus was de enquete de keuze die Storm en ik samen hebben gemaakt. De enquete produceerd een csv data file die makkelijk in r is te importen dit kan met de volgende functie:
+
+```{r}
+# read.csv()
+```
+
+De enquete heeft een paar voorwaarden: De vragen moeten duidelijk zijn, De manier van antwoorden moet een datatype terug geven waarmee gemidelden en grafieken etc mee kunnen worden uitgerekend. De verspreiding van de enquete is een belangrijke beslissing. 
+
+De vragen die in de enquete zullen staan moeten de hoofdvraag **“In welke studenten stad zijn studenten het gelukkigst?“** beantwoorden. Dus moeten wij onderzoeken welke factoren geluk bepalen en welke er aan toevoegen of afnemen. Dit moeten wij doen door het lezen van literatuur over geluk, Situatie en moleculaire werking.
+
+## 24-04-2024
+Doel van de dag
+**In de literatuur kijken naar wat en hoe**
+Tasks
+- Kijken naar literatuur
+- Samenvatting geven van wat ik heb gevonden
+- 
+
+ik ben gaan kijken naar de literatuur. Ik begon met google scholar. De volgende zoek termen heb ik gebruikt. *What is happiness*, *How does happiness work*, *Moleculair working of happiness*, *Happiness in people*
+Using google scholar i got given academic papers and books.
+
 
 ## 26-04-2024
 
@@ -65,5 +134,8 @@ Hebben wij geen kans gekregen om aan onze opdracht te werken echter hebben wij w
 ## 17-05-2024
 
 door medische redenen kon ik deze dag niks toevoegen aan het onderzoek
+
+## literatuur lijst 
+(zorg voor kleine samenvatting bij elke apa verwijzing + waarom je dit gebruikt)
 
 
