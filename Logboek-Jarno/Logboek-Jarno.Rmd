@@ -38,6 +38,8 @@ Waarmee en wat heb je gevonden (critisch uitleggen waarom gebruik je dit en wat 
 Het Doel vandaag is 
 **Vinden onderzoeks vraag**
 
+Tasks
+
 - Team maken 
 - De Vraag bedenken
 - De Vraag laten goedkeuren door 1 van de leraren
@@ -52,21 +54,25 @@ Ik opende ook de website van https://www.studiekeuzelab.nl/kies/welke-studentens
 Het Doel van de dag is dus Redelijk behaald. De onderzoeksvraag is half gevonden maar moet nog worden uitgewerkt verder
 
 De Tasks
+
 - Team maken = Gedaan
 - De Vraag bedenken = Gedaan
 - De Vraag laten goedkeuren door 1 van de leraren = Half gedaan
 - Plan maken hoe en waarmee we het onderzoek gaan doen = nog niet af
 
 ## 23-04-2024
-Het doel van vandaag
+Het doel van vandaag 
 **Het afmaken van de onderzoeksvraag & meet methode vinden.**
+
 Tasks
+
 - Onderzoeksvraag beter en duidelijker maken
 - Verschillende methoden bekijken waarmee we geluk kunnen meten
 - Wat is nodig voor deze methoden
 - Wat is het eind doel?
 
 Ik heb samen met storm besproken hoe we de hoofdvraag moeten formuleren. We zijn gaan brainstormen met de keywords. "Studenten", "Geluk", "Stad / Studentenstad" Hier kwamen een aantal vragen uit.
+
 - Welke stad heeft de gelukkigste studenten
 - Waar zijn studenten het gelukkigste
 - In welke studenten stad zijn studenten het gelukkigste?
@@ -90,13 +96,46 @@ De vragen die in de enquete zullen staan moeten de hoofdvraag **“In welke stud
 ## 24-04-2024
 Doel van de dag
 **In de literatuur kijken naar wat en hoe**
+
 Tasks
+
 - Kijken naar literatuur
 - Samenvatting geven van wat ik heb gevonden
-- 
+- Kijken hoe ik deze info kan vertalen naar vragen
+
 
 ik ben gaan kijken naar de literatuur. Ik begon met google scholar. De volgende zoek termen heb ik gebruikt. *What is happiness*, *How does happiness work*, *Moleculair working of happiness*, *Happiness in people*
-Using google scholar i got given academic papers and books.
+Google scholar heeft mij boeken en wetenschappelijke artikellen gegeven. 
+
+- Jacobsen, B. (2007, 1 januari). What is Happiness? | Existential Analysis: Journal of the Society for Existential Analysis.
+- Easterlin, R. A. (2003). Explaining happiness. Proceedings Of The National Academy Of Sciences Of The United States Of America
+-Veenhoven, R. (1991, 1 januari). Questions on Happiness.
+
+- De abstract van What is Happiness? | Existential Analysis: Journal of the Society for Existential Analysis. zegt het volgende. "Happiness as experienced by ordinary people has been the object in both sociological and psychological studies. The concept of happiness used in the studies of Positive and Humanistic Psychology varies from subjective well-being, to the fulfilment of life goals. In Existential Psychology the concept of happiness has both bodily and spiritual dimensions. In this paper the concept of happiness will be analyzed and the use of it in existential psychology and therapy will be discussed. The contributions to the field of Buhler, Boss, Condrau, Heidegger and May will be examined to throw light on a vital phenomenon concerning us all."
+
+n deze paper wordt naar het concept "Geluk" gekeken dit houd in dat er wordt gekeken naar meerdere kanten van geluk bekijken. Waaronder het concept van geluk. Hoe het in de maatschappij werkt, in de Humanistische psychologie en het effect van geluk op de levens van mensen. Deze tekst is gekozen omdat het een diepe kijk neemt door de ogen van een socioloog. het heeft goede punten en veel info die relevant is zoals de manier waarop verschillende factoren invloed hebben op iemands geluk.
+
+
+- Explaining happiness. Proceedings Of The National Academy Of Sciences Of The United States Of America.
+zegt in zijn abstract het volgende: "What do social survey data tell us about the determinants of happiness? First, that the psychologists' setpoint model is questionable. Life events in the nonpecuniary domain, such as marriage, divorce, and serious disability, have a lasting effect on happiness, and do not simply deflect the average person temporarily above or below a setpoint given by genetics and personality. Second, mainstream economists' inference that in the pecuniary domain "more is better," based on revealed preference theory, is problematic. An increase in income, and thus in the goods at one's disposal, does not bring with it a lasting increase in happiness because of the negative effect on utility of hedonic adaptation and social comparison. A better theory of happiness builds on the evidence that adaptation and social comparison affect utility less in the nonpecuniary than pecuniary domains. Because individuals fail to anticipate the extent to which adaptation and social comparison undermine expected utility in the pecuniary domain, they allocate an excessive amount of time to pecuniary goals, and shortchange nonpecuniary ends such as family life and health, reducing their happiness. There is need to devise policies that will yield better-informed individual preferences, and thereby increase individual and societal well-being." 
+
+In deze paper wordt gekeken naar sociale enquêtes en wat deze data zegt over de omstandigheden van geluk. Er wordt ook gezegd dat Psychologen hun model twijfelachtig is en dat het bepaalde levens omstandigheden en levens gebeurtenissen niet in zich opneemt. Dit zijn dan getrouwd zijn of scheiding. Ook bijvoorbeeld een zware onbekwaamheid of mentale worsteling zoals depressie of adhd. Deze hebben een langdurig effect op hoe een persoon geluk ervaart. Deze paper is dus belangrijk voor ons onderzoek dit omdat er factoren in staan die ook moeten worden meegenomen. Dit zijn dus bijvoorbeeld: Mentalegezondheid, Thuis situatie, Voel je je op je plek in de stad waarin je woont (Soms is het moeilijk om in een nieuwe stad te leven vooral als een eerste jaars), Of iemand een international is. Weg zijn van je ouders en je huis waar je niet zomaar terug naar toe kan is ook een mentale druk die je geluk langdurig kan aantasten.
+
+Met deze denkwijze hebben wij daarom gekozen om deze paper te gebruiken.
+
+- Questions on Happiness. De introductie zegt het volgende "Happiness is a longstanding theme in Western thought. It came under scrutiny in the following three periods: (1) Antique Greek philosophy; (2) Post-Enlightenment West-European moral philosophy, Utilitarianism in particular; and (3) Current Quality-of-Life research in the rich welfare states. Printed reflections on all this contemplation now fill a hundred meters of bookshelves. This paper takes stock of the progress made on seven classical topics. Are we now any wiser? Or is Dodge (1930) right in his contention that “the theory of the happy life has remained on about the same level that the ancient Greeks left it”? This inventory will differ from the usual review articles. The focus will not be on current technical research issues, but rather on the broader questions that prompted the enquiry. Furthermore, the aim is not only to enumerate advances in understanding, but also to mark the blind spots."
+
+Hieruit kan worden opgemaakt dat er naar verschillende perioden wordt gekeken. Dit zijn de antieke Griekse filosofie, De Na-verlichting west europeese morale filosofie, "Utilitarianism" specifiek en de huidige kwaliteit van leven onderzoeken in rijke welvarende staten. deze paper bekijkt het in de progressie van 7 klasieke onderwerpen 
+
+The following issues will be considered:
+
+1. What is happiness?
+2. Can happiness be measured?
+3. Is unhappiness the rule?
+4. How do people assess their happiness?
+5. What conditions favour happiness?
+6. Can happiness be promoted?
+7. Should happiness be promoted?
 
 
 ## 26-04-2024
@@ -138,4 +177,7 @@ door medische redenen kon ik deze dag niks toevoegen aan het onderzoek
 ## literatuur lijst 
 (zorg voor kleine samenvatting bij elke apa verwijzing + waarom je dit gebruikt)
 
+- Jacobsen, B. (2007, 1 januari). What is Happiness? | Existential Analysis: Journal of the Society for Existential Analysis | EBSCOhost. https://openurl.ebsco.com/EPDB%3Agcd%3A10%3A4911050/detailv2?sid=ebsco%3Aplink%3Ascholar&id=ebsco%3Agcd%3A24478440&crl=c
+- Easterlin, R. A. (2003). Explaining happiness. Proceedings Of The National Academy Of Sciences Of The United States Of America, 100(19), 11176–11183. https://doi.org/10.1073/pnas.1633144100
+- Veenhoven, R. (1991, 1 januari). Questions on Happiness. https://repub.eur.nl/pub/16149/
 
