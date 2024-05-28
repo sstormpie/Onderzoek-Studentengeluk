@@ -1,13 +1,15 @@
 ---
-title: My Awesome Catchy Title! # Geef je paper een naam die prikkelt, informatief is, en zo kort mogelijk
+title: What student city is the happiest? # Geef je paper een naam die prikkelt, informatief is, en zo kort mogelijk
 
 author: |
-  | Michiel Noback $^1$, Fenna Feenstra $^1$, John Doe $^2$
-  | $^1$Hanzehogeschool,  $^2$Een ander instituut
+  | Storm Steller $^1$, Jarno Jacob Duiker $^1$, 
+  | $^1$Student Bio-informatics 1st year $^1$ Hanze Honours $^1$ Faculty of Life sciences $^1$ Hanze UAS
 
 lang: nl # dit zorgt er voor dat "abstract" "samenvatting" gaat heten
 
-abstract: |
+abstract: Dit onderzoek gaat over, het geluk van studenten in verschillende studenten steden. De steden die wij hebben onderzocht zijn; Amsterdam, Groningen, Leiden en Utrecht. We hebben in dit onderzoek een enquête gebruikt om een data frame te maken waarmee we een goed grafisch overzicht kunnen geven van wat de resultaten zijn. Dit onderzoek is belangrijk omdat mentale gezondheid onder de studenten tegenwoordig veel in het nieuws is. Geluk is een groot deel van iemands mentale gezondheid daarom is het interessant om te weten in welke stad voor de studenten deze het hoogste ligt. De factoren die in dit onderzoek worden gebruikt gaan van persoonlijk naar omgevingsfactoren zodat er een duidelijk beeld kan worden geschetst waarin ook langdurige problemen worden meegenomen die invloed hebben. 
+
+|
   Geef hier je samenvatting in maximaal 150 woorden. Het is een samenvatting van het hele artikel; niet alleen de resultaten! Begin met het belang van dit onderzoek, dan hoe het onderzoek is aangepakt en de belangrijkste resultaten en eindig met de implicaties ervan voor de wetenschap/de maatschappij. Neem nooit figuren of tabellen op in de samenvatting.
 
 bibliography: simple_template.bib # naam van je .bib file. Deze moet hetzelfde zijn als je Rmd bestandsnaam
@@ -157,9 +159,7 @@ Ook de code zelf is waar nodig natuurlijk goed gedocumenteerd.
 Voeg aan het eind een woord-telling in:
 
 ```{r wordcount, message=FALSE}
-#install.packages(devtools)
-#devtools::install_github("benmarwick/wordcountaddin", type = "source", dependencies = TRUE)
-wordcountaddin:::text_stats()
+
 ```
 
 # Referenties
