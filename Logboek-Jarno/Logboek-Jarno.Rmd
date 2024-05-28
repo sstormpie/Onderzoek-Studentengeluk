@@ -9,6 +9,13 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+```{r}
+library(fmsb)
+library(ggplot2)
+library(dplyr)
+library(pwr)
+```
+
 
 ## tips
 algemene introductie mist
@@ -305,23 +312,97 @@ Dat is als volgt
 - Conclusie
 - Bedankjes en Honorable mentions
 
-Wij maken gebruik van deze template omdat wij een profesionele structuur willen.
+Wij maken gebruik van deze template omdat wij een profesionele structuur willen weer geven in ons eindproduct.
 
 ## 14-05-2024
 
-Vandaag heb ik een klein beetje geholpen met email's verzamelen van studieverenigingen verder heb ik me ingelezen op de nieuwe opdracht die ons was gegeven over de spider plots. Storm en ik hebben hier ook nog gevraagd voor feedback op wat dingen en ik ben hier bezig geweest met het verbeteren. Dit houd in de structuur en de formulering van zowel het logboek als het algemene onderzoeks document.
+### Doel van de dag
+**Emails verzamelen + data bekijken**
+
+Tasks
+
+- Emails verzamelen
+- De data vanaf de google form inlezen
+- Qr code verspreiden tussen klasgenoten
+
+Ik ben bezig gegaan met het zoeken naar emails van studie verenigingen, Dit heb ik gedaan door te zoeken op google naar "Studieverenigingen *stad*" hierdoor krijg je websites zoals die van de universiteit zelf https://www.universiteitleiden.nl/onderwijs/bachelors/studentenleven/studentenstad-leiden/studentenverenigingen
+of https://leidenstudentenstad.nl/studentenverenigingen waar ook nog wat opstaan. Storm heeft hier het grootste deel van de emails verzameled waar ik soms een paar nog vond.
+
+Om makkelijk wat antwoorden te verkrijgen hebben wij een paar klasgenoten gevraagd of deze ook de enquete zouden willen invullen. Dit hebben zowel mondeling als op onze klassen discord gevraagd.
+
+De data inlezen en bekijken. Wanneer we naar de google forms gaan is er een knop met "Bekijk in spreadsheets" Deze knop opend dan de google spreadsheet app met alle data van de vragen. Hier in click ik op de download knop en worden meerdere opties gegeven voor wat voor document ik graag wil hebben. Uit deze check bleek dat we maar 7 antwoorden hadden. Deze kwamen allemaal door onze mondelinge verspreiding en de vraag aan of de klas deze zouden willen invullen.
+
+```{r}
+# hier laad ik onze csv file in een variable genaamd student_hap_awn
+student_hap_awn <- read.csv("student_hap_awn.csv")
+
+# hier gebruik ik de "head()" command om te kijken of de juiste data typen er in zitten en de collom namen te controleren
+head(student_hap_awn)
+
+```
+Nu we de data bekijken is te zien dat de collom namen heel lang zijn. Dit is niet handig om mee te werken wanneer de data moet worden verwerkt. Dit heeft meerdere redenen maar om het in het kort te zeggen. De collom namen worden soms weer gegeven op de grafiek en dit kan dus voor conflict zorgen als ze er zo uit zien en voor ons gemak om mee te werken is het moeilijk om constant deze lange strings met punten in te typen.
+
+Hierom ga ik de colom namen aan passen met colnames() deze functie kan alle colom namen achter elkaar veranderen.
+
+```{r}
+# Er is hier te zien dat de colnames dus in volgorde worden veranderd. 
+colnames(student_hap_awn) <- c("Tijd", "Sexe", "Niveau", "Opl_jaar","Vakgebied", "Woonsituatie", "Stad", "Nat_Int", "Gelovig", "Relatie_stat", "Happy_RN", "Fys_Happy", "Fys_import", "Cont_buiten_school", "Na_school_soc", "Ouder_relatie", "Woonsituatie_geluk", "Thuis_in_stad", "academische_pres", "Financiele_sit", "Geld_geluk", "Verd_mid_gebr", "drugs_alc_geluk", "Mental_health", "Happy_after_quest")
+
+# hier head ik weer onze data om te zien of de colom namen zijn veranderd
+head(student_hap_awn, n = 10)
+
+```
+Nu is de data makkelijker te lezen met de afkortingen. We zien dat de tijd tussen de eerste 6 antwoordde vrij significant is. Deze antwoorden komen ook allemaal uit Groningen. Dit betekent voor ons dat de Posters die zijn opgehangen in leiden en Utrecht geen effect hebben gehad en ons geen beantwoorde enquêtes heeft gegeven. Wij gaan dus nog meer emails sturen en op andere manieren mensen proberen te bereiken. Dit zou via sociale media kunnen of groeps chats van studenten verenigingen.
+
+# POWER ANALYSE NOG AFMAKEN
+
+```{r}
+#hoe groot moet onze groep van gevraagde eigenlijk zijn? om 2 groepen te vergelijken gebruik je de  Independent two-sample t-test hiervoor moeten we een pwr analyze
+effect_size <- 0.5
+alpha <- 0.05
+power <- 0.8
+
+```
+
 
 ## 15-05-2024
 
-Storm en ik zijn vandaag op de zernike campus rond gaan lopen. Wij hebben in elk gebouw van de hanze 2-3 posters opgehangen. Wij hebben ook via een studenten vereneging een appje kunnen sturen in hun groepapp deze had dezelfde opbouw als de mail. Verder hebben wij op onze persoonlijke sociale media accounts "Instagram" nog een oproep gedaan of mensen onze enquete wilden invullen. We zijn op deze dag van 7 naar 26 antwoorden gegaan.
+### Doel van de dag
+**Meer qr codes ophangen + overleg leraar**
 
-## 16-05-2024
+Tasks
 
-Hebben wij geen kans gekregen om aan onze opdracht te werken echter hebben wij wel mails ontvangen / beantwoord
+- Emails verzamelen
+- De zernike campus af om qr codes te verspreiden
+- Plan opnieuw bekijken
 
-## 17-05-2024
+Door het lage aantal antwoorden zijn storm en ik gaan overleggen en hebben wij besloten om ons eerdere plan om de qr code te delen via onze persoonlijke sociale media en de studievereniging app groepen waar wij inzitten. Voor op onze sociale media hebben wij de posters als plaatje geplaatst. Het bericht in de app groepen ging zoals de email echter werd hier niet gevraagt of ze deze wilden verspreiden maar invullen.
 
-door medische redenen kon ik deze dag niks toevoegen aan het onderzoek
+Daarnaast zijn we door alle hanze gebouwen gaan lopen en hebben wij op duidelijk zichtbare plekken posters opgehangen. Deze plekken zijn poster borden, Snoep automaten, op uitgangen waar ook andere posters hingen. in bepaalde frames waar andere posters in hingen. Wij wilde deze graag duidelijker zichtbaar hebben omdat we uit de ervaring van leiden en utrecht kunnen halen dat niet veel studenten kijken naar de poster borden. Als ze dit wel doen vullen ze nog niet altijd de poster in. Vandaar deze wat andere plekken.
+
+Toen wij aan het einde van de dag keken op hoeveel enquete antwoorden zaten was deze gestegen van de 7-8 naar de 26.
+
+
+## 21-05-2024
+
+### Doel van de dag
+**Kijken welke data het belangrijkste is**
+
+Tasks
+
+- Data bekijken 
+- Welke grafieken willen wij
+- Hoe bouwen we ons eindproduct.
+
+Als we onze data vandaag bekijken is te zien dat we op 29 antwoorden zitten.
+```{r}
+student_hap_awn
+```
+
+
+
+
+
 
 ## literatuur lijst 
 (zorg voor kleine samenvatting bij elke apa verwijzing + waarom je dit gebruikt)
