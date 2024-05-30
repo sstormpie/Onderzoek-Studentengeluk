@@ -1,5 +1,6 @@
 ---
-title: What student city is the happiest? # Geef je paper een naam die prikkelt, informatief is, en zo kort mogelijk
+title: | 
+    What student city is the happiest? # Geef je paper een naam die prikkelt, informatief is, en zo kort mogelijk
 
 author: |
   | Storm Steller $^1$, Jarno Jacob Duiker $^1$, 
@@ -7,10 +8,9 @@ author: |
 
 lang: nl # dit zorgt er voor dat "abstract" "samenvatting" gaat heten
 
-abstract: Dit onderzoek gaat over, het geluk van studenten in verschillende studenten steden. De steden die wij hebben onderzocht zijn; Amsterdam, Groningen, Leiden en Utrecht. We hebben in dit onderzoek een enquête gebruikt om een data frame te maken waarmee we een goed grafisch overzicht kunnen geven van wat de resultaten zijn. Dit onderzoek is belangrijk omdat mentale gezondheid onder de studenten tegenwoordig veel in het nieuws is. Geluk is een groot deel van iemands mentale gezondheid daarom is het interessant om te weten in welke stad voor de studenten deze het hoogste ligt. De factoren die in dit onderzoek worden gebruikt gaan van persoonlijk naar omgevingsfactoren zodat er een duidelijk beeld kan worden geschetst waarin ook langdurige problemen worden meegenomen die invloed hebben. 
+abstract: | 
+    Dit onderzoek gaat over, het geluk van studenten in verschillende studenten steden. De steden die wij hebben onderzocht zijn; Amsterdam, Groningen, Leiden en Utrecht. We hebben in dit onderzoek een enquête gebruikt om een data frame te maken waarmee we een goed grafisch overzicht kunnen geven van wat de resultaten zijn. Dit onderzoek is belangrijk omdat mentale gezondheid onder de studenten tegenwoordig veel in het nieuws is. Geluk is een groot deel van iemands mentale gezondheid daarom is het interessant om te weten in welke stad voor de studenten deze het hoogste ligt. De factoren die in dit onderzoek worden gebruikt gaan van persoonlijk naar omgevingsfactoren zodat er een duidelijk beeld kan worden geschetst waarin ook langdurige problemen worden meegenomen die invloed hebben. 
 
-|
-  Geef hier je samenvatting in maximaal 150 woorden. Het is een samenvatting van het hele artikel; niet alleen de resultaten! Begin met het belang van dit onderzoek, dan hoe het onderzoek is aangepakt en de belangrijkste resultaten en eindig met de implicaties ervan voor de wetenschap/de maatschappij. Neem nooit figuren of tabellen op in de samenvatting.
 
 bibliography: simple_template.bib # naam van je .bib file. Deze moet hetzelfde zijn als je Rmd bestandsnaam
 
@@ -37,11 +37,15 @@ Gebruik de [wordcount plugin](https://github.com/benmarwick/wordcountaddin) om h
 
 Aan het begin van je paper kan je een zogenaamde *setup chunk* toevoegen. Hierin kan je het gedrag van `knitr` configureren en de bibliotheken laden die je in je code gebruikt. Hieronder is een voorbeeld van zo'n *setup chunk*.
 
-```{r setup, message=FALSE, warning=FALSE, include=FALSE}
+```{r setup, message=FALSE, warning=FALSE, include=FALSE, knitr::opts_chunk$set(echo = FALSE)}
 knitr::opts_chunk$set(out.width = '100%', dpi=300) # configuratie voor figuur grootte en resolutie
 knitr::opts_chunk$set(echo = FALSE) # Deze regel zorgt ervoor GEEN ENKELE chunk getoond wordt! 
 # Laad alle gebruikte bibliotheken hier
+library(knitr)
 library(ggplot2)
+library(fmsb)
+library(ggrepel)
+library(tidyverse)
 ```
 
 **NB** Gebruik altijd een naam voor iedere chunk. Dat maakt het *debuggen* van problemen bij het *knitten* van je RMarkdown document veel gemakkelijker.
@@ -79,8 +83,43 @@ Je eindigt de introductie met de doelstelling(en) van jouw onderzoek, en hoe je 
 
 De introductie bevat tussen de 400-800 woorden.
 
+Waarom dit onderzoek? Dit onderzoek is er om te laten zien of de stad waarin je studeerd ook invloed heeft op hoe gelukkig je bent. Om te weten wat geluk is zijn we gaan zoeken in literatuur die een duidelijk beeld geeft wat voor factoren ons als mens beinvloeden. De factoren die wij meenamen waren de volgende.
+
+### Factoren
+
+- Sexe
+- Niveau van de opleiding
+- Welk jaar de student in zit
+- Vakgebied (Sociaal, Technisch etc)
+- Woonsituatie (Uitwonend vs Thuiswonen)
+- Welke stad 
+- Geloving (Ja of Nee)
+- Relatie (Ja of Nee)
+
+**factoren in de vragen**
+
+- Fysieke gezondheid
+- Mentale gezondheid
+- Relatie met ouders
+- Sociale gezondheid
+- Geld / financiele situatie
+- Drugs en/of alcohol gebruik
+
+
 
 # Materialen en Methoden
+
+### Materialen
+
+- Google forms - Gebruikt om een enquête te maken die gebruikers vriendelijk is en die voor ons een netjes csv geeft als output. - https://docs.google.com/forms/
+- Google sheets - De antwoorden van de Google forms worden hier in een spreadsheet gezet en deze kan via een download knop omgezet worden in een data sheet ook wel een csv file. - https://docs.google.com/spreadsheets/
+- Google scholar - Dit is gebruikt om verschillende wetenschappelijke artikellen te vinden die onze literatuur onderbouwing verzorgt voor dit onderzoeks project - https://scholar.google.com
+- R-studio - Dit programma gebruiken we om ons Rmarkdown document te maken wat uiteindelijk ons eindproduct is geworden. Dit programma zorgt ervoor dat wij goede grafische plotjes kunnen leveren. - https://posit.co/download/rstudio-desktop/ Versie 2023.12.1+402 (2023.12.1+402)
+- Github - De gehele data set, logboeken en protocol staan op github omdat dit een netjese en goed navigeerbare omgeving maakt zodat iemand ook alles in 1 keer kan downloaden en bekijken. - http://github.com 
+
+### Methoden
+
+
 
 Materialen en Methoden beschrijft verhalend wat je hebt gebruikt (data, tools) en wat je hebt gedaan (ontwikkelde methodes). **_Het is essentieel dat dit hoofdstuk je onderzoek reproduceerbaar en valideerbaar maakt_**. Verwijs bij de start van dit hoofdstuk naar je code repository (meestal je github link).
 
@@ -98,6 +137,21 @@ Beschrijf wat je zelf in het kader van dit onderzoek hebt ontwikkeld aan methodo
 Deze sectie bevat tussen de 400-800 woorden.
 
 # Resultaten
+
+```{r}
+Student_awn_data <- read.csv("raw_data/Student_hap_awn_30_05.csv")
+
+colnames(Student_awn_data) <- c("Tijd", "Sexe", "Niveau", "Opl_jaar","Vakgebied", "Woonsituatie", "Stad", "Nat_Int", "Gelovig", "Relatie_stat", "Happy_RN", "Fys_Happy", "Fys_import", "Cont_buiten_school", "Na_school_soc", "Ouder_relatie", "Woonsituatie_geluk", "Thuis_in_stad", "academische_pres", "Financiele_sit", "Geld_geluk", "Verd_mid_gebr", "drugs_alc_geluk", "Mental_health", "Happy_after_quest")
+
+Reactie_stad <- select(Student_awn_data, c(Stad))
+
+ggplot(Reactie_stad, aes(x = " ", y = "Antwoord per stad", fill = Stad)) +
+    geom_col() + 
+    coord_polar(theta = "y") +
+    scale_fill_brewer() +
+    theme_void()
+```
+Deze grafiek laat zien waar onze enquête is ingevuld. Er is duidelijk te zien dat onze posters niet effectief waren. Ondanks dat wij het hebben aangevuld met emails sturen naar de desbetreffende faculteiten en verenigingen is er niet genoeg data. Hierdoor zullen wij niet een overtuigend antwoord kunnen geven met onze eigen verzamelde data. Wij gaan daarom ook data gebruiken van het **CBS**
 
 Presenteer je resultaten in een logische volgorde. Beschrijf wat er te zien is en werk toe naar het beantwoorden van je doelstelling. Beschrijf indien mogelijke de logica van de keuze voor opeenvolgende experimenten. In elke paragraaf worden de feitelijke conclusies gegeven (bv ‘de vergelijking laat zien dat het gemiddelde van groep A significant afwijkt van het gemiddelde van groep B, met een p-waarde van … Dit komt niet overeen met de in de literatuur (REF) beschreven waardes.’)
 
