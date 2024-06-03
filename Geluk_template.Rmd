@@ -1,6 +1,6 @@
 ---
 title: | 
-    What student city is the happiest? # Geef je paper een naam die prikkelt, informatief is, en zo kort mogelijk
+    Welke studenten stad heeft de gelukkigste studenten?
 
 author: |
   | Storm Steller $^1$, Jarno Jacob Duiker $^1$, 
@@ -37,7 +37,7 @@ Gebruik de [wordcount plugin](https://github.com/benmarwick/wordcountaddin) om h
 
 Aan het begin van je paper kan je een zogenaamde *setup chunk* toevoegen. Hierin kan je het gedrag van `knitr` configureren en de bibliotheken laden die je in je code gebruikt. Hieronder is een voorbeeld van zo'n *setup chunk*.
 
-```{r setup, message=FALSE, warning=FALSE, include=FALSE, knitr::opts_chunk$set(echo = FALSE)}
+```{r setup, message=FALSE, warning=FALSE, include=FALSE}
 knitr::opts_chunk$set(out.width = '100%', dpi=300) # configuratie voor figuur grootte en resolutie
 knitr::opts_chunk$set(echo = FALSE) # Deze regel zorgt ervoor GEEN ENKELE chunk getoond wordt! 
 # Laad alle gebruikte bibliotheken hier
@@ -46,6 +46,7 @@ library(ggplot2)
 library(fmsb)
 library(ggrepel)
 library(tidyverse)
+library(dplyr)
 ```
 
 **NB** Gebruik altijd een naam voor iedere chunk. Dat maakt het *debuggen* van problemen bij het *knitten* van je RMarkdown document veel gemakkelijker.
@@ -83,18 +84,21 @@ Je eindigt de introductie met de doelstelling(en) van jouw onderzoek, en hoe je 
 
 De introductie bevat tussen de 400-800 woorden.
 
-Waarom dit onderzoek? Dit onderzoek is er om te laten zien of de stad waarin je studeerd ook invloed heeft op hoe gelukkig je bent. Om te weten wat geluk is zijn we gaan zoeken in literatuur die een duidelijk beeld geeft wat voor factoren ons als mens beinvloeden. De factoren die wij meenamen waren de volgende.
+Waarom dit onderzoek? Dit onderzoek is er om te kijken of er verschil zit in het geluk tussen verschillende studenten steden. Dit is belangrijk omdat het geluk van een persoon invloed kan hebben op verschillende factoren in zijn leven. Als we kijken naar Geluk omvat dit meerdere dingen. Een persoon kan heel gelukkig worden van een academische prestatie echter zijn er anderen die meer geluk halen uit een sociale ontmoeting. Deze verschillende factoren zijn in ons onderzoek gemeten. Hiervoor is literatuur gebruikt die diep in gaat op wat mensen door de jaren heen van geluk maakten, De paper van Veenhoven, R. (1991, 1 januari). Questions on Happiness kijkt hier naar in verschillende tijdperken. Verder zijn er bepaalde factoren naar boven gekomen die belangrijk zijn voor een mens wanneer het gaat over het meten van geluk. 
 
-### Factoren
+- Sekse, als er gekeken wordt naar het menselijk lichaam is er te zien dat er een verschil is tussen de mannelijke en vrouwelijke sekse in specifiek de hormonen. Dit heeft invloed op hoe geluk wordt ervaart. Wanneer een vrouw haar menstruatie ervaart kan deze een kort effect hebben op hoe gelukkig deze zich voelt.  Hier heeft een man echter geen last van.
 
-- Sexe
-- Niveau van de opleiding
-- Welk jaar de student in zit
-- Vakgebied (Sociaal, Technisch etc)
-- Woonsituatie (Uitwonend vs Thuiswonen)
-- Welke stad 
-- Geloving (Ja of Nee)
-- Relatie (Ja of Nee)
+- Niveau van de opleiding, Het is algemeen bekend dat mensen die een hoger opleiding doen vaker ongelukkiger zijn door mentale complicaties. Dit is niet te zeggen dat studenten van een lager niveau hier geen last van hebben echter is het een goede factor om te bekijken.
+
+- Welk jaar de student in zit, Wanneer iemand al meerdere jaren heeft gestudeerd zal deze een andere kijk hebben op het effect van de omgeving van zijn studentenstad. Hierdoor is een 1ste jaar student te vergelijking met een 3de jaar student interessant. Het zou kunnen zijn dat een student namelijk aan zijn stad went. 
+
+- Vakgebied, De omgeving van een studie hangt af van iemands vakgebied. Wanneer een student een sociale studie doet zoals bedrijfskunde of social-work, Wordt deze in een omgeving gezet met andere studenten die over het algemeen ook socialer zijn. In een technische opleiding zijn studenten over het algemeen meer teruggetrokken. Dit zou dus ook invloed hebben op een student en wat voor prioriteiten deze heeft. 
+
+- Woonsituatie (Uitwonend vs Thuiswonen), In het geval dat een student thuis woont zou deze wanneer het wordt gecombineerd met een slechte relatie met zijn ouders een langdurig effect kunnen hebben op zijn geluk en hoe deze verder zich mentaal voelt.  
+
+- Geloving (Ja of Nee), Het is bekend dat mensen die gelovig zijn veel rust en mentale support halen uit hun geloof. Dit doen ze door het lezen van hun geloof gerelateerde literatuur en deze op hun eigen leven toe te passen. Het kan ook zijn dat de persoon steun haalt uit zijn omgeving met andere gelovigen.  
+
+- Relatie (Ja of Nee), Het hebben van een partner kan goed en slecht zijn voor iemands geluk. Wanneer de relatie met deze persoon in een goede staat verkeerd zal deze persoon steun, support en andere postieve dingen naar iemands leven brengen. Wanneer deze in een slechte of verslechterende situatie verkeerd zal deze stress en ongelukkig heid brengen naar iemands situatie. 
 
 **factoren in de vragen**
 
@@ -104,6 +108,8 @@ Waarom dit onderzoek? Dit onderzoek is er om te laten zien of de stad waarin je 
 - Sociale gezondheid
 - Geld / financiele situatie
 - Drugs en/of alcohol gebruik
+
+
 
 
 
@@ -119,6 +125,35 @@ Waarom dit onderzoek? Dit onderzoek is er om te laten zien of de stad waarin je 
 
 ### Methoden
 
+## (...).1 Het meten van geluk
+Om het geluk van de studenten te meten hebben wij een enquête gemaakt met verschillende vragen over geluk. Dit hebben wij gekozen, omdat het na een literatuuronderzoek ons het meest geschikt leek voor het meten van geluk. In deze enquête worden er naar meerdere onderwerpen gevraagd: sexe, de stad waarin de persoon studeert, financiele situatie, gebruik van verdovende middelen, geloof, de band tussen de student en hun ouders, of de student thuis woont of op hunzelf, of ze in een relatie zitten, fysieke gezondheid, contact buiten school en academische prestaties. Deze zijn op te delen in parameters en factoren. De parameters in dit geval zijn: 
+
+* Sexe
+* Niveau van de opleiding
+* Welk jaar de studenten in zitten
+* Vakgebied
+* Woonsituatie
+* Welke stad ze studeren
+* Gelovig
+* Relatie
+* Gebruik van verdovende middelen
+* Of ze nationaal- of internationale student zijn
+
+Dit zijn de gekozen parameters, omdat wij vinden dat deze allemaal invloed op het geluk kunnen hebben. De rest van de vragen zijn de factoren waarbij we het geluk meten.\
+
+Om de enquête zelf te maken hebben wij Google forms gebruikt, omdat het makkelijk is om de data in een .csv formaat te krijgen vanuit Google forms.
+
+## (...).2 Het verzamelen van de data
+Om onze enquête te verspreiden hebben wij ervoor gekozen om een poster met een Qr code te maken. Deze poster hebben wij gemaakt met Canva, omdat het makkelijk te gebruiken is. Op de poster staat er of de persoon die deze leest de enquête wilt invullen. Omdat wij zowel nationale- als internationale studenten willen meenemen, hebben wij een Nederlandstalige en een Engelstalige poster gemaakt. Op die manier kan iedereen de poster lezen.\
+
+Deze poster zouden wij vervolgens verspreiden door verschillende schoolgebouwen rondom de campussen van de verschillende steden. Op deze manier kunnen de studenten die de poster tegenkomen makkelijk bij de enquête komen en die invullen.\
+
+Naast het ophangen van de posters hebben wij ook besloten om de poster te verspreiden via e-mail. Wij stuurden een e-mail naar alle MBO scholen, HBO scholen, Universiteiten, en alle studieverenigingen in de verschillende steden met de vraag of ze onze enquête willen invullen en verspreiden. In de mail werd een pdf bestand in de bijlage gezet met de poster en werd een link in de mail gezet die naar de enquête leidt. Hier hebben wij voor gekozen, omdat wij vonden dat wij op deze manier veel meer studenten konden bereiken.\
+
+Als laatst hebben wij de enquête ook verspreid over verschillende LinkedIn groepen die horen bij de schoolorganisaties. In de groepen werd een bericht gestuurd die hetzelfde is als de e-mails die we hebben verstuurd. Ook hiervoor hebben we gekozen, omdat we vonden dat wij op dez manier meer studenten konden bereiken.
+
+## (...).3 Analyse van de data
+(Wat moet hier?)
 
 
 Materialen en Methoden beschrijft verhalend wat je hebt gebruikt (data, tools) en wat je hebt gedaan (ontwikkelde methodes). **_Het is essentieel dat dit hoofdstuk je onderzoek reproduceerbaar en valideerbaar maakt_**. Verwijs bij de start van dit hoofdstuk naar je code repository (meestal je github link).
@@ -139,9 +174,10 @@ Deze sectie bevat tussen de 400-800 woorden.
 # Resultaten
 
 ```{r}
+
 Student_awn_data <- read.csv("raw_data/Student_hap_awn_30_05.csv")
 
-colnames(Student_awn_data) <- c("Tijd", "Sexe", "Niveau", "Opl_jaar","Vakgebied", "Woonsituatie", "Stad", "Nat_Int", "Gelovig", "Relatie_stat", "Happy_RN", "Fys_Happy", "Fys_import", "Cont_buiten_school", "Na_school_soc", "Ouder_relatie", "Woonsituatie_geluk", "Thuis_in_stad", "academische_pres", "Financiele_sit", "Geld_geluk", "Verd_mid_gebr", "drugs_alc_geluk", "Mental_health", "Happy_after_quest")
+colnames(Student_awn_data) <- c("Tijd", "Sekse", "Niveau", "Opl_jaar","Vakgebied", "Woonsituatie", "Stad", "Nat_Int", "Gelovig", "Relatie_stat", "Happy_RN", "Fys_Happy", "Fys_import", "Cont_buiten_school", "Na_school_soc", "Ouder_relatie", "Woonsituatie_geluk", "Thuis_in_stad", "academische_pres", "Financiele_sit", "Geld_geluk", "Verd_mid_gebr", "drugs_alc_geluk", "Mental_health", "Happy_after_quest")
 
 Reactie_stad <- select(Student_awn_data, c(Stad))
 
@@ -151,7 +187,120 @@ ggplot(Reactie_stad, aes(x = " ", y = "Antwoord per stad", fill = Stad)) +
     scale_fill_brewer() +
     theme_void()
 ```
-Deze grafiek laat zien waar onze enquête is ingevuld. Er is duidelijk te zien dat onze posters niet effectief waren. Ondanks dat wij het hebben aangevuld met emails sturen naar de desbetreffende faculteiten en verenigingen is er niet genoeg data. Hierdoor zullen wij niet een overtuigend antwoord kunnen geven met onze eigen verzamelde data. Wij gaan daarom ook data gebruiken van het **CBS**
+In deze grafiek is te zien dat op 4 antwoorden na alle antwoorden uit Groningen komen. Hierdoor is het voor ons niet mogelijk om de hypothese te beantwoorden. Deze hypothese klinkt: “Het maakt voor het geluk van de student niet uit in welke stad deze studeert.”  Dit valt met de data die is verkregen niet te beantwoorden. Hierdoor kan er alleen naar het geluk onder de studenten in Groningen worden gekeken.  
+
+De verzamelde data in Groningen komt neer op 73 studenten.  In deze steekproef groep zitten ook verschillen. Deze verschillen zijn ook interessant om te bekijken en te benoemen.  
+
+Door het gebrek aan data van de andere steden zijn de volgende grafieken en discussies alleen gefocust op de studenten in Groningen. De steden Amsterdam, Leiden en Utrecht worden achterwegen gelaten.   
+
+Groningen Als studenten stad heeft de Rijks Universiteit Groningen, Hanze (Hanze University of Aplied Sciences) en verschillende mbo-opleiding. Deze zijn allemaal benaderd met emails en of posters zijn hier opgehangen. 
+
+Zoals in de grafiek hier onder te zien zijn de antwoorden verdeeld ons grootste deel van antwoorden komen van het HBO 
+
+```{r}
+student_awn_gro <- subset(Student_awn_data, Stad == "Groningen")
+student_niveau_gro <- select(student_awn_gro, c(Niveau))
+
+ggplot(student_niveau_gro, aes(x = " ", y = "Opleidngs niveau", fill = Niveau)) +
+    geom_col() + 
+    coord_polar(theta = "y") +
+    scale_fill_brewer() +
+    theme_void()
+
+```
+
+
+We hebben daar in tegen wel bepaalde factoren getest die invloed hebben op mensen hun geluk. Hierdoor kunnen we wel zien wat in de geteste groepen invloed heeft op de studenten hun geluk.
+
+Verder Kunnen wij ook kijken naar verschillen voor en na onze enquete en het gemidelde geluk.
+```{r}
+Student_awn_data
+```
+
+
+
+```{r}
+gem_geluk <- Student_awn_data %>%
+    mutate(average_col = Happy_RN + Happy_after_quest)
+
+gem_geluk <- gem_geluk %>%
+    mutate(average_col = average_col / 2)
+
+gem_geluk <- select(gem_geluk, c(Sekse, average_col))
+
+head(gem_geluk)
+
+ggplot(gem_geluk, aes(x = Sekse, y = average_col, fill = Sekse)) + 
+    geom_boxplot() +
+    stat_boxplot(geom = "errorbar",
+               width = 0.25) +
+    xlab("Sekse") +
+    labs(fill = "Sekse")
+    ggtitle("Het gemidelde geluk per Sekse", subtitle = "(Lijn in het vierkant is het gemidelde)") 
+    
+```
+Hier is het gemidelde geluk per persoon per sexe te zien. Hieruit is te zien dat manelijke studenten over het algemeen gelukkiger zijn maar gemiddeld niet. gemiddeld zijn vrouwen het gelukkigste. Anders, zijn het ongelukkigste dit is te zien aan de mediaan maar ook bijna de gehele Q1-Q3 zit onder die van de man en de vrouw.
+
+
+
+```{r}
+
+gem_geluk <- Student_awn_data %>%
+    mutate(average_col = Happy_RN + Happy_after_quest)
+
+gem_geluk <- gem_geluk %>%
+    mutate(average_col = average_col / 2)
+
+gem_geluk <- select(gem_geluk, c(Sekse, average_col))
+
+df_geluk_fem <- subset(gem_geluk, Sekse == "Vrouw (Female)")
+df_geluk_man <- subset(gem_geluk, Sekse == "Man (Male)")
+
+
+df_geluk_fem <- mean(df_geluk_fem$average_col)
+df_geluk_man <- mean(df_geluk_man$average_col)
+
+df_gem_geluk_sexe <- merge(df_geluk_fem, df_geluk_man)
+colnames(df_gem_geluk_sexe) <- c("Geluk_vrouw","Geluk_man")
+
+df_gem_geluk_sexe
+```
+### Thuiswonend vs Uitwonend
+```{r}
+woonsit_df <- select(Student_awn_data, c(Woonsituatie,
+                                        Happy_RN,
+                                        Thuis_in_stad,
+                                        Woonsituatie_geluk,
+                                        Happy_after_quest))
+
+
+woonsit_uit <- subset(woonsit_df, Woonsituatie == "Uitwonend (Away from home)")
+woonsit_thuis <- subset(woonsit_df, Woonsituatie == "Thuiswonend (At home)")
+p <- ggplot() + 
+    geom_point(data = woonsit_thuis, aes(x=Happy_RN, y=Happy_after_quest), color = "red", alpha = 0.6) +
+    geom_point(data = woonsit_uit, aes(x=Happy_RN, y=Happy_after_quest), color = "blue", alpha = 0.6) +
+    xlim(0, 10) +
+    ylim(0, 10) +
+    theme_minimal()
+    title = "Scatterplot Uit- vs Thuiswonende studenten geluk"
+
+p
+```
+In deze scatter plot is thuiswonend rood en uitwonende zijn blauw. er is te zien dat gemideld de uitwonende studenten gelukkiger zijn. Dit is te verklaren door thuis situatie. Wanneer we kijken naar de relatie met de ouders en of andere factoren die iemands thuis situatie beinvloeden kan er te verklaren zijn waarom studenten die thuiswonen ongelukkiger zijn. 
+
+Als we dieper kijken in de thuiswonende hun factoren zien we het volgende
+
+### INSERT PLOT VAN DE FACTOREN VOOR DE THUISWONENDE
+
+### Staat je Academische niveau in relatie met je geluk?
+
+```{r}
+hbo_student <- subset(student_hap_awn, Niveau == "HBO")
+masters_student <- subset(student_hap_awn, Niveau == "Masters")
+mbo_student <- subset(student_hap_awn, Niveau == "MBO")
+uni_student <- subset(student_hap_awn, Niveau == "Universiteit (University) Bachelor")
+```
+
 
 Presenteer je resultaten in een logische volgorde. Beschrijf wat er te zien is en werk toe naar het beantwoorden van je doelstelling. Beschrijf indien mogelijke de logica van de keuze voor opeenvolgende experimenten. In elke paragraaf worden de feitelijke conclusies gegeven (bv ‘de vergelijking laat zien dat het gemiddelde van groep A significant afwijkt van het gemiddelde van groep B, met een p-waarde van … Dit komt niet overeen met de in de literatuur (REF) beschreven waardes.’)
 
