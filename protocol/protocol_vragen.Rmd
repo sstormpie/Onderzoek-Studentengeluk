@@ -1,0 +1,104 @@
+---
+title: "Protocol & enquête"
+author: "Jarno Jacob Duiker & Storm Steller"
+date: "2024-06-04"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+In welke studenten stad zijn studenten het gelukkigst? 
+
+Hypothese: Het maakt voor het geluk van de student niet uit in welke stad deze studeert. 
+
+ 
+
+De vragen worden op een schaal van 0-10 beantwoord 10 = 100% enz. 
+
+INFO BLOCK 
+
+ 
+
+Parameters 
+
+Sexe 
+
+Niveau opleiding 
+
+Jaar opleiding 
+
+Vakgebied 
+
+Woonsituatie 
+
+Stad van studie 
+
+Nationaal of internationaal 
+
+Geloof 
+
+Relatiestatus 
+
+ 
+
+ 
+
+# vragen
+
+Hoe gelukkig voel je je nu? \
+
+Ben je gelukkig met je fysieke gesteldheid \
+
+Hoe belangrijk is je (fysieke-) gezondheid voor je geluk? \
+
+Hoe belangrijk is contact buiten school met andere voor jouw geluk? \
+
+Ik vind het belangrijk om buitenschool sociale activiteiten te doen. \
+
+Ik heb een goede relatie met mijn ouders. \
+
+Ik ben gelukkig met mijn woonsituatie \
+
+Ik voel me thuis in de stad waarin ik woon. \
+
+Mijn academische prestaties hebben veel invloed op hoe gelukkig ik ben. \
+
+Ik zit in een goede financiële situatie. \
+
+Geld is belangrijk voor mij om gelukkig te zijn. \
+
+Ik gebruik (verdovende-) middelen, Zoals wiet, alcohol of anders. \
+
+Deze middelen gebruik ik om mijzelf gelukkiger te maken. \
+
+Ik zit lekker in mijn vel. \
+
+Hoe gelukkig ben jij na deze enquête? \
+
+ 
+
+# Protocol. 
+
+Door middel van een QR-code kan de student deze scannen en een google form invullen met de vragen. De vragen hebben een schaal van 0-10 waarbij 0 het slechtste is en 10 het beste. De flyers nemen de meters mee naar de Universitaire bibliotheken van de studenten campussen om zoveel mogelijk verschillende studenten te ondervragen.  
+
+De enquête wordt ook op plekken rond de campus opgehangen. Dezelfde posters als die we aan de studenten laten zien. De link van de enquete zal eventueel nog worden gemailed naar studie’s / scholen zelf. Dit is zodat we een groot genoege groep kunnen krijgen zodat er genoeg data is. Ook om te zorgen dat de populatie willekeurig is en niet zwaar wordt beinvloed door 1 bepaalde groep. 
+
+Om extra mensen aan te spreken en zorgen dat de enquete nog verder wordt verspreid. Dit doen we door emails te sturen naar verschillende studieverenigingen en studenten verenigingen met een link en een netjese email waarin staat wat dit onderzoek is, waarvoor en door wie. Daarnaast sturen we het ook naar de mbo-scholen en de algemene kanalen van de hbo’s en de universiteiten. De email is hier onder te vinden. 
+
+ 
+
+# Email. 
+
+Hallo, **insert naam van vereneging** 
+
+Wij Storm en Jarno zijn studenten aan de Hanze Hogeschool Groningen. Wij hebben een onderzoeks project waar wij kijken naar het geluk van studenten in verschillende studenten-steden. Wij sturen deze email om te vragen of het mogelijk is om de enquete van dit onderzoek in jullie app groep of via email te kunnen delen. De enquete  is compleet anoniem. Het moet een goed beeld kunnen schetsen over het algemene geluk van een student. Wij gaan met deze data uiteindelijk onze onderzoeks vraag beantwoorden “In welke studenten stad zijn studenten het gelukkigst?”  
+
+Alvast bedankt voor de hulp 
+ 
+Vriendelijke Groet 
+
+Storm & Jarno, studenten Hanzehogeschool. 
+
+ 
