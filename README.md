@@ -7,7 +7,9 @@ Dit onderzoek gaat over het geluk van studenten in verschillende studenten stede
 Wij gaan het geluk van studenten in verschillende studentensteden meten om te kijken in welke stad ze het gelukkigst zijn. Dit doen wij door een enquête te versturen naar MBO, HBO en universiteiten. met verschillende vragen die te maken hebben met het geluk van een persoon. De data uit de enquête gaan we analyseren om te kijken hoe gelukkig de studenten zijn.
 
 ### Resultaten
-(INSERT RESULTATEN MET GRAFIEK BELANGRIJKSTE DATA)
+<img title="Antwoorden per stad" alt="Antwoorden per stad" src="/images/000010.png">
+<img title="Gemiddeld geluk per sexe" alt="Gemiddeld geluk per sexe" src="/images/000011.png">
+<img title="Gemiddeld geluk per sexe" alt="Gemiddeld geluk per sexe" src="/images/000014.png">
 
 
 ## Conclusie
