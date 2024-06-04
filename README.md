@@ -1,6 +1,6 @@
 # Onderzoek Studentengeluk
 
-Een onderzoek waarin geluk van studenten wordt gemeten om te kijken waar studenten het gelukkigst zijn.
+Dit onderzoek gaat over het geluk van studenten in verschillende studenten steden. De steden die wij hebben onderzocht zijn: Amsterdam, Groningen, Leiden en Utrecht. We hebben in dit onderzoek een enquête gebruikt om data te verzamelen. Dit onderzoek is belangrijk omdat mentale gezondheid onder de studenten tegenwoordig veel in het nieuws is. Geluk is een groot deel van iemands mentale gezondheid daarom is het interessant om te weten in welke stad voor de studenten geluk het hoogste ligt. De factoren die in dit onderzoek worden gebruikt gaan van persoonlijk naar omgevingsfactoren zodat er een duidelijk beeld kan worden geschetst waarin ook langdurige problemen worden meegenomen die invloed hebben.
 
 ## Projectomschrijving
 
