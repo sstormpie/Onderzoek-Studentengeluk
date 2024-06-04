@@ -12,8 +12,8 @@ Wij gaan het geluk van studenten in verschillende studentensteden meten om te ki
 
 ### Conclusie
 (INSERT IN HET KORT CONCLUSIE VAN HET ONDERZOEK)
-
-
+De data die verzamelt is kan niet worden gebruikt in andere onderzoeken. Dit omdat het te weinig is om een betrouwbaar antwoord te geven. Hierdoor kunnen wij alleen antwoord geven
+op de factoren die wij hebben bekeken. Deze zijn alleen van de studenten uit Groningen dit omdat hier wij de meeste data van hebben verzameld. Het blijkt dat mannen over het algemeen het gelukkigste zijn. en Anders sekse zijn het minst gelukkig.
 ### Benodigdheden
 
 * Een werkende OS
@@ -35,6 +35,14 @@ Wij gaan het geluk van studenten in verschillende studentensteden meten om te ki
 | Google  Spreadsheet  	|    https://docs.google.com/spreadsheets/                	|                                      	| De antwoorden van de Google forms worden hier in een spreadsheet gezet en deze kan via een download knop omgezet worden in een csv file.                                                     	|
 | Mendeley refrence manager   	| [https://docs.google.com/forms/ ](https://www.mendeley.com/reference-management/reference-manager/)    |   2.112.2                     	| Gebruikt om een alle literatuur netjes te ordenen en goed te refrencen                                                                                   	|
 
+Met de volgende commands zijn de packages te instaleren in RStudio
+```
+install.packages("knitr")
+install.packages("ggplot2")
+install.packages("fmsb")
+install.packages("tidyverse")
+install.packages("dplyr")
+```
 ## Help
 
 Voor vragen kan je ons contacteren op https://github.com/sstormpie/Onderzoek-Studentengeluk
