@@ -10,12 +10,20 @@ Wij gaan het geluk van studenten in verschillende studentensteden meten om te ki
 (INSERT RESULTATEN MET GRAFIEK BELANGRIJKSTE DATA)
 
 
-### Conclusie
-(INSERT IN HET KORT CONCLUSIE VAN HET ONDERZOEK)
-De data die verzamelt is kan niet worden gebruikt in andere onderzoeken. Dit omdat het te weinig is om een betrouwbaar antwoord te geven. Hierdoor kunnen wij alleen antwoord geven
-op de factoren die wij hebben bekeken. Deze zijn alleen van de studenten uit Groningen dit omdat hier wij de meeste data van hebben verzameld. Het blijkt dat mannen over het algemeen het gelukkigste zijn. en Anders sekse zijn het minst gelukkig.
+## Conclusie
 
-De hypothese kunnen wij niet beantwoorden. Dit komt ook door het hebben van te weinig data van zowel studenten in het algemeen, als het antwoord per stad.
+De data die wij verzameld hebben is niet genoeg om een antwoord te geven op de hypothese. Dit komt omdat er niet genoeg data is voor elke stad. De stad met het grootste aantal antwoorden is Groningen deze heeft echter ook maar 70 antwoorden dit is te zien in figuur 1. De 70 antwoorden zijn niet genoeg om met 95% zekerheid een antwoord te geven. Hierdoor zullen wij alleen naar factoren kunnen kijken zoals verschillen tussen de seksen in de stad Groningen. Hier kunnen we uit halen dat mannen het gelukkigste zijn en de anders sekse het ongelukkigste dit is te zien in figuur 4. Ook hebben wij gevonden dat er misschien een relatie zit tussen de studenten die een kunst opleiding volgen en bij de sekse "Anders"\ 
+Verder is te zien dat studenten die uitwonend zijn over het algemeen aan de gelukkigere kant zitten dat is te zien in figuur 5. De data die verzameld is zegt ook dat de studenten in Groningen gemiddeld niet zeer gelukkig zijn. Dit is tevens een trend in de data die het cbs heeft gevonden dit is te zien in figuur 8. Hier is ook een neerwaartse trend te zien. Wat wij dus uit deze data kunnen halen is dat een student in de stad Groningen redelijk gelukkig is maar er is zeker ruimte voor verbetering. 
+
+
+
+Deze data zal niet kunnen worden gebruikt in het werkveld. Het is niet genoeg om vertrouwen op de gegeven resultaten. Hierdoor is het een speculatieve data waardoor het niet betrouwbaar is.
+
+## Discussie
+
+De volgende keer moeten wij een betere manier verzinnen om de data te verzamelen. Wij hadden bijna, en voor Utrecht zelfs helemaal geen data. Door deze belemmering konden wij ons onderzoek niet goed uitvoeren. Dit zouden wij de volgende keer kunnen oplossen door directer naar de studenten te marketen. Wij kunnen dit oplossen door meerdere dagen per stad te besteden en fysiek studenten vragen om mee te doen met ons onderzoek. 
+
+
 ### Benodigdheden
 
 * Een werkende OS
