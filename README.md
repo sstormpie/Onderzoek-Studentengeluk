@@ -14,6 +14,8 @@ Wij gaan het geluk van studenten in verschillende studentensteden meten om te ki
 (INSERT IN HET KORT CONCLUSIE VAN HET ONDERZOEK)
 De data die verzamelt is kan niet worden gebruikt in andere onderzoeken. Dit omdat het te weinig is om een betrouwbaar antwoord te geven. Hierdoor kunnen wij alleen antwoord geven
 op de factoren die wij hebben bekeken. Deze zijn alleen van de studenten uit Groningen dit omdat hier wij de meeste data van hebben verzameld. Het blijkt dat mannen over het algemeen het gelukkigste zijn. en Anders sekse zijn het minst gelukkig.
+
+De hypothese kunnen wij niet beantwoorden. Dit komt ook door het hebben van te weinig data van zowel studenten in het algemeen, als het antwoord per stad.
 ### Benodigdheden
 
 * Een werkende OS
