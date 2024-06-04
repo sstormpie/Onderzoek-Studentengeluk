@@ -1,0 +1,551 @@
+---
+title: "Logboek-Storm"
+author: "Storm Steller"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(dplyr)
+library(fmsb)
+```
+
+# Logboek-Studentengeluk
+##### Storm Steller
+
+
+## Inleiding
+
+(Moet er een inleiding in?)
+
+
+## Log
+
+### 22-04-2024
+
+**Doel van de dag**\
+Opzetten onderzoek + voorbereidingen\
+
+**Doelen**
+
+* Een groep vormen
+* Een onderwerp met hoofdvraag bedenken
+* De vraag laten goedkeuren door de docenten
+* Een plan van aanpak opstellen
+
+Vandaag vormde ik samen met Jarno een groepje om onderzoek te doen. Na eventjes nadenken hebben wij besloten dat wij het over het geluk (emotie) van studenten willen meten. Wij hebben besloten om dit in de 4 grootste studentensteden te meten. Na het raadplegen van een site,  https://www.hallmark.nl/magazine/huis/de-leukste-studentensteden-van-nederland/ (22-04-2024), zijn wij erop uitgekomen dat wij het geluk in Groningen, Leiden, Utrecht en Amsterdam willen meten, omdat deze steden bovenaan de lijst stonden.\
+
+Nadat wij de steden en het onderwerp hadden gekozen, begonnen we met het verzinnen met een hoofdvraag. Die hebben wij ongeveer kunnen formuleren. De vraag was alleen nog een beetje vaag
+
+
+### 23-04-2024
+
+**Doel van de dag**\
+Hoofdvraag uitwerken en protocol ontwikkelen\
+
+**Doelen**\
+
+* Onderzoeksvraag beter uitwerken
+* Verschillende manieren bekijken waarmee we geluk kunnen meten
+* Wat is nodig voor deze methoden
+* Wat is het einddoel?
+
+Vandaag hebben we de hoofdvraag uitgewerkt. Na een klein tijdje brainstormen zijn we op de vraag *"In welke studentenstad zijn studenten het gelukkigst?"* gekomen. Na het formuleren van de hoofdvraag hebben we meteen de nulhypothese en de hypothese bedacht. Onze hypothese werd uiteindelijk "Het maakt voor het geluk van de student niet uit in welke stad deze studeert". Dit hebben wij gekozen, omdat wij dachten dat het geluk gelijk ligt bij de studenten in de verschillende steden.\
+
+Toen zijn we begonnen met naar methoden om geluk te meten. Na het bekijken naar verschillende methodes op deze site: https://www.scribbr.nl/category/onderzoeksmethoden/ (23-04-2024) hebben wij besloten om een enquête te maken met verschillende vragen over het geluk van een individu.\
+
+De enquete heeft een paar voorwaarden: De vragen moeten duidelijk zijn, de manier van antwoorden moet een datatype terug geven waarmee gemiddelden en grafieken etc. mee kunnen uitrekenen en maken. De manier van verspreiding van de enquête is ook een belangrijke beslissing.\ 
+
+De vragen die in de enquete zullen staan moeten de hoofdvraag *“In welke studenten stad zijn studenten het gelukkigst?“* kunnen beantwoorden. Dus moeten wij onderzoeken welke factoren geluk bepalen en welke er aan toevoegen of afnemen. Dit moeten wij doen door het lezen van literatuur over geluk, Situatie en geluk op moleculair niveau.
+
+
+### 24-04-2024
+
+**Doel van de dag**\
+Literatuuronderzoek om onderzoeksvragen te beantwoorden\
+
+**Doelen**\
+
+* Beantwoord de onderzoeksvragen door middel van literatuuronderzoek
+* Maak vragen van op basis van dat onderzoek
+
+Vandaag zijn we begonnen met ons literatuuronderzoek. Met dit onderzoek willen wij 4 vragen beantwoorden die wij belangrijk vinden bij ons onderzoek:
+
+* Wat is geluk (op moleculair niveau)?
+* Welke factoren dragen bij aan geluk?
+* Hoe belangrijk is geluk voor de functie van een persoon?
+* Hoe verschilt geluk per persoon?
+
+Wij hebben de vragen opgedeeld zodat wij beide 2 vragen hoeven te beantwoorden. Ik heb de vragen *"Hoe belangrijk is geluk voor de functie van een persoon?"* en *"Hoe verschilt geluk per persoon?"* behandeld.\
+
+Na even zoeken op google scholar kwam ik de volgende bronnen tegen:
+
+* Cohn, M. A., Fredrickson, B. L., Brown, S. L., Mikels, J. A., & Conway, A. M. (2009). Happiness Unpacked: Positive Emotions Increase Life Satisfaction by Building Resilience. Emotion, 9(3), 361–368. https://doi.org/10.1037/a0015952
+
+* Farhud, D. D., Malmir, M., & Khanahmadi, M. (2014). Happiness & Health: The Biological Factors-Systematic Review Article. In Iranian J Publ Health (Vol. 43, Issue 11). http://ijph.tums.ac.ir
+
+* Wink, P. M. (2014). George E. Vaillant, Triumphs of Experience: The Men of the Harvard Grant Study. Society, 51(2), 184–187. https://doi.org/10.1007/s12115-014-9760-7
+
+Na het literatuuronderzoek hebben wij besloten dat wij Google forms gaan gebruiken om onze enquête te maken. Hiervoor hebben wij gekozen, omdat het dan heel makkelijk is om de antwoorden in .csv format te krijgen. 
+
+
+### 26-04-2024
+
+**Doel van de dag**\
+Enquete vragen maken en structuur van de enquete bepalen
+
+**Doelen**
+
+* Door middel van het kijken naar de gevonden literatuur vragen maken
+* Enquête structuur bedenken
+* Protocol schrijven
+
+Na het literatuuronderzoek hebben wij vandaag een eerste draft van onze enquêtevragen gemaakt. Uit het literatuuronderzoek concludeerden wij dat financiële status, sociale omgeving, fysieke gezondheid, gebruik van (verdovende) middelen, relatiestatus, woonsituatie, geloof, sexe, opleidingsniveau, jaarlaag, het vakgebied waarin ze studeren, of ze nationaal of internationaal zijn, en de stad waarin ze studeren impact kan hebben op het geluk van een persoon. Dit hebben wij meteen verwerkt in de enquête.\
+
+Daarna zijn we bezig geweest met een protocol. Dit is het protocol dat wij hebben ontwikkeld: 
+
+Door middel van een poster met QR-code kan de student deze scannen en een Google form invullen met de vragen. De vragen hebben een schaal van 0-10 waarbij 0 het slechtste is en 10 het beste. De posters nemen de meters mee naar de Universitaire bibliotheken van de studenten campussen om op te hangen en zoveel mogelijk verschillende studenten te benaderen en ondervragen.\
+
+De enquête wordt ook op plekken rond de campus opgehangen. Dezelfde posters als die we aan de studenten laten zien. De poster wordt ook via de e-mail verspreid over de schoolorganisaties en alle studieverenigingen in de verschillende steden. Dit doen wij, omdat wij zo genoeg bereik hebben en veel respondenten kunnen krijgen. Ook om te zorgen dat de populatie willekeurig is en niet zwaar wordt beïnvloed door 1 bepaalde groep. 
+
+
+### 28-04-2024
+
+**Doel van de dag**\
+Maak de enquête en poster af
+
+**Doelen**
+
+* Maak alle voorbereidingen af voor het bezoek in Leiden
+
+Vandaag heb ik de poster gemaakt met een qr code die naar onze enquête leidt. Op deze poster staat ook wat informatie over de enquête en het onderwerp van het onderzoek. Daarnaast heb ik nog kleine voorbereidingen gedaan voor ons bezoek in Leiden morgen. Ik heb samen met Jarno nog even naar de enquête gekeken. Die leek goed. Verder heb ik nog gekeken hoe wij naar de campus in Leiden moeten.\
+
+<img src="Afbeeldingen/poster-engels.png" alt="Poster Engels" width="200" height="270">
+<img src="Afbeeldingen/poster-nederlands.png" alt="Poster Nederlands" width="200" height="270">
+
+Hierboven zie je de poster die is gemaakt. We hebben besloten om ze in het Engels en Nederlands te maken, omdat internationale studenten ook binnen onze doelgroep vallen.\
+
+
+### 29-04-2024
+
+**Doel**\
+Naar Leiden om de enquête te verspreiden
+
+**Doelen**
+
+* Verspreid posters in verschillende gebouwen
+* Benader mensen met de vraag of ze de enquête willen invullen
+
+Om zoveel mogelijk data te krijgen zijn wij zo snel mogelijk naar de gekozen steden gegaan. Leiden was het verste weg, dus deze gaan wij als eerste heen. Wij begonnen met posters ophangen om 13:30. Dit was in het lipsius gebouw, we gingen elk gebouw af en hingen er 2-3 posters op. Dit deden we in de meivakantie. Wij denken echter dat dit niet een enorme invloed zou moeten hebben op hoeveel data we kunnen verzamelen. Dit komt omdat de universiteiten niet geen meivakantie hebben en het dus aanwezig waren op school. Het MBO en HBO hebben wel meivakantie, maar ondanks dat zijn we wel binnengelaten in het HBO gebouw en hebben wij hier ook 3 posters opgehangen.\
+
+Tijdens het proces van posters ophangen hebben wij ook geprobeerd een aantal studenten te benaderen, vragen of zij onze enquête willen maken. Met weinig succes. Geen enkele student die wij benaderden wou meedoen aan het onderzoek. Om deze reden hebben wij besloten om het protocol te wijzigen: Wij benaderen geen studenten meer, omdat de grootste kans is dat ze niet mee willen werken. Dan is het vooral een tijdverspilling.
+
+
+### 07-05-2024
+
+**Doel**\
+Posters ophangen in Utrecht
+
+**Doelen**
+
+* In de gebouwen van Universiteit Utrecht & Hogeschool Utrecht posters ophangen
+* Emails verzamelen 
+
+Vandaag zijn Jarno en ik naar Utrecht gegaan voor ons onderzoek. Hier gingen wij heen, net als in Leiden, om onze poster te verspreiden. Utrecht heeft een groot campus waar alle HBO scholen en universiteiten staan. Daar zijn wij heen gegaan en hebben wij in elk gebouw weer posters gehangen op poster borden. Ook zijn wij naar de bibliotheek geweest waar wij, in tegenstelling tot in Leiden, wel posters konden neerleggen. Ook zijn wij in een paar studentencafés geweest op de campus. Daar hebben wij ook posters op de behorende plekken gehangen. Die hebben wij daar opgehangen, omdat daar veel studenten komen.
+
+
+### 08-05-2024
+
+**Doel**\
+Verzamel emailadressen van studieverenigingen en schoolorganisaties
+
+**Doelen**
+
+* Stel een e-mail op
+* Verzamel emailadressen
+
+Vandaag ben ik in de les begonnen met het verzamelen van alle emailadressen van de scholen en studieverenigingen. Ik heb die van Leiden kunnen verzamelen. Die van Utrecht ook voor de helft. Dit proces duurt best lang, omdat er heel veel studieverenigingen zijn. De e-mails van de studieverenigingen heb ik op de volgende websites gevonden:
+
+* https://utrechtstudentenstad.nl/studentenverenigingen
+* https://students.uu.nl/naast-de-studie/vrije-tijd-en-studentenleven/studentenorganisaties
+* https://www.universiteitleiden.nl/onderwijs/bachelors/studentenleven/studentenstad-leiden/studentenverenigingen
+* https://leidenstudentenstad.nl/studentenverenigingen
+
+Naast het verzamelen van de adressen hebben we ook de e-mail zelf opgesteld. De e-mail is als volgt:
+
+Hallo, **insert naam ** 
+
+Wij Storm en Jarno zijn studenten aan de Hanze Hogeschool Groningen. Wij hebben een onderzoeks project waar wij kijken naar het geluk van studenten in verschillende studenten-steden. Wij sturen deze email om te vragen of het mogelijk is om de enquete van dit onderzoek in jullie app groep of via email te kunnen delen. De enquete  is compleet anoniem. Het moet een goed beeld kunnen schetsen over het algemene geluk van een student. Wij gaan met deze data uiteindelijk onze onderzoeks vraag beantwoorden “In welke studenten stad zijn studenten het gelukkigst?”  
+
+Alvast bedankt voor de hulp.
+ 
+Vriendelijke Groet ,
+
+Storm & Jarno, studenten Hanzehogeschool
+
+Deze e-mail wordt ook in het Engels verstuurd. Hiermee verwijzen we met een dikgedrukte zin **For english look below**. Dit doen wij, omdat het bestuur van sommige studieverenigingen alleen maar bestaat uit internationals.
+
+
+### 13-05-2024
+
+**Doel**\
+Opzetten Algemene document en e-mails verzamelen
+
+**Doelen**
+
+* Verzamel emailadressen van schoolorganisaties en studievereniging
+* Structuur van R markdown document maken
+
+Vandaag ben ik verder gegaan met het verzamelen van de emailadressen. Ik heb vandaag alle emailadressen van Utrecht en Leiden verzameld en heb naar die scholen en studieverenigingen een e-mail gestuurd. Verder ben ik de dag verder bezig geweest met het verzamelen van de e-mails uit Amsterdam en Groningen. De e-mails heb ik verzameld op deze websites:
+
+* https://groningenstudentenstad.nl/studentenverenigingen
+* https://www.rug.nl/let/onze-faculteit/organisatie/studentenorganisaties-en-verenigingen/lijst-studieverenigingen
+* https://vu.nl/nl/student/verenigingen/studieverenigingen
+* https://amsterdamstudentenstad.nl/studentenverenigingen
+*https://student.uva.nl/onderwerpen/studieverenigingen
+
+Ook hebben we de algemene structuur van ons eindproduct gemaakt. De structuur die wij gaan volgen is de structuur die gebruikt wordt op ncbi. Dat is als volgt:
+
+* Pakkende titel die ook goed beschrijft waar het over gaat
+* Een abstract
+* Een introductie met de hyptothese en relevantie
+* De literatuur die relevant is met uitleg waarom voor dit onderzoek
+* De vragen en factoren waarom deze moeten worden gebruikt
+* Onze methoden en materialen - Protocol
+* Resultaten
+* Samenvatting
+* Conclusie
+* Bedankjes en Honorable mentions
+
+Wij maken gebruik van deze template omdat wij een profesionele structuur willen weer geven in ons eindproduct.
+
+
+### 14-05-2024
+
+**Doel**\
+Data bekijken
+
+**Doelen**
+
+* Verspreid de enquête meer
+* Bekijk de al verzamelde data
+
+Vandaag heb ik alle emailadressen verzameld van de scholen en studieverenigingen uit Amsterdam en Groningen. Daar heb ik dan ook meteen dezelfde mail naar verstuurd als de scholen en verenigingen in Utrecht en Leiden. Verder hebben wij al een aantal antwoorden gekregen van de scholen en verenigingen uit Utrecht en Leiden. Tot nu toe werken de meeste niet mee. Alleen hogeschool Utrecht die gaat kijken wat ze voor ons kunnen doen en MBO Utrecht die onze posters in hun scholen gaan hangen.\
+
+Tot nu toe hebben wij 7 antwoorden. Die zijn van mensen uit de klas. Samen met Jarno hebben we de .csv ingeladen en bekeken.
+
+
+### 15-05-2024
+
+**Doel**\
+Posters ophangen op campus Groningen
+
+**Doelen**
+
+* Posters verspreiden
+* Plan opnieuw bekijken
+
+Vandaag zijn Jarno en ik over de campus in Groningen gegaan om onze posters daar op te hangen. Wij zijn naar alle gebouwen van de Hanze geweest om de posters te hangen. Wij hebben ervoor gekozen om de posters een andere keer in de RUG gebouwen te hangen omdat wij niet genoeg tijd hadden om ze daar nog op te hangen. Wij hebben wederom in elk gebouw van de Hanze een aantal posters gehangen.\
+
+Vandaag hebben wij ook besloten om de posters te verspreiden via Linkedin. Dit hebben wij besloten, omdat wij vrij weinig antwoorden via e-mail terug krijgen. Wij hopen meer reacties te krijgen via Linkedin.\
+
+Aan het einde van de dag hadden we 26 antwoorden op de enquête.
+
+
+### 21-05-2024
+
+**Doel van de dag**\
+Kijk welke data het belangrijkste is
+
+**Doelen**
+
+* Data bekijken 
+* Welke grafieksoorten willen wij gebruiken
+* Hoe gaat het eindproduct eruit zien
+
+Als we onze data vandaag bekijken is te zien dat we op 29 antwoorden zitten.
+```{r}
+#Lees de data in
+data <- read.csv("../../raw_data/Student_hap_awn_30_05.csv")
+```
+
+```{r}
+#Verander de namen van de kolommen
+colnames(data) <- c("Tijdstempel", "Sexe", "Niveau", "Jaar", "Vakgebied", "Woonsituatie", "Stad", "Nationaal_Internationaal", "Gelovig", "Relatie", "Algemeen_Geluk", "Fysiek_Geluk", "Belang_Fysieke_Gezondheid", "Belang_Buitenschools_Contact", "Belang_Sociale_Activiteiten", "Band_Ouders", "Geluk_Woonsituatie", "Thuisgevoel", "Belang_Academische_Prestaties", "Financiele_Situatie", "Belang_Geld", "Gebruik_Verdovende_Middelen", "Belang_Verdovende_Middelen", "Lekker_In_Vel", "Geluk_Na_Enquête")
+
+```
+
+```{r}
+head(data)
+```
+
+
+```{r}
+#Maak een aparte vector met alle numerieke data
+numerieke_data <- select(data, c(11:15, 17:21, 23:25))
+
+#head(numerieke_data)
+```
+
+Wij keken naar welke grafieksoorten wij willen om onze data te laten zien in ons eindproduct. de grafieken die wij waarschijnlijk gaan gebruiken zijn.
+
+* Radar chart, omdat deze goed multivariate data over verschillende groepen kan laten zien.
+* Scatterplot, Het scatter plot is handig om 2 groepen te vergelijken. In ons eindproduct willen we graag meerdere groepen met elkaar vergelijken. Dan is deze plot erg geschikt
+
+```{r, fig.asp=.75, out.width='50%', fig.align='center', fig.cap='Selecting untidy data'}
+ggplot(data, aes(x = " ", y = "Antwoord per stad", fill = Stad)) +
+    geom_col() + 
+    coord_polar(theta = "y") +
+    scale_fill_brewer() +
+    theme_void() +
+    ggtitle("Antwoorden per stad")
+
+```
+
+Hier is te zien dat de ratio tussen de verschillende steden groot is. Amsterdam en leiden hebben 3 en 1 antwoord. Utrecht heeft echter geen enkele respndent\ 
+
+De mails die wij hebben verstuurd zijn aangekomen en wij hebben op bepaalde ook antwoorden gekregen dat deze zouden worden doorgestuurd en de correcte link en qr codes zouden worden verspreid.
+
+
+### 25-02-024
+
+**Doel**\
+Maak radar charts
+
+**Doelen**\
+
+* Maak radar charts voor de journal club
+* Maak radar charts voor het eindproduct
+
+Vandaag ben ik bezig geweest met het maken van verschillende radar charts met onze data. Ik heb ze volgende charts gemaakt:
+
+```{r, echo=FALSE}
+#Een functie die het gemiddelde van data in een dataframe berekent en er een nieuwe dataframe van maakt
+mean_frame <- function(data){
+  as.data.frame(t(colMeans(data)))
+}
+
+#Bereken het gemiddelde van alle numerieke gegevens en zet ze in een apart dataframe
+df_means <- mean_frame(numerieke_data)
+
+#Maak een naam voor de regel
+row.names(df_means) <- "Gemiddeld"
+
+#df_means
+```
+
+```{r, echo=FALSE}
+#Een functie die data afrond
+round_data <- function(data, digits) {
+  nums <- vapply(data, is.numeric, FUN.VALUE = logical(1))
+
+  data[,nums] <- round(data[,nums], digits = digits)
+
+  (data)
+}
+
+round_data(df_means, 1)
+
+```
+
+```{r, echo=FALSE}
+#Deze functie maakt een mooie radar chart, als parameters neemt de functie data, een kleur en een titel
+js_radarchart <- function(data, 
+                             color,
+                             vlabels = colnames(data),
+                             title) {
+    radarchart(
+        data, axistype = 1,
+        
+        #Hier worden de kleuren en de lijntypes van de grafiekdata opgezet
+        pcol = color, 
+        pfcol = scales::alpha(color, 0.5), 
+        plwd = 1, 
+        plty = 1,
+        
+        #Hier is de opmaak van het rooster van de grafiek
+        cglcol = "grey", 
+        cglty = 1, 
+        cglwd = .8,
+        caxislabels = NULL, 
+        calcex = .75, 
+        
+        #Hier wordt de kleur en grootte van de as labels bepaald
+        axislabcol = "black",
+        vlcex = .80, 
+        vlabels = vlabels,
+        title = title,
+    )
+}
+```
+
+```{r, echo= FALSE}
+#Zet een maximum- en minimum waarde in voor de grafiek
+max_min <- data.frame( Algemeen_Geluk = c(10,0),
+                       Fysiek_Geluk = c(10,0),
+                       Belang_Fysieke_Gezondheid = c(10,0),
+                       Belang_Buitenschools_Contact = c(10,0),
+                       Belang_Sociale_Activiteiten = c(10,0),
+                       Geluk_Woonsituatie = c(10,0),
+                       Thuisgevoel = c(10,0),
+                       Belang_Academische_Prestaties = c(10,0),
+                       Financiele_Situatie = c(10,0),
+                       Belang_Geld = c(10,0),
+                       Belang_Verdovende_Middelen = c(10,0),
+                       Lekker_In_Vel = c(10,0),
+                       Geluk_Na_Enquête = c(10,0)
+                      )
+
+row.names(max_min) <- c("Max", "Min")
+
+#Bind de max en min aan data en zet het in een dataframe
+df <- rbind(max_min, numerieke_data)
+radar_means <- rbind(max_min, df_means)
+
+#Zet grafische parameters
+op <- par(mar = c(1, 1, 1, 1))
+
+#Maak een plot van het gemiddelde geluk van alle studenten
+js_radarchart(data= radar_means, color= "blue", title= "Gemiddeld geluk van alle studenten")
+
+par(op)
+```
+
+Hier zie je een radar chart van het gemiddelde van alle studenten.
+
+```{r, echo=FALSE}
+#Voeg de sexe kolom terug aan de dataframe
+numerieke_data$Sexe <- data$Sexe
+
+#Verander de namen van de waarden om het later makkelijker te maken
+numerieke_data$Sexe[numerieke_data$Sexe == 'Vrouw (Female)'] <- "Vrouw"
+numerieke_data$Sexe[numerieke_data$Sexe == 'Man (Male)'] <- "Man"
+numerieke_data$Sexe[numerieke_data$Sexe == 'Anders (Other)'] <- "Anders"
+
+#Reken de gemiddelden van de individuen gesplitst op sexe
+mean_man <- mean_frame(numerieke_data[numerieke_data$Sexe == 'Man', 1:13])
+mean_vrouw <- mean_frame(numerieke_data[numerieke_data$Sexe == 'Vrouw', 1:13])
+mean_anders <- mean_frame(numerieke_data[numerieke_data$Sexe == 'Anders', 1:13])
+
+#Zet alle gemiddelden in een dataframe met de maximale- en minimale grens
+df_mean_sexe <- rbind(max_min, mean_man, mean_vrouw, mean_anders)
+
+#Zet de correcte titels voor de rijen in de dataframe
+rownames(df_mean_sexe) <- c("Max", "Min", "Man", "Vrouw", "Anders")
+
+#Rond de waarden in de dataframe af
+df_mean_sexe <- round_data(df_mean_sexe, 1)
+
+#Verwijder de sexe kolom weer
+numerieke_data <- numerieke_data[1:13]
+
+#head(df_mean_sexe)
+```
+```{r, echo= FALSE}
+op <- par(mar = c(1, 1, 1, 1))
+
+js_radarchart(data= df_mean_sexe, color= c("#4dd5ff", "#f5c2ff", "#e3e655"), title= "Gemiddeld Geluk Gesplitst Op Sexe")
+
+#Maak een legenda voor de grafiek
+legend(
+  x = "right", 
+  legend = c("Man", "Vrouw", "Anders"), 
+  horiz = FALSE,
+  bty = "n", 
+  pch = 20 , 
+  col = c("#4dd5ff", "#f5c2ff", "#e3e655"),
+  text.col = "black", 
+  cex = 1, 
+  pt.cex = 1.5
+  )
+
+par(op)
+```
+
+Hier is een radarchart van het gemiddeld geluk gesplitst op sexe. Wat opvalt is dat de groep "Anders" veel minder gelukkig is dan de rest. Ook dat ze meer drugs en alchohol consumeren dan de andere groepen.
+
+```{r, echo= FALSE}
+#Voeg de Stad kolom terug aan de dataframe
+numerieke_data$Stad <- data$Stad
+
+#Reken de gemiddelden van de individuen gesplitst op stad
+mean_Groningen <- mean_frame(numerieke_data[numerieke_data$Stad == "Groningen", 1:13])
+mean_Amsterdam <- mean_frame(numerieke_data[numerieke_data$Stad == "Amsterdam", 1:13])
+mean_Leiden <- mean_frame(numerieke_data[numerieke_data$Stad == "Leiden", 1:13])
+
+#Zet alle gemiddelden in een dataframe met de maximale- en minimale grens
+df_mean_stad <- rbind(max_min, mean_Groningen, mean_Amsterdam, mean_Leiden)
+
+#Zet de correcte titels voor de rijen in de dataframe
+rownames(df_mean_stad) <- c("Max", 
+                            "Min", 
+                            "Groningen", 
+                            "Amsterdam",
+                            "Leiden"
+                            )
+
+#Rond de waarden in de dataframe af
+df_mean_stad <- round_data(df_mean_stad, 1)
+
+#Verwijder de Woonsituatie kolom weer
+numerieke_data <- numerieke_data[1:13]
+
+#head(df_mean_stad)
+
+op <- par(mar = c(1, 1, 1, 1))
+
+js_radarchart(data= df_mean_stad, color= c("cyan", "violet", "green"), title= "Gemiddeld Geluk Gesplitst Op Stad")
+
+#Maak een legenda voor de grafiek
+legend(
+  x = "right", 
+  legend = c("Groningen", "Amsterdam", "Leiden"), 
+  horiz = FALSE,
+  bty = "n", 
+  pch = 20 , 
+  col = c("cyan", "violet", "green"),
+  text.col = "black", 
+  cex = 1, 
+  pt.cex = 1.5
+  )
+
+par(op)
+```
+
+Hier is een radar chart van het gemiddeld geluk gesplitst op de steden. Hier valt op dat de studenten uit Leiden veel minder belang bij academische prestaties hebben dan de andere groepen.
+
+### 28-05-2024
+
+**Doel van de dag**\
+Herzien nieuwe data
+
+**Doelen**
+
+* Data bekijken 
+* Data bouwen voor het eind product
+
+Vandaag kregen we het idee om een e-mail te sturen naar de teamleider van ons instituut om de poster te verspreiden. Dat was een goed idee. We kregen meteen veel meer antwoorden bij.\
+
+Verder heb ik niet veel kunnen doen.
+
+
+### 03-06-2024
+
+**Doel**\
+Het afmaken eindproduct
+
+**Doelen**
+
+* Na aanleiding van de feedback problemen fixen in het eind document
+
+
+Wij hebben naar feedback gevraagd aan de docent. Aan de hand daarvan hebben wij aanpassingen gemaakt op ons eindproduct.
+
+### 04-06-2024
+
+**Doel**\
+Inleveren eindproduct
+
+Vandaag hebben we puntjes op de i gezet en het product ingeleverd.
