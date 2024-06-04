@@ -1,0 +1,370 @@
+---
+title: | 
+    Welke studenten stad heeft de gelukkigste studenten?
+
+author: |
+  | Storm Steller $^1$, Jarno Jacob Duiker $^1$, 
+  | $^1$Student Bio-informatics 1st year $^1$ Hanze Honours $^1$ Faculty of Life sciences $^1$ Hanze UAS
+
+lang: nl # dit zorgt er voor dat "abstract" "samenvatting" gaat heten
+
+abstract: | 
+    Dit onderzoek gaat over, het geluk van studenten in verschillende studenten steden. De steden die wij hebben onderzocht zijn; Amsterdam, Groningen, Leiden en Utrecht. We hebben in dit onderzoek een enquête gebruikt om een data frame te maken waarmee we een goed grafisch overzicht kunnen geven van wat de resultaten zijn. Dit onderzoek is belangrijk omdat mentale gezondheid onder de studenten tegenwoordig veel in het nieuws is. Geluk is een groot deel van iemands mentale gezondheid daarom is het interessant om te weten in welke stad voor de studenten deze het hoogste ligt. De factoren die in dit onderzoek worden gebruikt gaan van persoonlijk naar omgevingsfactoren zodat er een duidelijk beeld kan worden geschetst waarin ook langdurige problemen worden meegenomen die invloed hebben. 
+
+
+bibliography: simple_template.bib # naam van je .bib file. Deze moet hetzelfde zijn als je Rmd bestandsnaam
+
+output:
+  bookdown::pdf_document2:
+    keep_tex: false    # set this to true if you want to investigate the generated tex
+    toc: false         # table of contents
+    fig_caption: true  # includes figure captions with numbering in output
+    includes:  
+        in_header: include_tex_header.tex #will include rules for linespacing and figure floating
+
+---
+
+# Introductie op deze template
+
+**Dit hoofdstuk niet in je eigen paper toevoegen!**
+
+Dit template bevat alle verplichte onderdelen van de paper die je moet schrijven. De titels van de secties mag je NIET wijzigen. Voor elk onderdeel is gegeven wat erin thuis hoort en hoe je dat kan aanpakken. Ook is er aangegeven hoeveel woorden er minimaal en maximaal in de sectie gebruikt mogen worden. In totaal mag je artikel niet minder dan 1000 en niet meer dan 2000 woorden bevatten.
+
+Gebruik de [wordcount plugin](https://github.com/benmarwick/wordcountaddin) om het aantal woorden te tellen van een sectie, en voeg aan het einde een totaal in (zoals al aanwezig in deze template).
+
+
+## Setup *Chunk* {#setup-chunk}
+
+Aan het begin van je paper kan je een zogenaamde *setup chunk* toevoegen. Hierin kan je het gedrag van `knitr` configureren en de bibliotheken laden die je in je code gebruikt. Hieronder is een voorbeeld van zo'n *setup chunk*.
+
+```{r setup, message=FALSE, warning=FALSE, include=FALSE}
+knitr::opts_chunk$set(out.width = '100%', dpi=300) # configuratie voor figuur grootte en resolutie
+knitr::opts_chunk$set(echo = FALSE) # Deze regel zorgt ervoor GEEN ENKELE chunk getoond wordt! 
+# Laad alle gebruikte bibliotheken hier
+library(knitr)
+library(ggplot2)
+library(fmsb)
+library(ggrepel)
+library(tidyverse)
+library(dplyr)
+```
+
+**NB** Gebruik altijd een naam voor iedere chunk. Dat maakt het *debuggen* van problemen bij het *knitten* van je RMarkdown document veel gemakkelijker.
+
+## Code "*Chunks*" wel of niet tonen
+
+In principe laat je code nooit zien in een publicatie, behalve als de code expliciet besproken wordt en een essentieel onderdeel vormt van je werk. Je kan code gemakkelijk verbergen door gebruik te maken van de optie `echo=FALSE` in de chunk header. Ook storende output kan je eventueel verbergen door gebruik te maken van `message=FALSE` of `warning=FALSE`. Eventueel kan je all chunks in een keer verbergen door dit in je *setup chunk* te plaatsen: `knitr::opts_chunk$set(echo = FALSE)`.
+
+## Referenties / citeren {#refs}
+
+Voor alle secties geldt dat je referenties kan gebruiken naar andere publicaties (externe referenties ofwel citatie) of naar secties, tabellen of figuren in je eigen publicatie (interne referenties). Voor externe referenties gebruik je deze notatie: `[@<ref_key]`, bijvoorbeeld `[@xie2013ddrk]`. Hier gebruik ik hem echt: [@xie2013ddrk]. De *processing engine* zal in het bibliografie bestand zoals opgegeven in de ***yaml header*** van dit bestand (`simple_template.bib`) zoeken naar de referentie met deze naam en vervolgens de hele referentie onderaan in het document opnemen. Kijk vooral in het `.bin` document hoe je deze kan gebruiken. Er zijn voor verschillende soorten bronnen verschillende @annotaties; zie in de `.bib` voor enkele voorbeelden.
+
+Interne referenties naar tabellen, figuren, equations en secties kan je maken door deze syntax te gebruiken: `\@ref(fig:<figuur-naam>)` waarbij `<figuur-naam>` de naam is van het chunk waarin de figuur gemaakt wordt. Hetzelfde werkt voor tabellen: `\@ref(tab:<tabel-naam>)`. Een sectie kan je labelen door er `{#label-naam}` achter te zetten. Bijvoorbeeld, dit `\@ref(setup-chunk)` linkt terug naar de sectie over de setup chunk in sectie [\@ref(setup-chunk)].
+
+Zie ook de hoofdstukken in het geweldige book over [bookdown](https://bookdown.org/yihui/bookdown/) [hier](https://bookdown.org/yihui/bookdown/cross-references.html) en [hier](https://bookdown.org/yihui/rmarkdown-cookbook/cross-ref.html)
+
+Voor de rest: GIYF!
+
+## Taalgebruik
+
+Wetenschappelijk taalgebruik is heel anders dan dagelijks communiceren - laat staan de taal die in online wordt gebruikt in bv Whatsapp of Instagram! Wetenschappelijk taalgebruik is formeel, onpersoonlijk en  ondubbelzinnig.
+Een klein voorbeeld: Je schrijft nooit "ik heb de verandering van zoutconcentratie bij langduring huilen onderzocht" maar "de verandering van zoutconcentratie in de tijd bij aanhoudend huilen is onderzocht" 
+
+Natuurlijk moeten spelling en grammatica (zo goed als) foutloos zijn! RStudio heeft redelijk goede spellingscontrole, ook voor Nederlands (alhoewel je deze misschien wel apart moet installeren). Gebruik deze!
+
+
+Alle volgende onderdelen moet je opnemen in je eigen artikel. Let vooral ook op het minimu
+
+# Introductie
+
+Je start altijd met de maatschappelijke drijfveer voor je onderzoek; waarom is het van belang dat dit onderzoek is uitgevoerd?
+Vervolgens bespreek je de achtergronden van je onderzoek. Wat is er al eerder onderzocht op dit vlak en wat mist er juist nog; welke speciale technieken heb je gebruikt? Refereer zorgvuldig naar bronnen die je hebt gebruikt - zie ook paragraaf \@ref(refs).
+
+Je eindigt de introductie met de doelstelling(en) van jouw onderzoek, en hoe je deze doelstellingen denkt te gaan verwezenlijken; de aanpak. Geef hier ook eventuele hypothesen. 
+
+De introductie bevat tussen de 400-800 woorden.
+
+Waarom dit onderzoek? Dit onderzoek is er om te kijken of er verschil zit in het geluk tussen verschillende studenten steden. Dit is belangrijk omdat het geluk van een persoon invloed kan hebben op verschillende factoren in zijn leven. Als we kijken naar Geluk omvat dit meerdere dingen. Een persoon kan heel gelukkig worden van een academische prestatie echter zijn er anderen die meer geluk halen uit een sociale ontmoeting. Deze verschillende factoren zijn in ons onderzoek gemeten. Hiervoor is literatuur gebruikt die diep in gaat op wat mensen door de jaren heen van geluk maakten, De paper van Veenhoven, R. (1991, 1 januari). Questions on Happiness kijkt hier naar in verschillende tijdperken. Verder zijn er bepaalde factoren naar boven gekomen die belangrijk zijn voor een mens wanneer het gaat over het meten van geluk. 
+
+- Sekse, als er gekeken wordt naar het menselijk lichaam is er te zien dat er een verschil is tussen de mannelijke en vrouwelijke sekse in specifiek de hormonen. Dit heeft invloed op hoe geluk wordt ervaart. Wanneer een vrouw haar menstruatie ervaart kan deze een kort effect hebben op hoe gelukkig deze zich voelt.  Hier heeft een man echter geen last van.
+
+- Niveau van de opleiding, Het is algemeen bekend dat mensen die een hoger opleiding doen vaker ongelukkiger zijn door mentale complicaties. Dit is niet te zeggen dat studenten van een lager niveau hier geen last van hebben echter is het een goede factor om te bekijken.
+
+- Welk jaar de student in zit, Wanneer iemand al meerdere jaren heeft gestudeerd zal deze een andere kijk hebben op het effect van de omgeving van zijn studentenstad. Hierdoor is een 1ste jaar student te vergelijking met een 3de jaar student interessant. Het zou kunnen zijn dat een student namelijk aan zijn stad went. 
+
+- Vakgebied, De omgeving van een studie hangt af van iemands vakgebied. Wanneer een student een sociale studie doet zoals bedrijfskunde of social-work, Wordt deze in een omgeving gezet met andere studenten die over het algemeen ook socialer zijn. In een technische opleiding zijn studenten over het algemeen meer teruggetrokken. Dit zou dus ook invloed hebben op een student en wat voor prioriteiten deze heeft. 
+
+- Woonsituatie (Uitwonend vs Thuiswonen), In het geval dat een student thuis woont zou deze wanneer het wordt gecombineerd met een slechte relatie met zijn ouders een langdurig effect kunnen hebben op zijn geluk en hoe deze verder zich mentaal voelt.  
+
+- Geloving (Ja of Nee), Het is bekend dat mensen die gelovig zijn veel rust en mentale support halen uit hun geloof. Dit doen ze door het lezen van hun geloof gerelateerde literatuur en deze op hun eigen leven toe te passen. Het kan ook zijn dat de persoon steun haalt uit zijn omgeving met andere gelovigen.  
+
+- Relatie (Ja of Nee), Het hebben van een partner kan goed en slecht zijn voor iemands geluk. Wanneer de relatie met deze persoon in een goede staat verkeerd zal deze persoon steun, support en andere postieve dingen naar iemands leven brengen. Wanneer deze in een slechte of verslechterende situatie verkeerd zal deze stress en ongelukkig heid brengen naar iemands situatie. 
+
+**factoren in de vragen**
+
+- Fysieke gezondheid
+- Mentale gezondheid
+- Relatie met ouders
+- Sociale gezondheid
+- Geld / financiele situatie
+- Drugs en/of alcohol gebruik
+
+
+
+
+
+# Materialen en Methoden
+
+### Materialen
+
+- Google forms - Gebruikt om een enquête te maken die gebruikers vriendelijk is en die voor ons een netjes csv geeft als output. - https://docs.google.com/forms/
+- Google sheets - De antwoorden van de Google forms worden hier in een spreadsheet gezet en deze kan via een download knop omgezet worden in een data sheet ook wel een csv file. - https://docs.google.com/spreadsheets/
+- Google scholar - Dit is gebruikt om verschillende wetenschappelijke artikellen te vinden die onze literatuur onderbouwing verzorgt voor dit onderzoeks project - https://scholar.google.com
+- R-studio - Dit programma gebruiken we om ons Rmarkdown document te maken wat uiteindelijk ons eindproduct is geworden. Dit programma zorgt ervoor dat wij goede grafische plotjes kunnen leveren. - https://posit.co/download/rstudio-desktop/ Versie 2023.12.1+402 (2023.12.1+402)
+- Github - De gehele data set, logboeken en protocol staan op github omdat dit een netjese en goed navigeerbare omgeving maakt zodat iemand ook alles in 1 keer kan downloaden en bekijken. - http://github.com 
+
+### Methoden
+
+## (...).1 Het meten van geluk
+Om het geluk van de studenten te meten hebben wij een enquête gemaakt met verschillende vragen over geluk. Dit hebben wij gekozen, omdat het na een literatuuronderzoek ons het meest geschikt leek voor het meten van geluk. In deze enquête worden er naar meerdere onderwerpen gevraagd: sexe, de stad waarin de persoon studeert, financiele situatie, gebruik van verdovende middelen, geloof, de band tussen de student en hun ouders, of de student thuis woont of op hunzelf, of ze in een relatie zitten, fysieke gezondheid, contact buiten school en academische prestaties. Deze zijn op te delen in parameters en factoren. De parameters in dit geval zijn: 
+
+* Sexe
+* Niveau van de opleiding
+* Welk jaar de studenten in zitten
+* Vakgebied
+* Woonsituatie
+* Welke stad ze studeren
+* Gelovig
+* Relatie
+* Gebruik van verdovende middelen
+* Of ze nationaal- of internationale student zijn
+
+Dit zijn de gekozen parameters, omdat wij vinden dat deze allemaal invloed op het geluk kunnen hebben. De rest van de vragen zijn de factoren waarbij we het geluk meten.\
+
+Om de enquête zelf te maken hebben wij Google forms gebruikt, omdat het makkelijk is om de data in een .csv formaat te krijgen vanuit Google forms.
+
+## (...).2 Het verzamelen van de data
+Om onze enquête te verspreiden hebben wij ervoor gekozen om een poster met een Qr code te maken. Deze poster hebben wij gemaakt met Canva, omdat het makkelijk te gebruiken is. Op de poster staat er of de persoon die deze leest de enquête wilt invullen. Omdat wij zowel nationale- als internationale studenten willen meenemen, hebben wij een Nederlandstalige en een Engelstalige poster gemaakt. Op die manier kan iedereen de poster lezen.\
+
+Deze poster zouden wij vervolgens verspreiden door verschillende schoolgebouwen rondom de campussen van de verschillende steden. Op deze manier kunnen de studenten die de poster tegenkomen makkelijk bij de enquête komen en die invullen.\
+
+Naast het ophangen van de posters hebben wij ook besloten om de poster te verspreiden via e-mail. Wij stuurden een e-mail naar alle MBO scholen, HBO scholen, Universiteiten, en alle studieverenigingen in de verschillende steden met de vraag of ze onze enquête willen invullen en verspreiden. In de mail werd een pdf bestand in de bijlage gezet met de poster en werd een link in de mail gezet die naar de enquête leidt. Hier hebben wij voor gekozen, omdat wij vonden dat wij op deze manier veel meer studenten konden bereiken.\
+
+Als laatst hebben wij de enquête ook verspreid over verschillende LinkedIn groepen die horen bij de schoolorganisaties. In de groepen werd een bericht gestuurd die hetzelfde is als de e-mails die we hebben verstuurd. Ook hiervoor hebben we gekozen, omdat we vonden dat wij op dez manier meer studenten konden bereiken.
+
+## (...).3 Analyse van de data
+(Wat moet hier?)
+
+
+Materialen en Methoden beschrijft verhalend wat je hebt gebruikt (data, tools) en wat je hebt gedaan (ontwikkelde methodes). **_Het is essentieel dat dit hoofdstuk je onderzoek reproduceerbaar en valideerbaar maakt_**. Verwijs bij de start van dit hoofdstuk naar je code repository (meestal je github link).
+
+Neem referenties op!
+
+De materialen zijn de meetinstrumenten die je hebt gebruikt, maar ook bijvoorbeeld datasets die je hebt gedownload.
+
+Beschrijf de gebruikte software tools, alsmede de bibliotheken/plugins, met naam, versie, referentie en gebruiksdoel (in dit project). Dit kan eventueel in een tabel an als die lang is mag het een online bijlage zijn.
+
+Beschrijf bestaande methodologieën met hun relevantie voor je project. Geef het doel, de toepassing en welke software en parameters er zijn gebruik. Voeg eventueel een flowchart toe.
+Beschrijf de gebruikte statistische methoden.
+
+Beschrijf wat je zelf in het kader van dit onderzoek hebt ontwikkeld aan methodologieën. Geef de naam van scripts/programma’s en waar deze (in je repo) te vinden zijn.
+
+Deze sectie bevat tussen de 400-800 woorden.
+
+# Resultaten
+
+```{r}
+
+Student_awn_data <- read.csv("raw_data/Student_hap_awn_30_05.csv")
+
+colnames(Student_awn_data) <- c("Tijd", "Sekse", "Niveau", "Opl_jaar","Vakgebied", "Woonsituatie", "Stad", "Nat_Int", "Gelovig", "Relatie_stat", "Happy_RN", "Fys_Happy", "Fys_import", "Cont_buiten_school", "Na_school_soc", "Ouder_relatie", "Woonsituatie_geluk", "Thuis_in_stad", "academische_pres", "Financiele_sit", "Geld_geluk", "Verd_mid_gebr", "drugs_alc_geluk", "Mental_health", "Happy_after_quest")
+
+Reactie_stad <- select(Student_awn_data, c(Stad))
+
+ggplot(Reactie_stad, aes(x = " ", y = "Antwoord per stad", fill = Stad)) +
+    geom_col() + 
+    coord_polar(theta = "y") +
+    scale_fill_brewer() +
+    theme_void()
+```
+In deze grafiek is te zien dat op 4 antwoorden na alle antwoorden uit Groningen komen. Hierdoor is het voor ons niet mogelijk om de hypothese te beantwoorden. Deze hypothese klinkt: “Het maakt voor het geluk van de student niet uit in welke stad deze studeert.”  Dit valt met de data die is verkregen niet te beantwoorden. Hierdoor kan er alleen naar het geluk onder de studenten in Groningen worden gekeken.  
+
+De verzamelde data in Groningen komt neer op 73 studenten.  In deze steekproef groep zitten ook verschillen. Deze verschillen zijn ook interessant om te bekijken en te benoemen.  
+
+Door het gebrek aan data van de andere steden zijn de volgende grafieken en discussies alleen gefocust op de studenten in Groningen. De steden Amsterdam, Leiden en Utrecht worden achterwegen gelaten.   
+
+Groningen Als studenten stad heeft de Rijks Universiteit Groningen, Hanze (Hanze University of Aplied Sciences) en verschillende mbo-opleiding. Deze zijn allemaal benaderd met emails en of posters zijn hier opgehangen. 
+
+Zoals in de grafiek hier onder te zien zijn de antwoorden verdeeld ons grootste deel van antwoorden komen van het HBO 
+
+```{r}
+student_awn_gro <- subset(Student_awn_data, Stad == "Groningen")
+student_niveau_gro <- select(student_awn_gro, c(Niveau))
+
+ggplot(student_niveau_gro, aes(x = " ", y = "Opleidngs niveau", fill = Niveau)) +
+    geom_col() + 
+    coord_polar(theta = "y") +
+    scale_fill_brewer() +
+    theme_void()
+
+```
+
+
+We hebben daar in tegen wel bepaalde factoren getest die invloed hebben op mensen hun geluk. Hierdoor kunnen we wel zien wat in de geteste groepen invloed heeft op de studenten hun geluk.
+
+Verder Kunnen wij ook kijken naar verschillen voor en na onze enquete en het gemidelde geluk.
+```{r}
+Student_awn_data
+```
+
+
+
+```{r}
+gem_geluk <- Student_awn_data %>%
+    mutate(average_col = Happy_RN + Happy_after_quest)
+
+gem_geluk <- gem_geluk %>%
+    mutate(average_col = average_col / 2)
+
+gem_geluk <- select(gem_geluk, c(Sekse, average_col))
+
+head(gem_geluk)
+
+ggplot(gem_geluk, aes(x = Sekse, y = average_col, fill = Sekse)) + 
+    geom_boxplot() +
+    stat_boxplot(geom = "errorbar",
+               width = 0.25) +
+    xlab("Sekse") +
+    labs(fill = "Sekse")
+    ggtitle("Het gemidelde geluk per Sekse", subtitle = "(Lijn in het vierkant is het gemidelde)") 
+    
+```
+Hier is het gemidelde geluk per persoon per sexe te zien. Hieruit is te zien dat manelijke studenten over het algemeen gelukkiger zijn maar gemiddeld niet. gemiddeld zijn vrouwen het gelukkigste. Anders, zijn het ongelukkigste dit is te zien aan de mediaan maar ook bijna de gehele Q1-Q3 zit onder die van de man en de vrouw.
+
+
+
+```{r}
+
+gem_geluk <- Student_awn_data %>%
+    mutate(average_col = Happy_RN + Happy_after_quest)
+
+gem_geluk <- gem_geluk %>%
+    mutate(average_col = average_col / 2)
+
+gem_geluk <- select(gem_geluk, c(Sekse, average_col))
+
+df_geluk_fem <- subset(gem_geluk, Sekse == "Vrouw (Female)")
+df_geluk_man <- subset(gem_geluk, Sekse == "Man (Male)")
+
+
+df_geluk_fem <- mean(df_geluk_fem$average_col)
+df_geluk_man <- mean(df_geluk_man$average_col)
+
+df_gem_geluk_sexe <- merge(df_geluk_fem, df_geluk_man)
+colnames(df_gem_geluk_sexe) <- c("Geluk_vrouw","Geluk_man")
+
+df_gem_geluk_sexe
+```
+### Thuiswonend vs Uitwonend
+```{r}
+woonsit_df <- select(Student_awn_data, c(Woonsituatie,
+                                        Happy_RN,
+                                        Thuis_in_stad,
+                                        Woonsituatie_geluk,
+                                        Happy_after_quest))
+
+
+woonsit_uit <- subset(woonsit_df, Woonsituatie == "Uitwonend (Away from home)")
+woonsit_thuis <- subset(woonsit_df, Woonsituatie == "Thuiswonend (At home)")
+p <- ggplot() + 
+    geom_point(data = woonsit_thuis, aes(x=Happy_RN, y=Happy_after_quest), color = "red", alpha = 0.6) +
+    geom_point(data = woonsit_uit, aes(x=Happy_RN, y=Happy_after_quest), color = "blue", alpha = 0.6) +
+    xlim(0, 10) +
+    ylim(0, 10) +
+    theme_minimal()
+    title = "Scatterplot Uit- vs Thuiswonende studenten geluk"
+
+p
+```
+In deze scatter plot is thuiswonend rood en uitwonende zijn blauw. er is te zien dat gemideld de uitwonende studenten gelukkiger zijn. Dit is te verklaren door thuis situatie. Wanneer we kijken naar de relatie met de ouders en of andere factoren die iemands thuis situatie beinvloeden kan er te verklaren zijn waarom studenten die thuiswonen ongelukkiger zijn. 
+
+Als we dieper kijken in de thuiswonende hun factoren zien we het volgende
+
+### INSERT PLOT VAN DE FACTOREN VOOR DE THUISWONENDE
+
+### Staat je Academische niveau in relatie met je geluk?
+
+```{r}
+hbo_student <- subset(student_hap_awn, Niveau == "HBO")
+masters_student <- subset(student_hap_awn, Niveau == "Masters")
+mbo_student <- subset(student_hap_awn, Niveau == "MBO")
+uni_student <- subset(student_hap_awn, Niveau == "Universiteit (University) Bachelor")
+```
+
+
+Presenteer je resultaten in een logische volgorde. Beschrijf wat er te zien is en werk toe naar het beantwoorden van je doelstelling. Beschrijf indien mogelijke de logica van de keuze voor opeenvolgende experimenten. In elke paragraaf worden de feitelijke conclusies gegeven (bv ‘de vergelijking laat zien dat het gemiddelde van groep A significant afwijkt van het gemiddelde van groep B, met een p-waarde van … Dit komt niet overeen met de in de literatuur (REF) beschreven waardes.’)
+
+Gebruik zo veel mogelijk figuren om je informatie uit je resultaten over te brengen. Gebruik tabellen wanneer figuren minder geschikt zijn. In de tekst worden figuren en tabellen geïntroduceerd, besproken en de belangrijkste aspecten toegelicht.
+
+Voorzie je figuren van een nummer en een beschrijvende titel. Zorg voor correcte as-labels (eenheid en grootheid), legenda en bijschrift. Hier is een voorbeeldje.
+
+```{r plot-demo, warning=FALSE, fig.cap='Ozon concentraties geplot tegen zonlicht intensiteit, vergeleken over verschillende maanden. Lineaire modellen (blauwe lijnen) en confidence intervals (grijze gebieden) zijn hieraan toegevoegd.'}
+airquality$Month_f = factor(airquality$Month, levels = 5:9, labels = month.abb[5:9])
+ggplot(data = airquality, mapping = aes(x = Solar.R, y = Ozone)) +
+    geom_smooth(method = "lm", formula = y ~ x) +
+    geom_point(aes(color = Month_f), alpha = 0.7) + 
+    facet_wrap(. ~ Month_f) +
+    ylab("Ozone (ppb)") +
+    xlab("Solar radiation (lang)") +
+    theme(legend.title = element_blank())
+```
+
+
+
+
+Geef tabellen bovenaan een titel en bijschrift die de inhoud beschrijft en onderaan voetnoten die kolomnamen of specifieke waardes verklaren.
+
+Deze sectie bevat tussen de 600-1200 woorden.
+
+
+# Discussie en Conclusies
+
+Formuleer je conclusie door eerst in te zoomen op je eigen data en daarna uit te zoomen. Zoom in door je resultaten samen te vatten. Zoom uit om de waarde van je werk te beoordelen, door je bijvoorbeeld de volgende vragen te stellen: 
+
+- Kunnen mijn resultaten gebruikt worden in het werkveld? 
+- Wat betekenen ze voor het werkveld? 
+- Zijn mijn data betrouwbaar? 
+
+Bespreek de resultaten zodanig dat je ze ter discussie stelt, wees kritisch. Vergelijk je resultaten met de literatuur of eerder ontwikkelde data. Geef aanbevelingen voor een vervolg en staaf je aanbevelingen door de impact op wetenschappelijk of maatschappelijk vlak te beschrijven. 
+
+Kom ten slotte altijd terug op de doelstelling (en hypothesen).
+
+Deze sectie bevat tussen de 400-800 woorden.
+
+
+# Online bijlagen
+
+Vaak zijn online bijlagen vele malen groter dan het eigenlijke artikel. Wees nooit bang om te veel aan bijlagen aan te bieden. Je kan hierbij denken aan
+
+- de ruwe data
+- de code voor dataverwerking 
+- de code voor analyse
+- aanvullende figuren en tabellen
+
+Natuurlijk is een git(hub) repo daar de beste plek voor!
+Zorg ervoor de je repo logisch is ingericht met goede Readme document(en). 
+Ook de code zelf is waar nodig natuurlijk goed gedocumenteerd.
+
+
+
+## Wordcount
+
+Voeg aan het eind een woord-telling in:
+
+```{r wordcount, message=FALSE}
+
+```
+
+# Referenties
+
+Een lijst van referenties wordt hier automagisch toegevoegd.
