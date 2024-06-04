@@ -25,7 +25,6 @@ output:
 
 
 ```{r setup, message=FALSE, warning=FALSE, include=FALSE }
-knitr::opts_chunk$set(options(knitr.duplicate.label = "allow"))
 knitr::opts_chunk$set(out.width = '100%', dpi=300) # configuratie voor figuur grootte en resolutie
 knitr::opts_chunk$set(echo = FALSE) # Deze regel zorgt ervoor GEEN ENKELE chunk getoond wordt! 
 # Laad alle gebruikte bibliotheken hier
@@ -102,7 +101,7 @@ De hypothese die wij willen be antwoorden is: Het maakt voor het geluk van de st
 | tidyverse          | <https://www.tidyverse.org>                               | tidyverse 1.3.0 (03-06-2024)         | Tidyverse wordt gebruikt om verschillende dingen aan te passen in potjes                                                                                                                     |
 | Canva              | <https://www.canva.com>                                   |                                      | Canva is gebruikt om posters te maken met qr codes die de enquete openen                                                                                                                     |
 | Google Spreadsheet | <https://docs.google.com/spreadsheets/>                   |                                      | De antwoorden van de Google forms worden hier in een spreadsheet gezet en deze kan via een download knop omgezet worden in een csv file.                                                     |
-| Mendeley refrence manager   	| [https://docs.google.com/forms/ ](https://www.mendeley.com/reference-management/reference-manager/)    |   2.112.2                     	| Gebruikt om een alle literatuur netjes te ordenen en goed te refrencen
+| Mendeley refrence manager   	| [https://docs.google.com/forms/ ](https://www.mendeley.com/reference-management/reference-manager/)    |   2.112.2                     	| Gebruikt om een alle literatuur netjes te ordenen en goed te refereren
 ## Methoden
 
 ### Het meten van geluk
@@ -137,22 +136,8 @@ Naast het ophangen van de posters hebben wij ook besloten om de poster te verspr
 Als laatst hebben wij de enquête ook verspreid over verschillende LinkedIn groepen die horen bij de schoolorganisaties. In de groepen werd een bericht gestuurd die hetzelfde is als de e-mails die we hebben verstuurd. Ook hiervoor hebben we gekozen, omdat we vonden dat wij op dez manier meer studenten konden bereiken.
 
 ### Analyse van de data
+Om onze data te analyseren hebben wij verschillende libraries gebruikt. De namen van de libraries staan in het stukje materialen. Deze libraries hebben wij gebruikt voor verschillende dingen. We hebben de libraries gebruikt om tests te runnen. We hebben tests gerund om te kijken of onze data betrouwbaar en normaal verdeeld is. Daarna hebben wij de libraries gebruikt om verschillende grafieken te maken. De grafieken die we hebben gemaakt zijn histogrammen, boxplots, radar charts, en pie charts. Deze hebben wij gekozen, omdat ze onze data op een goede manier laten zien. Met deze tests en grafieken hopen wij onze vraag te beantwoorden.
 
-(Wat moet hier?)
-
-Materialen en Methoden beschrijft verhalend wat je hebt gebruikt (data, tools) en wat je hebt gedaan (ontwikkelde methodes). ***Het is essentieel dat dit hoofdstuk je onderzoek reproduceerbaar en valideerbaar maakt***. Verwijs bij de start van dit hoofdstuk naar je code repository (meestal je github link).
-
-Neem referenties op!
-
-De materialen zijn de meetinstrumenten die je hebt gebruikt, maar ook bijvoorbeeld datasets die je hebt gedownload.
-
-Beschrijf de gebruikte software tools, alsmede de bibliotheken/plugins, met naam, versie, referentie en gebruiksdoel (in dit project). Dit kan eventueel in een tabel an als die lang is mag het een online bijlage zijn.
-
-Beschrijf bestaande methodologieën met hun relevantie voor je project. Geef het doel, de toepassing en welke software en parameters er zijn gebruik. Voeg eventueel een flowchart toe. Beschrijf de gebruikte statistische methoden.
-
-Beschrijf wat je zelf in het kader van dit onderzoek hebt ontwikkeld aan methodologieën. Geef de naam van scripts/programma’s en waar deze (in je repo) te vinden zijn.
-
-Deze sectie bevat tussen de 400-800 woorden.
 
 # Resultaten
 
@@ -201,7 +186,7 @@ Zoals je hierboven ziet, is de data best wel verspreid. De gemiddelde standaard 
 
 Om te kijken of onze data normaal verdeeld is, kunnen we een histogram maken:
 
-```{r hist algemeen geluk, plot-with-untidy-data, fig.asp=.75, out.width='50%', fig.align='center', fig.cap='Selecting untidy data', echo=FALSE}
+```{r , fig.asp=.75, out.width='50%', fig.align='center', fig.cap='Selecting untidy data', echo=FALSE}
 
 ggplot(numerieke_data, 
        aes(x = Happy_RN )) +
@@ -259,7 +244,7 @@ df_shapiro
 
 Hierboven zie je de shapiro wilk test uitgevoerd op alle numerieke data. Als je alle kolommen in de rij van de p-waarde af gaat, kan je zien dat geen enkele p-waarde \>0.05 is. Dit betekent dat onze data niet normaal verdeeld is. Dit dat onze data niet normaal verdeeld is. Deze p-waarden vertellen ons ook dat wij onze hyphothese moeten afwijzen, wat betekent dat er geen effect is. Dit is jammer, maar we kunnen ondanks dit nog wel naar andere onderwerpen kijken.
 
-```{r plot-with-untidy-data, fig.asp=.75, out.width='50%', fig.align='center', fig.cap='Selecting untidy data', echo=FALSE}
+```{r, fig.asp=.75, out.width='50%', fig.align='center', fig.cap='Selecting untidy data', echo=FALSE}
 Reactie_stad <- select(Student_awn_data, c(Stad))
 
 ggplot(Reactie_stad, aes(x = " ", y = "Antwoord per stad", fill = Stad)) +
@@ -279,7 +264,7 @@ Door het gebrek aan data van de andere steden zijn de volgende grafieken en disc
 
 Groningen Als studenten stad heeft de Rijks Universiteit Groningen, Hanze (Hanze University of Aplied Sciences) en verschillende mbo-opleiding. Deze zijn allemaal benaderd met emails en of posters zijn hier opgehangen.
 
-```{r plot-with-untidy-data, fig.asp=.75, out.width='50%', fig.align='center', fig.cap='Selecting untidy data', echo=FALSE}
+```{r, fig.asp=.75, out.width='50%', fig.align='center', fig.cap='Selecting untidy data', echo=FALSE}
 
 student_awn_gro <- subset(Student_awn_data, Stad == "Groningen")
 student_niveau_gro <- select(student_awn_gro, c(Niveau))
@@ -351,7 +336,7 @@ colnames(df_gem_geluk_sexe) <- c("Geluk_vrouw","Geluk_man")
 
 ### Thuiswonend vs Uitwonend
 
-```{r plot-with-untidy-data, fig.asp=.75, out.width='50%', fig.align='center', fig.cap='Selecting untidy data', echo=FALSE}
+```{r, fig.asp=.75, out.width='50%', fig.align='center', fig.cap='Selecting untidy data', echo=FALSE}
 woonsit_df <- select(Student_awn_data, c(Woonsituatie,
                                         Happy_RN,
                                         Thuis_in_stad,
@@ -491,7 +476,7 @@ numerieke_data <- numerieke_data[1:13]
 ```
 
 
-```{r plot-with-untidy-data, fig.asp=.75, out.width='50%', fig.align='center', fig.cap='Selecting untidy data', echo=FALSE}
+```{r, fig.asp=.75, out.width='50%', fig.align='center', fig.cap='Selecting untidy data', echo=FALSE}
 op <- par(mar = c(1, 1, 1, 1))
 
 js_radarchart(data= df_mean_sexe, color= c("#4dd5ff", "#f5c2ff", "#e3e655"), title= "Gemiddeld Geluk Gesplitst Op Sexe") 
@@ -513,7 +498,7 @@ par(op)
 ```
 In figuur 6 waarin het gemiddeld geluk te zien is van de verschillende sekse. Wat opvalt is dat de groep "Anders" over het algemeen veel minder gelukkig is dan de rest. Ook valt op dat dezelfde groep meer aan drugs en alchohol doet dan de rest. 
 
-```{r plot-with-untidy-data, fig.asp=.75, out.width='50%', fig.align='center', fig.cap='Selecting untidy data', echo=FALSE}
+```{r, fig.asp=.75, out.width='50%', fig.align='center', fig.cap='Selecting untidy data', echo=FALSE}
 #Voeg de Vakgebied kolom terug aan de dataframe
 numerieke_data$Vakgebied <- Student_awn_data$Vakgebied
 
@@ -581,12 +566,55 @@ Dit lijkt net als de "Anders" groep in de vorige radar chart. Misschien is er ee
 
 ### Staat je Academische niveau in relatie met je geluk?
 
-```{r, echo=FALSE}
-hbo_student <- subset(Student_awn_data, Niveau == "HBO")
-masters_student <- subset(Student_awn_data, Niveau == "Masters")
-mbo_student <- subset(Student_awn_data, Niveau == "MBO")
-uni_student <- subset(Student_awn_data, Niveau == "Universiteit (University) Bachelor")
+```{r, include=FALSE}
+#Voeg de niveau kolom terug aan de dataframe
+numerieke_data$Niveau <- Student_awn_data$Niveau
+
+#Verander de namen van de waarden om het later makkelijker te maken
+numerieke_data$Niveau[numerieke_data$Niveau == "Universiteit (University) Bachelor"] <- "Universiteit"
+
+#Reken de gemiddelden van de individuen gesplitst op niveau
+mean_MBO <- mean_frame(numerieke_data[numerieke_data$Niveau == "MBO", 1:13])
+mean_HBO <- mean_frame(numerieke_data[numerieke_data$Niveau == "HBO", 1:13])
+mean_Masters <- mean_frame(numerieke_data[numerieke_data$Niveau == "Masters", 1:13])
+mean_Uni <- mean_frame(numerieke_data[numerieke_data$Niveau == "Universiteit", 1:13])
+
+#Zet alle gemiddelden in een dataframe met de maximale- en minimale grens
+df_mean_niveau <- rbind(max_min, mean_MBO, mean_HBO, mean_Masters, mean_Uni)
+
+#Zet de correcte titels voor de rijen in de dataframe
+rownames(df_mean_niveau) <- c("Max", "Min", "MBO", "HBO", "Masters", "Universiteit")
+
+#Rond de waarden in de dataframe af
+df_mean_niveau <- round_data(df_mean_niveau, 1)
+
+#Verwijder de niveau kolom weer
+numerieke_data <- numerieke_data[1:13]
+
+#head(df_mean_niveau)
 ```
+
+```{r, echo= FALSE}
+op <- par(mar = c(1, 1, 1, 1))
+
+js_radarchart(data= df_mean_niveau, color= c("red", "blue", "yellow", "green"), title= "Gemiddeld Geluk Gesplitst Op Niveau")
+
+#Maak een legenda voor de grafiek
+legend(
+  x = "right", 
+  legend = c("MBO", "HBO", "Masters", "Universiteit"), 
+  horiz = FALSE,
+  bty = "n", 
+  pch = 20 , 
+  col = c("red", "blue", "yellow", "green"),
+  text.col = "black", 
+  cex = 1, 
+  pt.cex = 1.5
+  )
+
+par(op)
+```
+Hierboven zie je een radar chart van het gemiddeld geluk gesplitst op niveau. Het enige wat opvalt uit deze grafiek is dat mensen die studeren aan de universiteit over het algemeen iets gelukkiger zijn dan de rest van de groepen.
 
 
 ### cbs data
@@ -612,17 +640,16 @@ p_cbs <- ggplot() +
 p_cbs
 ```
 
-in figuur 8 is het gemiddelde geluk in jong volwassenen tussen 18 en 25 jaar. Er is te zien dat er een neerwaartse trend begint vanaf 2010 deze wordt steeds groter en in 2020 (waar ook de corona periode begon) was het geluk van de jongvolwassenen gemiddeld het laagste. Als we dit met onze data vergelijken zien we dat uit onze data blijkt dat de studenten gemideld ongelukkiger zijn. met een gemidelde score tussen de 6.3 en 6.7 terwijl deze van de jong volwassenen net onder 8.25 ligt. Deze 
+in figuur 8 is het gemiddelde geluk in jong volwassenen tussen 18 en 25 jaar. Er is te zien dat er een neerwaartse trend begint vanaf 2010 deze wordt steeds groter en in 2020 (waar ook de corona periode begon) was het geluk van de jongvolwassenen gemiddeld het laagste. Als we dit met onze data vergelijken zien we dat uit onze data blijkt dat de studenten gemideld ongelukkiger zijn. met een gemidelde score tussen de 6.3 en 6.7 terwijl deze van de jong volwassenen net onder 8.25 ligt.
+
+
 
 # Discussie en Conclusies
-
 
 ## Conclusie
 
 De data die wij verzameld hebben is niet genoeg om een antwoord te geven op de hypothese. Dit komt omdat er niet genoeg data is voor elke stad. De stad met het grootste aantal antwoorden is Groningen deze heeft echter ook maar 70 antwoorden dit is te zien in figuur 1. De 70 antwoorden zijn niet genoeg om met 95% zekerheid een antwoord te geven. Hierdoor zullen wij alleen naar factoren kunnen kijken zoals verschillen tussen de seksen in de stad Groningen. Hier kunnen we uit halen dat mannen het gelukkigste zijn en de anders sekse het ongelukkigste dit is te zien in figuur 4. Ook hebben wij gevonden dat er misschien een relatie zit tussen de studenten die een kunst opleiding volgen en bij de sekse "Anders"\ 
 Verder is te zien dat studenten die uitwonend zijn over het algemeen aan de gelukkigere kant zitten dat is te zien in figuur 5. De data die verzameld is zegt ook dat de studenten in Groningen gemiddeld niet zeer gelukkig zijn. Dit is tevens een trend in de data die het cbs heeft gevonden dit is te zien in figuur 8. Hier is ook een neerwaartse trend te zien. Wat wij dus uit deze data kunnen halen is dat een student in de stad Groningen redelijk gelukkig is maar er is zeker ruimte voor verbetering. 
-
-
 
 Deze data zal niet kunnen worden gebruikt in het werkveld. Het is niet genoeg om vertrouwen op de gegeven resultaten. Hierdoor is het een speculatieve data waardoor het niet betrouwbaar is.
 
