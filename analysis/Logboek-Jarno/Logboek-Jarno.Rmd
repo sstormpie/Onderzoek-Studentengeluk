@@ -405,17 +405,153 @@ student_hap_awn_NUM <- select(student_hap_awn, c(Happy_RN,Fys_Happy,Fys_import, 
 
 student_hap_awn_NUM
 
-chiq <- chisq.test(student_hap_awn_NUM)
-chiq
 ```
 
+Storm en ik gingen kijken naar wat voor grafieken wij willen om onze data te laten zien in ons eindproduct. de grafieken die wij waarschijnlijk gaan gebruiken zijn.
+
+- Radarplot, Deze kan snel veel factoren laten zien en daaruit kan in een snelle blik al een mening of conclusie worden gevormd
+- Scatterplot, Het scatter plot is handig om 2 groepen te vergelijken. In ons eind product willen we graag meerdere groepen met elkaar vergelijken. Dit zijn dan bijvoorbeeld sekse, Niveau, Opleidings jaar, Relatie status.
+
+```{r}
+
+
+colnames(student_hap_awn) <- c("Tijd", "Sexe", "Niveau", "Opl_jaar","Vakgebied", "Woonsituatie", "Stad", "Nat_Int", "Gelovig", "Relatie_stat", "Happy_RN", "Fys_Happy", "Fys_import", "Cont_buiten_school", "Na_school_soc", "Ouder_relatie", "Woonsituatie_geluk", "Thuis_in_stad", "academische_pres", "Financiele_sit", "Geld_geluk", "Verd_mid_gebr", "drugs_alc_geluk", "Mental_health", "Happy_after_quest")
+
+Reactie_stad <- select(student_hap_awn, c(Stad))
+
+ggplot(Reactie_stad, aes(x = " ", y = "Antwoord per stad", fill = Stad)) +
+    geom_col() + 
+    coord_polar(theta = "y") +
+    scale_fill_brewer() +
+    theme_void()
+```
+Hier is te zien dat de ratio tussen de verschillende steden groot is. Amsterdam en leiden hebben 3 en 1 antwoord. Utrecht heeft echter geen enkele invulling. 
+
+De mails die wij hebben verstuurd zijn aangekomen en wij hebben op bepaalde ook antwoorden gekregen dat deze zouden worden doorgestuurd en de correcte link en qr codes zouden worden verspreid.
+
+***INSERT FOTO EN DATA UIT MAILS***
+
+## 28-05-2024
+
+### Doel van de dag
+**Herzien nieuwe data**
+
+Tasks
+
+- Data bekijken 
+- data bouwen voor het eind product
+
+Vandaag is er een mail verstuurd via onze eigen facultiteit in de life science sector daardoor zijn onze antwoorden van 30-35 naar 76 gegaan. Dit zijn echter wel weer antwoorden die verkregen zijn vanaf Groningen dit betekent dus dat we nog steeds met het probleem zitten dat er nog maar 4 mensen buiten Groningen zijn. Hierdoor is het voor ons op dit moment niet mogelijk om de gekozen hypthose te beantwoorden hier door moeten wij het algemene plan aan passen.
+
+```{r}
+new_student_hap_awn <- read.csv("Student_hap_awn_30_05.csv")
+
+nrow(student_hap_awn)
+nrow(new_student_hap_awn)
+
+
+```
+dat betekent dat er 43 nieuwe antwoorden zijn binnen gekomen nadat de mail is uitgestuurd. Hierdoor kunnen we nu echt een goede kijk nemen in de nieuwe data en een iets betere schatting maken van geluk tussen de studenten.
+
+```{r}
+#Hier maak ik verschillende variabelen aan die gemidelden opslaan
+gem_geluk <- student_hap_awn %>%
+    mutate(average_col = Happy_RN + Happy_after_quest)
+# de %>% zorgt dat ik in gem_geluk een mutatie kan maken, ik heb het geluk pre en after het beantwoorden van onze enquête. opgeteld en daarna gedeeld door 2 waardoor er een gemiddelde uitkomt voor elke student
+
+gem_geluk <- gem_geluk %>%
+    mutate(average_col = average_col / 2)
+
+# hier wil ik dat de gem geluk variabele nu alleen nog het gemiddelde geluk die in de average col staat en de sekse die er bij hoort zodat ik deze kan laten zien.
+gem_geluk <- select(gem_geluk, c(Sexe, average_col))
+
+head(gem_geluk)
+
+# Hier gebruik ik gg plot om een netjese boxplot te maken die de 95% mediaan en alles netjes laat zien zodat het goed is te zien wat het verschil in gemidelde geluk is per sekse
+ggplot(gem_geluk, aes(x = Sexe, y = average_col, fill = Sexe)) + 
+    geom_boxplot() +
+    stat_boxplot(geom = "errorbar",
+               width = 0.25) +
+    ggtitle("Het gemidelde geluk per Sexe", subtitle = "(Lijn in het vierkant is het gemidelde)") 
+```
+Als we hier kijken zien we de verschillen in het gemiddelde geluk per sekse is het opmerkelijk om te zien dat vrouwen gemideld gelukkiger zijn. ECHTER is ook te zien dat de Q1-Q3 van de mannen hoger ligt. er is wel duidelijk te zien dat mensen die zich anders identificeren toch wel het ongelukigste zijn.
+
+Verder hebben storm en ik beslist dat de dingen waar we nu verder in ons onderzoek op ingaan de factoren in de vragen zullen zijn.
+
+## 30-05-2024
+
+### Doel van de dag
+**Het schrijven van het eind product**
+
+Tasks
+
+- Data bekijken 
+- Bouwen van het eind product
+
+ik begon de dag met kijken in de template die aan ons is gegeven om te zien wat er allemaal nodig was voor het eind product. De dingen die ik op dat moment makkelijk kon uit typen waren de Intro, Abstract en de materialen.
+
+Deze klinkten als volgt
+
+### Intro
+
+
+Waarom dit onderzoek? Dit onderzoek is er om te kijken of er verschil zit in het geluk tussen verschillende studenten steden. Dit is belangrijk omdat het geluk van een persoon invloed kan hebben op verschillende factoren in zijn leven. Als we kijken naar Geluk omvat dit meerdere dingen. Een persoon kan heel gelukkig worden van een academische prestatie echter zijn er anderen die meer geluk halen uit een sociale ontmoeting. Deze verschillende factoren zijn in ons onderzoek gemeten. Hiervoor is literatuur gebruikt die diep in gaat op wat mensen door de jaren heen van geluk maakten, De paper van Veenhoven, R. (1991, 1 januari). Questions on Happiness kijkt hier naar in verschillende tijdperken. Verder zijn er bepaalde factoren naar boven gekomen die belangrijk zijn voor een mens wanneer het gaat over het meten van geluk. 
+
+- Sekse, als er gekeken wordt naar het menselijk lichaam is er te zien dat er een verschil is tussen de mannelijke en vrouwelijke sekse in specifiek de hormonen. Dit heeft invloed op hoe geluk wordt ervaart. Wanneer een vrouw haar menstruatie ervaart kan deze een kort effect hebben op hoe gelukkig deze zich voelt.  Hier heeft een man echter geen last van.
+
+- Niveau van de opleiding, Het is algemeen bekend dat mensen die een hoger opleiding doen vaker ongelukkiger zijn door mentale complicaties. Dit is niet te zeggen dat studenten van een lager niveau hier geen last van hebben echter is het een goede factor om te bekijken.
+
+- Welk jaar de student in zit, Wanneer iemand al meerdere jaren heeft gestudeerd zal deze een andere kijk hebben op het effect van de omgeving van zijn studentenstad. Hierdoor is een 1ste jaar student te vergelijking met een 3de jaar student interessant. Het zou kunnen zijn dat een student namelijk aan zijn stad went. 
+
+- Vakgebied, De omgeving van een studie hangt af van iemands vakgebied. Wanneer een student een sociale studie doet zoals bedrijfskunde of social-work, Wordt deze in een omgeving gezet met andere studenten die over het algemeen ook socialer zijn. In een technische opleiding zijn studenten over het algemeen meer teruggetrokken. Dit zou dus ook invloed hebben op een student en wat voor prioriteiten deze heeft. 
+
+- Woonsituatie (Uitwonend vs Thuiswonen), In het geval dat een student thuis woont zou deze wanneer het wordt gecombineerd met een slechte relatie met zijn ouders een langdurig effect kunnen hebben op zijn geluk en hoe deze verder zich mentaal voelt.  
+
+- Geloving (Ja of Nee), Het is bekend dat mensen die gelovig zijn veel rust en mentale support halen uit hun geloof. Dit doen ze door het lezen van hun geloof gerelateerde literatuur en deze op hun eigen leven toe te passen. Het kan ook zijn dat de persoon steun haalt uit zijn omgeving met andere gelovigen.  
+
+- Relatie (Ja of Nee), Het hebben van een partner kan goed en slecht zijn voor iemands geluk. Wanneer de relatie met deze persoon in een goede staat verkeerd zal deze persoon steun, support en andere postieve dingen naar iemands leven brengen. Wanneer deze in een slechte of verslechterende situatie verkeerd zal deze stress en ongelukkig heid brengen naar iemands situatie. 
+
+**factoren in de vragen**
+
+- Fysieke gezondheid
+- Mentale gezondheid
+- Relatie met ouders
+- Sociale gezondheid
+- Geld / financiele situatie
+- Drugs en/of alcohol gebruik
+
+Deze intro is echter nog niet af. er missen nog een paar dingen die ik met storm moet overleggen echter was deze afwezig aan het eind van de les en bespreken we dit op een ander moment.
+
+### abstract
+
+Dit onderzoek gaat over, het geluk van studenten in verschillende studenten steden. De steden die wij hebben onderzocht zijn; Amsterdam, Groningen, Leiden en Utrecht. We hebben in dit onderzoek een enquête gebruikt om een data frame te maken waarmee we een goed grafisch overzicht kunnen geven van wat de resultaten zijn. Dit onderzoek is belangrijk omdat mentale gezondheid onder de studenten tegenwoordig veel in het nieuws is. Geluk is een groot deel van iemands mentale gezondheid daarom is het interessant om te weten in welke stad voor de studenten deze het hoogste ligt. De factoren die in dit onderzoek worden gebruikt gaan van persoonlijk naar omgevingsfactoren zodat er een duidelijk beeld kan worden geschetst waarin ook langdurige problemen worden meegenomen die invloed hebben.
+
+In deze abstract heb ik een mix tussen aandachts pakkende zin bouw en verwoording gebruikt en het onderzoek zo duidelijk mogelijk proberen uit te leggen.
+
+### materialen en methoden
+
+ik heb zelf alleen de materialen gemaakt omdat storm de methoden zal uitschrijven.
+Ik heb gekeken naar alles wat wij hebben gebruikt, hierbij heb ik een link gegeven en een versie of datum wanneer dit nodig is.
+
+- Google forms - Gebruikt om een enquête te maken die gebruikers vriendelijk is en die voor ons een netjes csv geeft als output. - https://docs.google.com/forms/
+- Google sheets - De antwoorden van de Google forms worden hier in een spreadsheet gezet en deze kan via een download knop omgezet worden in een data sheet ook wel een csv file. - https://docs.google.com/spreadsheets/
+- Google scholar - Dit is gebruikt om verschillende wetenschappelijke artikellen te vinden die onze literatuur onderbouwing verzorgt voor dit onderzoeks project - https://scholar.google.com
+- R-studio - Dit programma gebruiken we om ons Rmarkdown document te maken wat uiteindelijk ons eindproduct is geworden. Dit programma zorgt ervoor dat wij goede grafische plotjes kunnen leveren. - https://posit.co/download/rstudio-desktop/ Versie 2023.12.1+402 (2023.12.1+402)
+- Github - De gehele data set, logboeken en protocol staan op github omdat dit een netjese en goed navigeerbare omgeving maakt zodat iemand ook alles in 1 keer kan downloaden en bekijken. - http://github.com 
 
 
 
 ## literatuur lijst 
 (zorg voor kleine samenvatting bij elke apa verwijzing + waarom je dit gebruikt)
 
-- Jacobsen, B. (2007, 1 januari). What is Happiness? | Existential Analysis: Journal of the Society for Existential Analysis | EBSCOhost. https://openurl.ebsco.com/EPDB%3Agcd%3A10%3A4911050/detailv2?sid=ebsco%3Aplink%3Ascholar&id=ebsco%3Agcd%3A24478440&crl=c
-- Easterlin, R. A. (2003). Explaining happiness. Proceedings Of The National Academy Of Sciences Of The United States Of America, 100(19), 11176–11183. https://doi.org/10.1073/pnas.1633144100
+- Jacobsen, B. (2007, 1 januari). What is Happiness? | Existential Analysis: Journal of the Society for Existential Analysis | EBSCOhost. https://openurl.ebsco.com/EPDB%3Agcd%3A10%3A4911050/detailv2?sid=ebsco%3Aplink%3Ascholar&id=ebsco%3Agcd%3A24478440&crl=c - 
+Deze paper gebruiken we omdat er gekeken wordt naar wat geluk nou eigenlijk is. Het kijkt naar verschillende concepten van geluk en kijkt naar de psychologie er van. Dit is handig om te kijken wat voor externe factoren effect hebben op een persoon waardoor zijn geluk kan worden beinvloed. Het kijkt ook naar levens doelen en levens voldoening wat in het grote scala ook met geluk te maken heeft.
+
+- Easterlin, R. A. (2003). Explaining happiness. Proceedings Of The National Academy Of Sciences Of The United States Of America, 100(19), 11176–11183. https://doi.org/10.1073/pnas.1633144100 -
+In deze paper wordt gekeken naar sociale enquêtes en wat deze data zegt over de omstandigheden van geluk. Er wordt ook gezegd dat Psychologen hun model twijfelachtig is en dat het bepaalde levens omstandigheden en levens gebeurtenissen niet in zich opneemt. Dit zijn dan getrouwd zijn of scheiding. Ook bijvoorbeeld een zware onbekwaamheid of mentale worsteling zoals depressie of adhd. Deze hebben een langdurig effect op hoe een persoon geluk ervaart. Deze paper is dus belangrijk voor ons onderzoek dit omdat er factoren in staan die ook moeten worden meegenomen. Dit zijn dus bijvoorbeeld: Mentalegezondheid, Thuis situatie, Voel je je op je plek in de stad waarin je woont (Soms is het moeilijk om in een nieuwe stad te leven vooral als een eerste jaars), Of iemand een international is. Weg zijn van je ouders en je huis waar je niet zomaar terug naar toe kan is ook een mentale druk die je geluk langdurig kan aantasten. Het is daarom een goede paper voor ons omdat het een idee geeft over factoren die je normalieter misschien over het hoofd ziet. Dit maakt het dus een belangrijke bron om een goede enquete te bouwen tevens zegt het artikel ook dat enquêtes een redelijke meet wijze is.
+
+
 - Veenhoven, R. (1991, 1 januari). Questions on Happiness. https://repub.eur.nl/pub/16149/
+
+**SAMENVATTING**
 
