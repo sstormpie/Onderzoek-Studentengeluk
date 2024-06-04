@@ -14,6 +14,7 @@ library(fmsb)
 library(ggplot2)
 library(dplyr)
 library(pwr)
+library(tidyverse)
 ```
 
 
@@ -539,6 +540,114 @@ Ik heb gekeken naar alles wat wij hebben gebruikt, hierbij heb ik een link gegev
 - R-studio - Dit programma gebruiken we om ons Rmarkdown document te maken wat uiteindelijk ons eindproduct is geworden. Dit programma zorgt ervoor dat wij goede grafische plotjes kunnen leveren. - https://posit.co/download/rstudio-desktop/ Versie 2023.12.1+402 (2023.12.1+402)
 - Github - De gehele data set, logboeken en protocol staan op github omdat dit een netjese en goed navigeerbare omgeving maakt zodat iemand ook alles in 1 keer kan downloaden en bekijken. - http://github.com 
 
+## 03-06-2024
+
+### Doel van de dag
+**Het schrijven van het eind product**
+
+Tasks
+
+- Na aanleiding van de feedback problemen fixen in het eind document
+
+### intro toevoeging
+Er zijn eerder onderzoeken gedaan naar het geluk van jong volwassenen, ook zijn er onderzoeken geweest naar het geluk van studenten. Deze onderzoeken zijn echter niet heel diepgaand en focussen meer op het algemene geluk gevoel. Ons onderzoek gaat ook in op factoren die langdurig effect zouden hebben op iemands geluk. Ondanks dat ons onderzoek wat dieper in gaat op deze factoren zal deze alsnog niet diep genoeg zijn. In ons onderzoek wordt alles becijferd met een 0-10 schaal deze kan duidelijker worden wanneer de student zijn eigen mening er in kan zetten. Dit is voor ons in het tijd frame wat wij hebben niet mogelijk. De technieken die wij hebben gebruikt zijn een enquête die via een poster kan worden geopend en email's die de link bevatten die verwijzen naar de enquête. \
+
+**Doelstelling** \
+
+Op een grafische wijze laten zien wat het gemiddelde geluk is van de studenten in de verschillende steden. \
+
+Kijken wat de verschillen zijn wanneer we naar de factoren kijken en hier de groepen met elkaar vergelijken. \
+
+antwoord geven op de hypthose. \
+
+Deze doelstellingen willen wij bereiken door studenten in de verschillende studenten steden een enquête laten in te vullen. Hier de data uit te halen en deze verwerken met R. Van deze verwerkte data grafieken maken waar de data netjes is uit te lezen. Hierdoor kunnen de vragen en hypothese worden beantwoord. \
+
+De hypothese die wij willen be antwoorden is: Het maakt voor het geluk van de student niet uit in welke stad deze studeert. 
+
+### nieuwe materialen lijst
+
+| Tool                	| Referentie                                              	| Versie                               	| Waarom                                                                                                                                                                                       	|
+|---------------------	|---------------------------------------------------------	|--------------------------------------	|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
+| Google forms        	| https://docs.google.com/forms/                          	|                                      	| Gebruikt om een enquête te maken die gebruikers vriendelijk is en een netjes csv bestand geeft als output.                                                                                   	|
+| Git                 	| https://www.git-scm.com                                 	| git version 2.44.0                   	| Git wordt gebruikt voor version control                                                                                                                                                      	|
+| Github              	| http://github.com                                       	|                                      	| De gehele data set, logboeken en protocol staan op github omdat dit een netjese en goed navigeerbare omgeving maakt zodat iemand ook alles in 1 keer kan downloaden en bekijken.             	|
+| RStudio             	| https://posit.co/download/rstudio-desktop/              	| Versie 2023.12.1+402 (2023.12.1+402) 	| Dit programma gebruiken we om ons RMarkdown document te maken wat uiteindelijk ons eindproduct is geworden.                                                                                  	|
+| R                   	| https://www.r-project.org                               	| R version 4.3.3 (2024-02-29)         	| R staat mensen toe om vaardig grote hoeveelheden gegevens te verwerken, publicatie-waardige visualisaties te genereren, en een reeks statistische en analytische computertaken uit te voeren 	|
+| fmsb                	| https://cran.r-project.org/web/packages/fmsb/index.html 	| 0.7.6 (03-06-2024)                   	| Wij gebruiken deze voor het maken van radar plots                                                                                                                                            	|
+| ggplot2             	| https://ggplot2.tidyverse.org                           	| 3.5.1 (03-06-2024)                   	| Deze package wordt om plotjes in dit document duidelijker en netjeser te maken                                                                                                               	|
+| pwr                 	| https://github.com/heliosdrm/pwr                        	| 1.3-0 (October 14, 2022)             	| per wordt gebruikt om statistische analyze te doen zoals een t test                                                                                                                          	|
+| dplyr               	| https://dplyr.tidyverse.org                             	| 1.1.4 (03-06-2024)                   	| dplyr geeft andere commando's die niet in de standaard versie van R zit.                                                                                                                     	|
+| knitr               	| https://yihui.org/knitr/                                	| knitr 1.47 (03-06-2024)              	| Knitr is gebruikt om dingen aan te passen die in de geknitte versie komen                                                                                                                    	|
+| tidyverse           	|  https://www.tidyverse.org                              	| tidyverse 1.3.0 (03-06-2024)         	| Tidyverse wordt gebruikt om verschillende dingen aan te passen in potjes                                                                                                                     	|
+| Canva               	| https://www.canva.com                                   	|                                      	| Canva is gebruikt om posters te maken met qr codes die de enquete openen                                                                                                                     	|
+| Google  Spreadsheet  	|    https://docs.google.com/spreadsheets/                	|                                      	| De antwoorden van de Google forms worden hier in een spreadsheet gezet en deze kan via een download knop omgezet worden in een csv file.                                                     	|
+
+### nieuwe plotjes gemaakt met data van het cbs
+
+
+```{r}
+cbs_data_geluk <- read_csv("cbs_data_geluk.csv")
+
+colnames(cbs_data_geluk) <- c("Periode", "Tevredenheid_18_plus", "Tevredenheid_18_tot_25", "Geluk_18_plus", "Geluk_18_tot_25")
+cbs_data_geluk <- cbs_data_geluk %>%
+    mutate(Geluk_18_tot_25 = Geluk_18_tot_25 / 100)
+
+
+cbs_geluk_18_tot_25 <- select(cbs_data_geluk, c(Periode, Geluk_18_tot_25))
+
+
+cbs_geluk_18_tot_25
+
+p_cbs <- ggplot() + 
+    geom_point(data = cbs_geluk_18_tot_25, aes(x=Periode, y=Geluk_18_tot_25), color = "blue", alpha = 0.6) +
+    ylab("Geluk") +
+    xlab("Tijd periode in jaren") +
+    theme_minimal()
+
+p_cbs
+```
+hierin is het gemiddelde geluk van jongvolwassenen te zien tussen de 18 en 25.
+
+```{r}
+Student_awn_data <- read.csv("Student_hap_awn_30_05.csv")
+
+colnames(Student_awn_data) <- c("Tijd", "Sekse", "Niveau", "Opl_jaar","Vakgebied", "Woonsituatie", "Stad", "Nat_Int", "Gelovig", "Relatie_stat", "Happy_RN", "Fys_Happy", "Fys_import", "Cont_buiten_school", "Na_school_soc", "Ouder_relatie", "Woonsituatie_geluk", "Thuis_in_stad", "academische_pres", "Financiele_sit", "Geld_geluk", "Verd_mid_gebr", "drugs_alc_geluk", "Mental_health", "Happy_after_quest")
+
+```
+
+```{r}
+
+woonsit_df <- select(Student_awn_data, c(Woonsituatie,
+                                        Happy_RN,
+                                        Thuis_in_stad,
+                                        Woonsituatie_geluk,
+                                        Happy_after_quest))
+
+
+woonsit_uit <- subset(woonsit_df, Woonsituatie == "Uitwonend (Away from home)")
+woonsit_thuis <- subset(woonsit_df, Woonsituatie == "Thuiswonend (At home)")
+p <- ggplot() + 
+    geom_point(data = woonsit_thuis, aes(x=Happy_RN, y=Happy_after_quest), color = "red", alpha = 0.6) +
+    geom_point(data = woonsit_uit, aes(x=Happy_RN, y=Happy_after_quest), color = "blue", alpha = 0.6) +
+    xlim(0, 10) +
+    ylim(0, 10) +
+    labs(color = "Woonsituatie") +
+    xlab("Geluk voor de enquête") +
+    ylab("Geluk na de enquête")+
+    facet_wrap(~Woonsituatie) +
+    ggtitle("Scatterplot Uit- vs Thuiswonende studenten geluk", subtitle = "Donkerder = meerdere zelfde antwoorden") +
+    theme_minimal()
+
+p
+```
+Ik heb deze grafiek veranderd van een overlappende grafiek naar een facet wrap zodat het makkelijker te zien is. Voor dat dit was gedaan was er overlap waardoor er paarse dots onstonden die een verkeerd beeld gaven.
+
+als laatste heb ik de conclussie nog een begin gemaakt.
+### Conclusie
+
+De data die wij verzameld hebben is niet genoeg om een antwoord te geven op de hypothese. Dit komt omdat er niet genoeg data is voor elke stad. De stad met het grootste aantal antwoorden is Groningen deze heeft echter ook maar rond de 70. De 70 antwoorden zijn niet genoeg om met 95% zekerheid een antwoord te geven. Hierdoor zullen wij alleen naar factoren kunnen kijken zoals verschillen tussen de seksen in de stad Groningen. Hier kunnen we uit halen dat mannen het gelukkigste zijn en de anders sekse het ongelukkigste. \
+
+Deze data zal niet kunnen worden gebruikt in het werkveld. Het is niet genoeg om vertrouwen op de gegeven resultaten. Hierdoor is het een deel speculatief waardoor het niet betrouwbaar is. 
 
 
 ## literatuur lijst 
@@ -553,5 +662,17 @@ In deze paper wordt gekeken naar sociale enquêtes en wat deze data zegt over de
 
 - Veenhoven, R. (1991, 1 januari). Questions on Happiness. https://repub.eur.nl/pub/16149/
 
-**SAMENVATTING**
+in deze paper wordt er naar verschillende perioden  gekeken. Dit zijn de antieke Griekse filosofie, De Na-verlichting west europeese morale filosofie, "Utilitarianism" specifiek en de huidige kwaliteit van leven onderzoeken in rijke welvarende staten. deze paper bekijkt het in de progressie van 7 klasieke onderwerpen 
+
+The following issues will be considered:
+
+1. What is happiness?
+2. Can happiness be measured?
+3. Is unhappiness the rule?
+4. How do people assess their happiness?
+5. What conditions favour happiness?
+6. Can happiness be promoted?
+7. Should happiness be promoted?
+
+Deze onderwerpen geven ons goeie informatie om vragen op te bouwen. ook wordt er bijvoorbeeld in het onderwerp "Can happiness be measured" sub onderwerp "Assesment by quetstioning" besproken of een enquête wel een goed beeld weergeeft en of mensen zelf wel kunnen zien of ze gelukkig zijn of niet. Echter vinden de onderzoekers dat mensen meestal wel bewust zijn van het genot van hun leven. Als we naar de conclusie kijken bij onderwerp 5 wordt verteld dat er weinig kennis en onderzoek is over welke voorwaarden zorgen voor een positieve waardering van het leven. 
 
