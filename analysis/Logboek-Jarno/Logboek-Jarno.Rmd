@@ -357,13 +357,106 @@ Nu is de data makkelijker te lezen met de afkortingen. We zien dat de tijd tusse
 
 # POWER ANALYSE NOG AFMAKEN
 
-```{r}
-#hoe groot moet onze groep van gevraagde eigenlijk zijn? om 2 groepen te vergelijken gebruik je de  Independent two-sample t-test hiervoor moeten we een pwr analyze
-effect_size <- 0.5
-alpha <- 0.05
-power <- 0.8
+```{r, echo=FALSE}
+getwd()
+
+Student_awn_data <- read.csv("Student_hap_awn_30_05.csv")
+
+colnames(Student_awn_data) <- c("Tijd", "Sekse", "Niveau", "Opl_jaar","Vakgebied", "Woonsituatie", "Stad", "Nat_Int", "Gelovig", "Relatie_stat", "Happy_RN", "Fys_Happy", "Fys_import", "Cont_buiten_school", "Na_school_soc", "Ouder_relatie", "Woonsituatie_geluk", "Thuis_in_stad", "academische_pres", "Financiele_sit", "Geld_geluk", "Verd_mid_gebr", "drugs_alc_geluk", "Mental_health", "Happy_after_quest")
+
+#Maak een aparte vector met alle numerieke data
+numerieke_data <- select(Student_awn_data, c(11:15, 17:21, 23:25))
+
 
 ```
+Om eerst te kijken hoe onze data verspreid is, rekenen we het gemiddelde, 95% betrouwbaarheidsinterval en de standaard deviatie uit voor elk stuk numerieke data.
+
+```{r}
+#Deze functie berekent het gemiddelde binnen de 95% betrouwbaarheidsinterval
+mean_BI <- function(lijst) {
+    y_av <- mean(lijst)
+    s <- sd(lijst)
+    n <- length(lijst)
+    s_av <- s / sqrt(n)
+    BI <- y_av + qt(c(0.025, 0.975), n-1) * s_av
+    
+    (cat(sprintf("Gemiddelde = %.1f, 95%% BI = [%.1f, %.1f] SD = %.1f\n", y_av, BI[1], BI[2], s))
+)
+}
+
+#Maak een lijst van de numerieke data
+list <- as.list(numerieke_data)
+
+#Bereken het gemiddelde binnen de 95% betrouwbaarheids interval van alle factoren
+c <- 1
+for (i in list) {
+  print(colnames(numerieke_data[c]))
+  mean_BI(i)
+  c <- c + 1
+}
+
+```
+
+Zoals je hierboven ziet, is de data best wel verspreid. De gemiddelde standaard deviatie van de data is ongeveer 2. Dit is best hoog, omdat onze data op schaal van 1-10 is.
+
+Om te kijken of onze data normaal verdeeld is, kunnen we een histogram maken:
+
+```{r}
+
+ggplot(numerieke_data, 
+       aes(x = Happy_RN )) +
+    ggtitle("Algemeen Geluk Studenten") +
+    ylab("Frequentie (Aantal Personen)") +
+    xlab("Algemeen Geluk") +
+    geom_histogram(bins= 20, binwidth= 0.7) +
+    labs(caption = "Figuur 1: Algemeen Geluk Studenten ") +
+    theme("minimal")
+```
+De histogrammen die uit onze data komen zijn echter niet overzichtelijk. Dit komt hoogstwaarschijnlijk vanwege een tekort aan respondenten. Maar als je alleen naar de grafiek zou kijken, kan je wel zeggen dat de data normaal verdeeld is. We gaan echter wel wat meer doen om te kijken of dat daadwerkelijk zo is.
+
+Shapiro Wilcoxon Test
+
+Om goed te kijken of onze data normaal verdeeld is, voeren we een shapiro wilk test uit. Uit deze test krijgen we een p-waarde en een t-waarde. Als de p-waarde >0.05 is, betekent dat dat onze data normaal verdeeld is.
+
+```{r}
+#Voer een shapiro test uit op alle kolommen in de dataframe
+shapiro_test_data <- as.character(sapply(numerieke_data, shapiro.test))
+
+#Haal de onnodige informatie uit de vector
+shapiro_test_data <- shapiro_test_data[! shapiro_test_data%in% c("Shapiro-Wilk normality test",  "X[[i]]")]
+
+#Maak een nieuwe dataframe aan
+df_shapiro = data.frame(
+  col1= character(), 
+  col2= character(), 
+  stringsAsFactors = FALSE)
+ 
+#Een counter voor de indexing
+c <- 1
+
+#Voeg rijen toe aan de dataframe
+for(i in 1:13) {                       
+   
+  #Maak een vector aan die in het dataframe komt
+  vec <- c(shapiro_test_data[c], shapiro_test_data[c+1])     
+  
+  #Voeg de vector toe aan de rij
+  df_shapiro[i, ] <- vec
+  
+  #Voeg 2 toe aan de counter
+  c <- c +2
+}
+
+df_shapiro <- data.frame(t(df_shapiro))
+
+rownames(df_shapiro) <- c("t-statistic", "p-waarde")
+
+colnames(df_shapiro) <- colnames(numerieke_data)
+
+df_shapiro
+```
+Hierboven zie je de shapiro wilk test uitgevoerd op alle numerieke data. Als je alle kolommen in de rij van de p-waarde af gaat, kan je zien dat geen enkele p-waarde >0.05 is. Dit betekent dat onze data niet normaal verdeeld is. Dit dat onze data niet normaal verdeeld is. Deze p-waarden vertellen ons ook dat wij onze hyphothese moeten afwijzen, wat betekent dat er geen effect is. Dit is jammer, maar we kunnen ondanks dit nog wel naar andere onderwerpen kijken.
+
 
 
 ## 15-05-2024
