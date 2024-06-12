@@ -687,7 +687,7 @@ factoren met elkaar vergelijken zoals dus alcohol en drugs gebruik en
 hoe heeft dit invloed op het geluk.
 
 ```{r}
-woonsit_awn <- select(student_hap_awn, c(Vakgebied))
+vakgebied_awn <- select(student_hap_awn, c(Vakgebied))
 
 ggplot(vakgebied_awn, aes(x = " ", y = "Antwoord per Vakgebied", fill = Vakgebied)) +
     geom_col() + 
@@ -695,13 +695,19 @@ ggplot(vakgebied_awn, aes(x = " ", y = "Antwoord per Vakgebied", fill = Vakgebie
     scale_fill_brewer() +
     labs(caption = "Figuur 3: Antwoord per Vakgebied") +
     ggtitle("Antwoord per Vakgebied", subtitle = "antwoorden op 14-05-2024") +
+    scale_fill_viridis_d() +
     theme_void()
 ```
 
-```{r}
-vakgebied_awn <- select(student_hap_awn, c(Woonsituatie))
+In het vakgebied is veel variatie. de grootste twee sectoren zijn Anders
+en Technisch. Sociaal en lifesciences zijn ook heel groot. Dit is mooi
+omdat het hierdoor beter mogelijk is om de verschillende vakgebieden met
+elkaar vergelijken.
 
-ggplot(vakgebied_awn, aes(x = " ", y = "Antwoord per Woonsituatie", fill = Woonsituatie)) +
+```{r}
+woonsit_awn <- select(student_hap_awn, c(Woonsituatie))
+
+ggplot(woonsit_awn, aes(x = " ", y = "Antwoord per Woonsituatie", fill = Woonsituatie)) +
     geom_col() + 
     coord_polar(theta = "y") +
     scale_fill_brewer() +
@@ -709,6 +715,11 @@ ggplot(vakgebied_awn, aes(x = " ", y = "Antwoord per Woonsituatie", fill = Woons
     ggtitle("Antwoord per Woonsituatie", subtitle = "antwoorden op 14-05-2024") +
     theme_void()
 ```
+
+De antwoorden van de woonsituatie zijn redelijk door de helft verdeeld.
+Wat goed is omdat dit betekent dat wanneer wij de andere factoren
+vergelijken er voor beide genoeg antwoorden zijn om een redelijke
+conclusie te trekken.
 
 ```{r}
 NatInt_awn <- select(student_hap_awn, c(NatInt))
@@ -722,6 +733,11 @@ ggplot(NatInt_awn, aes(x = " ", y = "Antwoord Nationaal of internationaal", fill
     theme_void()
 ```
 
+Bij de antwoorden tussen Nationaal en internationaal is er duidelijk te
+zien dat er veel meer antwoorden zijn van Nationaal. Dit betekent dus
+dat we dus dat wij niet de internationale antwoorden kunnen vergelijken
+met de nationale op dit moment.
+
 ```{r}
 Gelovig_awn <- select(student_hap_awn, c(Gelovig))
 
@@ -734,6 +750,12 @@ ggplot(Gelovig_awn, aes(x = " ", y = "Antwoord Gelovig", fill = Gelovig)) +
     theme_void()
 ```
 
+Bij de antwoorden voor of iemand wel of niet gelovig is, is er duidelijk
+te zien dat er veel meer antwoorden zijn voor niet dan wel. Dit betekent
+dus dat we dus dat wij niet voor wel gelovigen een goed conclusie kunnen
+maken omdat hier veel te weinig antwoorden voor zijn. Deze factor is dus
+nu ook niet heel handig om mee te nemen in het eind product.
+
 ```{r}
 Relatie_stat_awn <- select(student_hap_awn, c(Relatie_stat))
 
@@ -741,10 +763,16 @@ ggplot(Relatie_stat_awn, aes(x = " ", y = "Antwoord Relatie status", fill = Rela
     geom_col() + 
     coord_polar(theta = "y") +
     scale_fill_brewer() +
-    labs(caption = "Figuur 6: Antwoord Relatie status") +
+    labs(caption = "Figuur 7: Antwoord Relatie status") +
     ggtitle("Antwoord Relatie status", subtitle = "antwoorden op 14-05-2024") +
     theme_void()
 ```
+
+Bij de antwoorden voor of iemand wel of niet een releatie heeft, is er
+te zien dat er veel meer antwoorden zijn voor nee dan ja. Dit betekent
+dus dat we dus dat wij niet voor mensen wel in een relatie een goede
+conclusie kunnen geven omdat hier te weinig antwoorden voor zijn. Deze
+factor is dus nu niet heel handig om mee te nemen in het eind product.
 
 ## 15-05-2024
 
