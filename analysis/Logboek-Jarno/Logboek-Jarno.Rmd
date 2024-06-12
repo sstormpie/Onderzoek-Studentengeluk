@@ -632,10 +632,10 @@ alle colom namen achter elkaar veranderen.
 
 ```{r}
 # Er is hier te zien dat de colnames dus in volgorde worden veranderd. 
-colnames(student_hap_awn) <- c("Tijd", "Sexe", "Niveau", "Opl_jaar","Vakgebied", "Woonsituatie", "Stad", "Nat_Int", "Gelovig", "Relatie_stat", "Happy_RN", "Fys_Happy", "Fys_import", "Cont_buiten_school", "Na_school_soc", "Ouder_relatie", "Woonsituatie_geluk", "Thuis_in_stad", "academische_pres", "Financiele_sit", "Geld_geluk", "Verd_mid_gebr", "drugs_alc_geluk", "Mental_health", "Happy_after_quest")
+colnames(student_hap_awn) <- c("Tijd", "Sekse", "Niveau", "Opl_jaar","Vakgebied", "Woonsituatie", "Stad", "NatInt", "Gelovig", "Relatie_stat", "Happy_RN", "Fys_Happy", "Fys_import", "Cont_buiten_school", "Na_school_soc", "Ouder_relatie", "Woonsituatie_geluk", "Thuis_in_stad", "academische_pres", "Financiele_sit", "Geld_geluk", "Verd_mid_gebr", "drugs_alc_geluk", "Mental_health", "Happy_after_quest")
 
 # hier head ik weer onze data om te zien of de colom namen zijn veranderd
-head(student_hap_awn, n = 10)
+student_hap_awn
 
 ```
 
@@ -654,7 +654,7 @@ plot_14_05 <- ggplot(reactie_stad, aes(x = " ", y = "Antwoord per stad", fill = 
     geom_col() + 
     coord_polar(theta = "y") +
     scale_fill_brewer() +
-    ggtitle("Antwoord per stad", subtitle = "Utrecht heeft geen antwoorden deze is hierdoor niet zichbaar") +
+    ggtitle("Antwoord per stad", subtitle = "antwoorden op 14-05-2024") +
     theme_void()
 
 plot_14_05 + labs(caption = "Figuur 1: Antwoord per stad") 
@@ -665,6 +665,86 @@ Groningen komen. Ook is te zien dat de antwoorden tot nu toe geen 1 van
 Utrecht bevatten. Dit betekent voor ons dat de posters niet lijken te
 werken en dat wij echt onze resultaten via de emails zouden moeten
 ontvangen.
+
+```{r}
+sekse_awn <- select(student_hap_awn, c(Sekse))
+
+ggplot(sekse_awn, aes(x = " ", y = "Antwoord per stad", fill = Sekse)) +
+    geom_col() + 
+    coord_polar(theta = "y") +
+    scale_fill_brewer() +
+    labs(caption = "Figuur 2: Antwoord per Sekse") +
+    ggtitle("Antwoord per sekse", subtitle = "antwoorden op 14-05-2024") +
+    theme_void()
+
+```
+
+Er is te zien dat er een redelijke verdeling tussen de man en vrouw. De
+anders sekse heeft niet heel veel antwoorden. Deze heeft dus
+waarschijnlijk niet genoeg antwoorden om een goede conclusie uit te
+halen. Uit de antwoorden van de man en vrouw kunnen wij weer andere
+factoren met elkaar vergelijken zoals dus alcohol en drugs gebruik en
+hoe heeft dit invloed op het geluk.
+
+```{r}
+woonsit_awn <- select(student_hap_awn, c(Vakgebied))
+
+ggplot(vakgebied_awn, aes(x = " ", y = "Antwoord per Vakgebied", fill = Vakgebied)) +
+    geom_col() + 
+    coord_polar(theta = "y") +
+    scale_fill_brewer() +
+    labs(caption = "Figuur 3: Antwoord per Vakgebied") +
+    ggtitle("Antwoord per Vakgebied", subtitle = "antwoorden op 14-05-2024") +
+    theme_void()
+```
+
+```{r}
+vakgebied_awn <- select(student_hap_awn, c(Woonsituatie))
+
+ggplot(vakgebied_awn, aes(x = " ", y = "Antwoord per Woonsituatie", fill = Woonsituatie)) +
+    geom_col() + 
+    coord_polar(theta = "y") +
+    scale_fill_brewer() +
+    labs(caption = "Figuur 4: Antwoord per Woonsituatie") +
+    ggtitle("Antwoord per Woonsituatie", subtitle = "antwoorden op 14-05-2024") +
+    theme_void()
+```
+
+```{r}
+NatInt_awn <- select(student_hap_awn, c(NatInt))
+
+ggplot(NatInt_awn, aes(x = " ", y = "Antwoord Nationaal of internationaal", fill = NatInt)) +
+    geom_col() + 
+    coord_polar(theta = "y") +
+    scale_fill_brewer() +
+    labs(caption = "Figuur 5:  Antwoord Nationaal of internationaal") +
+    ggtitle(" Antwoord Nationaal of internationaal", subtitle = "antwoorden op 14-05-2024") +
+    theme_void()
+```
+
+```{r}
+Gelovig_awn <- select(student_hap_awn, c(Gelovig))
+
+ggplot(Gelovig_awn, aes(x = " ", y = "Antwoord Gelovig", fill = Gelovig)) +
+    geom_col() + 
+    coord_polar(theta = "y") +
+    scale_fill_brewer() +
+    labs(caption = "Figuur 6: Antwoord Gelovig") +
+    ggtitle("Antwoord Gelovig", subtitle = "antwoorden op 14-05-2024") +
+    theme_void()
+```
+
+```{r}
+Relatie_stat_awn <- select(student_hap_awn, c(Relatie_stat))
+
+ggplot(Relatie_stat_awn, aes(x = " ", y = "Antwoord Relatie status", fill = Relatie_stat)) +
+    geom_col() + 
+    coord_polar(theta = "y") +
+    scale_fill_brewer() +
+    labs(caption = "Figuur 6: Antwoord Relatie status") +
+    ggtitle("Antwoord Relatie status", subtitle = "antwoorden op 14-05-2024") +
+    theme_void()
+```
 
 ## 15-05-2024
 
@@ -711,10 +791,6 @@ Tasks
 
 Als we onze data vandaag bekijken is te zien dat we op 29 antwoorden
 zitten.
-
-```{r}
-student_hap_awn
-```
 
 ```{r}
 student_hap_awn_NUM <- select(student_hap_awn, c(Happy_RN,Fys_Happy,Fys_import, Cont_buiten_school,Na_school_soc,Ouder_relatie,Woonsituatie_geluk,Thuis_in_stad,academische_pres,Financiele_sit,Geld_geluk,drugs_alc_geluk,Mental_health,Happy_after_quest))
@@ -960,6 +1036,7 @@ heb ik een link gegeven en een versie of datum wanneer dit nodig is.
     <http://github.com>
 
 ### Data
+
 ```{r, echo=FALSE}
 
 Student_awn_data_30_05 <- read.csv("Student_hap_awn_30_05.csv")
@@ -984,6 +1061,7 @@ ggplot(reactie_stad, aes(x = " ", y = "Antwoord per stad", fill = Stad)) +
     theme_void()
 
 ```
+
 ```{r}
 
 reactie_stad <- select(Student_awn_data_30_05, c(Stad))
@@ -998,11 +1076,16 @@ plot_30_05 <- ggplot(reactie_stad, aes(x = " ", y = "", fill = Stad)) +
 combined_plots <- grid.arrange(plot_14_05, plot_30_05, ncol = 1)
 
 ```
-In deze plot vergelijk ik 
+
+In deze plot vergelijk ik de antwoorden van 14 mei met de antwoorden op
+30 mei. Alle steden in beide data sets worden opgenomen. Het blijkt dus
+in de 16 dagen tijd dat niemand uit Utrecht de enquete heeft ingevuld.
+Dit is ook nog nadat wij Utrecht hebben gemailed en reacties van
+verschillende instellingen hebben gekregen. Het ziet er ook naar uit dat
+het deel van de antwoorden uit Groningen alleen maar groter is geworden.
+Waardoor onze onderzoeksvraag heel moeilijk wordt om te beantwoorden.
+
 ### Analyse
-
-
-
 
 Om eerst te kijken hoe onze data verspreid is, rekenen we het
 gemiddelde, 95% betrouwbaarheidsinterval en de standaard deviatie uit
@@ -1203,7 +1286,7 @@ van de student niet uit in welke stad deze studeert.
 ### nieuwe materialen lijst
 
 | Tool               | Referentie                                                | Versie                               | Waarom                                                                                                                                                                                       |
-|---------------|---------------|---------------|---------------------------|
+|--------------|--------------|--------------|-------------------------------|
 | Google forms       | <https://docs.google.com/forms/>                          |                                      | Gebruikt om een enquête te maken die gebruikers vriendelijk is en een netjes csv bestand geeft als output.                                                                                   |
 | Git                | <https://www.git-scm.com>                                 | git version 2.44.0                   | Git wordt gebruikt voor version control                                                                                                                                                      |
 | Github             | <http://github.com>                                       |                                      | De gehele data set, logboeken en protocol staan op github omdat dit een netjese en goed navigeerbare omgeving maakt zodat iemand ook alles in 1 keer kan downloaden en bekijken.             |
@@ -1299,7 +1382,7 @@ algemeen het gelukkigste zijn. en Anders sekse zijn het minst gelukkig.
 -   Een werkende OS
 
 | Tool                      | Referentie                                                                                         | Versie                               | Waarom                                                                                                                                                                                       |
-|---------------|---------------|---------------|---------------------------|
+|---------------|---------------|---------------|----------------------------|
 | Google forms              | <https://docs.google.com/forms/>                                                                   |                                      | Gebruikt om een enquête te maken die gebruikers vriendelijk is en een netjes csv bestand geeft als output.                                                                                   |
 | Git                       | <https://www.git-scm.com>                                                                          | git version 2.44.0                   | Git wordt gebruikt voor version control                                                                                                                                                      |
 | Github                    | <http://github.com>                                                                                |                                      | De gehele data set, logboeken en protocol staan op github omdat dit een netjese en goed navigeerbare omgeving maakt zodat iemand ook alles in 1 keer kan downloaden en bekijken.             |
