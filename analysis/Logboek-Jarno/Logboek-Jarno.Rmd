@@ -21,17 +21,6 @@ library(tidyverse)
 library(gridExtra)
 ```
 
-## tips
-
-algemene introductie mist Begin van de dag je doel al hebben en dat
-beschrijven per dag. Heel erg in de diepte gaan van hoe het proces
-verloopt. *STAP BIJ STAP* Waarom, Hoe (zoekterm op googlescholar),
-Waarmee + uitkomst (kritisch interpreteren - beschrijven van alles wat
-daarbij hoort) Beredenering om waarom je dit uitvoert op de manier
-waarop je het doet. (gedachte gang) literatuur lijst + kleine
-samenvatting waarom hij wel geschikt is (laat dingen zien uit het
-artikel)
-
 ## 22-04-2024
 
 ### Doel van de dag
@@ -101,32 +90,32 @@ Na het praten met de leraar hebben wij besloten om **“In welke studenten
 stad zijn studenten het gelukkigst?“** Als onze onderzoeksvraag te
 gebruiken.
 
-De hyptothese en 0-hypothese moeten we hiermee ook maken. De hypthose
+De hypothese en 0-hypothese moeten we hiermee ook maken. De hypthose
 waar we op komen is: Het maakt voor het geluk van de student niet uit in
 welke stad deze studeert. De gedachte gang hier achter is dat een stad
 niet bepaald hoe gelukkig iemand is de algemene ervaring is dus het
 leidende.
 
 Nu gaan we kijken wat hebben we nodig en hoe gaan we deze vraag
-beantwoorden. Storm en ik hebben wat onderzoeks methoden bekeken
+beantwoorden. Storm en ik hebben wat onderzoek methoden bekeken
 <https://www.scribbr.nl/category/onderzoeksmethoden/> (23-04-2024) deze
 website heeft ons een paar ideeën gegeven, ook hebben wij onze leraar
 gevraagd die met ons sparde met wat past De opties die er uitkwamen
-waren een test op cortisol of een enquete. De cortisol test was echter
-te duur en complex. Dus was de enquete de keuze die Storm en ik samen
-hebben gemaakt. De enquete produceerd een csv data file die makkelijk in
+waren een test op cortisol of een enquête. De cortisol test was echter
+te duur en complex. Dus was de enquête de keuze die Storm en ik samen
+hebben gemaakt. De enquête produceert een csv data file die makkelijk in
 r is te importen dit kan met de volgende functie:
 
 ```{r}
 # read.csv()
 ```
 
-De enquete heeft een paar voorwaarden: De vragen moeten duidelijk zijn,
+De enquête heeft een paar voorwaarden: De vragen moeten duidelijk zijn,
 De manier van antwoorden moet een datatype terug geven waarmee
-gemidelden en grafieken etc mee kunnen worden uitgerekend. De
-verspreiding van de enquete is een belangrijke beslissing.
+gemiddelden en grafieken etc mee kunnen worden uitgerekend. De
+verspreiding van de enquête is een belangrijke beslissing.
 
-De vragen die in de enquete zullen staan moeten de hoofdvraag **“In
+De vragen die in de enquête zullen staan moeten de hoofdvraag **“In
 welke studenten stad zijn studenten het gelukkigst?“** beantwoorden. Dus
 moeten wij onderzoeken welke factoren geluk bepalen en welke er aan
 toevoegen of afnemen. Dit moeten wij doen door het lezen van literatuur
@@ -285,7 +274,7 @@ kunnen voor conflicten zorgen wanneer je plotjes maakt.)
 
 ### Doel van de dag
 
-**enquete vragen maken en structuur van de enquete bepalen**
+**enquête vragen maken en structuur van de enquête bepalen**
 
 Tasks
 
@@ -305,8 +294,8 @@ Questions on Happiness.
     beantwoorden. Dit doen we omdat het kan zijn dat de student tijdens
     de vragen gaat nadenken over dingen en dit kan invloed hebben op
     iemands geluk. Bijvoorbeeld een vraag over of iemand een goede
-    relatie met zijn ouders heeft zou negatieve heringeringen kunnen
-    oproepen waarmee ze de rest van de enquete mee kunnen zitten.
+    relatie met zijn ouders heeft zou negatieve herinneringen kunnen
+    oproepen waarmee ze de rest van de enquête mee kunnen zitten.
 
 -   Ben je gelukkig met je fysieke gesteldheid. De fysieke gesteldheid
     is per persoon anders qua invloed op het geluk. Wanneer we kijken
@@ -358,7 +347,7 @@ het geluk.
     opgeleid in het sociale vlak door bijvoorbeeld te gaan "socializing"
     er toch een verhoging in iemands geluk komt. Deze experimenten waren
     niet heel lang dus het is niet bewezen hiermee of dit een langdurig
-    effect is. Om deze reden nemen we deze vraag mee in onze enquete
+    effect is. Om deze reden nemen we deze vraag mee in onze enquête
     omdat een goede sociale omgeving en "socializing" dus
     (tijdelijk-)geluk kan veranderen.
 
@@ -389,11 +378,11 @@ het geluk.
     deze student woont.
 
 Het antwoorden van deze vragen moet op een bepaalde manier zodat hier
-een netjese grafiek uit kan worden gehaald. Ik heb aangegeven bij mijn
+een netjes grafiek uit kan worden gehaald. Ik heb aangegeven bij mijn
 groepsgenoot dat een cijfer van 0-5 of 0-10 goede opties zijn omdat deze
-bekend zijn en vaak worden gebruikt in enquetes die een duidelijke
+bekend zijn en vaak worden gebruikt in enquêtes die een duidelijke
 mening moeten weer geven. Ik heb met mijn teamgenoot het besproken en
-wij zijn uitgekomen op de 0-10 beantwoordings methoden. Dit omdat 0 = 0%
+wij zijn uitgekomen op de 0-10 beantwoording methoden. Dit omdat 0 = 0%
 en 10 = 100%.
 
 ### Protocol
@@ -417,13 +406,13 @@ beïnvloed door 1 bepaalde groep.
 
 ### Doel van de dag
 
-\*\*Posters ophangen in leiden\*
+**Posters ophangen in leiden**
 
 Tasks
 
 -   In de gebouwen van de Universiteit leiden, LUMC en de hogeschool van
     leiden posters ophangen
--   Mensen werven voor de enquetes
+-   Mensen werven voor de enquêtes
 -   Emails verzamelen
 
 Poster gemaakt door Storm ![Engelse versie van de
@@ -439,7 +428,7 @@ lipsius gebouw, we gingen elk gebouw af waar we 2-3 posters ophangen.
 Dit deden we in de mei vakantie. Wij denken echter dat dit niet een
 enorme invloed zou moeten hebben op hoeveel data we kunnen verkrijgen.
 Dit omdat de universiteiten niet aan de mei vakantie doen en het dus in
-elk universiteits gebouw waar we waren het druk is. Het hbo en mbo
+elk universiteit's gebouw waar we waren het druk is. Het hbo en mbo
 hebben wel deze vakantie maar ondanks dat zijn we wel binnen gelaten in
 het hbo gebouw en hebben wij hier ook 3 posters opgehangen.
 
@@ -453,8 +442,8 @@ nemen om onze enquête te beantwoorden.
 
 Bij de service balies hebben wij ook gevraagd of ze deze konden laten
 zien aan of ophangen. Dit kan echter niet maar ze gaven ons wel het idee
-meerdere keren om te emailen. Het emailen van de uni zelf, de
-facultiteit, studie & studenten verenigen.
+meerdere keren om te emailen. Het emailen van de universiteit zelf, de
+faculteit, studie & studenten verenigen.
 
 We zijn ook nog naar het LUMC gegaan omdat hier toch ook veel studenten
 komen hier hebben we maar 2 posters opgehangen omdat we niet het gehele
@@ -558,11 +547,18 @@ hbo’s en de universiteiten. De email is hier onder te vinden.
 
 ### Doel van de dag
 
-**Opzetten Algemene document en de data van die dag bekijken**
+**Opzetten Algemene document  + Emails verzamelen**
 
 Tasks
 
--   
+-   Emails verzamelen
+
+-   Starten algemene document
+
+Emails verzamelen van elke vereniging werd gedaan via de website utrecht
+studenten stad <https://utrechtstudentenstad.nl/studentenverenigingen>
+waar alle soorten vereniging zijn van gezelligheid tot
+studieverenigingen. De studieverenigingen zijn wij naar op zoek.
 
 ## 14-05-2024
 
@@ -1270,7 +1266,7 @@ ggplot(numerieke_data,
 
 ```
 
-Uit deze barplot is te zien dat het grootste aantal van onze antwoorden
+Uit deze bar plot is te zien dat het grootste aantal van onze antwoorden
 rond de 6 ligt dit is dus niet normaal verdeeld. een normaal verdeling
 met een schaal van 0-10 zou het grootste aantal antwoorden moeten liggen
 rond de 5. Dit komt hoogstwaarschijnlijk vanwege een tekort aan
@@ -1315,7 +1311,7 @@ for(i in 1:13) {
 
 df_shapiro <- data.frame(t(df_shapiro))
 
-rownames(df_shapiro) <- c("t-statistic", "p-waarde")
+rownames(df_shapiro) <- c("tstatistic", "pwaarde")
 
 colnames(df_shapiro) <- colnames(numerieke_data)
 
@@ -1329,6 +1325,27 @@ verdeeld is. Dit dat onze data niet normaal verdeeld is. Deze p-waarden
 vertellen ons ook dat wij onze hypothese moeten afwijzen, wat betekent
 dat er geen effect is. Dit is jammer, maar we kunnen ondanks dit nog wel
 naar andere onderwerpen kijken.
+
+De t-statistic geeft ons ook een W waarde. Deze loop van 0 tot 1,
+waarbij 1 betekent dat de data perfect normaal verdeeld is. voor de W
+waarde wordt over het algemeen de ondergrens van 0.90 gehanteerd. als de
+test statistiek W grote dan 0.90 is dan kan de data als normaal verdeeld
+beschouwd worden. Er kan een kans zijn dat de W waarde en de P waarde
+hun resultaten elkaar tegen spreken.
+
+
+```{r}
+p_waarde_data <- df_shapiro["pwaarde",]
+
+
+
+p_waarde_data <- data.frame(t(p_waarde_data))
+p_waarde_data[, "pwaarde"] <- as.numeric(p_waarde_data[, "pwaarde"])
+
+
+barplot(unlist(p_waarde_data)) 
+```
+er is te zien ook in deze bar plot dat er een groot verschil is tussen alle p waarden. Het is moeilijk om deze data netjes te laten zien maar ik wilde graag een grafisch beeld.
 
 ## 03-06-2024
 
