@@ -475,35 +475,34 @@ Tasks
 
 Vandaag zijn we in Utrecht. Hetzelfde protocol als in leiden is hier
 gevolgd. We zijn begonnen op de padualaan bij het gebouw van de
-hogeschool van utrecht. We gaan hier net als in leiden elk gebouw af en
-zoeken de poster borden op. We hebben nog aan de service balies gevraagt
+hogeschool van Utrecht. We gaan hier net als in leiden elk gebouw af en
+zoeken de poster borden op. We hebben nog aan de service balies gevraagd
 waar we de posters mogen neer hangen en dit verwees on weer naar de
 poster borden.
 
-In utrecht mogen wij ook in de studenten cafe's en de restauranten + de
-ub posters ophagen. Dit zijn plekken waar de studenten wat vaker met
+In Utrecht mogen wij ook in de studenten cafes en de restaurantjes + de
+ub posters ophangen. Dit zijn plekken waar de studenten wat vaker met
 andere dingen bezig zijn dan alleen focus op hun lessen waardoor wij
-verwachten dat hierdoor de enquetes meer worden gezien!
+verwachten dat hierdoor de enquêtes meer worden gezien!
 
 ## 08-05-2024
 
 ### Doel van de dag
 
-**Data bekijken + Email idee uitwerken**
+**Email idee uitwerken**
 
 Tasks
 
--   Data bekijken wat hebben we en hoeveel is genoeg
 -   Naar wie moeten de emails
 -   Email maken en in protocol zetten
 
-Tijdens het ophangen van de posters is ons het idee binnengeschoten om
+Tijdens het ophangen van de posters is ons het idee binnen geschoten om
 ook nog email's te sturen naar verschillende groepen. Hier onder vallen
 de universiteiten, Hbo's en mbo's email's zelf maar ook de studie
 verenigingen en misschien een paar studenten verenigingen ook de
 faculteiten.
 
-De email moet netjes en profesioneel zijn zodat dezelfde email naar
+De email moet netjes en professioneel zijn zodat dezelfde email naar
 iedereen kan worden gestuurd. Hierdoor krijg je geen conflicten in
 interpretatie.
 
@@ -512,12 +511,12 @@ interpretatie.
 Hallo, **insert naam**
 
 Wij Storm en Jarno zijn studenten aan de Hanze Hogeschool Groningen. Wij
-hebben een onderzoeks project waar wij kijken naar het geluk van
+hebben een onderzoek project waar wij kijken naar het geluk van
 studenten in verschillende studenten-steden. Wij sturen deze email om te
-vragen of het mogelijk is om de enquete van dit onderzoek in jullie app
-groep of via email te kunnen delen. De enquete is compleet anoniem. Het
+vragen of het mogelijk is om de enquête van dit onderzoek in jullie app
+groep of via email te kunnen delen. De enquête is compleet anoniem. Het
 moet een goed beeld kunnen schetsen over het algemene geluk van een
-student. Wij gaan met deze data uiteindelijk onze onderzoeks vraag
+student. Wij gaan met deze data uiteindelijk onze onderzoek vraag
 beantwoorden “In welke studenten stad zijn studenten het gelukkigst?”
 
 Alvast bedankt voor de hulp
@@ -527,7 +526,7 @@ Vriendelijke Groet
 Storm & Jarno, studenten Hanzehogeschool.
 
 Dit is de email en deze wordt ook nog een keer in het engels verstuurd
-indezelfde mail. Hiermee verwijzen we met een dikgedrukte zin **For
+in dezelfde mail. Hiermee verwijzen we met een vetgedrukte zin **For
 english look below**
 
 Ons nieuwe protocol ziet er dus ook anders uit omdat wij de email er bij
@@ -535,20 +534,20 @@ hebben gezet. deze ziet er nu zo uit
 
 ### protocol met email
 
-Door middel van een QR-code kan de student deze scannen en een google
+Door middel van een QR-code kan de student deze scannen en een Google
 form invullen met de vragen. De vragen hebben een schaal van 0-10
 waarbij 0 het slechtste is en 10 het beste. De flyers nemen de meters
 mee naar de Universitaire bibliotheken van de studenten campussen om
 zoveel mogelijk verschillende studenten te ondervragen.
 
 De enquête wordt ook op plekken rond de campus opgehangen. Dezelfde
-posters als die we aan de studenten laten zien. De link van de enquete
-zal eventueel nog worden gemailed naar studie’s / scholen zelf. Dit is
+posters als die we aan de studenten laten zien. De link van de enquête
+zal eventueel nog worden gemailed naar studies / scholen zelf. Dit is
 zodat we een groot genoege groep kunnen krijgen zodat er genoeg data is.
 Ook om te zorgen dat de populatie willekeurig is en niet zwaar wordt
-beinvloed door 1 bepaalde groep.
+beïnvloed door 1 bepaalde groep.
 
-Om extra mensen aan te spreken en zorgen dat de enquete nog verder wordt
+Om extra mensen aan te spreken en zorgen dat de enquête nog verder wordt
 verspreid. Dit doen we door emails te sturen naar verschillende
 studieverenigingen en studenten verenigingen met een link en een netjese
 email waarin staat wat dit onderzoek is, waarvoor en door wie. Daarnaast
@@ -563,13 +562,7 @@ hbo’s en de universiteiten. De email is hier onder te vinden.
 
 Tasks
 
--   Door middel van het kijken naar de gevonden literatuur vragen maken
--   Vragen onderbouwen met literatuur waarom dit een goede vraag is
--   Enquête structuur bedenken
 -   
-
-Wij maken gebruik van deze template omdat wij een professionele
-structuur willen weer geven in ons eindproduct.
 
 ## 14-05-2024
 
@@ -628,7 +621,7 @@ alle colom namen achter elkaar veranderen.
 colnames(student_hap_awn) <- c("Tijd", "Sekse", "Niveau", "Opl_jaar","Vakgebied", "Woonsituatie", "Stad", "Nationaal_Internationaal", "Gelovig", "Relatie_stat", "Happy_RN", "Fys_Happy", "Fys_import", "Cont_buiten_school", "Na_school_soc", "Ouder_relatie", "Woonsituatie_geluk", "Thuis_in_stad", "academische_pres", "Financiele_sit", "Geld_geluk", "Verd_mid_gebr", "drugs_alc_geluk", "Mental_health", "Happy_after_quest")
 
 # hier head ik weer onze data om te zien of de colom namen zijn veranderd
-head(student_hap_awn)
+head(student_hap_awn) 
 
 ```
 
@@ -761,7 +754,7 @@ ggplot(Relatie_stat_awn, aes(x = " ", y = "Antwoord Relatie status", fill = Rela
     theme_void()
 ```
 
-Bij de antwoorden voor of iemand wel of niet een relatie heeft, is er
+Bij de antwoorden voor of iemand wel of niet een releatie heeft, is er
 te zien dat er veel meer antwoorden zijn voor nee dan ja. Dit betekent
 dus dat we dus dat wij niet voor mensen wel in een relatie een goede
 conclusie kunnen geven omdat hier te weinig antwoorden voor zijn. Deze
@@ -816,7 +809,7 @@ zitten.
 ```{r}
 student_hap_awn_NUM <- select(student_hap_awn, c(Happy_RN,Fys_Happy,Fys_import, Cont_buiten_school,Na_school_soc,Ouder_relatie,Woonsituatie_geluk,Thuis_in_stad,academische_pres,Financiele_sit,Geld_geluk,drugs_alc_geluk,Mental_health,Happy_after_quest))
 
-head(student_hap_awn_NUM)
+head(student_hap_awn_NUM) 
 
 ```
 
@@ -826,10 +819,71 @@ waarschijnlijk gaan gebruiken zijn.
 
 -   Radarplot, Deze kan snel veel factoren laten zien en daaruit kan in
     een snelle blik al een mening of conclusie worden gevormd
+
+    ```{r}
+    # Create data: note in High school for Jonathan:
+    data <- as.data.frame(matrix( sample( 2:20 , 10 , replace=T) , ncol=10))
+    colnames(data) <- c("math" , "english" , "biology" , "music" , "R-coding", "data-viz" , "french" , "physic", "statistic", "sport" )
+     
+    # To use the fmsb package, I have to add 2 lines to the dataframe: the max and min of each topic to show on the plot!
+    data <- rbind(rep(20,10) , rep(0,10) , data)
+     
+    # Check your data, it has to look like this!
+    # head(data)
+
+    # Custom the radarChart !
+    radarchart( data  , axistype=1 , 
+     
+        #custom polygon
+        pcol=rgb(0.2,0.5,0.5,0.9) , pfcol=rgb(0.2,0.5,0.5,0.5) , plwd=4 , 
+     
+        #custom the grid
+        cglcol="grey", cglty=1, axislabcol="grey", caxislabels=seq(0,20,5), cglwd=0.8,
+     
+        #custom labels
+        vlcex=0.8 
+        )
+    # https://r-graph-gallery.com/142-basic-radar-chart.html dit voorbeeld is gehaald van de r-graph-gallery website.
+
+    ```
+
+    Hier is een voorbeeld voor hoe een Radarplot er uit ziet. Met deze
+    plot zijn meerdere factoren tegelijk te vergelijken. Dit is voor ons
+    handig omdat wij op verschillende factoren dingen hebben gevraagd.
+
 -   Scatterplot, Het scatter plot is handig om 2 groepen te vergelijken.
     In ons eind product willen we graag meerdere groepen met elkaar
     vergelijken. Dit zijn dan bijvoorbeeld sekse, Niveau, Opleidings
     jaar, Relatie status.
+
+    ```{r}
+    # basic scatterplot
+    ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width)) + 
+        geom_point()
+    ```
+
+    Hier is een voorbeeld van een scatterplot. Het is mooi te zien waar
+    data zich bevind. Het enigste nadeel aan deze plot is dat de dot's
+    elkaar ook kunnen overlappen. Hier is echter wel een oplossing door
+    jitter te gebruiken. jitter kan de dot's een klein beetje uit elkaar
+    zetten waardoor het originele resultaat zo goed mogelijk wordt
+    behouden.
+
+-   boxplot, De boxplot laat meerdere dingen zien dit zijn de mediaan,
+    De 25ste en 75ste percentiel, De maximum en de minimum en natuurlijk
+    de uitschieters. Deze dingen geven de lezer goede informatie over
+    wat er aan de hand is met de data.
+
+    ```{r}
+    ggplot(mtcars, aes(x=as.factor(cyl), y=mpg)) + 
+        stat_boxplot(geom = "errorbar",width = 0.25) +
+        geom_boxplot() + 
+        xlab("cyl")
+    ```
+
+    in Dit voorbeeld is dus duidelijk te zien dat er 3 cylinder typen
+    zijn. die worden vegeleken op mijl per gallon. er is mooi zien bij
+    de 8 cylinder dat er 2 uitschieters zijn.
 
 ```{r}
 
@@ -843,6 +897,8 @@ ggplot(Reactie_stad, aes(x = " ", y = "Antwoord per stad", fill = Stad)) +
     coord_polar(theta = "y") +
     scale_fill_brewer() +
     theme_void()
+
+
 ```
 
 Hier is te zien dat de ratio tussen de verschillende steden groot is.
@@ -904,9 +960,9 @@ head(gem_geluk)
 
 # Hier gebruik ik gg plot om een netjese boxplot te maken die de 95% mediaan en alles netjes laat zien zodat het goed is te zien wat het verschil in gemidelde geluk is per sekse
 ggplot(gem_geluk, aes(x = Sekse, y = average_col, fill = Sekse)) + 
-    geom_boxplot() +
     stat_boxplot(geom = "errorbar",
                width = 0.25) +
+    geom_boxplot() +
     ggtitle("Het gemidelde geluk per Sekse", subtitle = "(Lijn in het vierkant is het gemidelde)") 
 ```
 
@@ -1132,7 +1188,7 @@ gemiddelde en dat er weinig uitschieters of extreme waarden zijn.
 Wanneer de standaarddeviatie groot is, betekent dit dat de waarden
 verder liggen van het gemiddelde en dat er veel extreme waarden en of
 uitschieters zijn. Dit is belangrijk om te weten om te kunnen beoordelen
-of de gemiddelden betrouwbaar is en representatief.
+of de gemiddelden betrouwbaar is en representatief
 
 ```{r}
 #Deze functie berekent het gemiddelde binnen de 95% betrouwbaarheidsinterval
@@ -1205,29 +1261,28 @@ maken:
 
 ggplot(numerieke_data, 
        aes(x = Happy_RN )) +
-    ggtitle("Algemeen Geluk Studenten") +
-    ylab("Frequentie (Aantal Personen)") +
-    xlab("Algemeen Geluk") +
-    geom_histogram(bins= 20, binwidth= 0.7) +
-    labs(caption = "Figuur 1: Algemeen Geluk Studenten ") +
-    theme("minimal")
+      ggtitle("Algemeen Geluk Studenten") +
+      ylab("Frequentie (Aantal Personen)") +
+      xlab("Algemeen Geluk") +
+      geom_bar() +
+      labs(caption = "Figuur 1: Algemeen Geluk Studenten ") +
+      theme("minimal")
+
 ```
 
-Uit deze histogram is te zien dat het grootste aantal van onze
-antwoorden rond de 6 ligt dit is dus niet normaal verdeeld. een normaal
-verdeling met een schaal van 0-10 zou het grootste aantal antwoorden
-moeten liggen rond de 5. Dit komt hoogstwaarschijnlijk vanwege een
-tekort aan respondenten. We gaan echter wel wat meer doen om te kijken
-of dat daadwerkelijk zo is.
+Uit deze barplot is te zien dat het grootste aantal van onze antwoorden
+rond de 6 ligt dit is dus niet normaal verdeeld. een normaal verdeling
+met een schaal van 0-10 zou het grootste aantal antwoorden moeten liggen
+rond de 5. Dit komt hoogstwaarschijnlijk vanwege een tekort aan
+respondenten. We gaan echter wel wat meer doen om te kijken of dat
+daadwerkelijk zo is.
 
 **Shapiro Wilcoxon Test**
 
-Om  te kijken of onze data normaal verdeeld is, voeren we een
-shapiro wilk test uit. Deze test geeft ons een p-waarde, een p-waarde is een getal tussen de 0
-en 1. Met dit getal kan worden bepaald of een steekproefuitkomst statisch significant is.
-Wanneer iets "statistisch significant is betekent dit dat een gevonden resultaat (waarschijnlijk)
-niet op toeval berust. Wanneer de p-waarde kleiner is dan het gekozen significantieniveau is dus vasttestellen 
-of de gvonden uitkomst extreem genoeg is om de nulhypothese te verwerpen. in ons geval als de p-waarde niet \>0.05 is, betekent dat dat onze data normaal verdeeld is.
+Om goed te kijken of onze data normaal verdeeld is, voeren we een
+shapiro wilk test uit. Uit deze test krijgen we een p-waarde en een
+t-waarde. Als de p-waarde \>0.05 is, betekent dat dat onze data normaal
+verdeeld is.
 
 ```{r}
 #Voer een shapiro test uit op alle kolommen in de dataframe
@@ -1268,10 +1323,12 @@ df_shapiro
 ```
 
 Hierboven zie je de shapiro wilk test uitgevoerd op alle numerieke data.
-Als je alle kolommen in de rij van de p-waarde af gaat, is te zien dat
+Als je alle kolommen in de rij van de p-waarde af gaat, kan je zien dat
 geen enkele p-waarde \>0.05 is. Dit betekent dat onze data niet normaal
-verdeeld is.Deze p-waarden vertellen ons ook dat wij onze hypothese moeten afwijzen, wat betekent
-dat er geen effect is. Dit is jammer, maar we kunnen ondanks dit nog wel naar andere onderwerpen kijken.
+verdeeld is. Dit dat onze data niet normaal verdeeld is. Deze p-waarden
+vertellen ons ook dat wij onze hypothese moeten afwijzen, wat betekent
+dat er geen effect is. Dit is jammer, maar we kunnen ondanks dit nog wel
+naar andere onderwerpen kijken.
 
 ## 03-06-2024
 
@@ -1320,7 +1377,7 @@ van de student niet uit in welke stad deze studeert.
 ### nieuwe materialen lijst
 
 | Tool               | Referentie                                                | Versie                               | Waarom                                                                                                                                                                                       |
-|---------------|---------------|---------------|---------------------------|
+|------------------|------------------|------------------|-------------------|
 | Google forms       | <https://docs.google.com/forms/>                          |                                      | Gebruikt om een enquête te maken die gebruikers vriendelijk is en een netjes csv bestand geeft als output.                                                                                   |
 | Git                | <https://www.git-scm.com>                                 | git version 2.44.0                   | Git wordt gebruikt voor version control                                                                                                                                                      |
 | Github             | <http://github.com>                                       |                                      | De gehele data set, logboeken en protocol staan op github omdat dit een netjese en goed navigeerbare omgeving maakt zodat iemand ook alles in 1 keer kan downloaden en bekijken.             |
@@ -1336,6 +1393,26 @@ van de student niet uit in welke stad deze studeert.
 | Google Spreadsheet | <https://docs.google.com/spreadsheets/>                   |                                      | De antwoorden van de Google forms worden hier in een spreadsheet gezet en deze kan via een download knop omgezet worden in een csv file.                                                     |
 
 ### nieuwe plotjes gemaakt met data van het cbs
+
+**Data van het cbs**
+
+in overleg met verschillende leraren hebben wij besloten om de data van
+het cbs ook te gebruiken. Dit omdat het interessant is om onze
+resultaten in Groningen te vergelijken met de algemene resultaten van
+Nederland.
+
+De data laat het geluk zien van jongvolwassenen tussen de 18 en 26 jaar.
+dit is gemeten op een schaal van 0-100 waar 0 ongelukkig is en 100
+gelukkig. Dit
+[onderzoek](<https://www.cbs.nl/nl-nl/nieuws/2022/16/geluksgevoel-bij-jongvolwassenen-afgenomen>)
+heeft ons voorzien van de dataset.
+
+De data set is begonnen met meten in 1997 en de laatste meting komt uit
+2021. Er is niet duidelijk hoeveel personen gemeten zijn en welke
+factoren hun geluk beïnvloed dus wij gaan er van uit dat deze data op
+correcte manier is verzameld dit omdat het cbs een gerespecteerde bron
+is. Verder kunnen wij alleen ons algemene geluk vergelijken met deze
+data.
 
 ```{r}
 cbs_data_geluk <- read_csv("cbs_data_geluk.csv")
@@ -1360,7 +1437,14 @@ p_cbs
 ```
 
 hierin is het gemiddelde geluk van jongvolwassenen te zien tussen de 18
-en 25.
+en 25. dit is gemeten vanaf 1997 tot en met 2021 er is te zien dat er
+een dalende trend is. waar we voor 2015 vaak ruim boven de 8.75 zitten
+met de uitzondering van 2005. is het duidelijk dat er een negatieve
+trend ontstaat waarin 2020 en 2021 de laagste 2 gemiddelden worden
+gemeten. Dit is te verklaren door de corona crisis. Ondanks dat ik hier
+zeg er ontstaat een negatieve trend is het gemiddelde geluk nog steeds
+groter dan een 8/10 wat aangeeft dat de gemiddelde Nederlander wel
+gelukkig is.
 
 ```{r}
 Student_awn_data <- read.csv("Student_hap_awn_30_05.csv")
@@ -1391,14 +1475,33 @@ p <- ggplot() +
     facet_wrap(~Woonsituatie) +
     ggtitle("Scatterplot Uit- vs Thuiswonende studenten geluk", subtitle = "Donkerder = meerdere zelfde antwoorden") +
     theme_minimal()
-
 p
 ```
 
 Ik heb deze grafiek veranderd van een overlappende grafiek naar een
 facet wrap zodat het makkelijker te zien is. Voor dat dit was gedaan was
-er overlap waardoor er paarse dots onstonden die een verkeerd beeld
-gaven.
+er overlap waardoor er paarse dots ontstonden die een verkeerd beeld
+gaven. Wat te zien is het verschil in het gemiddelde geluk tussen de
+uitwonende en thuiswonende student te zien. Thuiswonende studenten zijn
+meer gemiddeld verdeeld echter zijn er 2 uitschieters. 1 die redelijk
+gelukkig was voor de enquête en na de enquête zich ongelukkig voelt de
+andere uitschieter is gelukkiger na de enquête.
+
+```{r}
+p_2 <- ggplot() + 
+    geom_point(data = woonsit_thuis, aes(x=Thuis_in_stad, y=Woonsituatie_geluk), color = "red", alpha = 0.6) +
+    geom_point(data = woonsit_uit, aes(x=Thuis_in_stad, y=Woonsituatie_geluk), color = "blue", alpha = 0.6) +
+    xlim(0, 10) +
+    ylim(0, 10) +
+    labs(color = "Woonsituatie") +
+    xlab("Geluk door Stad") +
+    ylab("Geluk Door woonsituatie")+
+    facet_wrap(~Woonsituatie) +
+    ggtitle("Scatterplot Uit- vs Thuiswonende studenten geluk", subtitle = "Donkerder = meerdere zelfde antwoorden") +
+    theme_minimal()
+p_2
+
+```
 
 ### readme
 
@@ -1416,7 +1519,7 @@ algemeen het gelukkigste zijn. en Anders sekse zijn het minst gelukkig.
 -   Een werkende OS
 
 | Tool                      | Referentie                                                                                         | Versie                               | Waarom                                                                                                                                                                                       |
-|----------------|----------------|----------------|-------------------------|
+|------------------|------------------|------------------|-------------------|
 | Google forms              | <https://docs.google.com/forms/>                                                                   |                                      | Gebruikt om een enquête te maken die gebruikers vriendelijk is en een netjes csv bestand geeft als output.                                                                                   |
 | Git                       | <https://www.git-scm.com>                                                                          | git version 2.44.0                   | Git wordt gebruikt voor version control                                                                                                                                                      |
 | Github                    | <http://github.com>                                                                                |                                      | De gehele data set, logboeken en protocol staan op github omdat dit een netjese en goed navigeerbare omgeving maakt zodat iemand ook alles in 1 keer kan downloaden en bekijken.             |
