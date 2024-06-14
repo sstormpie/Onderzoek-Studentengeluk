@@ -547,7 +547,7 @@ hbo’s en de universiteiten. De email is hier onder te vinden.
 
 ### Doel van de dag
 
-**Opzetten Algemene document  + Emails verzamelen**
+**Opzetten Algemene document + Emails verzamelen**
 
 Tasks
 
@@ -706,13 +706,13 @@ conclusie te trekken.
 ```{r}
 NatInt_awn <- select(student_hap_awn, c(Nationaal_Internationaal))
 
-ggplot(NatInt_awn, aes(x = " ", y = "Antwoord Nationaal of internationaal", fill = Nationaal_Internationaal)) +
+plot_14_05_natint <- ggplot(NatInt_awn, aes(x = " ", y = "Antwoord Nationaal of internationaal", fill = Nationaal_Internationaal)) +
     geom_col() + 
     coord_polar(theta = "y") +
     scale_fill_brewer() +
-    labs(caption = "Figuur 5:  Antwoord Nationaal of internationaal") +
     ggtitle(" Antwoord Nationaal of internationaal", subtitle = "antwoorden op 14-05-2024") +
     theme_void()
+plot_14_05_natint + labs(caption = "Figuur 5:  Antwoord Nationaal of internationaal")
 ```
 
 Bij de antwoorden tussen Nationaal en internationaal is er duidelijk te
@@ -884,7 +884,7 @@ waarschijnlijk gaan gebruiken zijn.
 ```{r}
 
 
-colnames(student_hap_awn) <- c("Tijd", "Sekse", "Niveau", "Opl_jaar","Vakgebied", "Woonsituatie", "Stad", "Nat_Int", "Gelovig", "Relatie_stat", "Happy_RN", "Fys_Happy", "Fys_import", "Cont_buiten_school", "Na_school_soc", "Ouder_relatie", "Woonsituatie_geluk", "Thuis_in_stad", "academische_pres", "Financiele_sit", "Geld_geluk", "Verd_mid_gebr", "drugs_alc_geluk", "Mental_health", "Happy_after_quest")
+colnames(student_hap_awn) <- c("Tijd", "Sekse", "Niveau", "Opl_jaar","Vakgebied", "Woonsituatie", "Stad", "Nationaal_Internationaal", "Gelovig", "Relatie_stat", "Happy_RN", "Fys_Happy", "Fys_import", "Cont_buiten_school", "Na_school_soc", "Ouder_relatie", "Woonsituatie_geluk", "Thuis_in_stad", "academische_pres", "Financiele_sit", "Geld_geluk", "Verd_mid_gebr", "drugs_alc_geluk", "Mental_health", "Happy_after_quest")
 
 Reactie_stad <- select(student_hap_awn, c(Stad))
 
@@ -904,8 +904,6 @@ enkele invulling.
 De mails die wij hebben verstuurd zijn aangekomen en wij hebben op
 bepaalde ook antwoorden gekregen dat deze zouden worden doorgestuurd en
 de correcte link en qr codes zouden worden verspreid.
-
-***INSERT FOTO EN DATA UIT MAILS***
 
 ## 28-05-2024
 
@@ -927,22 +925,39 @@ moment niet mogelijk om de gekozen hypthose te beantwoorden hier door
 moeten wij het algemene plan aan passen.
 
 ```{r}
-new_student_hap_awn <- read.csv("Student_hap_awn_30_05.csv")
+student_hap_awn_28_05 <- read.csv("Student_hap_awn_28_05.csv")
+
+colnames(student_hap_awn_28_05) <- c("Tijd", "Sekse", "Niveau", "Opl_jaar","Vakgebied", "Woonsituatie", "Stad", "Nationaal_Internationaal", "Gelovig", "Relatie_stat", "Happy_RN", "Fys_Happy", "Fys_import", "Cont_buiten_school", "Na_school_soc", "Ouder_relatie", "Woonsituatie_geluk", "Thuis_in_stad", "academische_pres", "Financiele_sit", "Geld_geluk", "Verd_mid_gebr", "drugs_alc_geluk", "Mental_health", "Happy_after_quest")
 
 nrow(student_hap_awn)
-nrow(new_student_hap_awn)
-
+nrow(student_hap_awn_28_05)
 
 ```
 
-dat betekent dat er 43 nieuwe antwoorden zijn binnen gekomen nadat de
+dat betekent dat er 29 nieuwe antwoorden zijn binnen gekomen nadat de
 mail is uitgestuurd. Hierdoor kunnen we nu echt een goede kijk nemen in
 de nieuwe data en een iets betere schatting maken van geluk tussen de
 studenten.
 
 ```{r}
+NatInt_awn <- select(student_hap_awn_28_05, c(Nationaal_Internationaal))
+
+plot_28_05_natint <- ggplot(NatInt_awn, aes(x = " ", y = "Antwoord Nationaal of internationaal", fill = Nationaal_Internationaal)) +
+    geom_col() + 
+    coord_polar(theta = "y") +
+    scale_fill_brewer() +
+    labs(caption = "Figuur 6:  Antwoord Nationaal of internationaal") +
+    ggtitle(" Antwoord Nationaal of internationaal", subtitle = "antwoorden op 14-05-2024") +
+    theme_void()
+
+combined_plots <- grid.arrange(plot_14_05_natint, plot_28_05_natint, ncol = 1)
+
+
+```
+
+```{r}
 #Hier maak ik verschillende variabelen aan die gemidelden opslaan
-gem_geluk <- student_hap_awn %>%
+gem_geluk <- student_hap_awn_28_05 %>%
     mutate(average_col = Happy_RN + Happy_after_quest)
 # de %>% zorgt dat ik in gem_geluk een mutatie kan maken, ik heb het geluk pre en after het beantwoorden van onze enquête. opgeteld en daarna gedeeld door 2 waardoor er een gemiddelde uitkomt voor elke student
 
@@ -963,13 +978,36 @@ ggplot(gem_geluk, aes(x = Sekse, y = average_col, fill = Sekse)) +
 ```
 
 Als we hier kijken zien we de verschillen in het gemiddelde geluk per
-sekse is het opmerkelijk om te zien dat vrouwen gemideld gelukkiger
+sekse is het opmerkelijk om te zien dat vrouwen gemiddeld gelukkiger
 zijn. ECHTER is ook te zien dat de Q1-Q3 van de mannen hoger ligt. er is
 wel duidelijk te zien dat mensen die zich anders identificeren toch wel
 het ongelukigste zijn.
 
 Verder hebben storm en ik beslist dat de dingen waar we nu verder in ons
 onderzoek op ingaan de factoren in de vragen zullen zijn.
+
+```{r}
+
+gem_geluk <- student_hap_awn_28_05 %>%
+    mutate(average_col = Happy_RN + Happy_after_quest)
+# de %>% zorgt dat ik in gem_geluk een mutatie kan maken, ik heb het geluk pre en after het beantwoorden van onze enquête. opgeteld en daarna gedeeld door 2 waardoor er een gemiddelde uitkomt voor elke student
+
+gem_geluk <- gem_geluk %>%
+    mutate(average_col = average_col / 2)
+
+# hier wil ik dat de gem geluk variabele nu alleen nog het gemiddelde geluk die in de average col staat en de sekse die er bij hoort zodat ik deze kan laten zien.
+gem_geluk <- select(gem_geluk, c(Niveau, average_col))
+
+
+# Hier gebruik ik gg plot om een netjese boxplot te maken die de 95% mediaan en alles netjes laat zien zodat het goed is te zien wat het verschil in gemidelde geluk is per sekse
+ggplot(gem_geluk, aes(x = Niveau, y = average_col, fill = Niveau)) + 
+    stat_boxplot(geom = "errorbar",
+               width = 0.25) +
+    theme(axis.text.x = element_text(angle = 45, hjust = 1)) + 
+    geom_boxplot() +
+    ggtitle("Het gemidelde geluk per Niveau", subtitle = "(Lijn in het vierkant is het gemidelde)") 
+
+```
 
 ## 30-05-2024
 
@@ -1333,7 +1371,6 @@ test statistiek W grote dan 0.90 is dan kan de data als normaal verdeeld
 beschouwd worden. Er kan een kans zijn dat de W waarde en de P waarde
 hun resultaten elkaar tegen spreken.
 
-
 ```{r}
 p_waarde_data <- df_shapiro["pwaarde",]
 
@@ -1345,7 +1382,10 @@ p_waarde_data[, "pwaarde"] <- as.numeric(p_waarde_data[, "pwaarde"])
 
 barplot(unlist(p_waarde_data)) 
 ```
-er is te zien ook in deze bar plot dat er een groot verschil is tussen alle p waarden. Het is moeilijk om deze data netjes te laten zien maar ik wilde graag een grafisch beeld.
+
+er is te zien ook in deze bar plot dat er een groot verschil is tussen
+alle p waarden. Het is moeilijk om deze data netjes te laten zien maar
+ik wilde graag een grafisch beeld.
 
 ## 03-06-2024
 
@@ -1421,7 +1461,7 @@ Nederland.
 De data laat het geluk zien van jongvolwassenen tussen de 18 en 26 jaar.
 dit is gemeten op een schaal van 0-100 waar 0 ongelukkig is en 100
 gelukkig. Dit
-[onderzoek](<https://www.cbs.nl/nl-nl/nieuws/2022/16/geluksgevoel-bij-jongvolwassenen-afgenomen>)
+[onderzoek](https://www.cbs.nl/nl-nl/nieuws/2022/16/geluksgevoel-bij-jongvolwassenen-afgenomen)
 heeft ons voorzien van de dataset.
 
 De data set is begonnen met meten in 1997 en de laatste meting komt uit
