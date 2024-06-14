@@ -24,10 +24,10 @@ library(gridExtra)
 ## tips
 
 algemene introductie mist Begin van de dag je doel al hebben en dat
-beschrijven per dag. Heel erg in de diepte gaan van hoe het process
-verloopt. *STAP BIJ STAP* Waarom, Hoe (zoektermen op googlescholar),
-Waarmee + uitkomst (critisch interpreteren - beschrijven van alles wat
-daarbij hoort) Beredeneringen om waarom je dit uitvoert op de manier
+beschrijven per dag. Heel erg in de diepte gaan van hoe het proces
+verloopt. *STAP BIJ STAP* Waarom, Hoe (zoekterm op googlescholar),
+Waarmee + uitkomst (kritisch interpreteren - beschrijven van alles wat
+daarbij hoort) Beredenering om waarom je dit uitvoert op de manier
 waarop je het doet. (gedachte gang) literatuur lijst + kleine
 samenvatting waarom hij wel geschikt is (laat dingen zien uit het
 artikel)
@@ -75,13 +75,6 @@ Groningen, Utrecht en Amsterdam.
 
 Het Doel van de dag is dus Redelijk behaald. De onderzoeksvraag is half
 gevonden maar moet nog worden uitgewerkt verder
-
-De Tasks
-
--   Team maken = Gedaan
--   De Vraag bedenken = Gedaan
--   De Vraag laten goedkeuren door 1 van de leraren = Half gedaan
--   Plan maken hoe en waarmee we het onderzoek gaan doen = nog niet af
 
 ## 23-04-2024
 
@@ -632,10 +625,10 @@ alle colom namen achter elkaar veranderen.
 
 ```{r}
 # Er is hier te zien dat de colnames dus in volgorde worden veranderd. 
-colnames(student_hap_awn) <- c("Tijd", "Sekse", "Niveau", "Opl_jaar","Vakgebied", "Woonsituatie", "Stad", "NatInt", "Gelovig", "Relatie_stat", "Happy_RN", "Fys_Happy", "Fys_import", "Cont_buiten_school", "Na_school_soc", "Ouder_relatie", "Woonsituatie_geluk", "Thuis_in_stad", "academische_pres", "Financiele_sit", "Geld_geluk", "Verd_mid_gebr", "drugs_alc_geluk", "Mental_health", "Happy_after_quest")
+colnames(student_hap_awn) <- c("Tijd", "Sekse", "Niveau", "Opl_jaar","Vakgebied", "Woonsituatie", "Stad", "Nationaal_Internationaal", "Gelovig", "Relatie_stat", "Happy_RN", "Fys_Happy", "Fys_import", "Cont_buiten_school", "Na_school_soc", "Ouder_relatie", "Woonsituatie_geluk", "Thuis_in_stad", "academische_pres", "Financiele_sit", "Geld_geluk", "Verd_mid_gebr", "drugs_alc_geluk", "Mental_health", "Happy_after_quest")
 
 # hier head ik weer onze data om te zien of de colom namen zijn veranderd
-student_hap_awn
+head(student_hap_awn)
 
 ```
 
@@ -722,9 +715,9 @@ vergelijken er voor beide genoeg antwoorden zijn om een redelijke
 conclusie te trekken.
 
 ```{r}
-NatInt_awn <- select(student_hap_awn, c(NatInt))
+NatInt_awn <- select(student_hap_awn, c(Nationaal_Internationaal))
 
-ggplot(NatInt_awn, aes(x = " ", y = "Antwoord Nationaal of internationaal", fill = NatInt)) +
+ggplot(NatInt_awn, aes(x = " ", y = "Antwoord Nationaal of internationaal", fill = Nationaal_Internationaal)) +
     geom_col() + 
     coord_polar(theta = "y") +
     scale_fill_brewer() +
@@ -768,7 +761,7 @@ ggplot(Relatie_stat_awn, aes(x = " ", y = "Antwoord Relatie status", fill = Rela
     theme_void()
 ```
 
-Bij de antwoorden voor of iemand wel of niet een releatie heeft, is er
+Bij de antwoorden voor of iemand wel of niet een relatie heeft, is er
 te zien dat er veel meer antwoorden zijn voor nee dan ja. Dit betekent
 dus dat we dus dat wij niet voor mensen wel in een relatie een goede
 conclusie kunnen geven omdat hier te weinig antwoorden voor zijn. Deze
@@ -823,7 +816,7 @@ zitten.
 ```{r}
 student_hap_awn_NUM <- select(student_hap_awn, c(Happy_RN,Fys_Happy,Fys_import, Cont_buiten_school,Na_school_soc,Ouder_relatie,Woonsituatie_geluk,Thuis_in_stad,academische_pres,Financiele_sit,Geld_geluk,drugs_alc_geluk,Mental_health,Happy_after_quest))
 
-student_hap_awn_NUM
+head(student_hap_awn_NUM)
 
 ```
 
@@ -841,7 +834,7 @@ waarschijnlijk gaan gebruiken zijn.
 ```{r}
 
 
-colnames(student_hap_awn) <- c("Tijd", "Sexe", "Niveau", "Opl_jaar","Vakgebied", "Woonsituatie", "Stad", "Nat_Int", "Gelovig", "Relatie_stat", "Happy_RN", "Fys_Happy", "Fys_import", "Cont_buiten_school", "Na_school_soc", "Ouder_relatie", "Woonsituatie_geluk", "Thuis_in_stad", "academische_pres", "Financiele_sit", "Geld_geluk", "Verd_mid_gebr", "drugs_alc_geluk", "Mental_health", "Happy_after_quest")
+colnames(student_hap_awn) <- c("Tijd", "Sekse", "Niveau", "Opl_jaar","Vakgebied", "Woonsituatie", "Stad", "Nat_Int", "Gelovig", "Relatie_stat", "Happy_RN", "Fys_Happy", "Fys_import", "Cont_buiten_school", "Na_school_soc", "Ouder_relatie", "Woonsituatie_geluk", "Thuis_in_stad", "academische_pres", "Financiele_sit", "Geld_geluk", "Verd_mid_gebr", "drugs_alc_geluk", "Mental_health", "Happy_after_quest")
 
 Reactie_stad <- select(student_hap_awn, c(Stad))
 
@@ -905,16 +898,16 @@ gem_geluk <- gem_geluk %>%
     mutate(average_col = average_col / 2)
 
 # hier wil ik dat de gem geluk variabele nu alleen nog het gemiddelde geluk die in de average col staat en de sekse die er bij hoort zodat ik deze kan laten zien.
-gem_geluk <- select(gem_geluk, c(Sexe, average_col))
+gem_geluk <- select(gem_geluk, c(Sekse, average_col))
 
 head(gem_geluk)
 
 # Hier gebruik ik gg plot om een netjese boxplot te maken die de 95% mediaan en alles netjes laat zien zodat het goed is te zien wat het verschil in gemidelde geluk is per sekse
-ggplot(gem_geluk, aes(x = Sexe, y = average_col, fill = Sexe)) + 
+ggplot(gem_geluk, aes(x = Sekse, y = average_col, fill = Sekse)) + 
     geom_boxplot() +
     stat_boxplot(geom = "errorbar",
                width = 0.25) +
-    ggtitle("Het gemidelde geluk per Sexe", subtitle = "(Lijn in het vierkant is het gemidelde)") 
+    ggtitle("Het gemidelde geluk per Sekse", subtitle = "(Lijn in het vierkant is het gemidelde)") 
 ```
 
 Als we hier kijken zien we de verschillen in het gemiddelde geluk per
@@ -1119,23 +1112,38 @@ Om eerst te kijken hoe onze data verspreid is, rekenen we het
 gemiddelde, 95% betrouwbaarheidsinterval en de standaard deviatie uit
 voor elk stuk numerieke data.\
 
-De 95 % betrouwbaarheid interval is belangrijk omdat het een bereik van
-waarden geeft waarbinnen wij verwachten dat de ware populatie parameter
-zit met een zekerheid van 95%. Het is nuttig omdat dit een idee geeft
-van de precisie van een schatting. Een breed interval wijst op een
-mindere schatting terwijl een smaller interval wijst op een
-nauwkeurigere schatting.
+*De 95 procent betrouwbaarheidsinterval* is belangrijk omdat het een
+bereik van waarden geeft waarbinnen we verwachten dat de ware
+populatieparameter met een zekerheid van 95 procent zit. Dit suggereert
+dat we 95% van de betrouwbaarheidsintervallen zouden bevatten van de
+werkelijke populatieparameter als we een groot aantal steekproeven
+zouden nemen en een betrouwbaarheidsinterval voor elke steekproef zouden
+berekenen. Het helpt ons te begrijpen hoe zeker we kunnen zijn over een
+geschat gemiddelde uit een geschatte waarde, net als het gemiddelde uit
+een steekproef, dus het is belangrijk. Hierdoor kunnen we bepalen of de
+informatie die we hebben verzameld betrouwbaar is.
+
+*De standaarddeviatie* geeft aan hoe verspreid de getallen zijn in onze
+dataset. Als de standaarddeviatie klein is, liggen de getallen dicht bij
+het gemiddelde, wat betekent dat de meeste waarden in deze meting
+ongeveer hetzelfde zijn of ongeveer hetzelfde zijn als het gemiddelde.
+Bovendien geeft dit aan dat er weinig afwijkingen zijn van het
+gemiddelde en dat er weinig uitschieters of extreme waarden zijn.
+Wanneer de standaarddeviatie groot is, betekent dit dat de waarden
+verder liggen van het gemiddelde en dat er veel extreme waarden en of
+uitschieters zijn. Dit is belangrijk om te weten om te kunnen beoordelen
+of de gemiddelden betrouwbaar is en representatief.
 
 ```{r}
 #Deze functie berekent het gemiddelde binnen de 95% betrouwbaarheidsinterval
 mean_BI <- function(lijst) {
-    y_av <- mean(lijst)
-    s <- sd(lijst)
-    n <- length(lijst)
-    s_av <- s / sqrt(n)
-    BI <- y_av + qt(c(0.025, 0.975), n-1) * s_av
+    y_av <- mean(lijst) #Bereken het gemidelde van de lijst
+    s <- sd(lijst) # bereken de standaarddeviatie van de lijst
+    n <- length(lijst) # Bereken het aantal elementen in de lijst
+    s_av <- s / sqrt(n) # Bereken de standaardfout van het gemiddelde
+    BI <- y_av + qt(c(0.025, 0.975), n-1) * s_av # Bereken het 95% BI
     
-    (cat(sprintf("Gemiddelde = %.1f, 95%% BI = [%.1f, %.1f] SD = %.1f\n", y_av, BI[1], BI[2], s))
+    (cat(sprintf("Gemiddelde = %.1f, 95%% BI = [%.1f, %.1f] SD = %.1f\n", y_av, BI[1], BI[2], s)) # Hier worden de resultaten geprint
 )
 }
 
@@ -1147,12 +1155,14 @@ c <- 1
 for (i in list) {
   print(colnames(numerieke_data[c]))
   mean_BI(i)
-  c <- c + 1
+  c <- c + 1 # verhoogt de teller zodat de volgende kolom wordt verwerkt
 }
 
 ```
 
-Zoals hierboven is te zien, is de data best wel verspreid.
+Hierboven is voor elke factor het gemiddelde gegeven. De twee punten in
+de betrouwbaarheids interval en de SD staat voor standaarddeviatie. Wat
+we hier uit kunnen halen is het volgende.
 
 **Het hoogste gemiddelde** komt uit de Cont_buiten_school ook wel
 sociaal contact buiten school. deze heeft gemiddeld een 8 wat er op
@@ -1176,10 +1186,6 @@ dat er een grote onzekerheid over de daadwerkelijke gemiddelde score.
 heeft een relatief smal 95% betrouwbaarheidsinterval van 7.7 - 8.3 (een
 verschil van 0.6 punten) wat zegt dat er een hogere precisie is van de
 schatting.
-
-*De standaarddeviatie geeft de mate van spreiding aan in bepaalde data.
-Het geeft aan hoezeer de geobserveerde waardes afwijken van het
-gemiddelde.*
 
 **Hoogste standaarddeviatie** komt uit drugs_alc_geluk met een
 standaarddeviatie van 2.7, wat zegt dat er veel variatie is in hoe
@@ -1216,10 +1222,12 @@ of dat daadwerkelijk zo is.
 
 **Shapiro Wilcoxon Test**
 
-Om goed te kijken of onze data normaal verdeeld is, voeren we een
-shapiro wilk test uit. Uit deze test krijgen we een p-waarde en een
-t-waarde. Als de p-waarde \>0.05 is, betekent dat dat onze data normaal
-verdeeld is.
+Om  te kijken of onze data normaal verdeeld is, voeren we een
+shapiro wilk test uit. Deze test geeft ons een p-waarde, een p-waarde is een getal tussen de 0
+en 1. Met dit getal kan worden bepaald of een steekproefuitkomst statisch significant is.
+Wanneer iets "statistisch significant is betekent dit dat een gevonden resultaat (waarschijnlijk)
+niet op toeval berust. Wanneer de p-waarde kleiner is dan het gekozen significantieniveau is dus vasttestellen 
+of de gvonden uitkomst extreem genoeg is om de nulhypothese te verwerpen. in ons geval als de p-waarde niet \>0.05 is, betekent dat dat onze data normaal verdeeld is.
 
 ```{r}
 #Voer een shapiro test uit op alle kolommen in de dataframe
@@ -1260,12 +1268,10 @@ df_shapiro
 ```
 
 Hierboven zie je de shapiro wilk test uitgevoerd op alle numerieke data.
-Als je alle kolommen in de rij van de p-waarde af gaat, kan je zien dat
+Als je alle kolommen in de rij van de p-waarde af gaat, is te zien dat
 geen enkele p-waarde \>0.05 is. Dit betekent dat onze data niet normaal
-verdeeld is. Dit dat onze data niet normaal verdeeld is. Deze p-waarden
-vertellen ons ook dat wij onze hyphothese moeten afwijzen, wat betekent
-dat er geen effect is. Dit is jammer, maar we kunnen ondanks dit nog wel
-naar andere onderwerpen kijken.
+verdeeld is.Deze p-waarden vertellen ons ook dat wij onze hypothese moeten afwijzen, wat betekent
+dat er geen effect is. Dit is jammer, maar we kunnen ondanks dit nog wel naar andere onderwerpen kijken.
 
 ## 03-06-2024
 
@@ -1314,7 +1320,7 @@ van de student niet uit in welke stad deze studeert.
 ### nieuwe materialen lijst
 
 | Tool               | Referentie                                                | Versie                               | Waarom                                                                                                                                                                                       |
-|--------------|--------------|--------------|-------------------------------|
+|---------------|---------------|---------------|---------------------------|
 | Google forms       | <https://docs.google.com/forms/>                          |                                      | Gebruikt om een enquête te maken die gebruikers vriendelijk is en een netjes csv bestand geeft als output.                                                                                   |
 | Git                | <https://www.git-scm.com>                                 | git version 2.44.0                   | Git wordt gebruikt voor version control                                                                                                                                                      |
 | Github             | <http://github.com>                                       |                                      | De gehele data set, logboeken en protocol staan op github omdat dit een netjese en goed navigeerbare omgeving maakt zodat iemand ook alles in 1 keer kan downloaden en bekijken.             |
@@ -1410,7 +1416,7 @@ algemeen het gelukkigste zijn. en Anders sekse zijn het minst gelukkig.
 -   Een werkende OS
 
 | Tool                      | Referentie                                                                                         | Versie                               | Waarom                                                                                                                                                                                       |
-|---------------|---------------|---------------|----------------------------|
+|----------------|----------------|----------------|-------------------------|
 | Google forms              | <https://docs.google.com/forms/>                                                                   |                                      | Gebruikt om een enquête te maken die gebruikers vriendelijk is en een netjes csv bestand geeft als output.                                                                                   |
 | Git                       | <https://www.git-scm.com>                                                                          | git version 2.44.0                   | Git wordt gebruikt voor version control                                                                                                                                                      |
 | Github                    | <http://github.com>                                                                                |                                      | De gehele data set, logboeken en protocol staan op github omdat dit een netjese en goed navigeerbare omgeving maakt zodat iemand ook alles in 1 keer kan downloaden en bekijken.             |
