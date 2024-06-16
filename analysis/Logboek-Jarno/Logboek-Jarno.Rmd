@@ -98,7 +98,7 @@ niet bepaald hoe gelukkig iemand is de algemene ervaring is dus het
 leidende.
 
 Nu gaan we kijken wat hebben we nodig en hoe gaan we deze vraag
-beantwoorden. Storm en ik hebben wat onderzoek methoden bekeken
+beantwoorden. Storm en ik hebben wat onderzoeksmethoden bekeken
 <https://www.scribbr.nl/category/onderzoeksmethoden/> (23-04-2024) deze
 website heeft ons een paar ideeën gegeven, ook hebben wij onze leraar
 gevraagd die met ons sparde met wat past De opties die er uitkwamen
@@ -379,7 +379,7 @@ het geluk.
     deze student woont.
 
 Het antwoorden van deze vragen moet op een bepaalde manier zodat hier
-een netjes grafiek uit kan worden gehaald. Ik heb aangegeven bij mijn
+een nette grafiek uit kan worden gehaald. Ik heb aangegeven bij mijn
 groepsgenoot dat een cijfer van 0-5 of 0-10 goede opties zijn omdat deze
 bekend zijn en vaak worden gebruikt in enquêtes die een duidelijke
 mening moeten weer geven. Ik heb met mijn teamgenoot het besproken en
@@ -634,7 +634,7 @@ Deze heeft verschillende dingen nodig
         in het document worden toegevoegd.
 
 Natuurlijk moet hier ook worden gelet op het taalgebruik. Dit moet op
-een wetenschappelijke manier. Er moet een woorden telling gedaan dat
+een wetenschappelijke manier. Er moet een woordentelling gedaan dat
 wordt gedaan met de volgende code.
 
 ```{r wordcount}
@@ -1159,7 +1159,7 @@ van thuiswonende tegenover het drugs gebruik van uitwonende.
 ```{r}
 
 
-ggplot(Drugs_gebruik_woonsit, aes(x=drugs_alc_geluk, y=drugs_alc_geluk)) +
+ggplot(Drugs_gebruik_woonsit, aes(x=drugs_alc_geluk, y=Verd_mid_gebr)) +
   geom_bar(stat = "identity") +
   xlim(0, 10) +
   ylab("Frequentie (Aantal Personen") +
@@ -1194,6 +1194,155 @@ gevoel krijgen van drugs en of alcohol gebruik. Echter vind ik zelf dat
 deze grafiek erg onduidelijk is en moeilijk is te lezen want de medianen
 komen op hetzelfde uit terwijl de Q1-Q3 van beide heel anders zijn. Deze
 zou ik dus niet in het einddocument zetten.
+
+We kunnen ook kijken naar alcohol en drugs gebruikt tussen de sekse.
+
+```{r}
+Drugs_gebruik_Sekse <- select(student_hap_awn_28_05,c(Sekse,Verd_mid_gebr,drugs_alc_geluk))
+
+Drugs_gebruik_Sekse <- Drugs_gebruik_Sekse %>%
+  mutate(Verd_mid_gebr = ifelse(Verd_mid_gebr == "Ja (Yes)", 1, 0))
+
+Drugs_gebruik_Sekse <- Drugs_gebruik_Sekse %>%
+  filter(Verd_mid_gebr != 0)
+
+
+ggplot(Drugs_gebruik_Sekse, aes(x=Sekse, y=Verd_mid_gebr, fill = Sekse)) +
+  geom_bar(stat = "identity") +
+  ylab("Drugs gebruik") + 
+  theme(legend.position="none")
+```
+
+Hier zijn de studenten die drugs gebruiken te zien per sekse. door
+weinig antwoorden van het anders sekse kunnen we deze niet meenemen in
+de vergelijking. De verdeling tussen de antwoorden van de man en vrouw
+zijn redelijk gelijk dus hier kunnen wij wel wat over zeggen. In deze
+bar plot is te zien dat vrouwen over het algemeen meer drugs en of
+alcohol gebruiken.
+
+```{r}
+ggplot(Drugs_gebruik_Sekse, aes(x=drugs_alc_geluk, y=Verd_mid_gebr)) +
+  geom_bar(stat = "identity") +
+  xlim(0, 10) +
+  ylab("Frequentie (Aantal Personen") +
+  xlab("Geluk's gevoel door gebruik Drugs en of alcohol") + 
+  facet_wrap(~Sekse)
+```
+
+Deze plot laat geen resultaten voor anders en geeft ons ook een error
+waar het bepaalde rijen verwijderd omdat hier geen resultaten in staan.
+Dus om deze reden kunnen hem niet gebruiken in ons eind product. Het is
+alsnog wel interessant hom hier naar te kijken. Het is wel te zien dat
+vrouwen zich gelukkiger gevoelen door het gebruik van Drugs en of
+alcohol.
+
+```{r}
+Relatie_ouder_28_05 <- select(student_hap_awn_28_05,c(Sekse,academische_pres,Ouder_relatie))
+
+ggplot(Relatie_ouder_28_05, aes(x=Ouder_relatie, y=academische_pres)) + 
+  xlim(0, 10) +
+  ylim(0, 10) +
+  xlab("Relatie met ouders") +
+  ylab("academische prestaties invloed op geluk") +
+  geom_jitter(width = 0.2, alpha = 0.5) + 
+  geom_point() + 
+  facet_wrap(~Sekse) +
+  theme(legend.position="none")
+```
+
+Deze grafiek vergelijkt de relatie met ouders met hoeveel de academische
+presestaties invloed heeft op het geluk va de student. Dit is een
+grafiek die niet heel goed is om meerdere redenen. De eerste reden is
+dat deze twee factoren niet relevant met elkaar zijn. De tweede reden is
+dat er geen duidelijk resultaat is.
+
+```{r}
+gem_geluk_28_05 <- gem_geluk
+
+Relatie_ouder_28_05 <- select(student_hap_awn_28_05,c(Sekse,academische_pres,Ouder_relatie))
+
+
+Relatie_ouder_28_05 <- Relatie_ouder_28_05 %>%
+  mutate(average_col = gem_geluk_28_05$average_col)
+
+
+ggplot(Relatie_ouder_28_05, aes(x=Ouder_relatie, y=average_col)) + 
+  xlim(0, 10) +
+  ylim(0, 10) +
+  xlab("Relatie met ouders") +
+  ylab("Geluk") +
+  geom_jitter(width = 0.2, alpha = 0.5) + 
+  geom_point() + 
+  facet_wrap(~Sekse) +
+  theme(legend.position="none")
+
+```
+
+In deze grafiek heb ik de relatie met ouders en het geluk van de
+studenten naast elkaar gezet. Dit heb ik vervolgens op sekse gesorteerd
+en hier een scatter plot mee gemaakt. Ik heb geom_jitter gebruikt omdat
+het voorkomt dat sommige dots elkaar overlappen. Er is bij vrouwen
+duidelijk te zien hoe beter de relatie met diegene zijn ouders is hoe
+gelukkiger ze zijn. Bij de mannen is deze trend ook licht te zien maar
+minder duidelijk. Bij de ander seksen is het heel duidelijk dat met een
+goede relatie ze gelukkiger zijn en met een matige relatie zijn 2
+ongelukkige mensen te zien.
+
+```{r}
+
+Relatie_ouder_28_05_table <- table(Relatie_ouder_28_05$average_col, Relatie_ouder_28_05$Ouder_relatie)
+
+chisq.test(Relatie_ouder_28_05_table)
+
+```
+
+De chi-kwadraattest kan verschillende hypothesen beoordelen. De
+null-hypothese deze zegt dat de twee variabelen individueel zijn en geen
+significante verbanden tonen. De alternatieve hypothese zegt dat de twee
+variabelen niet individueel zijn omdat er een significante correlatie
+is.\
+\
+De chi kwadraat teststatistiek ook wel X-squared is de som van de
+kwadraatverschillen tussen de verwachte en geobserveerde frequenties.
+Dit wordt dan gestandaardiseerd door verwachte frequenties. Dit
+statistiek is belangrijk om de volgende redenen. Het is een maat voor
+afwijking tussen waargenomen en verwachte frequenties, een hulpmiddel
+voor het toetsen van hypothesen en een basis voor het berekenen van de
+p-waarde. Dit geeft ons een begrip van zowel het statistisch
+significante effect als de vraag of we de null-hypothese moeten
+verwerpen.\
+\
+Het df staat voor vrijheidsgraden. Het wordt berekend door het aantal
+categorieën in de kruistabel te tellen. dit is meestal het geval bij een
+onafhankelijkheidstest. Het is belangrijk omdat het de verdeling van de
+Chi-kwadraat beïnvloedt. Dit beïnvloedt dan weer de berekening van onze
+p-waarde. De df is dus cruciaal omdat het de vorm van verdeling van de
+Chi-kwadraat en de interpretatie van de testresultaten bepalen. het kan
+dus ook helpen bij het bepalen of de waargenomen gegevens aanzienlijk
+verschillen van de verwachte waarden. In onze data is geen significante
+afwijking tussen de waargenomen en verwachte waarden. Aangezien een
+X-squared waarde van 110.78 (p-waarde 0.3307) normaal gesproken niet als
+significant wordt beschouwd bij 105 df.
+
+De p-waarde speelt een cruciale rol bij het beoordelen van statistische
+hypothesen. Deze variabele helpt bij het vinden van een acceptabele
+basis voor data. omdat het een objectieve maat geeft voor het variabele
+van de compatibiliteit van de data met de nulhypothese. Met behulp van
+de o-waarde kunnen onderzoekers bepalen of hun resultaten significant
+zijn en of de nulhypothese moet worden verworpen. Het is onmogelijk om
+de nulhypothese te ontdekken als de p-waarde groter is dan het
+significantie niveau, dat doorgaans 0,05 is. Dit geeft aan dat het
+bewijs onvoldoende is om tot de conclusie te komen dat er geen
+significant verband bestaat tussen variabelen. P-waarde =\< 0,05:
+Verwerpen de nulhypothese en komt tot de conclusie dat er een
+significant verband bestaat tussen de variabelen als de p-waarde kleiner
+is dan of gelijk is aan het significantie niveau. onze P-waarde is
+0.3307 dit is dus groter dan 0.05 waardoor wij niet slagen in de null
+hypothese te verwerpen.
+
+De conclusie uit deze data is dat er niet een grote connectie is tussen
+de variabelen academische prestatie en de relatie met een student zijn
+ouders.
 
 ## 30-05-2024
 
@@ -1408,7 +1557,7 @@ gemiddelde en dat er weinig uitschieters of extreme waarden zijn.
 Wanneer de standaarddeviatie groot is, betekent dit dat de waarden
 verder liggen van het gemiddelde en dat er veel extreme waarden en of
 uitschieters zijn. Dit is belangrijk om te weten om te kunnen beoordelen
-of de gemiddelden betrouwbaar is en representatief
+of de gemiddelden betrouwbaar en representatief zijn
 
 ```{r}
 #Deze functie berekent het gemiddelde binnen de 95% betrouwbaarheidsinterval
@@ -1715,6 +1864,7 @@ p <- ggplot() +
     labs(color = "Woonsituatie") +
     xlab("Geluk voor de enquête") +
     ylab("Geluk na de enquête")+
+    geom_jitter(width = 0.2, alpha = 0.5) + 
     facet_wrap(~Woonsituatie) +
     ggtitle("Scatterplot Uit- vs Thuiswonende studenten geluk", subtitle = "Donkerder = meerdere zelfde antwoorden") +
     theme_minimal()
@@ -1739,6 +1889,7 @@ p_2 <- ggplot() +
     labs(color = "Woonsituatie") +
     xlab("Geluk door Stad") +
     ylab("Geluk Door woonsituatie")+
+    geom_jitter(width = 0.2, alpha = 0.5) + 
     facet_wrap(~Woonsituatie) +
     ggtitle("Scatterplot Uit- vs Thuiswonende studenten geluk", subtitle = "Donkerder = meerdere zelfde antwoorden") +
     theme_minimal()
