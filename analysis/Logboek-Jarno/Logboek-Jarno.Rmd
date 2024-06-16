@@ -947,7 +947,7 @@ plot_28_05_natint <- ggplot(NatInt_awn, aes(x = " ", y = "Antwoord Nationaal of 
     coord_polar(theta = "y") +
     scale_fill_brewer() +
     labs(caption = "Figuur 6:  Antwoord Nationaal of internationaal") +
-    ggtitle(" Antwoord Nationaal of internationaal", subtitle = "antwoorden op 14-05-2024") +
+    ggtitle(" Antwoord Nationaal of internationaal", subtitle = "antwoorden op 28-05-2024") +
     theme_void()
 
 combined_plots <- grid.arrange(plot_14_05_natint, plot_28_05_natint, ncol = 1)
@@ -969,12 +969,12 @@ gem_geluk <- select(gem_geluk, c(Sekse, average_col))
 
 head(gem_geluk)
 
-# Hier gebruik ik gg plot om een netjese boxplot te maken die de 95% mediaan en alles netjes laat zien zodat het goed is te zien wat het verschil in gemidelde geluk is per sekse
+# Hier gebruik ik gg plot om een netjese boxplot te maken die de 95% mediaan en alles netjes laat zien zodat het goed is te zien wat het verschil in gemiddelde geluk is per sekse
 ggplot(gem_geluk, aes(x = Sekse, y = average_col, fill = Sekse)) + 
     stat_boxplot(geom = "errorbar",
                width = 0.25) +
     geom_boxplot() +
-    ggtitle("Het gemidelde geluk per Sekse", subtitle = "(Lijn in het vierkant is het gemidelde)") 
+    ggtitle("Het gemiddelde geluk per Sekse", subtitle = "(Lijn in het vierkant is het gemiddelde)") 
 ```
 
 Als we hier kijken zien we de verschillen in het gemiddelde geluk per
@@ -999,15 +999,95 @@ gem_geluk <- gem_geluk %>%
 gem_geluk <- select(gem_geluk, c(Niveau, average_col))
 
 
-# Hier gebruik ik gg plot om een netjese boxplot te maken die de 95% mediaan en alles netjes laat zien zodat het goed is te zien wat het verschil in gemidelde geluk is per sekse
+# Hier gebruik ik gg plot om een netjese boxplot te maken die de 95% mediaan en alles netjes laat zien zodat het goed is te zien wat het verschil in gemiddelde geluk is per sekse
 ggplot(gem_geluk, aes(x = Niveau, y = average_col, fill = Niveau)) + 
     stat_boxplot(geom = "errorbar",
                width = 0.25) +
     theme(axis.text.x = element_text(angle = 45, hjust = 1)) + 
     geom_boxplot() +
-    ggtitle("Het gemidelde geluk per Niveau", subtitle = "(Lijn in het vierkant is het gemidelde)") 
+    ggtitle("Het gemiddelde geluk per Niveau", subtitle = "(Lijn in het vierkant is het gemiddelde)") 
 
 ```
+
+In deze Grafiek is het volgende te zien er zijn 4 niveaus waar het
+gemiddeld gelukkigste niveau de masters studenten zijn. Dit is te zien
+aan de lijn in het groene blok. Deze ligt het hoogste van allemaal. De
+volgende dichtstbijzijnde zijn de Bachelor studenten aan de
+Universiteit. Opmerkelijk ook is een uitschieter bij de MBO studenten
+waar 1 iemand zwaar ongelukkig is. De HBO studenten hebben de meeste
+spreiding in hun antwoorden.
+
+```{r}
+Drugs_gebruik <- select(student_hap_awn_28_05,c(Niveau,Verd_mid_gebr,drugs_alc_geluk))
+
+Drugs_gebruik <- Drugs_gebruik %>%
+  mutate(Verd_mid_gebr = ifelse(Verd_mid_gebr == "Ja (Yes)", 1, 0))
+
+Drugs_gebruik_per_niveau <- Drugs_gebruik %>%
+  filter(Verd_mid_gebr != 0)
+
+# Barplot
+ggplot(Drugs_gebruik_per_niveau, aes(x=Niveau, y=Verd_mid_gebr, fill = Niveau)) +
+  geom_bar(stat = "identity") +
+  ylab("Drugs gebruik") + 
+  theme(legend.position="none")
+```
+Het is duidelijk te zien wie het meeste drugs gebruikt in onze data. Echter is dit niet betrouwbaar. Dit is omdat in onze data het grootste deel van onze antwoorden komt van hbo studenten. Wat zorgt voor een disproportionele weergave.
+
+```{r}
+woonsit_awn <- select(student_hap_awn_28_05, c(Woonsituatie))
+
+ggplot(woonsit_awn, aes(x = " ", y = "Antwoord per Woonsituatie", fill = Woonsituatie)) +
+    geom_col() + 
+    coord_polar(theta = "y") +
+    scale_fill_brewer() +
+    labs(caption = "Figuur 4: Antwoord per Woonsituatie") +
+    ggtitle("Antwoord per Woonsituatie", subtitle = "antwoorden op 28-05-2024") +
+    theme_void()
+```
+De antwoorden van Thuiswonende vergeleken met uitwonende zijn wel redelijk gelijk verdeeld. Hiervan kunnen we dus wel een mooi verschil maken.
+
+```{r}
+Drugs_gebruik_woonsit <- select(student_hap_awn_28_05,c(Woonsituatie,Verd_mid_gebr,drugs_alc_geluk))
+
+Drugs_gebruik_woonsit <- Drugs_gebruik_woonsit %>%
+  mutate(Verd_mid_gebr = ifelse(Verd_mid_gebr == "Ja (Yes)", 1, 0))
+
+Drugs_gebruik_woonsit <- Drugs_gebruik_woonsit %>%
+  filter(Verd_mid_gebr != 0)
+
+
+ggplot(Drugs_gebruik_woonsit, aes(x=Woonsituatie, y=Verd_mid_gebr, fill = Woonsituatie)) +
+  geom_bar(stat = "identity") +
+  ylab("Drugs gebruik") + 
+  theme(legend.position="none")
+
+```
+Er is niet een significant verschil te zien tussen het gebruik van drugs van thuiswonende tegenover het drugs gebruik van uitwonende.
+
+```{r}
+
+
+ggplot(Drugs_gebruik_woonsit, aes(x=drugs_alc_geluk, y=drugs_alc_geluk)) +
+  geom_bar(stat = "identity") +
+  xlim(0, 10) +
+  ylab("Frequentie (Aantal Personen") +
+  xlab("Geluk's gevoel door gebruik Drugs en of alcohol") + 
+  facet_wrap(~Woonsituatie)
+
+```
+Hier is het verschil in de verdeling mooi te zien. Er is te zien dat er een stijgende lijn is in de thuiswonende. Bij de uitwonende is het overal verdeeld met de meeste tussen de 5 en 7.5. Er kunnen meerdere redenen zijn waarom mensen geluk halen uit drugs en of alcohol. Dit kan zijn omdat de drugs hun mentale problemen onderdrukken. Ook kan er een sociaal onderdeel aan vast zitten. Een biertje doen op het teras met je vrienden kan ook voor geluk zorgen. Hierdoor zorgt alcohol dus indirect voor geluk omdat het een onderdeel is van het geheel met je vrienden praten en sociaal zijn. In het ergste geval halen mensen geluk uit de verdovende effecten van deze middelen.
+
+```{r}
+ggplot(Drugs_gebruik_woonsit, aes(x = drugs_alc_geluk, y = drugs_alc_geluk, fill = Woonsituatie)) +
+    ylab("Geluk's gevoel door gebruik Drugs en of alcohol") +
+    xlab(" ") + 
+    stat_boxplot(geom = "errorbar",
+               width = 0.25) +
+    theme(axis.text.x = element_text(angle = 45, hjust = 1)) + 
+    geom_boxplot() 
+```
+Ik probeer hier met een boxplot ook nog te laten zien of studenten geluk gevoel krijgen van drugs en of alcohol gebruik. Echter vind ik zelf dat deze grafiek erg onduidelijk is en moeilijk is te lezen want de medianen komen op hetzelfde uit terwijl de Q1-Q3 van beide heel anders zijn. Deze zou ik dus niet in het einddocument zetten.
 
 ## 30-05-2024
 
