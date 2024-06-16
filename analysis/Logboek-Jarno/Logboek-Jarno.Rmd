@@ -19,6 +19,7 @@ library(dplyr)
 library(pwr)
 library(tidyverse)
 library(gridExtra)
+library(devtools)
 ```
 
 ## 22-04-2024
@@ -474,6 +475,9 @@ ub posters ophangen. Dit zijn plekken waar de studenten wat vaker met
 andere dingen bezig zijn dan alleen focus op hun lessen waardoor wij
 verwachten dat hierdoor de enquêtes meer worden gezien!
 
+Uit eindelijk zijn er in elk gebouw van zowel de Universiteit als de
+Hogeschool een paar posters opgehangen.
+
 ## 08-05-2024
 
 ### Doel van de dag
@@ -532,8 +536,8 @@ zoveel mogelijk verschillende studenten te ondervragen.
 De enquête wordt ook op plekken rond de campus opgehangen. Dezelfde
 posters als die we aan de studenten laten zien. De link van de enquête
 zal eventueel nog worden gemailed naar studies / scholen zelf. Dit is
-zodat we een groot genoege groep kunnen krijgen zodat er genoeg data is.
-Ook om te zorgen dat de populatie willekeurig is en niet zwaar wordt
+zodat we een groot genoegen groep kunnen krijgen zodat er genoeg data
+is. Ook om te zorgen dat de populatie willekeurig is en niet zwaar wordt
 beïnvloed door 1 bepaalde groep.
 
 Om extra mensen aan te spreken en zorgen dat de enquête nog verder wordt
@@ -543,7 +547,7 @@ email waarin staat wat dit onderzoek is, waarvoor en door wie. Daarnaast
 sturen we het ook naar de mbo-scholen en de algemene kanalen van de
 hbo’s en de universiteiten. De email is hier onder te vinden.
 
-## 13-05-2024 !! BEWERKEN
+## 13-05-2024
 
 ### Doel van de dag
 
@@ -555,10 +559,89 @@ Tasks
 
 -   Starten algemene document
 
-Emails verzamelen van elke vereniging werd gedaan via de website utrecht
+Emails verzamelen van elke vereniging werd gedaan via de website Utrecht
 studenten stad <https://utrechtstudentenstad.nl/studentenverenigingen>
 waar alle soorten vereniging zijn van gezelligheid tot
 studieverenigingen. De studieverenigingen zijn wij naar op zoek.
+
+**Het algemene document**
+
+De leraar heeft ons voorzien van een bepaald template dat moet worden
+gevolgd.
+
+Deze heeft verschillende dingen nodig
+
+-   Een introductie
+
+    -   Hier moet de Waarom in staan die uitlegt waarom dit onderzoek
+        belangrijk is en wat het aan het toevoegt. Het moet de
+        achtergrond van je onderzoek uitleggen, Wat er al eerder
+        onderzocht is op dit vlak en wat er juist nog mist en welke
+        speciale technieken wij gebruikt hebben. Het einde van de
+        introductie bevat de doelstelling(en) van ons onderzoek, hoe wij
+        deze denken te gaan behalen en de aanpak. Eventueel kan je hier
+        ook de hypothese geven.
+
+-   Materialen & Methoden
+
+    -   Materialen: Hier moet instaan wat je hebt gebruikt, welke versie
+        je hebt gebruikt, een link waar dit is te downloaden of te
+        gebruiken, wat het doet en waarvoor wij het hebben gebruikt. Dit
+        zijn alle software tools, gebruikte bibliotheken/plugs en
+        externe programma's.
+
+    -   Methoden: Welke methodologieën met relevantie voor je project je
+        hebt gebruikt. het doel, de toepassing en welke software en
+        parameters zijn gebruikt. Eventueel kan er een flowchart worden
+        gemaakt. De statistische methoden zijn gebruikt zet je hier ook
+        neer. Wat heb je zelf in het kader van dit onderzoek ontwikkeld
+        aan methodologieën. Hier moeten de namen van de scripts en
+        programma's en waar deze te vinden zijn in repo staan.
+
+-   Resultaten
+
+    -   Hier worden de resultaten in logische volgorde gepresenteerd. er
+        moet een beschrijving zijn wat er te zien is en deze moet naar
+        het beantwoorden van de doelstelling toe werken. beschrijf
+        wanneer dit mogelijk is de logica van de keuze voor de
+        experimenten. In elke paragraaf worden de feitelijke conclusies
+        gegeven. Gebruik zo veel mogelijk figuren om je informatie uit
+        je resultaten over te brengen. Gebruik tabellen wanneer figuren
+        minder geschikt zijn. Deze worden in de tekst besproken en de
+        belangrijkste aspecten worden hier toegelicht. Geef tabellen
+        bovenaan een titel en bijschrift die de inhoud beschrijft en
+        onderaan voetnoten die kolomnamen of specifieke waardes
+        verklaren.
+
+-   Discussie en Conclusies
+
+    -   Formuleer je conclusie door eerst in te zoomen op je eigen data
+        en daarna uit te zoomen. Zoom in door je resultaten samen te
+        vatten. Zoom uit om de waarde van je werk te beoordelen, door je
+        bijvoorbeeld de volgende vragen te stellen: Kunnen mijn
+        resultaten gebruikt worden in het werkveld? Wat betekenen ze
+        voor het werkveld? en is mijn data betrouwbaar?\
+        Bespreek de resultaten zodanig dat je ze ter discussie stelt,
+        wees kritisch. Vergelijk je resultaten met de literatuur of
+        eerder ontwikkelde data. Geef aanbevelingen voor een vervolg en
+        staaf je aanbevelingen door de impact op wetenschappelijk of
+        maatschappelijk vlak te beschrijven. Kom ten slotte altijd terug
+        op de doelstelling (en hypothesen).
+
+-   Referenties
+
+    -   Deze worden in een bib file toegevoegd waardoor ze automatisch
+        in het document worden toegevoegd.
+
+Natuurlijk moet hier ook worden gelet op het taalgebruik. Dit moet op
+een wetenschappelijke manier. Er moet een woorden telling gedaan dat
+wordt gedaan met de volgende code.
+
+```{r wordcount}
+#install.packages(devtools)
+#devtools::install_github("benmarwick/wordcountaddin", type = "source", dependencies = TRUE)
+wordcountaddin:::text_stats()
+```
 
 ## 14-05-2024
 
@@ -585,7 +668,7 @@ klasgenoten gevraagd of deze ook de enquête zouden willen invullen. Dit
 hebben zowel mondeling als op onze klassen discord gevraagd.
 
 De data inlezen en bekijken. Wanneer we naar de Google forms gaan is er
-een knop met "Bekijk in spreadsheets" Deze knop opent dan de google
+een knop met "Bekijk in spreadsheets" Deze knop opent dan de Google
 spreadsheet app met alle data van de vragen. Hier in click ik op de
 download knop en worden meerdere opties gegeven voor wat voor document
 ik graag wil hebben. Uit deze check bleek dat we maar 7 antwoorden
@@ -596,27 +679,26 @@ vraag aan of de klas deze zouden willen invullen.
 # hier laad ik onze csv file in een variable genaamd student_hap_awn
 student_hap_awn <- read.csv("student_hap_awn.csv")
 
-# hier gebruik ik de "head()" command om te kijken of de juiste data typen er in zitten en de collom namen te controleren
+# hier gebruik ik de "head()" command om te kijken of de juiste data typen er in zitten en de kolom  namen te controleren
 head(student_hap_awn)
 
 ```
 
-Nu we de data bekijken is te zien dat de collom namen heel lang zijn.
-Dit is niet handig om mee te werken wanneer de data moet worden
-verwerkt. Dit heeft meerdere redenen maar om het in het kort te zeggen.
-De collom namen worden soms weer gegeven op de grafiek en dit kan dus
-voor conflict zorgen als ze er zo uit zien en voor ons gemak om mee te
-werken is het moeilijk om constant deze lange strings met punten in te
-typen.
+Nu we de data bekijken is te zien dat de kolom namen heel lang zijn. Dit
+is niet handig om mee te werken wanneer de data moet worden verwerkt.
+Dit heeft meerdere redenen maar om het in het kort te zeggen. De kolom
+namen worden soms weer gegeven op de grafiek en dit kan dus voor
+conflict zorgen als ze er zo uit zien en voor ons gemak om mee te werken
+is het moeilijk om constant deze lange strings met punten in te typen.
 
-Hierom ga ik de colom namen aan passen met colnames() deze functie kan
-alle colom namen achter elkaar veranderen.
+Hierom ga ik de kolom namen aan passen met colnames() deze functie kan
+alle kolom namen achter elkaar veranderen.
 
 ```{r}
 # Er is hier te zien dat de colnames dus in volgorde worden veranderd. 
 colnames(student_hap_awn) <- c("Tijd", "Sekse", "Niveau", "Opl_jaar","Vakgebied", "Woonsituatie", "Stad", "Nationaal_Internationaal", "Gelovig", "Relatie_stat", "Happy_RN", "Fys_Happy", "Fys_import", "Cont_buiten_school", "Na_school_soc", "Ouder_relatie", "Woonsituatie_geluk", "Thuis_in_stad", "academische_pres", "Financiele_sit", "Geld_geluk", "Verd_mid_gebr", "drugs_alc_geluk", "Mental_health", "Happy_after_quest")
 
-# hier head ik weer onze data om te zien of de colom namen zijn veranderd
+# hier head ik weer onze data om te zien of de kolom  namen zijn veranderd
 head(student_hap_awn) 
 
 ```
@@ -1032,7 +1114,11 @@ ggplot(Drugs_gebruik_per_niveau, aes(x=Niveau, y=Verd_mid_gebr, fill = Niveau)) 
   ylab("Drugs gebruik") + 
   theme(legend.position="none")
 ```
-Het is duidelijk te zien wie het meeste drugs gebruikt in onze data. Echter is dit niet betrouwbaar. Dit is omdat in onze data het grootste deel van onze antwoorden komt van hbo studenten. Wat zorgt voor een disproportionele weergave.
+
+Het is duidelijk te zien wie het meeste drugs gebruikt in onze data.
+Echter is dit niet betrouwbaar. Dit is omdat in onze data het grootste
+deel van onze antwoorden komt van hbo studenten. Wat zorgt voor een
+disproportionele weergave.
 
 ```{r}
 woonsit_awn <- select(student_hap_awn_28_05, c(Woonsituatie))
@@ -1045,7 +1131,10 @@ ggplot(woonsit_awn, aes(x = " ", y = "Antwoord per Woonsituatie", fill = Woonsit
     ggtitle("Antwoord per Woonsituatie", subtitle = "antwoorden op 28-05-2024") +
     theme_void()
 ```
-De antwoorden van Thuiswonende vergeleken met uitwonende zijn wel redelijk gelijk verdeeld. Hiervan kunnen we dus wel een mooi verschil maken.
+
+De antwoorden van Thuiswonende vergeleken met uitwonende zijn wel
+redelijk gelijk verdeeld. Hiervan kunnen we dus wel een mooi verschil
+maken.
 
 ```{r}
 Drugs_gebruik_woonsit <- select(student_hap_awn_28_05,c(Woonsituatie,Verd_mid_gebr,drugs_alc_geluk))
@@ -1063,7 +1152,9 @@ ggplot(Drugs_gebruik_woonsit, aes(x=Woonsituatie, y=Verd_mid_gebr, fill = Woonsi
   theme(legend.position="none")
 
 ```
-Er is niet een significant verschil te zien tussen het gebruik van drugs van thuiswonende tegenover het drugs gebruik van uitwonende.
+
+Er is niet een significant verschil te zien tussen het gebruik van drugs
+van thuiswonende tegenover het drugs gebruik van uitwonende.
 
 ```{r}
 
@@ -1076,7 +1167,17 @@ ggplot(Drugs_gebruik_woonsit, aes(x=drugs_alc_geluk, y=drugs_alc_geluk)) +
   facet_wrap(~Woonsituatie)
 
 ```
-Hier is het verschil in de verdeling mooi te zien. Er is te zien dat er een stijgende lijn is in de thuiswonende. Bij de uitwonende is het overal verdeeld met de meeste tussen de 5 en 7.5. Er kunnen meerdere redenen zijn waarom mensen geluk halen uit drugs en of alcohol. Dit kan zijn omdat de drugs hun mentale problemen onderdrukken. Ook kan er een sociaal onderdeel aan vast zitten. Een biertje doen op het teras met je vrienden kan ook voor geluk zorgen. Hierdoor zorgt alcohol dus indirect voor geluk omdat het een onderdeel is van het geheel met je vrienden praten en sociaal zijn. In het ergste geval halen mensen geluk uit de verdovende effecten van deze middelen.
+
+Hier is het verschil in de verdeling mooi te zien. Er is te zien dat er
+een stijgende lijn is in de thuiswonende. Bij de uitwonende is het
+overal verdeeld met de meeste tussen de 5 en 7.5. Er kunnen meerdere
+redenen zijn waarom mensen geluk halen uit drugs en of alcohol. Dit kan
+zijn omdat de drugs hun mentale problemen onderdrukken. Ook kan er een
+sociaal onderdeel aan vast zitten. Een biertje doen op het teras met je
+vrienden kan ook voor geluk zorgen. Hierdoor zorgt alcohol dus indirect
+voor geluk omdat het een onderdeel is van het geheel met je vrienden
+praten en sociaal zijn. In het ergste geval halen mensen geluk uit de
+verdovende effecten van deze middelen.
 
 ```{r}
 ggplot(Drugs_gebruik_woonsit, aes(x = drugs_alc_geluk, y = drugs_alc_geluk, fill = Woonsituatie)) +
@@ -1087,7 +1188,12 @@ ggplot(Drugs_gebruik_woonsit, aes(x = drugs_alc_geluk, y = drugs_alc_geluk, fill
     theme(axis.text.x = element_text(angle = 45, hjust = 1)) + 
     geom_boxplot() 
 ```
-Ik probeer hier met een boxplot ook nog te laten zien of studenten geluk gevoel krijgen van drugs en of alcohol gebruik. Echter vind ik zelf dat deze grafiek erg onduidelijk is en moeilijk is te lezen want de medianen komen op hetzelfde uit terwijl de Q1-Q3 van beide heel anders zijn. Deze zou ik dus niet in het einddocument zetten.
+
+Ik probeer hier met een boxplot ook nog te laten zien of studenten geluk
+gevoel krijgen van drugs en of alcohol gebruik. Echter vind ik zelf dat
+deze grafiek erg onduidelijk is en moeilijk is te lezen want de medianen
+komen op hetzelfde uit terwijl de Q1-Q3 van beide heel anders zijn. Deze
+zou ik dus niet in het einddocument zetten.
 
 ## 30-05-2024
 
