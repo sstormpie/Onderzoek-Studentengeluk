@@ -700,16 +700,20 @@ colnames(student_hap_awn) <- c("Tijd", "Sekse", "Niveau", "Opl_jaar","Vakgebied"
 
 # hier head ik weer onze data om te zien of de kolom  namen zijn veranderd
 head(student_hap_awn) 
+nrow(student_hap_awn)
 
 ```
 
 Nu is de data makkelijker te lezen met de afkortingen. We zien dat de
-tijd tussen de eerste 6 antwoordde vrij significant is. Deze antwoorden
-komen ook allemaal uit Groningen. Dit betekent voor ons dat de Posters
-die zijn opgehangen in leiden en Utrecht geen effect hebben gehad en ons
-geen beantwoorde enquêtes heeft gegeven. Wij gaan dus nog meer emails
-sturen en op andere manieren mensen proberen te bereiken. Dit zou via
-sociale media kunnen of groepschats van studenten verenigingen.
+tijd tussen de eerste 6 antwoordde vrij significant is. Dit is te zien
+door te kijken naar de head van onze data. Hierin is in de tijd kolom te
+zien dat de eerste 6 antwoordde verspeid zijn over 15 dagen. Deze
+antwoorden komen ook allemaal uit Groningen. Dit betekent voor ons dat
+de posters die zijn opgehangen in Leiden en Utrecht geen effect hebben
+gehad en ons geen beantwoorde enquêtes heeft gegeven. Wij gaan dus nog
+meer emails sturen en op andere manieren mensen proberen te bereiken.
+Dit zou via sociale media kunnen of groepschats van studenten
+verenigingen.
 
 ```{r}
 reactie_stad <- select(student_hap_awn, c(Stad))
@@ -837,6 +841,33 @@ te zien dat er veel meer antwoorden zijn voor nee dan ja. Dit betekent
 dus dat we dus dat wij niet voor mensen wel in een relatie een goede
 conclusie kunnen geven omdat hier te weinig antwoorden voor zijn. Deze
 factor is dus nu niet heel handig om mee te nemen in het eind product.
+
+**Power-analyse**
+Een power-analyse is een statistische methode die gebruikt wordt om verschillende aspecten van een onderzoek te bepalen die belangrijk zijn. Het kan bijvoorbeeld gebruikt worden om de steekproef grote te bepalen. Het beperken van type 1 en type 2 fouten. Een type 1 fout is het vinden van een onterecht effect, een type 2 fout is het niet vinden van een echt effect. Dus het draagt bij aan de betrouwbaarheid en validiteit van de onderzoeksresultaten.
+
+Er zijn verschillende dingen nodig om een power analyse te doen
+sig.level deze geeft de waarschijnlijkheid op het afwijzen van de nul hypothese wanneer het waar is. Ik heb hier 0.05 gebruikt omdat dit de meest standaard gebruikte invulling is.
+
+Power, is de kans van het correct afwijzen van de null hypothese wanneer het niet waar is. hoe hoger de power wordt gezet hoe minder het risico op een type 2 error bij ons is deze op 0.8 gezet omdat dit weer een standaard niveau is. voor kritische studies wordt 0.9 gebruikt maar hoe hoger de power hoe hoger de sample grote
+
+d is een maat die zegt hoe groot het verschil is tussen de gemiddelde waarden van twee groepen. Het doet dit door het verschil te meten in termen van standaarddeviaties. Dit helpt ons om te begrijpen hoe sterk of groot het waargenomen effect is
+
+N = onze sample grote. Dit is de groep van geobserveerde personen.
+
+
+```{r}
+#power test
+
+power1 <- pwr.t.test(sig.level = 0.05, power = 0.8, n = 17, alternative = "two.sided")
+power2 <-  pwr.t.test(d = 0.5, sig.level = 0.05, power = 0.8 , alternative = "two.sided")
+power1
+power2
+```
+ik heb bij n 17 ingevuld omdat wij 33 resultaten totaal hebben en ik ga hiermee alleen in deze analyse er van uit dat we 2 groepen hebben van elk 17 personen ik kon niet namelijk halve personen meten.
+
+Uit de power1 is het volgende te halen de d = 0.9910032 wat zegt dat met de hoeveelheid kandidaten dat we nu hebben er een groot verschil is tussen de groepen in onze 
+
+uit de power2 komt uit dat als wij 2 even groepen willen vergelijken hebben wij voor een medium effect level van d = 0.5, een power van 0.8 en een sig level van 0,05 hebben wij ongeveer 64 personen per groep nodig dus ongeveer 128 personen in totaal.
 
 ## 15-05-2024
 
@@ -1769,7 +1800,7 @@ van de student niet uit in welke stad deze studeert.
 ### nieuwe materialen lijst
 
 | Tool               | Referentie                                                | Versie                               | Waarom                                                                                                                                                                                       |
-|------------------|------------------|------------------|-------------------|
+|--------------|--------------|--------------|-------------------------------|
 | Google forms       | <https://docs.google.com/forms/>                          |                                      | Gebruikt om een enquête te maken die gebruikers vriendelijk is en een netjes csv bestand geeft als output.                                                                                   |
 | Git                | <https://www.git-scm.com>                                 | git version 2.44.0                   | Git wordt gebruikt voor version control                                                                                                                                                      |
 | Github             | <http://github.com>                                       |                                      | De gehele data set, logboeken en protocol staan op github omdat dit een netjese en goed navigeerbare omgeving maakt zodat iemand ook alles in 1 keer kan downloaden en bekijken.             |
@@ -1913,7 +1944,7 @@ algemeen het gelukkigste zijn. en Anders sekse zijn het minst gelukkig.
 -   Een werkende OS
 
 | Tool                      | Referentie                                                                                         | Versie                               | Waarom                                                                                                                                                                                       |
-|------------------|------------------|------------------|-------------------|
+|---------------|---------------|---------------|----------------------------|
 | Google forms              | <https://docs.google.com/forms/>                                                                   |                                      | Gebruikt om een enquête te maken die gebruikers vriendelijk is en een netjes csv bestand geeft als output.                                                                                   |
 | Git                       | <https://www.git-scm.com>                                                                          | git version 2.44.0                   | Git wordt gebruikt voor version control                                                                                                                                                      |
 | Github                    | <http://github.com>                                                                                |                                      | De gehele data set, logboeken en protocol staan op github omdat dit een netjese en goed navigeerbare omgeving maakt zodat iemand ook alles in 1 keer kan downloaden en bekijken.             |
