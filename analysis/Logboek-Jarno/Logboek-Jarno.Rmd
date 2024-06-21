@@ -1518,7 +1518,7 @@ heb ik een link gegeven en een versie of datum wanneer dit nodig is.
 
 Student_awn_data_30_05 <- read.csv("Student_hap_awn_30_05.csv")
 
-colnames(Student_awn_data_30_05) <- c("Tijd", "Sekse", "Niveau", "Opl_jaar","Vakgebied", "Woonsituatie", "Stad", "Nat_Int", "Gelovig", "Relatie_stat", "Happy_RN", "Fys_Happy", "Fys_import", "Cont_buiten_school", "Na_school_soc", "Ouder_relatie", "Woonsituatie_geluk", "Thuis_in_stad", "academische_pres", "Financiele_sit", "Geld_geluk", "Verd_mid_gebr", "drugs_alc_geluk", "Mental_health", "Happy_after_quest")
+colnames(Student_awn_data_30_05) <- c("Tijd", "Sekse", "Niveau", "Opl_jaar","Vakgebied", "Woonsituatie", "Stad", "Nationaal_Internationaal", "Gelovig", "Relatie_stat", "Happy_RN", "Fys_Happy", "Fys_import", "Cont_buiten_school", "Na_school_soc", "Ouder_relatie", "Woonsituatie_geluk", "Thuis_in_stad", "academische_pres", "Financiele_sit", "Geld_geluk", "Verd_mid_gebr", "drugs_alc_geluk", "Mental_health", "Happy_after_quest")
 
 #Maak een aparte vector met alle numerieke data
 numerieke_data <- select(Student_awn_data_30_05, c(11:15, 17:21, 23:25))
@@ -1561,6 +1561,137 @@ Dit is ook nog nadat wij Utrecht hebben gemailed en reacties van
 verschillende instellingen hebben gekregen. Het ziet er ook naar uit dat
 het deel van de antwoorden uit Groningen alleen maar groter is geworden.
 Waardoor onze onderzoeksvraag heel moeilijk wordt om te beantwoorden.
+
+```{r}
+#elke catagorie bekijken of deze handig is te gebruiken
+
+sekse_awn_30_05 <- select(Student_awn_data_30_05, c(Sekse))
+
+ggplot(sekse_awn_30_05, aes(x = " ", y = "Antwoord per stad", fill = Sekse)) +
+    geom_col() + 
+    coord_polar(theta = "y") +
+    scale_fill_brewer() +
+    labs(caption = "Figuur 2: Antwoord per Sekse") +
+    ggtitle("Antwoord per sekse", subtitle = "antwoorden op 30-05-2024") +
+    theme_void()
+```
+In deze plot is het verschil in antwoorden te zien tussen mannen en vrouwen.
+Er is te zien dat er een redelijk even verderling is in antwoordent tussen
+mannen en vrouwen, tussen deze twee groepen kunnen wij dus verschillende factoren
+vergelijken. Anders sekse heeft bijna geen antwoorden dus deze laten wij er wel
+bij zien maar hier kunnen wij geen conclusies voor geven.
+
+```{r}
+vakgebied_awn_30_05 <- select(Student_awn_data_30_05, c(Vakgebied))
+
+ggplot(vakgebied_awn_30_05, aes(x = " ", y = "Antwoord per Vakgebied", fill = Vakgebied)) +
+    geom_col() + 
+    coord_polar(theta = "y") +
+    scale_fill_brewer() +
+    labs(caption = "Figuur 3: Antwoord per Vakgebied") +
+    ggtitle("Antwoord per Vakgebied", subtitle = "antwoorden op 30-05-2024") +
+    scale_fill_viridis_d() +
+    theme_void()
+```
+In dit plot is antwoord per vakgebied te zien er is te zien dat lifesciences eigenlijk 
+de grootste aantal antwoorden omvangt. Hierdoor kunnen wij dus niet alle vakgebieden realistisch
+representeren met een goed gemidelde. wat ook betekent wat we de vakgebieden wel kunnen vergelijken
+maar geen betrouwbare conlussie er uit halen.
+
+```{r}
+
+Niveau_awn_30_05 <- select(Student_awn_data_30_05, c(Niveau))
+
+ggplot(Niveau_awn_30_05, aes(x = " ", y = "Antwoord per Niveau", fill = Niveau)) +
+    geom_col() + 
+    coord_polar(theta = "y") +
+    scale_fill_brewer() +
+    labs(caption = "Figuur 3: Antwoord per Niveau") +
+    ggtitle("Antwoord per Niveau", subtitle = "antwoorden op 30-05-2024") +
+    scale_fill_viridis_d() +
+    theme_void()
+```
+In dit plot is antwoord per Niveau te zien. de meeste antwoorden komen van HBO waardoor de verdeling
+dus niet even is verdeeld. Hierdoor kunnen wij niet een goede vergelijking maken tussen deze niveau's.
+Het laten zien hiervan kan dus wel maar er kunnen geen betrouwbare conclusies uitworden gehaald.
+
+```{r}
+woonsit_awn_30_05 <- select(Student_awn_data_30_05, c(Woonsituatie))
+
+ggplot(woonsit_awn_30_05, aes(x = " ", y = "Antwoord per Woonsituatie", fill = Woonsituatie)) +
+    geom_col() + 
+    coord_polar(theta = "y") +
+    scale_fill_brewer() +
+    labs(caption = "Figuur 4: Antwoord per Woonsituatie") +
+    ggtitle("Antwoord per Woonsituatie", subtitle = "antwoorden op 30-05-2024") +
+    theme_void()
+```
+Dit zijn de antwoorden per woonsituatie. Dit heeft een redelijk gelijke verdeling
+wat betekent dat wij deze twee groepen kunnen gebruiken om verschillende factoren te vergelijken.
+
+
+```{r}
+Relatie_stat_awn_30_05 <- select(Student_awn_data_30_05, c(Relatie_stat))
+
+ggplot(Relatie_stat_awn_30_05, aes(x = " ", y = "Antwoord Relatie status", fill = Relatie_stat)) +
+    geom_col() + 
+    coord_polar(theta = "y") +
+    scale_fill_brewer() +
+    labs(caption = "Figuur 7: Antwoord Relatie status") +
+    ggtitle("Antwoord Relatie status", subtitle = "antwoorden op 30-05-2024") +
+    theme_void()
+```
+De relatie status antwoorden zijn redelijk verdeeld en dus kunnen we deze 2 groepen
+gebruiken om verschillende factoren te vergelijken
+
+
+```{r}
+NatInt_awn_30_05 <- select(Student_awn_data_30_05, c(Nationaal_Internationaal))
+
+plot_14_05_natint <- ggplot(NatInt_awn_30_05, aes(x = " ", y = "Antwoord Nationaal of internationaal", fill = Nationaal_Internationaal)) +
+    geom_col() + 
+    coord_polar(theta = "y") +
+    scale_fill_brewer() +
+    ggtitle(" Antwoord Nationaal of internationaal", subtitle = "antwoorden op 30-05-2024") +
+    theme_void()
+plot_14_05_natint + labs(caption = "Figuur 5:  Antwoord Nationaal of internationaal")
+```
+Het is duidelijk te zien in de grafiek dat de verdeling voor data tussen internationale en nationale
+heel disproportioneel is en daardoor kunnen wij deze groepen niet met elkaar vergelijken.
+
+
+```{r}
+
+Opl_jaar_awn_30_05 <- select(Student_awn_data_30_05, c(Opl_jaar))
+
+plot_14_05_natint <- ggplot(Opl_jaar_awn_30_05, aes(x = " ", y = "Antwoord opleidings Jaar", fill = Opl_jaar)) +
+    geom_col() + 
+    coord_polar(theta = "y") +
+    scale_fill_brewer() +
+    ggtitle(" Antwoord opleiding's Jaar", subtitle = "antwoorden op 30-05-2024") +
+    theme_void()
+plot_14_05_natint + labs(caption = "Figuur 5:  Antwoord opleidings Jaar")
+```
+Hier is te zien wat de antwoorden zijn per opleiding jaar. dit is redelijk even verdeeld 
+1ste jaar heeft de meeste antwoorden daarna het 2de, 3rde en als laatste het 4de deze groepen zijn wel
+redelijk te vergelijken echter is het wel handig om te kijken welk niveau bij welk jaar zit.
+
+```{r}
+
+Gelovig_awn_30_05 <- select(Student_awn_data_30_05, c(Gelovig))
+
+plot_14_05_natint <- ggplot(Gelovig_awn_30_05, aes(x = " ", y = "Antwoord Gelovig", fill = Gelovig)) +
+    geom_col() + 
+    coord_polar(theta = "y") +
+    scale_fill_brewer() +
+    ggtitle(" Antwoord Gelovig", subtitle = "antwoorden op 30-05-2024") +
+    theme_void()
+plot_14_05_natint + labs(caption = "Figuur 5:  Antwoord Gelovig")
+```
+Het antwoord tussen wel of niet gelovigen is grotendeels ongelovigen. Deze twee zijn wel te vergelijken
+maar er kan niet een betrouwbare conclusie uit worden getrokken.
+
+
 
 ### Analyse
 
