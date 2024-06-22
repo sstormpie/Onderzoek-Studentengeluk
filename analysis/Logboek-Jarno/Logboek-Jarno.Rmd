@@ -1080,7 +1080,6 @@ gem_geluk <- gem_geluk %>%
 # hier wil ik dat de gem geluk variabele nu alleen nog het gemiddelde geluk die in de average col staat en de sekse die er bij hoort zodat ik deze kan laten zien.
 gem_geluk <- select(gem_geluk, c(Sekse, average_col))
 
-head(gem_geluk)
 
 # Hier gebruik ik gg plot om een netjese boxplot te maken die de 95% mediaan en alles netjes laat zien zodat het goed is te zien wat het verschil in gemiddelde geluk is per sekse
 ggplot(gem_geluk, aes(x = Sekse, y = average_col, fill = Sekse)) + 
@@ -1513,12 +1512,18 @@ heb ik een link gegeven en een versie of datum wanneer dit nodig is.
     <http://github.com>
 
 ### Data
-
+#### Data per vergelijkbare groep
 ```{r, echo=FALSE}
 
 Student_awn_data_30_05 <- read.csv("Student_hap_awn_30_05.csv")
 
 colnames(Student_awn_data_30_05) <- c("Tijd", "Sekse", "Niveau", "Opl_jaar","Vakgebied", "Woonsituatie", "Stad", "Nationaal_Internationaal", "Gelovig", "Relatie_stat", "Happy_RN", "Fys_Happy", "Fys_import", "Cont_buiten_school", "Na_school_soc", "Ouder_relatie", "Woonsituatie_geluk", "Thuis_in_stad", "academische_pres", "Financiele_sit", "Geld_geluk", "Verd_mid_gebr", "drugs_alc_geluk", "Mental_health", "Happy_after_quest")
+
+reactie_stad <- Student_awn_data_30_05
+
+#ik heb hier voor alleen groningen gefilterd dit omdat de andere steden anders de resultaten beïnvloeden en bij deze steden zit sowieso niet genoeg data om mee te nemen voor conclusies.
+Student_awn_data_30_05 <- Student_awn_data_30_05 %>%
+  filter(Stad == "Groningen")
 
 #Maak een aparte vector met alle numerieke data
 numerieke_data <- select(Student_awn_data_30_05, c(11:15, 17:21, 23:25))
@@ -1527,7 +1532,7 @@ numerieke_data <- select(Student_awn_data_30_05, c(11:15, 17:21, 23:25))
 ```
 
 ```{r}
-reactie_stad <- select(Student_awn_data_30_05, c(Stad))
+reactie_stad <- select(reactie_stad, c(Stad))
 
 ggplot(reactie_stad, aes(x = " ", y = "Antwoord per stad", fill = Stad)) +
     geom_col() + 
@@ -1541,7 +1546,7 @@ ggplot(reactie_stad, aes(x = " ", y = "Antwoord per stad", fill = Stad)) +
 
 ```{r}
 
-reactie_stad <- select(Student_awn_data_30_05, c(Stad))
+reactie_stad <- select(reactie_stad, c(Stad))
 
 plot_30_05 <- ggplot(reactie_stad, aes(x = " ", y = "", fill = Stad)) +
     geom_col() + 
@@ -1691,6 +1696,454 @@ plot_14_05_natint + labs(caption = "Figuur 5:  Antwoord Gelovig")
 Het antwoord tussen wel of niet gelovigen is grotendeels ongelovigen. Deze twee zijn wel te vergelijken
 maar er kan niet een betrouwbare conclusie uit worden getrokken.
 
+kort gezegd de belangrijkste groepen voor vergelijking zijn:Niveau, Opleidingsjaar, Relatie, Woonsituatie en Sekse .
+
+Op dag 28-05 heb ik al een paar factoren per groep bekeken. Vandaag doe ik nog een paar vergelijkingen
+
+#### Gemidelde geluk
+
+```{r}
+
+gem_geluk_30_05 <- Student_awn_data_30_05 %>%
+    mutate(average_col = Happy_RN + Happy_after_quest)
+# de %>% zorgt dat ik in gem_geluk_30_05 een mutatie kan maken, ik heb het geluk pre en after het beantwoorden van onze enquête. opgeteld en daarna gedeeld door 2 waardoor er een gemiddelde uitkomt voor elke student
+
+gem_geluk_30_05 <- gem_geluk_30_05 %>%
+    mutate(average_col = average_col / 2)
+
+# hier wil ik dat de gem_geluk_30_05 variabele nu alleen nog het gemiddelde geluk die in de average col staat en de sekse die er bij hoort zodat ik deze kan laten zien.
+gem_geluk_30_05 <- select(gem_geluk_30_05, c(Relatie_stat, average_col))
+
+ggplot(gem_geluk_30_05, aes(x = Relatie_stat, y = average_col, fill = Relatie_stat)) + 
+    stat_boxplot(geom = "errorbar",
+               width = 0.25) +
+    theme(axis.text.x = element_text(angle = 45, hjust = 1)) + 
+    ylim(0, 10) +
+    geom_boxplot() +
+    ylab("Gemidelde geluk") + 
+    xlab("Relatie ja of nee") + 
+  
+    ggtitle("Het gemiddelde geluk Relatie", subtitle = "(Lijn in het vierkant is het gemiddelde)") +
+  theme_minimal()
+
+```
+
+```{r}
+#Hier maak ik verschillende variabelen aan die gemidelden opslaan
+gem_geluk <- Student_awn_data_30_05 %>%
+    mutate(average_col = Happy_RN + Happy_after_quest)
+# de %>% zorgt dat ik in gem_geluk een mutatie kan maken, ik heb het geluk pre en after het beantwoorden van onze enquête. opgeteld en daarna gedeeld door 2 waardoor er een gemiddelde uitkomt voor elke student
+
+gem_geluk <- gem_geluk %>%
+    mutate(average_col = average_col / 2)
+
+# hier wil ik dat de gem geluk variabele nu alleen nog het gemiddelde geluk die in de average col staat en de sekse die er bij hoort zodat ik deze kan laten zien.
+gem_geluk <- select(gem_geluk, c(Sekse, average_col))
+
+
+# Hier gebruik ik gg plot om een netjese boxplot te maken die de 95% mediaan en alles netjes laat zien zodat het goed is te zien wat het verschil in gemiddelde geluk is per sekse
+ggplot(gem_geluk, aes(x = Sekse, y = average_col, fill = Sekse)) + 
+    stat_boxplot(geom = "errorbar",
+               width = 0.25) +
+    ylim(0, 10) +
+    geom_boxplot() +
+    ylab("Gemidelde geluk") + 
+    ggtitle("Het gemiddelde geluk per Sekse", subtitle = "(Lijn in het vierkant is het gemiddelde)") 
+```
+
+Als we hier kijken zien we de verschillen in het gemiddelde geluk per
+sekse is het opmerkelijk om te zien dat vrouwen gemiddeld gelukkiger
+zijn. ECHTER is ook te zien dat de Q1-Q3 van de mannen hoger ligt. er is
+wel duidelijk te zien dat mensen die zich anders identificeren toch wel
+het ongelukigste zijn.
+
+Verder hebben storm en ik beslist dat de dingen waar we nu verder in ons
+onderzoek op ingaan de factoren in de vragen zullen zijn.
+
+```{r}
+
+gem_geluk <- Student_awn_data_30_05 %>%
+    mutate(average_col = Happy_RN + Happy_after_quest)
+# de %>% zorgt dat ik in gem_geluk een mutatie kan maken, ik heb het geluk pre en after het beantwoorden van onze enquête. opgeteld en daarna gedeeld door 2 waardoor er een gemiddelde uitkomt voor elke student
+
+gem_geluk <- gem_geluk %>%
+    mutate(average_col = average_col / 2)
+
+# hier wil ik dat de gem geluk variabele nu alleen nog het gemiddelde geluk die in de average col staat en de sekse die er bij hoort zodat ik deze kan laten zien.
+gem_geluk <- select(gem_geluk, c(Niveau, average_col))
+
+
+# Hier gebruik ik gg plot om een netjese boxplot te maken die de 95% mediaan en alles netjes laat zien zodat het goed is te zien wat het verschil in gemiddelde geluk is per sekse
+ggplot(gem_geluk, aes(x = Niveau, y = average_col, fill = Niveau)) + 
+    stat_boxplot(geom = "errorbar",
+               width = 0.25) +
+    ylim(0, 10) +
+    theme(axis.text.x = element_text(angle = 45, hjust = 1)) + 
+    geom_boxplot() +
+    ylab("Gemidelde geluk") + 
+    ggtitle("Het gemiddelde geluk per Niveau", subtitle = "(Lijn in het vierkant is het gemiddelde)") 
+
+```
+
+In deze Grafiek is het volgende te zien er zijn 4 niveaus waar het
+gemiddeld gelukkigste niveau de masters studenten zijn. Dit is te zien
+aan de lijn in het groene blok. Deze ligt het hoogste van allemaal. De
+volgende dichtstbijzijnde zijn de Bachelor studenten aan de
+Universiteit. Opmerkelijk ook is een uitschieter bij de MBO studenten
+waar 1 iemand zwaar ongelukkig is. De HBO studenten hebben de meeste
+spreiding in hun antwoorden.
+
+```{r}
+gem_geluk <- Student_awn_data_30_05 %>%
+    mutate(average_col = Happy_RN + Happy_after_quest)
+# de %>% zorgt dat ik in gem_geluk een mutatie kan maken, ik heb het geluk pre en after het beantwoorden van onze enquête. opgeteld en daarna gedeeld door 2 waardoor er een gemiddelde uitkomt voor elke student
+
+gem_geluk <- gem_geluk %>%
+    mutate(average_col = average_col / 2)
+
+# hier wil ik dat de gem geluk variabele nu alleen nog het gemiddelde geluk die in de average col staat en de sekse die er bij hoort zodat ik deze kan laten zien.
+gem_geluk <- select(gem_geluk, c(Woonsituatie, average_col))
+
+
+# Hier gebruik ik gg plot om een netjese boxplot te maken die de 95% mediaan en alles netjes laat zien zodat het goed is te zien wat het verschil in gemiddelde geluk is per sekse
+ggplot(gem_geluk, aes(x = Woonsituatie, y = average_col, fill = Woonsituatie)) + 
+    stat_boxplot(geom = "errorbar",
+               width = 0.25) +
+    ylim(0, 10) +
+    geom_boxplot() +
+      ylab("Gemidelde geluk") + 
+    ggtitle("Het gemiddelde geluk per Woonsituatie", subtitle = "(Lijn in het vierkant is het gemiddelde)") 
+```
+```{r}
+gem_geluk <- Student_awn_data_30_05 %>%
+    mutate(average_col = Happy_RN + Happy_after_quest)
+# de %>% zorgt dat ik in gem_geluk een mutatie kan maken, ik heb het geluk pre en after het beantwoorden van onze enquête. opgeteld en daarna gedeeld door 2 waardoor er een gemiddelde uitkomt voor elke student
+
+gem_geluk <- gem_geluk %>%
+    mutate(average_col = average_col / 2)
+
+# hier wil ik dat de gem geluk variabele nu alleen nog het gemiddelde geluk die in de average col staat en de sekse die er bij hoort zodat ik deze kan laten zien.
+gem_geluk <- select(gem_geluk, c(Opl_jaar, average_col))
+
+
+# Hier gebruik ik gg plot om een netjese boxplot te maken die de 95% mediaan en alles netjes laat zien zodat het goed is te zien wat het verschil in gemiddelde geluk is per sekse
+ggplot(gem_geluk, aes(x = Opl_jaar, y = average_col, fill = Opl_jaar)) + 
+    stat_boxplot(geom = "errorbar",
+               width = 0.25) +
+    ylim(0, 10) +
+    geom_boxplot() +
+    theme(legend.position = "none") +
+    ylab("Gemidelde geluk") +
+    xlab("Opleidings jaar") +
+    ggtitle("Het gemiddelde geluk per Opleidings jaar", subtitle = "(Lijn in het vierkant is het gemiddelde)") 
+
+```
+
+
+#### Fysieke gezonheid
+
+```{r}
+
+ggplot(Student_awn_data_30_05, aes(x = Sekse, y = Fys_import
+, fill = Sekse)) +
+    ylim(0, 10) +
+  geom_violin() +
+  labs(title = "Hoe belangrijk is je (fysieke-) gezondheid voor je geluk? ", x = "Sekse", y = "antwoord") +
+  theme_minimal()
+
+```
+Hier is te zien dat voor zowel mannen als vrouwen hun fysieke gezondheid zeer belangrijk is voor hun geluk. Het grootste deel zit tussen de 7 en 9.
+
+```{r}
+ggplot(Student_awn_data_30_05, aes(x = Woonsituatie, y = Fys_import
+, fill = Woonsituatie)) +
+    stat_boxplot(geom = "errorbar",
+               width = 0.25) +
+    ylim(0, 10) +
+  geom_boxplot() +
+  labs(title = "Hoe belangrijk is je (fysieke-) gezondheid voor je geluk? ", x = "Woonsituatie", y = "antwoord") +
+  theme_minimal()
+```
+```{r}
+ggplot(Student_awn_data_30_05, aes(x = Niveau, y = Fys_import
+, fill = Niveau)) +
+    stat_boxplot(geom = "errorbar",
+               width = 0.25) +
+  ylim(0, 10) +
+  geom_boxplot() +
+  labs(title = "Hoe belangrijk is je (fysieke-) gezondheid voor je geluk? ", x = "Niveau", y = "antwoord") +
+  theme_minimal()
+```
+
+```{r}
+ggplot(Student_awn_data_30_05, aes(x = Relatie_stat, y = Fys_import
+, fill = Relatie_stat)) +
+    stat_boxplot(geom = "errorbar",
+               width = 0.25) +
+    ylim(0, 10) +
+  geom_boxplot() +
+  labs(title = "Hoe belangrijk is je (fysieke-) gezondheid voor je geluk? ", x = "Niveau", y = "antwoord") +
+  theme_minimal()
+```
+
+#### academische prestatie
+
+```{r}
+
+ggplot(Student_awn_data_30_05, aes(x = Opl_jaar, y = academische_pres, fill = Opl_jaar)) +
+  stat_boxplot(geom = "errorbar",
+               width = 0.25) +
+    ylim(0, 10) +
+  geom_boxplot() +
+  labs(title = "Hoeveel Geluk door academische prestatie per opleidings jaar", x = "opleidingsjaar", y = "Geluk") +
+  theme_minimal()
+
+
+```
+Hier is een plot van het geluk door academische prestatie per opleidingsjaar. In dit plot
+is er geen opmerkelijke uitschieter of groot verschil in de gemiddelden. Ze liggen allemaal rond de 7/10 waarbij het 3rde en vierde jaar een halve punt naar boven of beneden liggen.
+
+```{r}
+ggplot(Student_awn_data_30_05, aes(x = Sekse, y = academische_pres, fill = Sekse)) +
+  stat_boxplot(geom = "errorbar",
+               width = 0.25) +
+    ylim(0, 10) +
+  geom_boxplot() +
+  labs(title = "Hoeveel Geluk door academische prestatie per Sekse", x = "Sekse", y = "Geluk") +
+  theme_minimal()
+
+```
+
+
+#### Geld
+
+```{r}
+
+ggplot(Student_awn_data_30_05, aes(x = Sekse, y = Geld_geluk, color = Sekse)) +
+    ylim(0, 10) +
+  geom_jitter(width = 0.2, size = 2) +
+  labs(title = "Geld is belangrijk voor mij om gelukkig te zijn.
+", x = "Sekse", y = "Geluk") +
+  theme_minimal()
+
+```
+Hier heb ik een plot gemaakt waar te zien is hoe veel geld uit maakt voor het geluk van een student
+er is te zien dat bij vrouwen de meeste punten zitten tussen de 7.5 en de 5. bij de mannen ligt het grootste deel tussen 5 en 6.25. Wel opmerkelijk is de uitschieter bij de vrouwen naar benenden en bij mannen is deze juist naar boven. Kortom er is te zien dat beide seksen wel redelijk gelukkig worden van geld.
+
+```{r}
+ggplot(Student_awn_data_30_05, aes(x = Sekse, y = Financiele_sit, fill = Sekse)) +
+    stat_boxplot(geom = "errorbar",
+               width = 0.25) +
+    ylim(0, 10) +
+  geom_boxplot() +
+  labs(title = "Scatterplot (Jitter Plot) van Financiele situatie", x = "Sekse", y = "Financiele situatie") +
+  theme_minimal()
+```
+In deze plot is de financiële  situatie te zien tussen de seksen en het laat zien dat gemideld
+mannen de beste situatie hebben. Behalve 2 uitschieters die een erg slechte financiële  situatie hebben bij vrouwen is er maar 1 uitschieter deze heeft ook een erg slechte financiële situatie.
+
+```{r}
+
+ggplot(Student_awn_data_30_05, aes(x = Woonsituatie, y = Geld_geluk, color = Woonsituatie)) +
+    ylim(0, 10) +
+  geom_jitter(width = 0.2, size = 2) +
+  labs(title = "Geld is belangrijk voor mij om gelukkig te zijn.
+", x = "Woonsituatie", y = "Geluk") +
+  theme_minimal()
+
+```
+```{r}
+ggplot(Student_awn_data_30_05, aes(x = Woonsituatie, y = Financiele_sit, fill = Woonsituatie)) +
+    stat_boxplot(geom = "errorbar",
+               width = 0.25) +
+    ylim(0, 10) +
+  geom_boxplot() +
+  labs(title = "Scatterplot (Jitter Plot) van Financiele situatie", x = "Woonsituatie", y = "Financiele situatie") +
+  theme_minimal()
+```
+Woonsitu
+
+```{r}
+ggplot(Student_awn_data_30_05, aes(x = Niveau, y = Geld_geluk, color = Niveau)) +
+    ylim(0, 10) +
+  geom_jitter(width = 0.2, size = 2) +
+  labs(title = "Geld is belangrijk voor mij om gelukkig te zijn.
+", x = "Niveau", y = "Geluk") +
+  theme_minimal()
+
+```
+
+```{r}
+ggplot(Student_awn_data_30_05, aes(x = Niveau, y = Financiele_sit, fill = Niveau)) +
+    stat_boxplot(geom = "errorbar",
+               width = 0.25) +
+    ylim(0, 10) +
+  geom_boxplot() +
+  labs(title = "Scatterplot (Jitter Plot) van Financiele situatie", x = "Niveau", y = "Financiele situatie") +
+  theme_minimal()
+```
+Niveau
+
+```{r}
+ggplot(Student_awn_data_30_05, aes(x = Opl_jaar, y = Geld_geluk, color = Opl_jaar)) +
+    ylim(0, 10) +
+  geom_jitter(width = 0.2, size = 2) +
+  labs(title = "Geld is belangrijk voor mij om gelukkig te zijn.
+", x = "Opleidings jaar", y = "Geluk") +
+  theme_minimal()
+```
+```{r}
+ggplot(Student_awn_data_30_05, aes(x = Opl_jaar, y = Financiele_sit, fill = Opl_jaar)) +
+    stat_boxplot(geom = "errorbar",
+               width = 0.25) +
+    ylim(0, 10) +
+  geom_boxplot() +
+  labs(title = "Scatterplot (Jitter Plot) van Financiele situatie", x = "Opleidings jaar", y = "Financiele situatie") +
+  theme_minimal()
+```
+Opleidings jaar
+
+```{r}
+ggplot(Student_awn_data_30_05, aes(x = Relatie_stat, y = Geld_geluk, color = Relatie_stat)) +
+    ylim(0, 10) +
+  geom_jitter(width = 0.2, size = 2) +
+  labs(title = "Geld is belangrijk voor mij om gelukkig te zijn.
+", x = "Relatie status", y = "Geluk") +
+  theme_minimal()
+```
+```{r}
+ggplot(Student_awn_data_30_05, aes(x = Relatie_stat, y = Financiele_sit, fill = Relatie_stat)) +
+    stat_boxplot(geom = "errorbar",
+               width = 0.25) +
+    ylim(0, 10) +
+  geom_boxplot() +
+  labs(title = "Scatterplot (Jitter Plot) van Financiele situatie", x = "Relatie status", y = "Financiele situatie") +
+  theme_minimal()
+```
+
+
+#### Mentale gezondheid
+
+
+```{r}
+
+ggplot(Student_awn_data_30_05, aes(x = Sekse, y = Mental_health, fill = Sekse)) +
+      stat_boxplot(geom = "errorbar",
+               width = 0.25) +
+    ylim(0, 10) +
+  geom_boxplot() +
+  labs(title = "Density Plot of Values by Group", x = "Sekse", y = "Mental_health") +
+  theme_minimal()
+```
+
+```{r}
+ggplot(Student_awn_data_30_05, aes(x = Woonsituatie, y = Mental_health, fill = Woonsituatie)) +
+      stat_boxplot(geom = "errorbar",
+               width = 0.25) +
+    ylim(0, 10) +
+  geom_boxplot() +
+  labs(title = "Density Plot of Values by Group", x = "Woonsituatie", y = "Mental_health") +
+  theme_minimal()
+```
+
+```{r}
+ggplot(Student_awn_data_30_05, aes(x = Opl_jaar, y = Mental_health, fill = Opl_jaar)) +
+      stat_boxplot(geom = "errorbar",
+               width = 0.25) +
+    ylim(0, 10) +
+  geom_boxplot() +
+  labs(title = "Density Plot of Values by Group", x = "Opleidings jaar", y = "Mental_health") +
+  theme_minimal()
+```
+
+```{r}
+ggplot(Student_awn_data_30_05, aes(x = Niveau, y = Mental_health, fill = Niveau)) +
+      stat_boxplot(geom = "errorbar",
+               width = 0.25) +
+    ylim(0, 10) +
+  geom_boxplot() +
+  labs(title = "Mental_health", x = "Niveau", y = "Mental_health") +
+  theme_minimal()
+```
+
+```{r}
+ggplot(Student_awn_data_30_05, aes(x = Relatie_stat, y = Mental_health, fill = Relatie_stat)) +
+      stat_boxplot(geom = "errorbar",
+               width = 0.25) +
+    ylim(0, 10) +
+  geom_boxplot() +
+  labs(title = "Mental_health", x = "Relatie status", y = "Mental_health") +
+  theme_minimal()
+```
+
+#### Thuis in stad
+
+```{r}
+
+ggplot(Student_awn_data_30_05, aes(x = Sekse, y = Thuis_in_stad, fill = Sekse)) +
+      stat_boxplot(geom = "errorbar",
+               width = 0.25) +
+    ylim(0, 10) +
+  geom_boxplot() +
+  labs(title = "Ik voel me thuis in de stad waar ik woon. 
+", x = "Sekse", y = "Antwoord") +
+  theme_minimal()
+```
+Sekse
+
+```{r}
+
+ggplot(Student_awn_data_30_05, aes(x = Niveau, y = Thuis_in_stad, fill = Niveau)) +
+      stat_boxplot(geom = "errorbar",
+               width = 0.25) +
+    ylim(0, 10) +
+  geom_boxplot() +
+  labs(title = "Ik voel me thuis in de stad waar ik woon. 
+", x = "Niveau", y = "Antwoord") +
+  theme_minimal()
+
+
+```
+Niveau
+
+```{r}
+ggplot(Student_awn_data_30_05, aes(x = Opl_jaar, y = Thuis_in_stad, fill = Opl_jaar)) +
+      stat_boxplot(geom = "errorbar",
+               width = 0.25) +
+    ylim(0, 10) +
+  geom_boxplot() +
+  labs(title = "Ik voel me thuis in de stad waar ik woon. 
+", x = "Opleidingsjaar", y = "Antwoord") +
+  theme_minimal()
+```
+
+Opl_jaar
+
+```{r}
+
+ggplot(Student_awn_data_30_05, aes(x = Woonsituatie, y = Thuis_in_stad, fill = Woonsituatie)) +
+      stat_boxplot(geom = "errorbar",
+               width = 0.25) +
+    ylim(0, 10) +
+  geom_boxplot() +
+  labs(title = "Ik voel me thuis in de stad waar ik woon. 
+", x = "Woonsituatie", y = "Antwoord") +
+  theme_minimal()
+```
+
+```{r}
+ggplot(Student_awn_data_30_05, aes(x = Relatie_stat, y = Thuis_in_stad, fill = Relatie_stat)) +
+      stat_boxplot(geom = "errorbar",
+               width = 0.25) +
+    ylim(0, 10) +
+  geom_boxplot() +
+  labs(title = "Ik voel me thuis in de stad waar ik woon. 
+", x = "Relatie status", y = "Antwoord") +
+  theme_minimal()
+
+```
+
+Relatie status
 
 
 ### Analyse
