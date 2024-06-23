@@ -2218,8 +2218,7 @@ ggplot(Student_awn_data_30_05, aes(x = Opl_jaar, y = Thuis_in_stad, fill = Opl_j
 ", x = "Opleidingsjaar", y = "Antwoord") +
   theme_minimal()
 ```
-
-Opl_jaar
+Deze plot laat zien dat ieder opleidings jaar behalve de 4de zich gemiddeld zeer thuis voelt in de stad waar ze wonen.
 
 ```{r}
 
@@ -2600,11 +2599,38 @@ p_2 <- ggplot() +
 p_2
 
 ```
+### Onderzoeks vraag
+
+Onze onderzoeksvraag luid **“In welke studenten stad zijn studenten het gelukkigst?“** 
+Om deze vraag te beantwoorden hadden wij 4 studenten steden geselecteerd.
+Amsterdam, Groningen, Leiden en Utrecht. Naar de universiteiten, HBO's en MBO's zijn mails verstuurd. De mails zijn verstuurd naar de instituten zelf en de faculteiten, ook de studie verenigingen hebben mails gekregen. 
+Ook zijn er op sommige plekken op zowel de HBO's als universiteiten posters opgehangen. Dit is niet in Amsterdam gedaan dit is omdat na wij de posters hadden opgehangen in Utrecht en Leiden wij merkten dat dit niet een goede strategie was.
+Hierdoor zijn we gestart met de emails versturen. Hier zijn de resultaten van onze data verzameling.
+
+```{r}
+laatste_data <- read.csv("Student_hap_awn_30_05.csv")
+
+colnames(laatste_data) <- c("Tijd", "Sekse", "Niveau", "Opl_jaar","Vakgebied", "Woonsituatie", "Stad", "Nat_Int", "Gelovig", "Relatie_stat", "Happy_RN", "Fys_Happy", "Fys_import", "Cont_buiten_school", "Na_school_soc", "Ouder_relatie", "Woonsituatie_geluk", "Thuis_in_stad", "academische_pres", "Financiele_sit", "Geld_geluk", "Verd_mid_gebr", "drugs_alc_geluk", "Mental_health", "Happy_after_quest")
+
+
+ggplot(laatste_data, aes(x = " ", y = "Antwoord per stad", fill = Stad)) +
+    geom_col() + 
+    coord_polar(theta = "y") +
+    scale_fill_brewer() +
+    ggtitle("Antwoord per stad", subtitle = "Utrecht heeft geen antwoorden deze is hierdoor niet zichbaar") +
+    theme_void()
+
+```
+Hier zijn alle verzamelde antwoorden te zien. Er is te zien dat er maar 3 steden staan. Dit is omdat er geen antwoorden zijn gekomen uit utrecht ondanks de mails en posters. De andere steden die wel data hebben zijn Amsterdam, Leiden en Groningen. Het is duidelijk te zien waar alle data vandaan komt. Wat dus betekent dat wij niet de onderzoeksvraag met goede onderbouwing kunnen beantwoorden. Dit betekent dus dat onze conclusie in relatie met de onderzoeksvraag **“In welke studenten stad zijn studenten het gelukkigst?“** dit is niet uit onze data te halen. \\
+
+Wel kunnen wij andere dingen bekijken zoals verdovende middelen gebruik of mentale gezondheid tussen de sekse en allemaal andere vergelijkingen tussen groepen binnen onze enquête. We hebben natuurlijk om de steden gevraagd maar ook om welke sekse zich de student voelt, De relatie met hun ouders, drugs en alcohol gebruik, geloof, 
+
+
 
 ### readme
 
 Ik heb in de README nog wat dingen gezet zoals de tabel en de
-conclusie + de instalatie wijze
+conclusie + de installatie wijze
 
 De data die verzamelt is kan niet worden gebruikt in andere onderzoeken.
 Dit omdat het te weinig is om een betrouwbaar antwoord te geven.
@@ -2612,6 +2638,8 @@ Hierdoor kunnen wij alleen antwoord geven op de factoren die wij hebben
 bekeken. Deze zijn alleen van de studenten uit Groningen dit omdat hier
 wij de meeste data van hebben verzameld. Het blijkt dat mannen over het
 algemeen het gelukkigste zijn. en Anders sekse zijn het minst gelukkig.
+
+
 \### Benodigdheden
 
 -   Een werkende OS
