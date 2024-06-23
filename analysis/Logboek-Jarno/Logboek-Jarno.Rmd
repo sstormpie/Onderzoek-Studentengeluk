@@ -718,14 +718,14 @@ verenigingen.
 ```{r}
 reactie_stad <- select(student_hap_awn, c(Stad))
 
-plot_14_05 <- ggplot(reactie_stad, aes(x = " ", y = "Antwoord per stad", fill = Stad)) +
+plot_14_05_stad <- ggplot(reactie_stad, aes(x = " ", y = "Antwoord per stad", fill = Stad)) +
     geom_col() + 
     coord_polar(theta = "y") +
     scale_fill_brewer() +
     ggtitle("Antwoord per stad", subtitle = "antwoorden op 14-05-2024") +
     theme_void()
 
-plot_14_05 + labs(caption = "Figuur 1: Antwoord per stad") 
+plot_14_05_stad + labs(caption = "Figuur 1: Antwoord per stad") 
 ```
 
 In deze plot is te zien dat eigenlijk bijna alle antwoorden uit
@@ -842,18 +842,31 @@ dus dat we dus dat wij niet voor mensen wel in een relatie een goede
 conclusie kunnen geven omdat hier te weinig antwoorden voor zijn. Deze
 factor is dus nu niet heel handig om mee te nemen in het eind product.
 
-**Power-analyse**
-Een power-analyse is een statistische methode die gebruikt wordt om verschillende aspecten van een onderzoek te bepalen die belangrijk zijn. Het kan bijvoorbeeld gebruikt worden om de steekproef grote te bepalen. Het beperken van type 1 en type 2 fouten. Een type 1 fout is het vinden van een onterecht effect, een type 2 fout is het niet vinden van een echt effect. Dus het draagt bij aan de betrouwbaarheid en validiteit van de onderzoeksresultaten.
+**Power-analyse** Een power-analyse is een statistische methode die
+gebruikt wordt om verschillende aspecten van een onderzoek te bepalen
+die belangrijk zijn. Het kan bijvoorbeeld gebruikt worden om de
+steekproef grote te bepalen. Het beperken van type 1 en type 2 fouten.
+Een type 1 fout is het vinden van een onterecht effect, een type 2 fout
+is het niet vinden van een echt effect. Dus het draagt bij aan de
+betrouwbaarheid en validiteit van de onderzoeksresultaten.
 
 Er zijn verschillende dingen nodig om een power analyse te doen
-sig.level deze geeft de waarschijnlijkheid op het afwijzen van de nul hypothese wanneer het waar is. Ik heb hier 0.05 gebruikt omdat dit de meest standaard gebruikte invulling is.
+sig.level deze geeft de waarschijnlijkheid op het afwijzen van de nul
+hypothese wanneer het waar is. Ik heb hier 0.05 gebruikt omdat dit de
+meest standaard gebruikte invulling is.
 
-Power, is de kans van het correct afwijzen van de null hypothese wanneer het niet waar is. hoe hoger de power wordt gezet hoe minder het risico op een type 2 error bij ons is deze op 0.8 gezet omdat dit weer een standaard niveau is. voor kritische studies wordt 0.9 gebruikt maar hoe hoger de power hoe hoger de sample grote
+Power, is de kans van het correct afwijzen van de null hypothese wanneer
+het niet waar is. hoe hoger de power wordt gezet hoe minder het risico
+op een type 2 error bij ons is deze op 0.8 gezet omdat dit weer een
+standaard niveau is. voor kritische studies wordt 0.9 gebruikt maar hoe
+hoger de power hoe hoger de sample grote
 
-d is een maat die zegt hoe groot het verschil is tussen de gemiddelde waarden van twee groepen. Het doet dit door het verschil te meten in termen van standaarddeviaties. Dit helpt ons om te begrijpen hoe sterk of groot het waargenomen effect is
+d is een maat die zegt hoe groot het verschil is tussen de gemiddelde
+waarden van twee groepen. Het doet dit door het verschil te meten in
+termen van standaarddeviaties. Dit helpt ons om te begrijpen hoe sterk
+of groot het waargenomen effect is
 
 N = onze sample grote. Dit is de groep van geobserveerde personen.
-
 
 ```{r}
 #power test
@@ -863,11 +876,19 @@ power2 <-  pwr.t.test(d = 0.5, sig.level = 0.05, power = 0.8 , alternative = "tw
 power1
 power2
 ```
-ik heb bij n 17 ingevuld omdat wij 33 resultaten totaal hebben en ik ga hiermee alleen in deze analyse er van uit dat we 2 groepen hebben van elk 17 personen ik kon niet namelijk halve personen meten.
 
-Uit de power1 is het volgende te halen de d = 0.9910032 wat zegt dat met de hoeveelheid kandidaten dat we nu hebben er een groot verschil is tussen de groepen in onze 
+ik heb bij n 17 ingevuld omdat wij 33 resultaten totaal hebben en ik ga
+hiermee alleen in deze analyse er van uit dat we 2 groepen hebben van
+elk 17 personen ik kon niet namelijk halve personen meten.
 
-uit de power2 komt uit dat als wij 2 even groepen willen vergelijken hebben wij voor een medium effect level van d = 0.5, een power van 0.8 en een sig level van 0,05 hebben wij ongeveer 64 personen per groep nodig dus ongeveer 128 personen in totaal.
+Uit de power1 is het volgende te halen de d = 0.9910032 wat zegt dat met
+de hoeveelheid kandidaten dat we nu hebben er een groot verschil is
+tussen de groepen in onze
+
+uit de power2 komt uit dat als wij 2 even groepen willen vergelijken
+hebben wij voor een medium effect level van d = 0.5, een power van 0.8
+en een sig level van 0,05 hebben wij ongeveer 64 personen per groep
+nodig dus ongeveer 128 personen in totaal.
 
 ## 15-05-2024
 
@@ -1053,9 +1074,9 @@ de nieuwe data en een iets betere schatting maken van geluk tussen de
 studenten.
 
 ```{r}
-NatInt_awn <- select(student_hap_awn_28_05, c(Nationaal_Internationaal))
+Stad_awn <- select(student_hap_awn_28_05, c(Stad))
 
-plot_28_05_natint <- ggplot(NatInt_awn, aes(x = " ", y = "Antwoord Nationaal of internationaal", fill = Nationaal_Internationaal)) +
+plot_28_05_stad <- ggplot(Stad_awn, aes(x = " ", y = "Antwoord Nationaal of internationaal", fill = Stad)) +
     geom_col() + 
     coord_polar(theta = "y") +
     scale_fill_brewer() +
@@ -1063,10 +1084,14 @@ plot_28_05_natint <- ggplot(NatInt_awn, aes(x = " ", y = "Antwoord Nationaal of 
     ggtitle(" Antwoord Nationaal of internationaal", subtitle = "antwoorden op 28-05-2024") +
     theme_void()
 
-combined_plots <- grid.arrange(plot_14_05_natint, plot_28_05_natint, ncol = 1)
+combined_plots <- grid.arrange(plot_14_05_stad, plot_28_05_stad, ncol = 1)
 
 
 ```
+Hier is te zien dat de verschillen in antwoorden per stad nog steeds niet erg zijn 
+veranderd en nu zijn er alleen meer antwoorden uit Groningen. verder niks uit 
+utrecht wat erg jammer is. Hierdoor moeten wij nu de beslissing maken om op
+de antwoorden te focussen uit Groningen.
 
 ```{r}
 #Hier maak ik verschillende variabelen aan die gemidelden opslaan
@@ -1116,6 +1141,7 @@ ggplot(gem_geluk, aes(x = Niveau, y = average_col, fill = Niveau)) +
     stat_boxplot(geom = "errorbar",
                width = 0.25) +
     theme(axis.text.x = element_text(angle = 45, hjust = 1)) + 
+    ylab("Gem Geluk") +
     geom_boxplot() +
     ggtitle("Het gemiddelde geluk per Niveau", subtitle = "(Lijn in het vierkant is het gemiddelde)") 
 
@@ -1129,6 +1155,7 @@ Universiteit. Opmerkelijk ook is een uitschieter bij de MBO studenten
 waar 1 iemand zwaar ongelukkig is. De HBO studenten hebben de meeste
 spreiding in hun antwoorden.
 
+#### Drugs gebruik
 ```{r}
 Drugs_gebruik <- select(student_hap_awn_28_05,c(Niveau,Verd_mid_gebr,drugs_alc_geluk))
 
@@ -1512,7 +1539,9 @@ heb ik een link gegeven en een versie of datum wanneer dit nodig is.
     <http://github.com>
 
 ### Data
+
 #### Data per vergelijkbare groep
+
 ```{r, echo=FALSE}
 
 Student_awn_data_30_05 <- read.csv("Student_hap_awn_30_05.csv")
@@ -1531,6 +1560,8 @@ numerieke_data <- select(Student_awn_data_30_05, c(11:15, 17:21, 23:25))
 
 ```
 
+Ik heb de andere steden weg gefilterd zodat de data alleen maar van Groningen komt.
+
 ```{r}
 reactie_stad <- select(reactie_stad, c(Stad))
 
@@ -1543,7 +1574,7 @@ ggplot(reactie_stad, aes(x = " ", y = "Antwoord per stad", fill = Stad)) +
     theme_void()
 
 ```
-
+Nog steeds is te zien dat Groningen de meeste antwoorden en de rest van de steden maar een paar of helemaal geen zoals bij Utrecht.
 ```{r}
 
 reactie_stad <- select(reactie_stad, c(Stad))
@@ -1580,11 +1611,13 @@ ggplot(sekse_awn_30_05, aes(x = " ", y = "Antwoord per stad", fill = Sekse)) +
     ggtitle("Antwoord per sekse", subtitle = "antwoorden op 30-05-2024") +
     theme_void()
 ```
-In deze plot is het verschil in antwoorden te zien tussen mannen en vrouwen.
-Er is te zien dat er een redelijk even verderling is in antwoordent tussen
-mannen en vrouwen, tussen deze twee groepen kunnen wij dus verschillende factoren
-vergelijken. Anders sekse heeft bijna geen antwoorden dus deze laten wij er wel
-bij zien maar hier kunnen wij geen conclusies voor geven.
+
+In deze plot is het verschil in antwoorden te zien tussen mannen en
+vrouwen. Er is te zien dat er een redelijk even verderling is in
+antwoordent tussen mannen en vrouwen, tussen deze twee groepen kunnen
+wij dus verschillende factoren vergelijken. Anders sekse heeft bijna
+geen antwoorden dus deze laten wij er wel bij zien maar hier kunnen wij
+geen conclusies voor geven.
 
 ```{r}
 vakgebied_awn_30_05 <- select(Student_awn_data_30_05, c(Vakgebied))
@@ -1598,10 +1631,12 @@ ggplot(vakgebied_awn_30_05, aes(x = " ", y = "Antwoord per Vakgebied", fill = Va
     scale_fill_viridis_d() +
     theme_void()
 ```
-In dit plot is antwoord per vakgebied te zien er is te zien dat lifesciences eigenlijk 
-de grootste aantal antwoorden omvangt. Hierdoor kunnen wij dus niet alle vakgebieden realistisch
-representeren met een goed gemidelde. wat ook betekent wat we de vakgebieden wel kunnen vergelijken
-maar geen betrouwbare conlussie er uit halen.
+
+In dit plot is antwoord per vakgebied te zien er is te zien dat
+lifesciences eigenlijk de grootste aantal antwoorden omvangt. Hierdoor
+kunnen wij dus niet alle vakgebieden realistisch representeren met een
+goed gemidelde. wat ook betekent wat we de vakgebieden wel kunnen
+vergelijken maar geen betrouwbare conlussie er uit halen.
 
 ```{r}
 
@@ -1616,9 +1651,12 @@ ggplot(Niveau_awn_30_05, aes(x = " ", y = "Antwoord per Niveau", fill = Niveau))
     scale_fill_viridis_d() +
     theme_void()
 ```
-In dit plot is antwoord per Niveau te zien. de meeste antwoorden komen van HBO waardoor de verdeling
-dus niet even is verdeeld. Hierdoor kunnen wij niet een goede vergelijking maken tussen deze niveau's.
-Het laten zien hiervan kan dus wel maar er kunnen geen betrouwbare conclusies uitworden gehaald.
+
+In dit plot is antwoord per Niveau te zien. de meeste antwoorden komen
+van HBO waardoor de verdeling dus niet even is verdeeld. Hierdoor kunnen
+wij niet een goede vergelijking maken tussen deze niveau's. Het laten
+zien hiervan kan dus wel maar er kunnen geen betrouwbare conclusies
+uitworden gehaald.
 
 ```{r}
 woonsit_awn_30_05 <- select(Student_awn_data_30_05, c(Woonsituatie))
@@ -1631,9 +1669,10 @@ ggplot(woonsit_awn_30_05, aes(x = " ", y = "Antwoord per Woonsituatie", fill = W
     ggtitle("Antwoord per Woonsituatie", subtitle = "antwoorden op 30-05-2024") +
     theme_void()
 ```
-Dit zijn de antwoorden per woonsituatie. Dit heeft een redelijk gelijke verdeling
-wat betekent dat wij deze twee groepen kunnen gebruiken om verschillende factoren te vergelijken.
 
+Dit zijn de antwoorden per woonsituatie. Dit heeft een redelijk gelijke
+verdeling wat betekent dat wij deze twee groepen kunnen gebruiken om
+verschillende factoren te vergelijken.
 
 ```{r}
 Relatie_stat_awn_30_05 <- select(Student_awn_data_30_05, c(Relatie_stat))
@@ -1646,9 +1685,9 @@ ggplot(Relatie_stat_awn_30_05, aes(x = " ", y = "Antwoord Relatie status", fill 
     ggtitle("Antwoord Relatie status", subtitle = "antwoorden op 30-05-2024") +
     theme_void()
 ```
-De relatie status antwoorden zijn redelijk verdeeld en dus kunnen we deze 2 groepen
-gebruiken om verschillende factoren te vergelijken
 
+De relatie status antwoorden zijn redelijk verdeeld en dus kunnen we
+deze 2 groepen gebruiken om verschillende factoren te vergelijken
 
 ```{r}
 NatInt_awn_30_05 <- select(Student_awn_data_30_05, c(Nationaal_Internationaal))
@@ -1661,9 +1700,10 @@ plot_14_05_natint <- ggplot(NatInt_awn_30_05, aes(x = " ", y = "Antwoord Nationa
     theme_void()
 plot_14_05_natint + labs(caption = "Figuur 5:  Antwoord Nationaal of internationaal")
 ```
-Het is duidelijk te zien in de grafiek dat de verdeling voor data tussen internationale en nationale
-heel disproportioneel is en daardoor kunnen wij deze groepen niet met elkaar vergelijken.
 
+Het is duidelijk te zien in de grafiek dat de verdeling voor data tussen
+internationale en nationale heel disproportioneel is en daardoor kunnen
+wij deze groepen niet met elkaar vergelijken.
 
 ```{r}
 
@@ -1677,9 +1717,12 @@ plot_14_05_natint <- ggplot(Opl_jaar_awn_30_05, aes(x = " ", y = "Antwoord oplei
     theme_void()
 plot_14_05_natint + labs(caption = "Figuur 5:  Antwoord opleidings Jaar")
 ```
-Hier is te zien wat de antwoorden zijn per opleiding jaar. dit is redelijk even verdeeld 
-1ste jaar heeft de meeste antwoorden daarna het 2de, 3rde en als laatste het 4de deze groepen zijn wel
-redelijk te vergelijken echter is het wel handig om te kijken welk niveau bij welk jaar zit.
+
+Hier is te zien wat de antwoorden zijn per opleiding jaar. dit is
+redelijk even verdeeld 1ste jaar heeft de meeste antwoorden daarna het
+2de, 3rde en als laatste het 4de deze groepen zijn wel redelijk te
+vergelijken echter is het wel handig om te kijken welk niveau bij welk
+jaar zit.
 
 ```{r}
 
@@ -1693,12 +1736,16 @@ plot_14_05_natint <- ggplot(Gelovig_awn_30_05, aes(x = " ", y = "Antwoord Gelovi
     theme_void()
 plot_14_05_natint + labs(caption = "Figuur 5:  Antwoord Gelovig")
 ```
-Het antwoord tussen wel of niet gelovigen is grotendeels ongelovigen. Deze twee zijn wel te vergelijken
-maar er kan niet een betrouwbare conclusie uit worden getrokken.
 
-kort gezegd de belangrijkste groepen voor vergelijking zijn:Niveau, Opleidingsjaar, Relatie, Woonsituatie en Sekse .
+Het antwoord tussen wel of niet gelovigen is grotendeels ongelovigen.
+Deze twee zijn wel te vergelijken maar er kan niet een betrouwbare
+conclusie uit worden getrokken.
 
-Op dag 28-05 heb ik al een paar factoren per groep bekeken. Vandaag doe ik nog een paar vergelijkingen
+kort gezegd de belangrijkste groepen voor vergelijking zijn:Niveau,
+Opleidingsjaar, Relatie, Woonsituatie en Sekse .
+
+Op dag 28-05 heb ik al een paar factoren per groep bekeken. Vandaag doe
+ik nog een paar vergelijkingen
 
 #### Gemidelde geluk
 
@@ -1727,6 +1774,8 @@ ggplot(gem_geluk_30_05, aes(x = Relatie_stat, y = average_col, fill = Relatie_st
   theme_minimal()
 
 ```
+Het gemiddelde geluk veranderd niet heel veel wanneer iemand in een relatie zit of niet. Dus deze grafiek is niet interesant om te laten zien.
+
 
 ```{r}
 #Hier maak ik verschillende variabelen aan die gemidelden opslaan
@@ -1814,6 +1863,10 @@ ggplot(gem_geluk, aes(x = Woonsituatie, y = average_col, fill = Woonsituatie)) +
       ylab("Gemidelde geluk") + 
     ggtitle("Het gemiddelde geluk per Woonsituatie", subtitle = "(Lijn in het vierkant is het gemiddelde)") 
 ```
+Er is te zien dat mensen die uitwonen en dus niet meer thuis wonen gemiddeld zich
+gelukkiger voelen dan mensen die thuiswonen. Deze plot is dus interessant om in 
+te vermelden in ons eindproduct.
+
 ```{r}
 gem_geluk <- Student_awn_data_30_05 %>%
     mutate(average_col = Happy_RN + Happy_after_quest)
@@ -1838,7 +1891,8 @@ ggplot(gem_geluk, aes(x = Opl_jaar, y = average_col, fill = Opl_jaar)) +
     ggtitle("Het gemiddelde geluk per Opleidings jaar", subtitle = "(Lijn in het vierkant is het gemiddelde)") 
 
 ```
-
+Het geluk per opleiding jaar is niet heel verschillend het licht allemaal gemiddeld rond de 6.25 waar mensen in het 3rde jaar zich het gelukkigste voelen
+dit kan voor de universiteit studenten zijn omdat dit hun laatste jaar is. Het is niet dat iedereen zich super gelukkig voelt.
 
 #### Fysieke gezonheid
 
@@ -1852,7 +1906,9 @@ ggplot(Student_awn_data_30_05, aes(x = Sekse, y = Fys_import
   theme_minimal()
 
 ```
-Hier is te zien dat voor zowel mannen als vrouwen hun fysieke gezondheid zeer belangrijk is voor hun geluk. Het grootste deel zit tussen de 7 en 9.
+Hier is te zien dat voor zowel mannen als vrouwen hun fysieke gezondheid
+zeer belangrijk is voor hun geluk. Het grootste deel zit tussen de 7 en
+9.
 
 ```{r}
 ggplot(Student_awn_data_30_05, aes(x = Woonsituatie, y = Fys_import
@@ -1864,6 +1920,9 @@ ggplot(Student_awn_data_30_05, aes(x = Woonsituatie, y = Fys_import
   labs(title = "Hoe belangrijk is je (fysieke-) gezondheid voor je geluk? ", x = "Woonsituatie", y = "antwoord") +
   theme_minimal()
 ```
+Het is opmerkelijk in deze plot dat de gemiddelden hetzelfde zijn maar de thuiswonende wel meer uitschieters hebben.
+
+
 ```{r}
 ggplot(Student_awn_data_30_05, aes(x = Niveau, y = Fys_import
 , fill = Niveau)) +
@@ -1874,6 +1933,8 @@ ggplot(Student_awn_data_30_05, aes(x = Niveau, y = Fys_import
   labs(title = "Hoe belangrijk is je (fysieke-) gezondheid voor je geluk? ", x = "Niveau", y = "antwoord") +
   theme_minimal()
 ```
+In deze grafiek is te zien dat fysieke gezondheid over het algemeen belangrijk is voor elk opleidings niveau.
+er zijn wel verschillen in de mate van overeenstemming binnen de groep.
 
 ```{r}
 ggplot(Student_awn_data_30_05, aes(x = Relatie_stat, y = Fys_import
@@ -1885,6 +1946,8 @@ ggplot(Student_awn_data_30_05, aes(x = Relatie_stat, y = Fys_import
   labs(title = "Hoe belangrijk is je (fysieke-) gezondheid voor je geluk? ", x = "Niveau", y = "antwoord") +
   theme_minimal()
 ```
+Bij deze grafiek is het raar omdat de inter kwartiel en gemiddelden identiek lijken.
+Deze plot is dus niet geschikt voor het eind product.
 
 #### academische prestatie
 
@@ -1900,8 +1963,11 @@ ggplot(Student_awn_data_30_05, aes(x = Opl_jaar, y = academische_pres, fill = Op
 
 
 ```
-Hier is een plot van het geluk door academische prestatie per opleidingsjaar. In dit plot
-is er geen opmerkelijke uitschieter of groot verschil in de gemiddelden. Ze liggen allemaal rond de 7/10 waarbij het 3rde en vierde jaar een halve punt naar boven of beneden liggen.
+
+Hier is een plot van het geluk door academische prestatie per
+opleidingsjaar. In dit plot is er geen opmerkelijke uitschieter of groot
+verschil in de gemiddelden. Ze liggen allemaal rond de 7/10 waarbij het
+3rde en vierde jaar een halve punt naar boven of beneden liggen.
 
 ```{r}
 ggplot(Student_awn_data_30_05, aes(x = Sekse, y = academische_pres, fill = Sekse)) +
@@ -1913,7 +1979,19 @@ ggplot(Student_awn_data_30_05, aes(x = Sekse, y = academische_pres, fill = Sekse
   theme_minimal()
 
 ```
+In deze grafiek is te zien dat voor mannen en vrouwen geluk door academische prestatie belangrijker is dan voor de ander sekse. Het gemiddelde is ook hetzelfde
+voor mannen en vrouwen.
 
+```{r}
+ggplot(Student_awn_data_30_05, aes(x = Niveau, y = academische_pres, fill = Niveau)) +
+  stat_boxplot(geom = "errorbar",
+               width = 0.25) +
+    ylim(0, 10) +
+  geom_boxplot() +
+  labs(title = "Hoeveel Geluk door academische prestatie per Niveau", x = "Niveau", y = "Geluk") +
+  theme_minimal()
+```
+Over het algemeen is de academische prestatie belangrijk echter is er wel te zien dat het voor mbo'ers het minst belangrijk is gemiddeld maar voor hbo studenten en masters studenten is het heel belangrijk. 
 
 #### Geld
 
@@ -1927,8 +2005,13 @@ ggplot(Student_awn_data_30_05, aes(x = Sekse, y = Geld_geluk, color = Sekse)) +
   theme_minimal()
 
 ```
-Hier heb ik een plot gemaakt waar te zien is hoe veel geld uit maakt voor het geluk van een student
-er is te zien dat bij vrouwen de meeste punten zitten tussen de 7.5 en de 5. bij de mannen ligt het grootste deel tussen 5 en 6.25. Wel opmerkelijk is de uitschieter bij de vrouwen naar benenden en bij mannen is deze juist naar boven. Kortom er is te zien dat beide seksen wel redelijk gelukkig worden van geld.
+
+Hier heb ik een plot gemaakt waar te zien is hoe veel geld uit maakt
+voor het geluk van een student er is te zien dat bij vrouwen de meeste
+punten zitten tussen de 7.5 en de 5. bij de mannen ligt het grootste
+deel tussen 5 en 6.25. Wel opmerkelijk is de uitschieter bij de vrouwen
+naar benenden en bij mannen is deze juist naar boven. Kortom er is te
+zien dat beide seksen wel redelijk gelukkig worden van geld.
 
 ```{r}
 ggplot(Student_awn_data_30_05, aes(x = Sekse, y = Financiele_sit, fill = Sekse)) +
@@ -1936,11 +2019,15 @@ ggplot(Student_awn_data_30_05, aes(x = Sekse, y = Financiele_sit, fill = Sekse))
                width = 0.25) +
     ylim(0, 10) +
   geom_boxplot() +
-  labs(title = "Scatterplot (Jitter Plot) van Financiele situatie", x = "Sekse", y = "Financiele situatie") +
+  labs(title = "boxplot van financiële situatie", x = "Sekse", y = "financiële situatie") +
   theme_minimal()
 ```
-In deze plot is de financiële  situatie te zien tussen de seksen en het laat zien dat gemideld
-mannen de beste situatie hebben. Behalve 2 uitschieters die een erg slechte financiële  situatie hebben bij vrouwen is er maar 1 uitschieter deze heeft ook een erg slechte financiële situatie.
+
+In deze plot is de financiële situatie te zien tussen de seksen en het
+laat zien dat gemideld mannen de beste situatie hebben. Behalve 2
+uitschieters die een erg slechte financiële situatie hebben bij vrouwen
+is er maar 1 uitschieter deze heeft ook een erg slechte financiële
+situatie.
 
 ```{r}
 
@@ -1952,16 +2039,20 @@ ggplot(Student_awn_data_30_05, aes(x = Woonsituatie, y = Geld_geluk, color = Woo
   theme_minimal()
 
 ```
+In deze plot is moeilijk te zien waar het gemiddelde ligt omdat de meningen verspreid zijn echter kan je wel zien dat uitwonend meer geluk halen uit geld omdat het voor thuiswonende aardig verspreid ligt.
+
 ```{r}
 ggplot(Student_awn_data_30_05, aes(x = Woonsituatie, y = Financiele_sit, fill = Woonsituatie)) +
     stat_boxplot(geom = "errorbar",
                width = 0.25) +
     ylim(0, 10) +
   geom_boxplot() +
-  labs(title = "Scatterplot (Jitter Plot) van Financiele situatie", x = "Woonsituatie", y = "Financiele situatie") +
+  labs(title = "boxplot van financiële situatie", x = "Woonsituatie", y = "financiële situatie") +
   theme_minimal()
 ```
-Woonsitu
+In deze plot is te zien dat thuiswonende gemiddeld in een beter financieel situatie
+zitten echter is ook te zien dat er 1 uitschieter is bij de thuiswonende
+die in een extreem slechte financiële situatie zit. Verder is de interkwartiel afstand tussen de twee verschillend waar de q3 van de uitwonende hoger naar boven gaat en de q1 van de thuiswonende juist naar beneden uitschiet.
 
 ```{r}
 ggplot(Student_awn_data_30_05, aes(x = Niveau, y = Geld_geluk, color = Niveau)) +
@@ -1972,6 +2063,7 @@ ggplot(Student_awn_data_30_05, aes(x = Niveau, y = Geld_geluk, color = Niveau)) 
   theme_minimal()
 
 ```
+In deze scatter plot is duidelijk het verschil te zien in antwoorden waar uit ik niet een duidelijk antwoord kan halen waardoor deze plot niet handig is voor ons eind product. 
 
 ```{r}
 ggplot(Student_awn_data_30_05, aes(x = Niveau, y = Financiele_sit, fill = Niveau)) +
@@ -1979,10 +2071,10 @@ ggplot(Student_awn_data_30_05, aes(x = Niveau, y = Financiele_sit, fill = Niveau
                width = 0.25) +
     ylim(0, 10) +
   geom_boxplot() +
-  labs(title = "Scatterplot (Jitter Plot) van Financiele situatie", x = "Niveau", y = "Financiele situatie") +
+  labs(title = "boxplot van financiële situatie", x = "Niveau", y = "financiële situatie") +
   theme_minimal()
 ```
-Niveau
+Hier is de zien dat gemiddeld hbo'ers de slechtste financiële situatie hebben en dat masters studenten de beste hebben. Dit is ook wel logisch omdat masters studenten meestal al bijbaan hebben die goed verdient door het bacholer diploma.
 
 ```{r}
 ggplot(Student_awn_data_30_05, aes(x = Opl_jaar, y = Geld_geluk, color = Opl_jaar)) +
@@ -1992,16 +2084,19 @@ ggplot(Student_awn_data_30_05, aes(x = Opl_jaar, y = Geld_geluk, color = Opl_jaa
 ", x = "Opleidings jaar", y = "Geluk") +
   theme_minimal()
 ```
+Deze plot laat zien of geld belangrijk was om gelukkig te zijn per opleidings jaar
+het is alleen onduidelijk om uit deze data een goeie conclusie te halen en elk jaar lijkt wel gelukkig te zijn echter is wel te zien dat het 2de en 4de jaar een dip hebben.
+
 ```{r}
 ggplot(Student_awn_data_30_05, aes(x = Opl_jaar, y = Financiele_sit, fill = Opl_jaar)) +
     stat_boxplot(geom = "errorbar",
                width = 0.25) +
     ylim(0, 10) +
   geom_boxplot() +
-  labs(title = "Scatterplot (Jitter Plot) van Financiele situatie", x = "Opleidings jaar", y = "Financiele situatie") +
+  labs(title = "boxplot van financiële situatie", x = "Opleidings jaar", y = "financiële situatie") +
   theme_minimal()
 ```
-Opleidings jaar
+Er is in deze plot te zien dat de 3de jaars gemiddeld in de beste financiële situatie zitten. Dit kan zijn voor universiteit studenten dat dit hun laatste jaar is en voor hbo'ers dat ze hun minor of een stage doen. de 2de jaars lijken in de slechtste financiële ik zou niet een reden kunnen bedenken hiervoor.
 
 ```{r}
 ggplot(Student_awn_data_30_05, aes(x = Relatie_stat, y = Geld_geluk, color = Relatie_stat)) +
@@ -2011,19 +2106,21 @@ ggplot(Student_awn_data_30_05, aes(x = Relatie_stat, y = Geld_geluk, color = Rel
 ", x = "Relatie status", y = "Geluk") +
   theme_minimal()
 ```
+er is niet een opmerkelijk verschil in dit plot waard om te benoemen
+
+
 ```{r}
 ggplot(Student_awn_data_30_05, aes(x = Relatie_stat, y = Financiele_sit, fill = Relatie_stat)) +
     stat_boxplot(geom = "errorbar",
                width = 0.25) +
     ylim(0, 10) +
   geom_boxplot() +
-  labs(title = "Scatterplot (Jitter Plot) van Financiele situatie", x = "Relatie status", y = "Financiele situatie") +
+  labs(title = "boxplot van Financiele situatie", x = "Relatie status", y = "Financiele situatie") +
   theme_minimal()
 ```
-
+er is niet een opmerkelijk verschil in dit plot waard om te benoemen
 
 #### Mentale gezondheid
-
 
 ```{r}
 
@@ -2032,9 +2129,11 @@ ggplot(Student_awn_data_30_05, aes(x = Sekse, y = Mental_health, fill = Sekse)) 
                width = 0.25) +
     ylim(0, 10) +
   geom_boxplot() +
-  labs(title = "Density Plot of Values by Group", x = "Sekse", y = "Mental_health") +
+  labs(title = "boxplot van Mentale gezondheid per sekse", x = "Sekse", y = "Mental_health") +
   theme_minimal()
 ```
+Er is in deze plot te zien dat mannen gemiddelde de beste mentale gezondheid hebben
+en anders sekse de slechtste.
 
 ```{r}
 ggplot(Student_awn_data_30_05, aes(x = Woonsituatie, y = Mental_health, fill = Woonsituatie)) +
@@ -2042,9 +2141,10 @@ ggplot(Student_awn_data_30_05, aes(x = Woonsituatie, y = Mental_health, fill = W
                width = 0.25) +
     ylim(0, 10) +
   geom_boxplot() +
-  labs(title = "Density Plot of Values by Group", x = "Woonsituatie", y = "Mental_health") +
+  labs(title = "boxplot van Mentale gezondheid van thuiswonende vs uitwonende", x = "Woonsituatie", y = "Mental_health") +
   theme_minimal()
 ```
+In deze plot is te zien dat de uitwonende studenten gemiddeld een beter mentale gezondheid hebben dan studenten die thuiswonen er zijn bij beide wel uitschieters.
 
 ```{r}
 ggplot(Student_awn_data_30_05, aes(x = Opl_jaar, y = Mental_health, fill = Opl_jaar)) +
@@ -2052,9 +2152,10 @@ ggplot(Student_awn_data_30_05, aes(x = Opl_jaar, y = Mental_health, fill = Opl_j
                width = 0.25) +
     ylim(0, 10) +
   geom_boxplot() +
-  labs(title = "Density Plot of Values by Group", x = "Opleidings jaar", y = "Mental_health") +
+  labs(title = "boxplot van Mentale gezondheid van verschillende opleidings jaren", x = "Opleidings jaar", y = "Mental_health") +
   theme_minimal()
 ```
+Er is duidelijk te zien dat het 2de opleidings jaar gemiddelde de slechtste mentale gezondheid heeft en dat het 3rde en 4de jaar de beste mentale gezondheid heeft. Dit is interessant om te laten zien in ons eind product.
 
 ```{r}
 ggplot(Student_awn_data_30_05, aes(x = Niveau, y = Mental_health, fill = Niveau)) +
@@ -2065,6 +2166,7 @@ ggplot(Student_awn_data_30_05, aes(x = Niveau, y = Mental_health, fill = Niveau)
   labs(title = "Mental_health", x = "Niveau", y = "Mental_health") +
   theme_minimal()
 ```
+Hier is het verschil in mentale gezondheid per niveau en er is te zien dat masters studenten de beste mentale gezondheid hebben behalve 1 uitschieter wel is er maar 1 kwartiel te zien. bij de mbo'ers zijn beide kwartielen niet te zien alleen maar 1 lijn en 2 uitschieters. Bij universiteits studenten is alleen het q3 te zien.
 
 ```{r}
 ggplot(Student_awn_data_30_05, aes(x = Relatie_stat, y = Mental_health, fill = Relatie_stat)) +
@@ -2089,7 +2191,7 @@ ggplot(Student_awn_data_30_05, aes(x = Sekse, y = Thuis_in_stad, fill = Sekse)) 
 ", x = "Sekse", y = "Antwoord") +
   theme_minimal()
 ```
-Sekse
+De mannen en vrouwen voelen zich beide gemiddeld even thuis in de stad waarin ze wonen de anders sekse voelen zich minder thuis.
 
 ```{r}
 
@@ -2104,7 +2206,7 @@ ggplot(Student_awn_data_30_05, aes(x = Niveau, y = Thuis_in_stad, fill = Niveau)
 
 
 ```
-Niveau
+Deze grafiek is heel apart hbo'ers voelen zich heel erg thuis de masters is moeilijk een oordeel uit te halen mbo'ers zijn gemiddeld niet super gelukkig en de uni studenten lijken even gelukkig als de hbo'ers.
 
 ```{r}
 ggplot(Student_awn_data_30_05, aes(x = Opl_jaar, y = Thuis_in_stad, fill = Opl_jaar)) +
@@ -2130,20 +2232,7 @@ ggplot(Student_awn_data_30_05, aes(x = Woonsituatie, y = Thuis_in_stad, fill = W
 ", x = "Woonsituatie", y = "Antwoord") +
   theme_minimal()
 ```
-
-```{r}
-ggplot(Student_awn_data_30_05, aes(x = Relatie_stat, y = Thuis_in_stad, fill = Relatie_stat)) +
-      stat_boxplot(geom = "errorbar",
-               width = 0.25) +
-    ylim(0, 10) +
-  geom_boxplot() +
-  labs(title = "Ik voel me thuis in de stad waar ik woon. 
-", x = "Relatie status", y = "Antwoord") +
-  theme_minimal()
-
-```
-
-Relatie status
+Er is te zien dat mensen die in Groningen wonen zich heel erg thuis voelen hier het gemiddelde licht hier ook tussen de 8.75 en 10 er is ook te zien dat er iemand is die thuis woont en deze zich helemaal niet thuisvoelt waar ze wonen.
 
 
 ### Analyse
@@ -2384,7 +2473,7 @@ van de student niet uit in welke stad deze studeert.
 ### nieuwe materialen lijst
 
 | Tool               | Referentie                                                | Versie                               | Waarom                                                                                                                                                                                       |
-|--------------|--------------|--------------|-------------------------------|
+|---------------|---------------|---------------|---------------------------|
 | Google forms       | <https://docs.google.com/forms/>                          |                                      | Gebruikt om een enquête te maken die gebruikers vriendelijk is en een netjes csv bestand geeft als output.                                                                                   |
 | Git                | <https://www.git-scm.com>                                 | git version 2.44.0                   | Git wordt gebruikt voor version control                                                                                                                                                      |
 | Github             | <http://github.com>                                       |                                      | De gehele data set, logboeken en protocol staan op github omdat dit een netjese en goed navigeerbare omgeving maakt zodat iemand ook alles in 1 keer kan downloaden en bekijken.             |
@@ -2528,7 +2617,7 @@ algemeen het gelukkigste zijn. en Anders sekse zijn het minst gelukkig.
 -   Een werkende OS
 
 | Tool                      | Referentie                                                                                         | Versie                               | Waarom                                                                                                                                                                                       |
-|---------------|---------------|---------------|----------------------------|
+|----------------|----------------|----------------|-------------------------|
 | Google forms              | <https://docs.google.com/forms/>                                                                   |                                      | Gebruikt om een enquête te maken die gebruikers vriendelijk is en een netjes csv bestand geeft als output.                                                                                   |
 | Git                       | <https://www.git-scm.com>                                                                          | git version 2.44.0                   | Git wordt gebruikt voor version control                                                                                                                                                      |
 | Github                    | <http://github.com>                                                                                |                                      | De gehele data set, logboeken en protocol staan op github omdat dit een netjese en goed navigeerbare omgeving maakt zodat iemand ook alles in 1 keer kan downloaden en bekijken.             |
