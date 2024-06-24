@@ -1586,7 +1586,7 @@ plot_30_05 <- ggplot(reactie_stad, aes(x = " ", y = "", fill = Stad)) +
     ggtitle("", subtitle = "antwoorden op 30-05-2024") +
     theme_void()
 
-combined_plots <- grid.arrange(plot_14_05, plot_30_05, ncol = 1)
+combined_plots <- grid.arrange(plot_14_05_stad, plot_30_05, ncol = 1)
 
 ```
 
@@ -1943,7 +1943,7 @@ ggplot(Student_awn_data_30_05, aes(x = Relatie_stat, y = Fys_import
                width = 0.25) +
     ylim(0, 10) +
   geom_boxplot() +
-  labs(title = "Hoe belangrijk is je (fysieke-) gezondheid voor je geluk? ", x = "Niveau", y = "antwoord") +
+  labs(title = "Hoe belangrijk is je (fysieke-) gezondheid voor je geluk? ", x = "Relatie", y = "antwoord") +
   theme_minimal()
 ```
 Bij deze grafiek is het raar omdat de inter kwartiel en gemiddelden identiek lijken.
@@ -2624,7 +2624,182 @@ ggplot(laatste_data, aes(x = " ", y = "Antwoord per stad", fill = Stad)) +
 Hier zijn alle verzamelde antwoorden te zien. Er is te zien dat er maar 3 steden staan. Dit is omdat er geen antwoorden zijn gekomen uit utrecht ondanks de mails en posters. De andere steden die wel data hebben zijn Amsterdam, Leiden en Groningen. Het is duidelijk te zien waar alle data vandaan komt. Wat dus betekent dat wij niet de onderzoeksvraag met goede onderbouwing kunnen beantwoorden. Dit betekent dus dat onze conclusie in relatie met de onderzoeksvraag **“In welke studenten stad zijn studenten het gelukkigst?“** dit is niet uit onze data te halen. \\
 
 Wel kunnen wij andere dingen bekijken zoals verdovende middelen gebruik of mentale gezondheid tussen de sekse en allemaal andere vergelijkingen tussen groepen binnen onze enquête. We hebben natuurlijk om de steden gevraagd maar ook om welke sekse zich de student voelt, De relatie met hun ouders, drugs en alcohol gebruik, geloof, 
+Hier zijn de interessantste grafieken die uit de data komen
 
+**Wie is het gelukkigste**
+
+```{r}
+#Hier maak ik verschillende variabelen aan die gemidelden opslaan
+gem_geluk_laatste_data <- laatste_data %>%
+    mutate(average_col = Happy_RN + Happy_after_quest)
+# de %>% zorgt dat ik in gem_geluk een mutatie kan maken, ik heb het geluk pre en after het beantwoorden van onze enquête. opgeteld en daarna gedeeld door 2 waardoor er een gemiddelde uitkomt voor elke student
+
+gem_geluk_laatste_data <- gem_geluk_laatste_data %>%
+    mutate(average_col = average_col / 2)
+
+# hier wil ik dat de gem geluk variabele nu alleen nog het gemiddelde geluk die in de average col staat en de sekse die er bij hoort zodat ik deze kan laten zien.
+gem_geluk_laatste_data <- select(gem_geluk_laatste_data, c(Sekse, average_col))
+
+
+# Hier gebruik ik gg plot om een netjese boxplot te maken die de 95% mediaan en alles netjes laat zien zodat het goed is te zien wat het verschil in gemiddelde geluk is per sekse
+ggplot(gem_geluk_laatste_data, aes(x = Sekse, y = average_col, fill = Sekse)) + 
+    stat_boxplot(geom = "errorbar",
+               width = 0.25) +
+    ylim(0, 10) +
+    geom_boxplot() +
+    ylab("Gemidelde geluk") + 
+    ggtitle("Het gemiddelde geluk per Sekse", subtitle = "(Lijn in het vierkant is het gemiddelde)") 
+```
+Van de studenten in Groningen zijn mannen gemiddeld het gelukkigste daarna vrouwen en de ongelukkigste sekse is de anders sekse. Er is wel 1 uitschieter bij de vrouwen die vrij ongelukkig is.
+
+```{r}
+gem_geluk_laatste_data <- laatste_data %>%
+    mutate(average_col = Happy_RN + Happy_after_quest)
+# de %>% zorgt dat ik in gem_geluk een mutatie kan maken, ik heb het geluk pre en after het beantwoorden van onze enquête. opgeteld en daarna gedeeld door 2 waardoor er een gemiddelde uitkomt voor elke student
+
+gem_geluk_laatste_data <- gem_geluk_laatste_data %>%
+    mutate(average_col = average_col / 2)
+
+# hier wil ik dat de gem geluk variabele nu alleen nog het gemiddelde geluk die in de average col staat en de sekse die er bij hoort zodat ik deze kan laten zien.
+gem_geluk_laatste_data <- select(gem_geluk_laatste_data, c(Woonsituatie, average_col))
+
+
+# Hier gebruik ik gg plot om een netjese boxplot te maken die de 95% mediaan en alles netjes laat zien zodat het goed is te zien wat het verschil in gemiddelde geluk is per sekse
+ggplot(gem_geluk_laatste_data, aes(x = Woonsituatie, y = average_col, fill = Woonsituatie)) + 
+    stat_boxplot(geom = "errorbar",
+               width = 0.25) +
+    ylim(0, 10) +
+    geom_boxplot() +
+      ylab("Gemidelde geluk") + 
+    ggtitle("Het gemiddelde geluk per Woonsituatie", subtitle = "(Lijn in het vierkant is het gemiddelde)") 
+```
+Het is ook wel interessant om te zien dat studenten die niet meer thuiswonen en dus in de stad Groningen wonen zijn gemiddeld gelukkiger dan mensen die bij hun ouders wonen. Dit kan komen door verschillende redenen zoals het gevoel van vrijheid of niet een goede relatie met de ouders hebben waardoor niet meer bij hun wonen het algemene geluk verbeterd.
+
+```{r}
+Drugs_gebruik_woonsit <- select(laatste_data,c(Sekse,Verd_mid_gebr,drugs_alc_geluk))
+
+Drugs_gebruik_woonsit <- Drugs_gebruik_woonsit %>%
+  mutate(Verd_mid_gebr = ifelse(Verd_mid_gebr == "Ja (Yes)", 1, 0))
+
+Drugs_gebruik_woonsit <- Drugs_gebruik_woonsit %>%
+  filter(Verd_mid_gebr != 0)
+
+
+ggplot(Drugs_gebruik_woonsit, aes(x=Sekse, y=Verd_mid_gebr, fill = Sekse)) +
+  geom_bar(stat = "identity") +
+  ylab("A") + 
+  ggtitle("Het Drugs & Alcohol gebruik onder de studenten", subtitle = "Per sekse")+
+  theme(legend.position="none")
+```
+Hier is het verschil te zien in drugs & alcohol gebruik tussen de verschillende seksen. Er is hier niet een groot verschil te zien tussen de seksen wel is te zien dat vrouwen iets meer Drugs en of alcohol gebruiken dan mannen. Anders seksen kan weinig over gezegd worden omdat hier te weing antwoorden voor zijn.
+```{r}
+Drugs_gebruik_woonsit <- select(laatste_data,c(Opl_jaar,Verd_mid_gebr,drugs_alc_geluk))
+
+Drugs_gebruik_woonsit <- Drugs_gebruik_woonsit %>%
+  mutate(Verd_mid_gebr = ifelse(Verd_mid_gebr == "Ja (Yes)", 1, 0))
+
+Drugs_gebruik_woonsit <- Drugs_gebruik_woonsit %>%
+  filter(Verd_mid_gebr != 0)
+
+
+ggplot(Drugs_gebruik_woonsit, aes(x=Opl_jaar, y=Verd_mid_gebr, fill = Opl_jaar)) +
+  geom_bar(stat = "identity") +
+  xlab("Opleidings jaar") +
+  ylab("Persoon") +
+  ggtitle("Het Drugs & Alcohol gebruik onder de studenten", subtitle = "Per opleidngsjaar")+
+  theme(legend.position="none")
+```
+Hier is te zien wat het drugs gebruik is per opleidingsjaar. Er zijn meer antwoorden binnen gekomen van 1ste jaars maar niet zo significant meer dan de andere jaren. Hierdoor is dus te zeggen dat eerste jaars studenten waarschijnlijk het meeste drugs en alcohol gebruiken. Dit zou kunnen komen omdat ze in deze omgeving minder negatief stigma staat op drugs & alcohol gebruik. Er wordt gezegt dat je in je studenten leven met allemaal dingen experimenteerd.
+In Groningen heb je bijvoorbeeld de kei-week waar allemaal nieuwe studenten een week lang feesten. Hier hoort dus alcohol en drugs gebruik bij. Dit zou dus kunnen zorgen voor het grote verschil tussen de eerste en de andere jaren.
+
+
+
+```{r}
+ggplot(laatste_data, aes(x = Opl_jaar, y = Fys_import
+, fill = Opl_jaar)) +
+    stat_boxplot(geom = "errorbar",
+               width = 0.25) +
+  ylim(0, 10) +
+  geom_boxplot() +
+  labs(title = "Hoe belangrijk is je (fysieke-) gezondheid voor je geluk? ", x = "opleidings jaar", y = "antwoord") +
+  theme_minimal()
+```
+Hier is te zien hoe belangrijk de fysieke gezondheid is voor de verschillende opleidings jaren en de gemiddelden liggen allemaal bijna op 1 lijn wat ook interessant is en dit betekend dat er gemiddeld niet een verschil in zit voor hoe belangrijk de fysieke gezondheid is voor studenten.
+```{r}
+ggplot(laatste_data, aes(x = Niveau, y = Fys_import
+, fill = Niveau)) +
+    stat_boxplot(geom = "errorbar",
+               width = 0.25) +
+  ylim(0, 10) +
+  geom_boxplot() +
+  labs(title = "Hoe belangrijk is je (fysieke-) gezondheid voor je geluk? ", x = "Niveau", y = "antwoord") +
+  theme(legend.position="none") 
+```
+Per niveau is het gemiddelde ook redelijk gelijk over elk niveau is het gemiddelde tussen de 7.5 en 8.75 wat betekent dat elk niveau zijn fysieke gezondheid belangrijk vindt en dit het geluk van de student erg beinvloed.
+
+```{r}
+ggplot(laatste_data, aes(x = Sekse, y = Geld_geluk, fill = Sekse)) +
+    stat_boxplot(geom = "errorbar",
+               width = 0.25) +
+    ylim(0, 10) +
+  geom_boxplot() +
+  labs(title = "boxplot van Geluk door Geld", x = "Sekse", y = "Geluk door geld") +
+  theme_minimal()
+```
+Hier is te zien dat vrouwen gemiddeld gelukkig worden door geld dan mannen. Voor anders sekse maakt geld niet gelukkig echter is voor de ander sekse weinig data dus deze conclusie is niet heel betrouwbaar.
+
+```{r}
+ggplot(laatste_data, aes(x = Sekse, y = Financiele_sit, fill = Sekse)) +
+    stat_boxplot(geom = "errorbar",
+               width = 0.25) +
+    ylim(0, 10) +
+  geom_boxplot() +
+  labs(title = "Financïele situatie van de Sekse", x = "Sekse", y = "Financïele situatie") +
+  theme_minimal()
+```
+Hier is te zien dat mannen gemiddeld in een betere financïele situatie zitten dan dat vrouwen dat zitten. Er zijn bij beide wel 2 uitschieters die in een zeer slechte financïele situatie zitten.
+
+```{r}
+ggplot(laatste_data, aes(x = Opl_jaar, y = Geld_geluk, fill = Opl_jaar)) +
+    stat_boxplot(geom = "errorbar",
+               width = 0.25) +
+    ylim(0, 10) +
+  geom_boxplot() +
+  labs(title = "boxplot van Geluk door Geld", x = "Opleidings jaar", y = "Geluk door geld") +
+  theme_minimal()
+```
+
+```{r}
+ggplot(laatste_data, aes(x = Opl_jaar, y = Financiele_sit, fill = Opl_jaar)) +
+    stat_boxplot(geom = "errorbar",
+               width = 0.25) +
+    ylim(0, 10) +
+  geom_boxplot() +
+  labs(title = "Financïele situatie van de Sekse", x = "Sekse", y = "Financïele situatie") +
+  theme_minimal()
+```
+Hier zijn de grafieken te zien van het Geluk door geld en financïele situatie van de verschillende opleidings jaren. Opmerkelijk is dat het 2de opleidings jaar het minste geluk aan geld hecht maar ook degene zijn met gemiddeld de slechtste financiele situatie. Verder zitten de 3rde jaar studenten in de beste financiele situatie dit kan komen door stage of het feit dat de studie bijna is afgerond bijvoorbeeld in het geval van universiteits studenten en masters studenten. 
+
+```{r}
+ggplot(laatste_data, aes(x = Woonsituatie, y = Mental_health, fill = Woonsituatie)) +
+      stat_boxplot(geom = "errorbar",
+               width = 0.25) +
+    ylim(0, 10) +
+  geom_boxplot() +
+  labs(title = "boxplot van Mentale gezondheid van thuiswonende vs uitwonende", x = "Woonsituatie", y = "Mental_health") +
+  theme_minimal()
+```
+Het is duidelijk dat de mentale gezondheid van studenten die thuiswonen slechter is dan studenten die niet meer thuiswonen. Dit is te zien door dat de gemiddelde lijn (ook wel mediaan) van de thuiswonende studenten, Deze ligt onder de q1 van de uitwonende studenten.
+
+```{r}
+ggplot(laatste_data, aes(x = Vakgebied, y = Mental_health, fill = Vakgebied)) +
+      stat_boxplot(geom = "errorbar",
+               width = 0.25) +
+    ylim(0, 10) +
+  geom_boxplot() +
+  labs(title = "boxplot van Mentale gezondheid van thuiswonende vs uitwonende", x = "Opleiding", y = "Mental_health") +
+  theme_minimal()
+```
 
 
 ### readme
