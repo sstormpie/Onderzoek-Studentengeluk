@@ -2797,10 +2797,26 @@ ggplot(laatste_data, aes(x = Vakgebied, y = Mental_health, fill = Vakgebied)) +
                width = 0.25) +
     ylim(0, 10) +
   geom_boxplot() +
-  labs(title = "boxplot van Mentale gezondheid van thuiswonende vs uitwonende", x = "Opleiding", y = "Mental_health") +
+  labs(title = "boxplot van Mentale gezondheid van thuiswonende vs uitwonende", x = "Opleiding", y = "Mental health") +
+  theme_minimal()+ 
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  theme(legend.position="none") 
+```
+Ondanks dat de data oneven verdeeld is ga ik toch deze plot benoemen er is namelijk te zien dat vergeleken met de andere opleiding studenten die kunst studeren mentaal veel ongelukkiger zijn. Dit is anders dan dat ik had verwacht. Ik had verwacht dat studenten van een technische studie ongelukkiger zouden zijn.
+
+```{r}
+ggplot(laatste_data, aes(x = Woonsituatie, y = Thuis_in_stad, fill = Woonsituatie)) +
+      stat_boxplot(geom = "errorbar",
+               width = 0.25) +
+    ylim(0, 10) +
+  geom_boxplot() +
+  labs(title = "Ik voel me thuis in de stad waar ik woon. 
+", x = "Woonsituatie", y = "Antwoord") +
   theme_minimal()
 ```
+Er is te zien dat mensen die in Groningen wonen zich heel erg thuis voelen hier het gemiddelde licht hier ook tussen de 8.75 en 10 er is ook te zien dat er iemand is die thuis woont en deze zich helemaal niet thuisvoelt waar ze wonen. 
 
+Deze besproken plots zijn volgens mij het belangrijkste. Deze data komt uit ons onderzoek en om het nogmaals te benoemen geeft geen antwoord op onze eigenlijke onderzoeksvraag **“In welke studenten stad zijn studenten het gelukkigst?“**  
 
 ### readme
 
