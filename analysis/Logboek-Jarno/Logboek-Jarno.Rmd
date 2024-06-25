@@ -1052,6 +1052,7 @@ ggplot(Reactie_stad, aes(x = " ", y = "Antwoord per stad", fill = Stad)) +
     ggtitle("Antwoorden per stad") +
     coord_polar(theta = "y") +
     scale_fill_brewer() +
+  labs(caption = "Figuur 8: Antwoord per stad") +
     theme_void()
 
 
@@ -1110,7 +1111,7 @@ plot_28_05_stad <- ggplot(Stad_awn, aes(x = " ", y = "Antwoord Nationaal of inte
     geom_col() + 
     coord_polar(theta = "y") +
     scale_fill_brewer() +
-    labs(caption = "Figuur 6:  Antwoord Nationaal of internationaal") +
+    labs(caption = "Figuur 9:  Antwoord Nationaal of internationaal") +
     ggtitle(" Antwoord Nationaal of internationaal", subtitle = "antwoorden op 28-05-2024") +
     theme_void()
 
@@ -1120,10 +1121,12 @@ combined_plots <- grid.arrange(plot_14_05_stad, plot_28_05_stad, ncol = 1)
 
 
 ```
-Hier is te zien dat de verschillen in antwoorden per stad nog steeds niet erg zijn 
-veranderd en nu zijn er alleen meer antwoorden uit Groningen. verder niks uit 
-utrecht wat erg jammer is. Hierdoor moeten wij nu de beslissing maken om op
-de antwoorden te focussen uit Groningen.
+
+Hier is te zien dat de verschillen in antwoorden per stad nog steeds
+niet erg zijn veranderd en nu zijn er alleen meer antwoorden uit
+Groningen. verder niks uit utrecht wat erg jammer is. Hierdoor moeten
+wij nu de beslissing maken om op de antwoorden te focussen uit
+Groningen.
 
 ```{r, fig.asp=.75, out.width='50%', fig.align='center'}
 #Hier maak ik verschillende variabelen aan die gemidelden opslaan
@@ -1143,6 +1146,7 @@ ggplot(gem_geluk, aes(x = Sekse, y = average_col, fill = Sekse)) +
     stat_boxplot(geom = "errorbar",
                width = 0.25) +
     geom_boxplot() +
+  labs(caption = "Figuur 10: Het gemiddelde geluk per Sekse") +
     ggtitle("Het gemiddelde geluk per Sekse", subtitle = "(Lijn in het vierkant is het gemiddelde)") 
 ```
 
@@ -1175,6 +1179,7 @@ ggplot(gem_geluk, aes(x = Niveau, y = average_col, fill = Niveau)) +
     theme(axis.text.x = element_text(angle = 45, hjust = 1)) + 
     ylab("Gem Geluk") +
     geom_boxplot() +
+    labs(caption = "Figuur 10: Het gemiddelde geluk per Niveau") +
     ggtitle("Het gemiddelde geluk per Niveau", subtitle = "(Lijn in het vierkant is het gemiddelde)") 
 
 ```
@@ -1188,6 +1193,7 @@ waar 1 iemand zwaar ongelukkig is. De HBO studenten hebben de meeste
 spreiding in hun antwoorden.
 
 #### Drugs gebruik
+
 ```{r, fig.asp=.75, out.width='50%', fig.align='center'}
 Drugs_gebruik <- select(student_hap_awn_28_05,c(Niveau,Verd_mid_gebr,drugs_alc_geluk))
 
@@ -1207,6 +1213,7 @@ Drugs_gebruik_per_niveau <- Drugs_gebruik %>%
 ggplot(Drugs_gebruik_per_niveau, aes(x=Niveau, y=Verd_mid_gebr, fill = Niveau)) +
   geom_bar(stat = "identity") +
   ylab("Drugs gebruik") + 
+    labs(caption = "Figuur 11: Drugs gebruik per niveau") +
   theme(legend.position="none")
 ```
 
@@ -1225,7 +1232,7 @@ ggplot(woonsit_awn, aes(x = " ", y = "Antwoord per Woonsituatie", fill = Woonsit
     geom_col() + 
     coord_polar(theta = "y") +
     scale_fill_brewer() +
-    labs(caption = "Figuur 4: Antwoord per Woonsituatie") +
+    labs(caption = "Figuur 12: Antwoord per Woonsituatie") +
     ggtitle("Antwoord per Woonsituatie", subtitle = "antwoorden op 28-05-2024") +
     theme_void()
 ```
@@ -1252,6 +1259,7 @@ Drugs_gebruik_woonsit <- Drugs_gebruik_woonsit %>%
 ggplot(Drugs_gebruik_woonsit, aes(x=Woonsituatie, y=Verd_mid_gebr, fill = Woonsituatie)) +
   geom_bar(stat = "identity") +
   ylab("Drugs gebruik") + 
+    labs(caption = "Figuur 13: Drugs gebruik per woonsituatie") +
   theme(legend.position="none")
 
 ```
@@ -1267,6 +1275,7 @@ ggplot(Drugs_gebruik_woonsit, aes(x=drugs_alc_geluk, y=Verd_mid_gebr)) +
   xlim(0, 10) +
   ylab("Frequentie (Aantal Personen") +
   xlab("Geluk's gevoel door gebruik Drugs en of alcohol") + 
+    labs(caption = "Figuur 14: Geluk's gevoel door gebruik Drugs en of alcohol") +
   facet_wrap(~Woonsituatie)
 
 ```
@@ -1289,6 +1298,7 @@ ggplot(Drugs_gebruik_woonsit, aes(x =Woonsituatie , y = drugs_alc_geluk, fill = 
     xlab(" ") + 
     stat_boxplot(geom = "errorbar",
                width = 0.25) +
+    labs(caption = "Figuur 15: Geluks gevoel door drugs of alcohol per woonsituatie") +
     geom_boxplot() 
 ```
 
@@ -1316,6 +1326,7 @@ Drugs_gebruik_Sekse <- Drugs_gebruik_Sekse %>%
 ggplot(Drugs_gebruik_Sekse, aes(x=Sekse, y=Verd_mid_gebr, fill = Sekse)) +
   geom_bar(stat = "identity") +
   ylab("Drugs gebruik") + 
+  labs(caption = "Figuur 16: drugs gebruik per sekse") +
   theme(legend.position="none")
 ```
 
@@ -1333,6 +1344,7 @@ ggplot(Drugs_gebruik_Sekse, aes(x=drugs_alc_geluk, y=Verd_mid_gebr)) +
   xlim(0, 10) +
   ylab("Frequentie (Aantal Personen") +
   xlab("Geluk's gevoel door gebruik Drugs en of alcohol") + 
+    labs(caption = "Figuur 17: vergelijking geluk en gebruik drugs en alcohol") +
   facet_wrap(~Sekse)
 ```
 
@@ -1355,6 +1367,7 @@ ggplot(Relatie_ouder_28_05, aes(x=Ouder_relatie, y=academische_pres)) +
   geom_jitter(width = 0.2, alpha = 0.5) + 
   geom_point() + 
   facet_wrap(~Sekse) +
+    labs(caption = "Figuur 18: ouder relatie en geluks gevoel academie") +
   theme(legend.position="none")
 ```
 
@@ -1382,6 +1395,7 @@ ggplot(Relatie_ouder_28_05, aes(x=Ouder_relatie, y=average_col)) +
   geom_jitter(width = 0.2, alpha = 0.5) + 
   geom_point() + 
   facet_wrap(~Sekse) +
+  labs(caption = "Figuur 19: Geluk vergeleken met relatie met ouders") +
   theme(legend.position="none")
 
 ```
@@ -1611,7 +1625,8 @@ numerieke_data <- select(Student_awn_data_30_05, c(11:15, 17:21, 23:25))
 
 ```
 
-Ik heb de andere steden weg gefilterd zodat de data alleen maar van Groningen komt.
+Ik heb de andere steden weg gefilterd zodat de data alleen maar van
+Groningen komt.
 
 ```{r, fig.asp=.75, out.width='50%', fig.align='center'}
 reactie_stad <- select(reactie_stad, c(Stad))
@@ -1620,12 +1635,15 @@ ggplot(reactie_stad, aes(x = " ", y = "Antwoord per stad", fill = Stad)) +
     geom_col() + 
     coord_polar(theta = "y") +
     scale_fill_brewer() +
-    labs(caption = "Figuur 3: Antwoord per stad") +
+    labs(caption = "Figuur 20: Antwoord per stad") +
     ggtitle("Antwoord per stad", subtitle = "Utrecht heeft geen antwoorden deze is hierdoor niet zichbaar") +
     theme_void()
 
 ```
-Nog steeds is te zien dat Groningen de meeste antwoorden en de rest van de steden maar een paar of helemaal geen zoals bij Utrecht.
+
+Nog steeds is te zien dat Groningen de meeste antwoorden en de rest van
+de steden maar een paar of helemaal geen zoals bij Utrecht.
+
 ```{r, fig.asp=.75, out.width='50%', fig.align='center'}
 
 reactie_stad <- select(reactie_stad, c(Stad))
@@ -1635,6 +1653,7 @@ plot_30_05 <- ggplot(reactie_stad, aes(x = " ", y = "", fill = Stad)) +
     coord_polar(theta = "y") +
     scale_fill_brewer() +
     ggtitle("", subtitle = "antwoorden op 30-05-2024") +
+    labs(caption = "Figuur 21: antwoord per stad") +
     theme_void()
 
 combined_plots <- grid.arrange(plot_14_05_stad, plot_30_05, ncol = 1)
@@ -1658,7 +1677,7 @@ ggplot(sekse_awn_30_05, aes(x = " ", y = "Antwoord per stad", fill = Sekse)) +
     geom_col() + 
     coord_polar(theta = "y") +
     scale_fill_brewer() +
-    labs(caption = "Figuur 2: Antwoord per Sekse") +
+    labs(caption = "Figuur 22: Antwoord per Sekse") +
     ggtitle("Antwoord per sekse", subtitle = "antwoorden op 30-05-2024") +
     theme_void()
 ```
@@ -1677,7 +1696,7 @@ ggplot(vakgebied_awn_30_05, aes(x = " ", y = "Antwoord per Vakgebied", fill = Va
     geom_col() + 
     coord_polar(theta = "y") +
     scale_fill_brewer() +
-    labs(caption = "Figuur 3: Antwoord per Vakgebied") +
+    labs(caption = "Figuur 23: Antwoord per Vakgebied") +
     ggtitle("Antwoord per Vakgebied", subtitle = "antwoorden op 30-05-2024") +
     scale_fill_viridis_d() +
     theme_void()
@@ -1697,7 +1716,7 @@ ggplot(Niveau_awn_30_05, aes(x = " ", y = "Antwoord per Niveau", fill = Niveau))
     geom_col() + 
     coord_polar(theta = "y") +
     scale_fill_brewer() +
-    labs(caption = "Figuur 3: Antwoord per Niveau") +
+    labs(caption = "Figuur 24: Antwoord per Niveau") +
     ggtitle("Antwoord per Niveau", subtitle = "antwoorden op 30-05-2024") +
     scale_fill_viridis_d() +
     theme_void()
@@ -1716,7 +1735,7 @@ ggplot(woonsit_awn_30_05, aes(x = " ", y = "Antwoord per Woonsituatie", fill = W
     geom_col() + 
     coord_polar(theta = "y") +
     scale_fill_brewer() +
-    labs(caption = "Figuur 4: Antwoord per Woonsituatie") +
+    labs(caption = "Figuur 25: Antwoord per Woonsituatie") +
     ggtitle("Antwoord per Woonsituatie", subtitle = "antwoorden op 30-05-2024") +
     theme_void()
 ```
@@ -1732,7 +1751,7 @@ ggplot(Relatie_stat_awn_30_05, aes(x = " ", y = "Antwoord Relatie status", fill 
     geom_col() + 
     coord_polar(theta = "y") +
     scale_fill_brewer() +
-    labs(caption = "Figuur 7: Antwoord Relatie status") +
+    labs(caption = "Figuur 26: Antwoord Relatie status") +
     ggtitle("Antwoord Relatie status", subtitle = "antwoorden op 30-05-2024") +
     theme_void()
 ```
@@ -1749,7 +1768,7 @@ plot_14_05_natint <- ggplot(NatInt_awn_30_05, aes(x = " ", y = "Antwoord Nationa
     scale_fill_brewer() +
     ggtitle(" Antwoord Nationaal of internationaal", subtitle = "antwoorden op 30-05-2024") +
     theme_void()
-plot_14_05_natint + labs(caption = "Figuur 5:  Antwoord Nationaal of internationaal")
+plot_14_05_natint + labs(caption = "Figuur 27:  Antwoord Nationaal of internationaal")
 ```
 
 Het is duidelijk te zien in de grafiek dat de verdeling voor data tussen
@@ -1766,7 +1785,7 @@ plot_14_05_natint <- ggplot(Opl_jaar_awn_30_05, aes(x = " ", y = "Antwoord oplei
     scale_fill_brewer() +
     ggtitle(" Antwoord opleiding's Jaar", subtitle = "antwoorden op 30-05-2024") +
     theme_void()
-plot_14_05_natint + labs(caption = "Figuur 5:  Antwoord opleidings Jaar")
+plot_14_05_natint + labs(caption = "Figuur 28:  Antwoord opleidings Jaar")
 ```
 
 Hier is te zien wat de antwoorden zijn per opleiding jaar. dit is
@@ -1785,7 +1804,7 @@ plot_14_05_natint <- ggplot(Gelovig_awn_30_05, aes(x = " ", y = "Antwoord Gelovi
     scale_fill_brewer() +
     ggtitle(" Antwoord Gelovig", subtitle = "antwoorden op 30-05-2024") +
     theme_void()
-plot_14_05_natint + labs(caption = "Figuur 5:  Antwoord Gelovig")
+plot_14_05_natint + labs(caption = "Figuur 29:  Antwoord Gelovig")
 ```
 
 Het antwoord tussen wel of niet gelovigen is grotendeels ongelovigen.
@@ -1820,13 +1839,15 @@ ggplot(gem_geluk_30_05, aes(x = Relatie_stat, y = average_col, fill = Relatie_st
     geom_boxplot() +
     ylab("Gemidelde geluk") + 
     xlab("Relatie ja of nee") + 
-  
+    labs(caption = "Figuur 30: Gemiddelde geluk in relatie") +
     ggtitle("Het gemiddelde geluk Relatie", subtitle = "(Lijn in het vierkant is het gemiddelde)") +
   theme_minimal()
 
 ```
-Het gemiddelde geluk veranderd niet heel veel wanneer iemand in een relatie zit of niet. Dus deze grafiek is niet interesant om te laten zien.
 
+Het gemiddelde geluk veranderd niet heel veel wanneer iemand in een
+relatie zit of niet. Dus deze grafiek is niet interesant om te laten
+zien.
 
 ```{r, fig.asp=.75, out.width='50%', fig.align='center'}
 #Hier maak ik verschillende variabelen aan die gemidelden opslaan
@@ -1848,6 +1869,7 @@ ggplot(gem_geluk, aes(x = Sekse, y = average_col, fill = Sekse)) +
     ylim(0, 10) +
     geom_boxplot() +
     ylab("Gemidelde geluk") + 
+    labs(caption = "Figuur 31: Gemiddelde geluk per sekse") +
     ggtitle("Het gemiddelde geluk per Sekse", subtitle = "(Lijn in het vierkant is het gemiddelde)") 
 ```
 
@@ -1881,6 +1903,7 @@ ggplot(gem_geluk, aes(x = Niveau, y = average_col, fill = Niveau)) +
     theme(axis.text.x = element_text(angle = 45, hjust = 1)) + 
     geom_boxplot() +
     ylab("Gemidelde geluk") + 
+      labs(caption = "Figuur 32: Gemiddelde geluk per Niveau") +
     ggtitle("Het gemiddelde geluk per Niveau", subtitle = "(Lijn in het vierkant is het gemiddelde)") 
 
 ```
@@ -1912,11 +1935,13 @@ ggplot(gem_geluk, aes(x = Woonsituatie, y = average_col, fill = Woonsituatie)) +
     ylim(0, 10) +
     geom_boxplot() +
       ylab("Gemidelde geluk") + 
+      labs(caption = "Figuur 33: Gemiddelde geluk per Woonsituatie") +
     ggtitle("Het gemiddelde geluk per Woonsituatie", subtitle = "(Lijn in het vierkant is het gemiddelde)") 
 ```
-Er is te zien dat mensen die uitwonen en dus niet meer thuis wonen gemiddeld zich
-gelukkiger voelen dan mensen die thuiswonen. Deze plot is dus interessant om in 
-te vermelden in ons eindproduct.
+
+Er is te zien dat mensen die uitwonen en dus niet meer thuis wonen
+gemiddeld zich gelukkiger voelen dan mensen die thuiswonen. Deze plot is
+dus interessant om in te vermelden in ons eindproduct.
 
 ```{r, fig.asp=.75, out.width='50%', fig.align='center'}
 gem_geluk <- Student_awn_data_30_05 %>%
@@ -1939,11 +1964,15 @@ ggplot(gem_geluk, aes(x = Opl_jaar, y = average_col, fill = Opl_jaar)) +
     theme(legend.position = "none") +
     ylab("Gemidelde geluk") +
     xlab("Opleidings jaar") +
+      labs(caption = "Figuur 34: Gemiddelde geluk in relatie") +
     ggtitle("Het gemiddelde geluk per Opleidings jaar", subtitle = "(Lijn in het vierkant is het gemiddelde)") 
 
 ```
-Het geluk per opleiding jaar is niet heel verschillend het licht allemaal gemiddeld rond de 6.25 waar mensen in het 3rde jaar zich het gelukkigste voelen
-dit kan voor de universiteit studenten zijn omdat dit hun laatste jaar is. Het is niet dat iedereen zich super gelukkig voelt.
+
+Het geluk per opleiding jaar is niet heel verschillend het licht
+allemaal gemiddeld rond de 6.25 waar mensen in het 3rde jaar zich het
+gelukkigste voelen dit kan voor de universiteit studenten zijn omdat dit
+hun laatste jaar is. Het is niet dat iedereen zich super gelukkig voelt.
 
 #### Fysieke gezonheid
 
@@ -1953,10 +1982,12 @@ ggplot(Student_awn_data_30_05, aes(x = Sekse, y = Fys_import
 , fill = Sekse)) +
     ylim(0, 10) +
   geom_violin() +
+      labs(caption = "Figuur 35: Belang fysieke gezondheid per sekse") +
   labs(title = "Hoe belangrijk is je (fysieke-) gezondheid voor je geluk? ", x = "Sekse", y = "antwoord") +
   theme_minimal()
 
 ```
+
 Hier is te zien dat voor zowel mannen als vrouwen hun fysieke gezondheid
 zeer belangrijk is voor hun geluk. Het grootste deel zit tussen de 7 en
 9.
@@ -1968,11 +1999,13 @@ ggplot(Student_awn_data_30_05, aes(x = Woonsituatie, y = Fys_import
                width = 0.25) +
     ylim(0, 10) +
   geom_boxplot() +
+        labs(caption = "Figuur 36: Belang fysieke gezondheid per Woonsituatie") +
   labs(title = "Hoe belangrijk is je (fysieke-) gezondheid voor je geluk? ", x = "Woonsituatie", y = "antwoord") +
   theme_minimal()
 ```
-Het is opmerkelijk in deze plot dat de gemiddelden hetzelfde zijn maar de thuiswonende wel meer uitschieters hebben.
 
+Het is opmerkelijk in deze plot dat de gemiddelden hetzelfde zijn maar
+de thuiswonende wel meer uitschieters hebben.
 
 ```{r, fig.asp=.75, out.width='50%', fig.align='center'}
 ggplot(Student_awn_data_30_05, aes(x = Niveau, y = Fys_import
@@ -1981,11 +2014,14 @@ ggplot(Student_awn_data_30_05, aes(x = Niveau, y = Fys_import
                width = 0.25) +
   ylim(0, 10) +
   geom_boxplot() +
+        labs(caption = "Figuur 37: Belang fysieke gezondheid per Niveau") +
   labs(title = "Hoe belangrijk is je (fysieke-) gezondheid voor je geluk? ", x = "Niveau", y = "antwoord") +
   theme_minimal()
 ```
-In deze grafiek is te zien dat fysieke gezondheid over het algemeen belangrijk is voor elk opleidings niveau.
-er zijn wel verschillen in de mate van overeenstemming binnen de groep.
+
+In deze grafiek is te zien dat fysieke gezondheid over het algemeen
+belangrijk is voor elk opleidings niveau. er zijn wel verschillen in de
+mate van overeenstemming binnen de groep.
 
 ```{r, fig.asp=.75, out.width='50%', fig.align='center'}
 ggplot(Student_awn_data_30_05, aes(x = Relatie_stat, y = Fys_import
@@ -1994,11 +2030,13 @@ ggplot(Student_awn_data_30_05, aes(x = Relatie_stat, y = Fys_import
                width = 0.25) +
     ylim(0, 10) +
   geom_boxplot() +
+  labs(caption = "Figuur 38: Belang fysieke gezondheid relatie") +
   labs(title = "Hoe belangrijk is je (fysieke-) gezondheid voor je geluk? ", x = "Relatie", y = "antwoord") +
   theme_minimal()
 ```
-Bij deze grafiek is het raar omdat de inter kwartiel en gemiddelden identiek lijken.
-Deze plot is dus niet geschikt voor het eind product.
+
+Bij deze grafiek is het raar omdat de inter kwartiel en gemiddelden
+identiek lijken. Deze plot is dus niet geschikt voor het eind product.
 
 #### academische prestatie
 
@@ -2009,6 +2047,7 @@ ggplot(Student_awn_data_30_05, aes(x = Opl_jaar, y = academische_pres, fill = Op
                width = 0.25) +
     ylim(0, 10) +
   geom_boxplot() +
+        labs(caption = "Figuur 39: Belang fysieke gezondheid per opleidingsjaar") +
   labs(title = "Hoeveel Geluk door academische prestatie per opleidings jaar", x = "opleidingsjaar", y = "Geluk") +
   theme_minimal()
 
@@ -2026,12 +2065,15 @@ ggplot(Student_awn_data_30_05, aes(x = Sekse, y = academische_pres, fill = Sekse
                width = 0.25) +
     ylim(0, 10) +
   geom_boxplot() +
+        labs(caption = "Figuur 40: Belang academische prestatie per sekse") +
   labs(title = "Hoeveel Geluk door academische prestatie per Sekse", x = "Sekse", y = "Geluk") +
   theme_minimal()
 
 ```
-In deze grafiek is te zien dat voor mannen en vrouwen geluk door academische prestatie belangrijker is dan voor de ander sekse. Het gemiddelde is ook hetzelfde
-voor mannen en vrouwen.
+
+In deze grafiek is te zien dat voor mannen en vrouwen geluk door
+academische prestatie belangrijker is dan voor de ander sekse. Het
+gemiddelde is ook hetzelfde voor mannen en vrouwen.
 
 ```{r, fig.asp=.75, out.width='50%', fig.align='center'}
 ggplot(Student_awn_data_30_05, aes(x = Niveau, y = academische_pres, fill = Niveau)) +
@@ -2039,10 +2081,14 @@ ggplot(Student_awn_data_30_05, aes(x = Niveau, y = academische_pres, fill = Nive
                width = 0.25) +
     ylim(0, 10) +
   geom_boxplot() +
+          labs(caption = "Figuur 41: Belang academische prestatie per niveau") +
   labs(title = "Hoeveel Geluk door academische prestatie per Niveau", x = "Niveau", y = "Geluk") +
   theme_minimal()
 ```
-Over het algemeen is de academische prestatie belangrijk echter is er wel te zien dat het voor mbo'ers het minst belangrijk is gemiddeld maar voor hbo studenten en masters studenten is het heel belangrijk. 
+
+Over het algemeen is de academische prestatie belangrijk echter is er
+wel te zien dat het voor mbo'ers het minst belangrijk is gemiddeld maar
+voor hbo studenten en masters studenten is het heel belangrijk.
 
 #### Geld
 
@@ -2051,6 +2097,7 @@ Over het algemeen is de academische prestatie belangrijk echter is er wel te zie
 ggplot(Student_awn_data_30_05, aes(x = Sekse, y = Geld_geluk, color = Sekse)) +
     ylim(0, 10) +
   geom_jitter(width = 0.2, size = 2) +
+      labs(caption = "Figuur 42: Belang geld per sekse") +
   labs(title = "Geld is belangrijk voor mij om gelukkig te zijn.
 ", x = "Sekse", y = "Geluk") +
   theme_minimal()
@@ -2069,6 +2116,7 @@ ggplot(Student_awn_data_30_05, aes(x = Sekse, y = Financiele_sit, fill = Sekse))
     stat_boxplot(geom = "errorbar",
                width = 0.25) +
     ylim(0, 10) +
+        labs(caption = "Figuur 43: financiele situatie per sekse") +
   geom_boxplot() +
   labs(title = "boxplot van financiële situatie", x = "Sekse", y = "financiële situatie") +
   theme_minimal()
@@ -2085,58 +2133,80 @@ situatie.
 ggplot(Student_awn_data_30_05, aes(x = Woonsituatie, y = Geld_geluk, color = Woonsituatie)) +
     ylim(0, 10) +
   geom_jitter(width = 0.2, size = 2) +
+    labs(caption = "Figuur 44: Belang geld woonsituatie") +
   labs(title = "Geld is belangrijk voor mij om gelukkig te zijn.
 ", x = "Woonsituatie", y = "Geluk") +
   theme_minimal()
 
 ```
-In deze plot is moeilijk te zien waar het gemiddelde ligt omdat de meningen verspreid zijn echter kan je wel zien dat uitwonend meer geluk halen uit geld omdat het voor thuiswonende aardig verspreid ligt.
+
+In deze plot is moeilijk te zien waar het gemiddelde ligt omdat de
+meningen verspreid zijn echter kan je wel zien dat uitwonend meer geluk
+halen uit geld omdat het voor thuiswonende aardig verspreid ligt.
 
 ```{r, fig.asp=.75, out.width='50%', fig.align='center'}
 ggplot(Student_awn_data_30_05, aes(x = Woonsituatie, y = Financiele_sit, fill = Woonsituatie)) +
     stat_boxplot(geom = "errorbar",
                width = 0.25) +
     ylim(0, 10) +
+        labs(caption = "Figuur 45: Financiele situatie per woonsituatie") +
   geom_boxplot() +
   labs(title = "boxplot van financiële situatie", x = "Woonsituatie", y = "financiële situatie") +
   theme_minimal()
 ```
-In deze plot is te zien dat thuiswonende gemiddeld in een beter financieel situatie
-zitten echter is ook te zien dat er 1 uitschieter is bij de thuiswonende
-die in een extreem slechte financiële situatie zit. Verder is de interkwartiel afstand tussen de twee verschillend waar de q3 van de uitwonende hoger naar boven gaat en de q1 van de thuiswonende juist naar beneden uitschiet.
+
+In deze plot is te zien dat thuiswonende gemiddeld in een beter
+financieel situatie zitten echter is ook te zien dat er 1 uitschieter is
+bij de thuiswonende die in een extreem slechte financiële situatie zit.
+Verder is de interkwartiel afstand tussen de twee verschillend waar de
+q3 van de uitwonende hoger naar boven gaat en de q1 van de thuiswonende
+juist naar beneden uitschiet.
 
 ```{r, fig.asp=.75, out.width='50%', fig.align='center'}
 ggplot(Student_awn_data_30_05, aes(x = Niveau, y = Geld_geluk, color = Niveau)) +
     ylim(0, 10) +
   geom_jitter(width = 0.2, size = 2) +
+    labs(caption = "Figuur 46: Belang geld per niveau") +
   labs(title = "Geld is belangrijk voor mij om gelukkig te zijn.
 ", x = "Niveau", y = "Geluk") +
   theme_minimal()
 
 ```
-In deze scatter plot is duidelijk het verschil te zien in antwoorden waar uit ik niet een duidelijk antwoord kan halen waardoor deze plot niet handig is voor ons eind product. 
+
+In deze scatter plot is duidelijk het verschil te zien in antwoorden
+waar uit ik niet een duidelijk antwoord kan halen waardoor deze plot
+niet handig is voor ons eind product.
 
 ```{r, fig.asp=.75, out.width='50%', fig.align='center'}
 ggplot(Student_awn_data_30_05, aes(x = Niveau, y = Financiele_sit, fill = Niveau)) +
     stat_boxplot(geom = "errorbar",
                width = 0.25) +
     ylim(0, 10) +
+    labs(caption = "Figuur 47: financiele situatie per niveau") +
   geom_boxplot() +
   labs(title = "boxplot van financiële situatie", x = "Niveau", y = "financiële situatie") +
   theme_minimal()
 ```
-Hier is de zien dat gemiddeld hbo'ers de slechtste financiële situatie hebben en dat masters studenten de beste hebben. Dit is ook wel logisch omdat masters studenten meestal al bijbaan hebben die goed verdient door het bacholer diploma.
+
+Hier is de zien dat gemiddeld hbo'ers de slechtste financiële situatie
+hebben en dat masters studenten de beste hebben. Dit is ook wel logisch
+omdat masters studenten meestal al bijbaan hebben die goed verdient door
+het bacholer diploma.
 
 ```{r, fig.asp=.75, out.width='50%', fig.align='center'}
 ggplot(Student_awn_data_30_05, aes(x = Opl_jaar, y = Geld_geluk, color = Opl_jaar)) +
     ylim(0, 10) +
+      labs(caption = "Figuur 48: Belang geld per opleidingsjaar") +
   geom_jitter(width = 0.2, size = 2) +
   labs(title = "Geld is belangrijk voor mij om gelukkig te zijn.
 ", x = "Opleidings jaar", y = "Geluk") +
   theme_minimal()
 ```
-Deze plot laat zien of geld belangrijk was om gelukkig te zijn per opleidings jaar
-het is alleen onduidelijk om uit deze data een goeie conclusie te halen en elk jaar lijkt wel gelukkig te zijn echter is wel te zien dat het 2de en 4de jaar een dip hebben.
+
+Deze plot laat zien of geld belangrijk was om gelukkig te zijn per
+opleidings jaar het is alleen onduidelijk om uit deze data een goeie
+conclusie te halen en elk jaar lijkt wel gelukkig te zijn echter is wel
+te zien dat het 2de en 4de jaar een dip hebben.
 
 ```{r, fig.asp=.75, out.width='50%', fig.align='center'}
 ggplot(Student_awn_data_30_05, aes(x = Opl_jaar, y = Financiele_sit, fill = Opl_jaar)) +
@@ -2144,31 +2214,40 @@ ggplot(Student_awn_data_30_05, aes(x = Opl_jaar, y = Financiele_sit, fill = Opl_
                width = 0.25) +
     ylim(0, 10) +
   geom_boxplot() +
+      labs(caption = "Figuur 49: Financiele situatie per opleidingsjaar") +
   labs(title = "boxplot van financiële situatie", x = "Opleidings jaar", y = "financiële situatie") +
   theme_minimal()
 ```
-Er is in deze plot te zien dat de 3de jaars gemiddeld in de beste financiële situatie zitten. Dit kan zijn voor universiteit studenten dat dit hun laatste jaar is en voor hbo'ers dat ze hun minor of een stage doen. de 2de jaars lijken in de slechtste financiële ik zou niet een reden kunnen bedenken hiervoor.
+
+Er is in deze plot te zien dat de 3de jaars gemiddeld in de beste
+financiële situatie zitten. Dit kan zijn voor universiteit studenten dat
+dit hun laatste jaar is en voor hbo'ers dat ze hun minor of een stage
+doen. de 2de jaars lijken in de slechtste financiële ik zou niet een
+reden kunnen bedenken hiervoor.
 
 ```{r, fig.asp=.75, out.width='50%', fig.align='center'}
 ggplot(Student_awn_data_30_05, aes(x = Relatie_stat, y = Geld_geluk, color = Relatie_stat)) +
     ylim(0, 10) +
   geom_jitter(width = 0.2, size = 2) +
+    labs(caption = "Figuur 50: Belang geld relatie") +
   labs(title = "Geld is belangrijk voor mij om gelukkig te zijn.
 ", x = "Relatie status", y = "Geluk") +
   theme_minimal()
 ```
-er is niet een opmerkelijk verschil in dit plot waard om te benoemen
 
+er is niet een opmerkelijk verschil in dit plot waard om te benoemen
 
 ```{r, fig.asp=.75, out.width='50%', fig.align='center'}
 ggplot(Student_awn_data_30_05, aes(x = Relatie_stat, y = Financiele_sit, fill = Relatie_stat)) +
     stat_boxplot(geom = "errorbar",
                width = 0.25) +
     ylim(0, 10) +
+      labs(caption = "Figuur 51: financiele status relatie") +
   geom_boxplot() +
   labs(title = "boxplot van Financiele situatie", x = "Relatie status", y = "Financiele situatie") +
   theme_minimal()
 ```
+
 er is niet een opmerkelijk verschil in dit plot waard om te benoemen
 
 #### Mentale gezondheid
@@ -2179,45 +2258,62 @@ ggplot(Student_awn_data_30_05, aes(x = Sekse, y = Mental_health, fill = Sekse)) 
       stat_boxplot(geom = "errorbar",
                width = 0.25) +
     ylim(0, 10) +
+  labs(caption = "Figuur 52: mentale gezondheid per sekse") +
   geom_boxplot() +
   labs(title = "boxplot van Mentale gezondheid per sekse", x = "Sekse", y = "Mental_health") +
   theme_minimal()
 ```
-Er is in deze plot te zien dat mannen gemiddelde de beste mentale gezondheid hebben
-en anders sekse de slechtste.
+
+Er is in deze plot te zien dat mannen gemiddelde de beste mentale
+gezondheid hebben en anders sekse de slechtste.
 
 ```{r, fig.asp=.75, out.width='50%', fig.align='center'}
 ggplot(Student_awn_data_30_05, aes(x = Woonsituatie, y = Mental_health, fill = Woonsituatie)) +
       stat_boxplot(geom = "errorbar",
                width = 0.25) +
     ylim(0, 10) +
+  labs(caption = "Figuur 53: mentale gezondheid per woonsituatie") +
   geom_boxplot() +
   labs(title = "boxplot van Mentale gezondheid van thuiswonende vs uitwonende", x = "Woonsituatie", y = "Mental_health") +
   theme_minimal()
 ```
-In deze plot is te zien dat de uitwonende studenten gemiddeld een beter mentale gezondheid hebben dan studenten die thuiswonen er zijn bij beide wel uitschieters.
+
+In deze plot is te zien dat de uitwonende studenten gemiddeld een beter
+mentale gezondheid hebben dan studenten die thuiswonen er zijn bij beide
+wel uitschieters.
 
 ```{r, fig.asp=.75, out.width='50%', fig.align='center'}
 ggplot(Student_awn_data_30_05, aes(x = Opl_jaar, y = Mental_health, fill = Opl_jaar)) +
       stat_boxplot(geom = "errorbar",
                width = 0.25) +
     ylim(0, 10) +
+  labs(caption = "Figuur 54: mentale gezondheid per opleidingsjaar") +
   geom_boxplot() +
   labs(title = "boxplot van Mentale gezondheid van verschillende opleidings jaren", x = "Opleidings jaar", y = "Mental_health") +
   theme_minimal()
 ```
-Er is duidelijk te zien dat het 2de opleidings jaar gemiddelde de slechtste mentale gezondheid heeft en dat het 3rde en 4de jaar de beste mentale gezondheid heeft. Dit is interessant om te laten zien in ons eind product.
+
+Er is duidelijk te zien dat het 2de opleidings jaar gemiddelde de
+slechtste mentale gezondheid heeft en dat het 3rde en 4de jaar de beste
+mentale gezondheid heeft. Dit is interessant om te laten zien in ons
+eind product.
 
 ```{r, fig.asp=.75, out.width='50%', fig.align='center'}
 ggplot(Student_awn_data_30_05, aes(x = Niveau, y = Mental_health, fill = Niveau)) +
       stat_boxplot(geom = "errorbar",
                width = 0.25) +
     ylim(0, 10) +
+  labs(caption = "Figuur 55: mentale gezondheid per niveau") +
   geom_boxplot() +
-  labs(title = "Mental_health", x = "Niveau", y = "Mental_health") +
+  labs(title = "Mentale gezondheid per niveau", x = "Niveau", y = "Mental_health") +
   theme_minimal()
 ```
-Hier is het verschil in mentale gezondheid per niveau en er is te zien dat masters studenten de beste mentale gezondheid hebben behalve 1 uitschieter wel is er maar 1 kwartiel te zien. bij de mbo'ers zijn beide kwartielen niet te zien alleen maar 1 lijn en 2 uitschieters. Bij universiteits studenten is alleen het q3 te zien.
+
+Hier is het verschil in mentale gezondheid per niveau en er is te zien
+dat masters studenten de beste mentale gezondheid hebben behalve 1
+uitschieter wel is er maar 1 kwartiel te zien. bij de mbo'ers zijn beide
+kwartielen niet te zien alleen maar 1 lijn en 2 uitschieters. Bij
+universiteits studenten is alleen het q3 te zien.
 
 ```{r, fig.asp=.75, out.width='50%', fig.align='center'}
 ggplot(Student_awn_data_30_05, aes(x = Relatie_stat, y = Mental_health, fill = Relatie_stat)) +
@@ -2225,7 +2321,8 @@ ggplot(Student_awn_data_30_05, aes(x = Relatie_stat, y = Mental_health, fill = R
                width = 0.25) +
     ylim(0, 10) +
   geom_boxplot() +
-  labs(title = "Mental_health", x = "Relatie status", y = "Mental_health") +
+  labs(caption = "Figuur 56: mentale gezondheid relatie") +
+  labs(title = "mentale gezondheid relatie", x = "Relatie status", y = "Mental_health") +
   theme_minimal()
 ```
 
@@ -2238,11 +2335,14 @@ ggplot(Student_awn_data_30_05, aes(x = Sekse, y = Thuis_in_stad, fill = Sekse)) 
                width = 0.25) +
     ylim(0, 10) +
   geom_boxplot() +
+  labs(caption = "Figuur 57: Thuis in stad per sekse") +
   labs(title = "Ik voel me thuis in de stad waar ik woon. 
 ", x = "Sekse", y = "Antwoord") +
   theme_minimal()
 ```
-De mannen en vrouwen voelen zich beide gemiddeld even thuis in de stad waarin ze wonen de anders sekse voelen zich minder thuis.
+
+De mannen en vrouwen voelen zich beide gemiddeld even thuis in de stad
+waarin ze wonen de anders sekse voelen zich minder thuis.
 
 ```{r, fig.asp=.75, out.width='50%', fig.align='center'}
 
@@ -2251,13 +2351,17 @@ ggplot(Student_awn_data_30_05, aes(x = Niveau, y = Thuis_in_stad, fill = Niveau)
                width = 0.25) +
     ylim(0, 10) +
   geom_boxplot() +
+  labs(caption = "Figuur 58: Thuis in stad per niveau") +
   labs(title = "Ik voel me thuis in de stad waar ik woon. 
 ", x = "Niveau", y = "Antwoord") +
   theme_minimal()
 
 
 ```
-Deze grafiek is heel apart hbo'ers voelen zich heel erg thuis de masters is moeilijk een oordeel uit te halen mbo'ers zijn gemiddeld niet super gelukkig en de uni studenten lijken even gelukkig als de hbo'ers.
+
+Deze grafiek is heel apart hbo'ers voelen zich heel erg thuis de masters
+is moeilijk een oordeel uit te halen mbo'ers zijn gemiddeld niet super
+gelukkig en de uni studenten lijken even gelukkig als de hbo'ers.
 
 ```{r, fig.asp=.75, out.width='50%', fig.align='center'}
 ggplot(Student_awn_data_30_05, aes(x = Opl_jaar, y = Thuis_in_stad, fill = Opl_jaar)) +
@@ -2265,11 +2369,14 @@ ggplot(Student_awn_data_30_05, aes(x = Opl_jaar, y = Thuis_in_stad, fill = Opl_j
                width = 0.25) +
     ylim(0, 10) +
   geom_boxplot() +
+  labs(caption = "Figuur 59: Thuis in stad per opleidingsjaar") +
   labs(title = "Ik voel me thuis in de stad waar ik woon. 
 ", x = "Opleidingsjaar", y = "Antwoord") +
   theme_minimal()
 ```
-Deze plot laat zien dat ieder opleidings jaar behalve de 4de zich gemiddeld zeer thuis voelt in de stad waar ze wonen.
+
+Deze plot laat zien dat ieder opleidings jaar behalve de 4de zich
+gemiddeld zeer thuis voelt in de stad waar ze wonen.
 
 ```{r, fig.asp=.75, out.width='50%', fig.align='center'}
 
@@ -2277,13 +2384,17 @@ ggplot(Student_awn_data_30_05, aes(x = Woonsituatie, y = Thuis_in_stad, fill = W
       stat_boxplot(geom = "errorbar",
                width = 0.25) +
     ylim(0, 10) +
+  labs(caption = "Figuur 60: Thuis in stad per woonsituatie") +
   geom_boxplot() +
   labs(title = "Ik voel me thuis in de stad waar ik woon. 
 ", x = "Woonsituatie", y = "Antwoord") +
   theme_minimal()
 ```
-Er is te zien dat mensen die in Groningen wonen zich heel erg thuis voelen hier het gemiddelde licht hier ook tussen de 8.75 en 10 er is ook te zien dat er iemand is die thuis woont en deze zich helemaal niet thuisvoelt waar ze wonen.
 
+Er is te zien dat mensen die in Groningen wonen zich heel erg thuis
+voelen hier het gemiddelde licht hier ook tussen de 8.75 en 10 er is ook
+te zien dat er iemand is die thuis woont en deze zich helemaal niet
+thuisvoelt waar ze wonen.
 
 ### Analyse
 
@@ -2523,7 +2634,7 @@ van de student niet uit in welke stad deze studeert.
 ### nieuwe materialen lijst
 
 | Tool               | Referentie                                                | Versie                               | Waarom                                                                                                                                                                                       |
-|---------------|---------------|---------------|---------------------------|
+|-----------------|-----------------|-----------------|----------------------|
 | Google forms       | <https://docs.google.com/forms/>                          |                                      | Gebruikt om een enquête te maken die gebruikers vriendelijk is en een netjes csv bestand geeft als output.                                                                                   |
 | Git                | <https://www.git-scm.com>                                 | git version 2.44.0                   | Git wordt gebruikt voor version control                                                                                                                                                      |
 | Github             | <http://github.com>                                       |                                      | De gehele data set, logboeken en protocol staan op github omdat dit een netjese en goed navigeerbare omgeving maakt zodat iemand ook alles in 1 keer kan downloaden en bekijken.             |
@@ -2571,10 +2682,11 @@ cbs_data_geluk <- cbs_data_geluk %>%
 cbs_geluk_18_tot_25 <- select(cbs_data_geluk, c(Periode, Geluk_18_tot_25))
 
 
-cbs_geluk_18_tot_25
+head(cbs_geluk_18_tot_25)
 
 p_cbs <- ggplot() + 
     geom_point(data = cbs_geluk_18_tot_25, aes(x=Periode, y=Geluk_18_tot_25), color = "blue", alpha = 0.6) +
+  labs(caption = "Figuur 61: cbs data geluk") +
     ylab("Geluk") +
     xlab("Tijd periode in jaren") +
     theme_minimal()
@@ -2618,6 +2730,7 @@ p <- ggplot() +
     labs(color = "Woonsituatie") +
     xlab("Geluk voor de enquête") +
     ylab("Geluk na de enquête")+
+    labs(caption = "Figuur 62: Thuiswonend vs uitwonend geluk") +
     geom_jitter(width = 0.2, alpha = 0.5) + 
     facet_wrap(~Woonsituatie) +
     ggtitle("Scatterplot Uit- vs Thuiswonende studenten geluk", subtitle = "Donkerder = meerdere zelfde antwoorden") +
@@ -2643,22 +2756,39 @@ p_2 <- ggplot() +
     labs(color = "Woonsituatie") +
     xlab("Geluk door Stad") +
     ylab("Geluk Door woonsituatie")+
-    geom_jitter(width = 0.2, alpha = 0.5) + 
+    geom_jitter(width = 0.2, height = 0.2) +
     facet_wrap(~Woonsituatie) +
+    labs(caption = "Figuur 63: Geluk door woonsituatie en stad") +
     ggtitle("Scatterplot Uit- vs Thuiswonende studenten geluk", subtitle = "Donkerder = meerdere zelfde antwoorden") +
     theme_minimal()
 p_2
 
 ```
+
+Hier is te zien dat mensen die uitwonen gemiddelde gelukkiger zijn met
+hun woonsituatie dan mensen die thuiswonen.
+
 ### Onderzoeks vraag
 
-Onze onderzoeksvraag luid **“In welke studenten stad zijn studenten het gelukkigst?“** 
-Om deze vraag te beantwoorden hadden wij 4 studenten steden geselecteerd.
-Amsterdam, Groningen, Leiden en Utrecht. Naar de universiteiten, HBO's en MBO's zijn mails verstuurd. De mails zijn verstuurd naar de instituten zelf en de faculteiten, ook de studie verenigingen hebben mails gekregen. 
-Ook zijn er op sommige plekken op zowel de HBO's als universiteiten posters opgehangen. Dit is niet in Amsterdam gedaan dit is omdat na wij de posters hadden opgehangen in Utrecht en Leiden wij merkten dat dit niet een goede strategie was.
-Hierdoor zijn we gestart met de emails versturen. Hier zijn de resultaten van onze data verzameling. \\
-Dit is ook te zien aan onze power tests op dag **14-05** is te zien dat per groep voor een goede conclusie minimaal 64 personen moeten zijn en aangezien wij in totaal 77 antwoorden hebben is dit niet mogelijk. 
-Onze p-waarde (p-value = 0.3307) is ook te hoog om conclusies te trekken. Dit omdat een hoge p-waarde zegt dat de resultaten niet statistisch significant zijn wat eigenlijk betekent dat er geen sterk bewijs is om aan te nemen dat er een werkelijk verschil of effect is hierdoor is de data waarschijnlijk niet te vertrouwen voor een basis voor het trekken van conclussies.
+Onze onderzoeksvraag luid **“In welke studenten stad zijn studenten het
+gelukkigst?“** Om deze vraag te beantwoorden hadden wij 4 studenten
+steden geselecteerd. Amsterdam, Groningen, Leiden en Utrecht. Naar de
+universiteiten, HBO's en MBO's zijn mails verstuurd. De mails zijn
+verstuurd naar de instituten zelf en de faculteiten, ook de studie
+verenigingen hebben mails gekregen. Ook zijn er op sommige plekken op
+zowel de HBO's als universiteiten posters opgehangen. Dit is niet in
+Amsterdam gedaan dit is omdat na wij de posters hadden opgehangen in
+Utrecht en Leiden wij merkten dat dit niet een goede strategie was.
+Hierdoor zijn we gestart met de emails versturen. Hier zijn de
+resultaten van onze data verzameling. \\ Dit is ook te zien aan onze
+power tests op dag **14-05** is te zien dat per groep voor een goede
+conclusie minimaal 64 personen moeten zijn en aangezien wij in totaal 77
+antwoorden hebben is dit niet mogelijk. Onze p-waarde (p-value = 0.3307)
+is ook te hoog om conclusies te trekken. Dit omdat een hoge p-waarde
+zegt dat de resultaten niet statistisch significant zijn wat eigenlijk
+betekent dat er geen sterk bewijs is om aan te nemen dat er een
+werkelijk verschil of effect is hierdoor is de data waarschijnlijk niet
+te vertrouwen voor een basis voor het trekken van conclussies.
 
 ```{r, fig.asp=.75, out.width='50%', fig.align='center'}
 laatste_data <- read.csv("Student_hap_awn_30_05.csv")
@@ -2670,14 +2800,27 @@ ggplot(laatste_data, aes(x = " ", y = "Antwoord per stad", fill = Stad)) +
     geom_col() + 
     coord_polar(theta = "y") +
     scale_fill_brewer() +
+    labs(caption = "Figuur 64: antwoord per stad") +
     ggtitle("Antwoord per stad", subtitle = "Utrecht heeft geen antwoorden deze is hierdoor niet zichbaar") +
     theme_void()
 
 ```
-Hier zijn alle verzamelde antwoorden te zien. Er is te zien dat er maar 3 steden staan. Dit is omdat er geen antwoorden zijn gekomen uit utrecht ondanks de mails en posters. De andere steden die wel data hebben zijn Amsterdam, Leiden en Groningen. Het is duidelijk te zien waar alle data vandaan komt. Wat dus betekent dat wij niet de onderzoeksvraag met goede onderbouwing kunnen beantwoorden. Dit betekent dus dat onze conclusie in relatie met de onderzoeksvraag **“In welke studenten stad zijn studenten het gelukkigst?“** dit is niet uit onze data te halen. \\
 
-Wel kunnen wij andere dingen bekijken zoals verdovende middelen gebruik of mentale gezondheid tussen de sekse en allemaal andere vergelijkingen tussen groepen binnen onze enquête. We hebben natuurlijk om de steden gevraagd maar ook om welke sekse zich de student voelt, De relatie met hun ouders, drugs en alcohol gebruik, geloof, 
-Hier zijn de interessantste grafieken die uit de data komen
+Hier zijn alle verzamelde antwoorden te zien. Er is te zien dat er maar
+3 steden staan. Dit is omdat er geen antwoorden zijn gekomen uit utrecht
+ondanks de mails en posters. De andere steden die wel data hebben zijn
+Amsterdam, Leiden en Groningen. Het is duidelijk te zien waar alle data
+vandaan komt. Wat dus betekent dat wij niet de onderzoeksvraag met goede
+onderbouwing kunnen beantwoorden. Dit betekent dus dat onze conclusie in
+relatie met de onderzoeksvraag **“In welke studenten stad zijn studenten
+het gelukkigst?“** dit is niet uit onze data te halen. \\
+
+Wel kunnen wij andere dingen bekijken zoals verdovende middelen gebruik
+of mentale gezondheid tussen de sekse en allemaal andere vergelijkingen
+tussen groepen binnen onze enquête. We hebben natuurlijk om de steden
+gevraagd maar ook om welke sekse zich de student voelt, De relatie met
+hun ouders, drugs en alcohol gebruik, geloof, Hier zijn de
+interessantste grafieken die uit de data komen
 
 **Wie is het gelukkigste**
 
@@ -2700,10 +2843,14 @@ ggplot(gem_geluk_laatste_data, aes(x = Sekse, y = average_col, fill = Sekse)) +
                width = 0.25) +
     ylim(0, 10) +
     geom_boxplot() +
+  labs(caption = "Figuur 65: Gem geluk per sekse") +
     ylab("Gemidelde geluk") + 
     ggtitle("Het gemiddelde geluk per Sekse", subtitle = "(Lijn in het vierkant is het gemiddelde)") 
 ```
-Van de studenten in Groningen zijn mannen gemiddeld het gelukkigste daarna vrouwen en de ongelukkigste sekse is de anders sekse. Er is wel 1 uitschieter bij de vrouwen die vrij ongelukkig is.
+
+Van de studenten in Groningen zijn mannen gemiddeld het gelukkigste
+daarna vrouwen en de ongelukkigste sekse is de anders sekse. Er is wel 1
+uitschieter bij de vrouwen die vrij ongelukkig is.
 
 ```{r, fig.asp=.75, out.width='50%', fig.align='center'}
 gem_geluk_laatste_data <- laatste_data %>%
@@ -2723,10 +2870,17 @@ ggplot(gem_geluk_laatste_data, aes(x = Woonsituatie, y = average_col, fill = Woo
                width = 0.25) +
     ylim(0, 10) +
     geom_boxplot() +
+  labs(caption = "Figuur 66: gem geluk per woonsituatie") +
       ylab("Gemidelde geluk") + 
     ggtitle("Het gemiddelde geluk per Woonsituatie", subtitle = "(Lijn in het vierkant is het gemiddelde)") 
 ```
-Het is ook wel interessant om te zien dat studenten die niet meer thuiswonen en dus in de stad Groningen wonen zijn gemiddeld gelukkiger dan mensen die bij hun ouders wonen. Dit kan komen door verschillende redenen zoals het gevoel van vrijheid of niet een goede relatie met de ouders hebben waardoor niet meer bij hun wonen het algemene geluk verbeterd.
+
+Het is ook wel interessant om te zien dat studenten die niet meer
+thuiswonen en dus in de stad Groningen wonen zijn gemiddeld gelukkiger
+dan mensen die bij hun ouders wonen. Dit kan komen door verschillende
+redenen zoals het gevoel van vrijheid of niet een goede relatie met de
+ouders hebben waardoor niet meer bij hun wonen het algemene geluk
+verbeterd.
 
 ```{r, fig.asp=.75, out.width='50%', fig.align='center'}
 Drugs_gebruik_woonsit <- select(laatste_data,c(Sekse,Verd_mid_gebr,drugs_alc_geluk))
@@ -2741,10 +2895,17 @@ Drugs_gebruik_woonsit <- Drugs_gebruik_woonsit %>%
 ggplot(Drugs_gebruik_woonsit, aes(x=Sekse, y=Verd_mid_gebr, fill = Sekse)) +
   geom_bar(stat = "identity") +
   ylab("A") + 
+  labs(caption = "Figuur 67: drugs en alcohol gebruik per sekse") +
   ggtitle("Het Drugs & Alcohol gebruik onder de studenten", subtitle = "Per sekse")+
   theme(legend.position="none")
 ```
-Hier is het verschil te zien in drugs & alcohol gebruik tussen de verschillende seksen. Er is hier niet een groot verschil te zien tussen de seksen wel is te zien dat vrouwen iets meer Drugs en of alcohol gebruiken dan mannen. Anders seksen kan weinig over gezegd worden omdat hier te weing antwoorden voor zijn.
+
+Hier is het verschil te zien in drugs & alcohol gebruik tussen de
+verschillende seksen. Er is hier niet een groot verschil te zien tussen
+de seksen wel is te zien dat vrouwen iets meer Drugs en of alcohol
+gebruiken dan mannen. Anders seksen kan weinig over gezegd worden omdat
+hier te weing antwoorden voor zijn.
+
 ```{r, fig.asp=.75, out.width='50%', fig.align='center'}
 Drugs_gebruik_woonsit <- select(laatste_data,c(Opl_jaar,Verd_mid_gebr,drugs_alc_geluk))
 
@@ -2759,13 +2920,21 @@ ggplot(Drugs_gebruik_woonsit, aes(x=Opl_jaar, y=Verd_mid_gebr, fill = Opl_jaar))
   geom_bar(stat = "identity") +
   xlab("Opleidings jaar") +
   ylab("Persoon") +
+  labs(caption = "Figuur 68: drugs en alcohol gebruik per opleidingsjaar") +
   ggtitle("Het Drugs & Alcohol gebruik onder de studenten", subtitle = "Per opleidngsjaar")+
   theme(legend.position="none")
 ```
-Hier is te zien wat het drugs gebruik is per opleidingsjaar. Er zijn meer antwoorden binnen gekomen van 1ste jaars maar niet zo significant meer dan de andere jaren. Hierdoor is dus te zeggen dat eerste jaars studenten waarschijnlijk het meeste drugs en alcohol gebruiken. Dit zou kunnen komen omdat ze in deze omgeving minder negatief stigma staat op drugs & alcohol gebruik. Er wordt gezegt dat je in je studenten leven met allemaal dingen experimenteerd.
-In Groningen heb je bijvoorbeeld de kei-week waar allemaal nieuwe studenten een week lang feesten. Hier hoort dus alcohol en drugs gebruik bij. Dit zou dus kunnen zorgen voor het grote verschil tussen de eerste en de andere jaren.
 
-
+Hier is te zien wat het drugs gebruik is per opleidingsjaar. Er zijn
+meer antwoorden binnen gekomen van 1ste jaars maar niet zo significant
+meer dan de andere jaren. Hierdoor is dus te zeggen dat eerste jaars
+studenten waarschijnlijk het meeste drugs en alcohol gebruiken. Dit zou
+kunnen komen omdat ze in deze omgeving minder negatief stigma staat op
+drugs & alcohol gebruik. Er wordt gezegt dat je in je studenten leven
+met allemaal dingen experimenteerd. In Groningen heb je bijvoorbeeld de
+kei-week waar allemaal nieuwe studenten een week lang feesten. Hier
+hoort dus alcohol en drugs gebruik bij. Dit zou dus kunnen zorgen voor
+het grote verschil tussen de eerste en de andere jaren.
 
 ```{r, fig.asp=.75, out.width='50%', fig.align='center'}
 ggplot(laatste_data, aes(x = Opl_jaar, y = Fys_import
@@ -2774,10 +2943,17 @@ ggplot(laatste_data, aes(x = Opl_jaar, y = Fys_import
                width = 0.25) +
   ylim(0, 10) +
   geom_boxplot() +
+  labs(caption = "Figuur 69: Hoe belangrijk is je (fysieke-) gezondheid voor je geluk per opleidingsjaar") +
   labs(title = "Hoe belangrijk is je (fysieke-) gezondheid voor je geluk? ", x = "opleidings jaar", y = "antwoord") +
   theme_minimal()
 ```
-Hier is te zien hoe belangrijk de fysieke gezondheid is voor de verschillende opleidings jaren en de gemiddelden liggen allemaal bijna op 1 lijn wat ook interessant is en dit betekend dat er gemiddeld niet een verschil in zit voor hoe belangrijk de fysieke gezondheid is voor studenten.
+
+Hier is te zien hoe belangrijk de fysieke gezondheid is voor de
+verschillende opleidings jaren en de gemiddelden liggen allemaal bijna
+op 1 lijn wat ook interessant is en dit betekend dat er gemiddeld niet
+een verschil in zit voor hoe belangrijk de fysieke gezondheid is voor
+studenten.
+
 ```{r, fig.asp=.75, out.width='50%', fig.align='center'}
 ggplot(laatste_data, aes(x = Niveau, y = Fys_import
 , fill = Niveau)) +
@@ -2785,10 +2961,15 @@ ggplot(laatste_data, aes(x = Niveau, y = Fys_import
                width = 0.25) +
   ylim(0, 10) +
   geom_boxplot() +
+  labs(caption = "Figuur 70: Hoe belangrijk is je (fysieke-) gezondheid voor je geluk per niveau") +
   labs(title = "Hoe belangrijk is je (fysieke-) gezondheid voor je geluk? ", x = "Niveau", y = "antwoord") +
   theme(legend.position="none") 
 ```
-Per niveau is het gemiddelde ook redelijk gelijk over elk niveau is het gemiddelde tussen de 7.5 en 8.75 wat betekent dat elk niveau zijn fysieke gezondheid belangrijk vindt en dit het geluk van de student erg beinvloed.
+
+Per niveau is het gemiddelde ook redelijk gelijk over elk niveau is het
+gemiddelde tussen de 7.5 en 8.75 wat betekent dat elk niveau zijn
+fysieke gezondheid belangrijk vindt en dit het geluk van de student erg
+beinvloed.
 
 ```{r, fig.asp=.75, out.width='50%', fig.align='center'}
 ggplot(laatste_data, aes(x = Sekse, y = Geld_geluk, fill = Sekse)) +
@@ -2796,27 +2977,36 @@ ggplot(laatste_data, aes(x = Sekse, y = Geld_geluk, fill = Sekse)) +
                width = 0.25) +
     ylim(0, 10) +
   geom_boxplot() +
+  labs(caption = "Figuur 71: Geluk door geld per sekse") +
   labs(title = "boxplot van Geluk door Geld", x = "Sekse", y = "Geluk door geld") +
   theme_minimal()
 ```
-Hier is te zien dat vrouwen gemiddeld gelukkig worden door geld dan mannen. Voor anders sekse maakt geld niet gelukkig echter is voor de ander sekse weinig data dus deze conclusie is niet heel betrouwbaar.
+
+Hier is te zien dat vrouwen gemiddeld gelukkig worden door geld dan
+mannen. Voor anders sekse maakt geld niet gelukkig echter is voor de
+ander sekse weinig data dus deze conclusie is niet heel betrouwbaar.
 
 ```{r, fig.asp=.75, out.width='50%', fig.align='center'}
 ggplot(laatste_data, aes(x = Sekse, y = Financiele_sit, fill = Sekse)) +
     stat_boxplot(geom = "errorbar",
                width = 0.25) +
     ylim(0, 10) +
+  labs(caption = "Figuur 72: Financiele situatie per sekse") +
   geom_boxplot() +
   labs(title = "Financïele situatie van de Sekse", x = "Sekse", y = "Financïele situatie") +
   theme_minimal()
 ```
-Hier is te zien dat mannen gemiddeld in een betere financïele situatie zitten dan dat vrouwen dat zitten. Er zijn bij beide wel 2 uitschieters die in een zeer slechte financïele situatie zitten.
+
+Hier is te zien dat mannen gemiddeld in een betere financïele situatie
+zitten dan dat vrouwen dat zitten. Er zijn bij beide wel 2 uitschieters
+die in een zeer slechte financïele situatie zitten.
 
 ```{r, fig.asp=.75, out.width='50%', fig.align='center'}
 ggplot(laatste_data, aes(x = Opl_jaar, y = Geld_geluk, fill = Opl_jaar)) +
     stat_boxplot(geom = "errorbar",
                width = 0.25) +
     ylim(0, 10) +
+  labs(caption = "Figuur 73: Geluk door geld per opleidingsjaar") +
   geom_boxplot() +
   labs(title = "boxplot van Geluk door Geld", x = "Opleidings jaar", y = "Geluk door geld") +
   theme_minimal()
@@ -2827,35 +3017,54 @@ ggplot(laatste_data, aes(x = Opl_jaar, y = Financiele_sit, fill = Opl_jaar)) +
     stat_boxplot(geom = "errorbar",
                width = 0.25) +
     ylim(0, 10) +
+  labs(caption = "Figuur 74: financiele situatie per opleidingsjaar") +
   geom_boxplot() +
-  labs(title = "Financïele situatie van de Sekse", x = "Sekse", y = "Financïele situatie") +
+  labs(title = "Financïele situatie van de opleidingsjaren", x = "Opleidingsjaar", y = "Financïele situatie") +
   theme_minimal()
 ```
-Hier zijn de grafieken te zien van het Geluk door geld en financïele situatie van de verschillende opleidings jaren. Opmerkelijk is dat het 2de opleidings jaar het minste geluk aan geld hecht maar ook degene zijn met gemiddeld de slechtste financiele situatie. Verder zitten de 3rde jaar studenten in de beste financiele situatie dit kan komen door stage of het feit dat de studie bijna is afgerond bijvoorbeeld in het geval van universiteits studenten en masters studenten. 
+
+Hier zijn de grafieken te zien van het Geluk door geld en financïele
+situatie van de verschillende opleidings jaren. Opmerkelijk is dat het
+2de opleidings jaar het minste geluk aan geld hecht maar ook degene zijn
+met gemiddeld de slechtste financiele situatie. Verder zitten de 3rde
+jaar studenten in de beste financiele situatie dit kan komen door stage
+of het feit dat de studie bijna is afgerond bijvoorbeeld in het geval
+van universiteits studenten en masters studenten.
 
 ```{r, fig.asp=.75, out.width='50%', fig.align='center'}
 ggplot(laatste_data, aes(x = Woonsituatie, y = Mental_health, fill = Woonsituatie)) +
       stat_boxplot(geom = "errorbar",
                width = 0.25) +
     ylim(0, 10) +
+  labs(caption = "Figuur 75: mentale gezondheid woonsituatie") +
   geom_boxplot() +
   labs(title = "boxplot van Mentale gezondheid van thuiswonende vs uitwonende", x = "Woonsituatie", y = "Mental_health") +
   theme_minimal()
 ```
-Het is duidelijk dat de mentale gezondheid van studenten die thuiswonen slechter is dan studenten die niet meer thuiswonen. Dit is te zien door dat de gemiddelde lijn (ook wel mediaan) van de thuiswonende studenten, Deze ligt onder de q1 van de uitwonende studenten.
+
+Het is duidelijk dat de mentale gezondheid van studenten die thuiswonen
+slechter is dan studenten die niet meer thuiswonen. Dit is te zien door
+dat de gemiddelde lijn (ook wel mediaan) van de thuiswonende studenten,
+Deze ligt onder de q1 van de uitwonende studenten.
 
 ```{r, fig.asp=.75, out.width='50%', fig.align='center'}
 ggplot(laatste_data, aes(x = Vakgebied, y = Mental_health, fill = Vakgebied)) +
       stat_boxplot(geom = "errorbar",
                width = 0.25) +
     ylim(0, 10) +
+  labs(caption = "Figuur 76: mentale gezondheid per vakgebied") +
   geom_boxplot() +
-  labs(title = "boxplot van Mentale gezondheid van thuiswonende vs uitwonende", x = "Opleiding", y = "Mental health") +
+  labs(title = "boxplot van Mentale gezondheid van thuiswonende vs uitwonende", x = "vakgebied", y = "Mental health") +
   theme_minimal()+ 
   theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
   theme(legend.position="none") 
 ```
-Ondanks dat de data oneven verdeeld is ga ik toch deze plot benoemen er is namelijk te zien dat vergeleken met de andere opleiding studenten die kunst studeren mentaal veel ongelukkiger zijn. Dit is anders dan dat ik had verwacht. Ik had verwacht dat studenten van een technische studie ongelukkiger zouden zijn.
+
+Ondanks dat de data oneven verdeeld is ga ik toch deze plot benoemen er
+is namelijk te zien dat vergeleken met de andere opleiding studenten die
+kunst studeren mentaal veel ongelukkiger zijn. Dit is anders dan dat ik
+had verwacht. Ik had verwacht dat studenten van een technische studie
+ongelukkiger zouden zijn.
 
 ```{r, fig.asp=.75, out.width='50%', fig.align='center'}
 ggplot(laatste_data, aes(x = Woonsituatie, y = Thuis_in_stad, fill = Woonsituatie)) +
@@ -2863,13 +3072,21 @@ ggplot(laatste_data, aes(x = Woonsituatie, y = Thuis_in_stad, fill = Woonsituati
                width = 0.25) +
     ylim(0, 10) +
   geom_boxplot() +
+  labs(caption = "Figuur 77: thuis voelen in de stad waar je woont per Woonsituatie") +
   labs(title = "Ik voel me thuis in de stad waar ik woon. 
 ", x = "Woonsituatie", y = "Antwoord") +
   theme_minimal()
 ```
-Er is te zien dat mensen die in Groningen wonen zich heel erg thuis voelen hier het gemiddelde licht hier ook tussen de 8.75 en 10 er is ook te zien dat er iemand is die thuis woont en deze zich helemaal niet thuisvoelt waar ze wonen. 
 
-Deze besproken plots zijn volgens mij het belangrijkste. Deze data komt uit ons onderzoek en om het nogmaals te benoemen geeft geen antwoord op onze eigenlijke onderzoeksvraag **“In welke studenten stad zijn studenten het gelukkigst?“**  
+Er is te zien dat mensen die in Groningen wonen zich heel erg thuis
+voelen hier het gemiddelde licht hier ook tussen de 8.75 en 10 er is ook
+te zien dat er iemand is die thuis woont en deze zich helemaal niet
+thuisvoelt waar ze wonen.
+
+Deze besproken plots zijn volgens mij het belangrijkste. Deze data komt
+uit ons onderzoek en om het nogmaals te benoemen geeft geen antwoord op
+onze eigenlijke onderzoeksvraag **“In welke studenten stad zijn
+studenten het gelukkigst?“**
 
 ### readme
 
@@ -2883,13 +3100,12 @@ bekeken. Deze zijn alleen van de studenten uit Groningen dit omdat hier
 wij de meeste data van hebben verzameld. Het blijkt dat mannen over het
 algemeen het gelukkigste zijn. en Anders sekse zijn het minst gelukkig.
 
-
 \### Benodigdheden
 
 -   Een werkende OS
 
 | Tool                      | Referentie                                                                                         | Versie                               | Waarom                                                                                                                                                                                       |
-|----------------|----------------|----------------|-------------------------|
+|-----------------|-----------------|-----------------|---------------------|
 | Google forms              | <https://docs.google.com/forms/>                                                                   |                                      | Gebruikt om een enquête te maken die gebruikers vriendelijk is en een netjes csv bestand geeft als output.                                                                                   |
 | Git                       | <https://www.git-scm.com>                                                                          | git version 2.44.0                   | Git wordt gebruikt voor version control                                                                                                                                                      |
 | Github                    | <http://github.com>                                                                                |                                      | De gehele data set, logboeken en protocol staan op github omdat dit een netjese en goed navigeerbare omgeving maakt zodat iemand ook alles in 1 keer kan downloaden en bekijken.             |
