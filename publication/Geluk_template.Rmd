@@ -259,6 +259,8 @@ Uit deze bar plot is te zien dat het grootste aantal van onze antwoorden rond de
 
 Om goed te kijken of de data normaal verdeeld is wordt deze shapiro wilcoxon test uitgevoerd. Uit deze test krijgen we een p-waarde en een t-waarde. Als de p-waarde \>0.05 is, betekent dat dat onze data normaal verdeeld is.
 
+in tabel 5 zijn de resultaten van de Shapiro Wilcoxon Test te zien  op alle numerieke data. Als alle kolommen in de rij van de p-waarde af gaat, is te zien dat geen enkele p-waarde \>0.05 is. Dit betekent dat onze data niet normaal verdeeld is. Dit dat onze data niet normaal verdeeld is. Deze p-waarden vertellen ons ook dat wij onze hypothese moeten afwijzen, wat betekent dat er geen effect is. Dit is jammer, maar we kunnen ondanks dit nog wel naar andere onderwerpen kijken.
+
 ```{r shapiro test,  echo=FALSE}
 #Voer een shapiro test uit op alle kolommen in de dataframe
 
@@ -302,7 +304,6 @@ knitr::kable(t_test_result, align = "c", caption = "Shapiro Wilcoxon Test")
 
 ```
 
-Hierboven zie je de shapiro wilk test uitgevoerd op alle numerieke data. Als je alle kolommen in de rij van de p-waarde af gaat, kan je zien dat geen enkele p-waarde \>0.05 is. Dit betekent dat onze data niet normaal verdeeld is. Dit dat onze data niet normaal verdeeld is. Deze p-waarden vertellen ons ook dat wij onze hypothese moeten afwijzen, wat betekent dat er geen effect is. Dit is jammer, maar we kunnen ondanks dit nog wel naar andere onderwerpen kijken.
 
 De t-statistic geeft ons ook een W waarde. Deze loop van 0 tot 1, waarbij 1 betekent dat de data perfect normaal verdeeld is. voor de W waarde wordt over het algemeen de ondergrens van 0.90 gehanteerd. als de test statistiek W grote dan 0.90 is dan kan de data als normaal verdeeld beschouwd worden. Er kan een kans zijn dat de W waarde en de P waarde hun resultaten elkaar tegen spreken.
 
@@ -319,7 +320,7 @@ ggplot(Reactie_stad, aes(x = " ", y = "Antwoord per stad", fill = Stad)) +
 
 In deze grafiek is te zien dat op 4 antwoorden na alle antwoorden uit Groningen komen. Hierdoor is het niet mogelijk om de hypothese te beantwoorden. Met deze reden worden verschillende factoren vergeleken met de data van de studenten in Groningen.De verzamelde data in Groningen komt neer op 73 studenten. In deze steekproef groep zitten ook verschillen. De steden Amsterdam, Leiden en Utrecht worden dus achterwegen gelaten. Groningen Als studenten stad heeft de Rijks Universiteit Groningen, Hanze (Hanze University of Aplied Sciences) en verschillende mbo-opleiding.
 
-```{r, fig.asp=.75, out.width='50%', fig.align='center', fig.cap="Antwoord per Niveau", echo=FALSE}
+```{r, fig.asp=.75, out.width='50%', fig.align='center', fig.cap="Antwoord per Niveau", echo=FALSE, warning=FALSE, message=FALSE}
 
 
 student_awn_gro <- subset(Student_awn_data, Stad == "Groningen")
@@ -521,7 +522,7 @@ ggplot(Drugs_gebruik_Sekse, aes(x=Sekse, y=Verd_mid_gebr, fill = Sekse)) +
 
 Hier is het drugs gebruik per sekse te zien. Het is duidelijk dat van de studenten uit onze data vrouwen de meeste drugs en of alcohol gebruiken van de seksen. Dit zou kunnen komen door verschillende dingen. thuissituatie zou hier invloed op kunnen hebben zowel bij thuiswonende als uitwonende, thuiswonende zouden dit kunnen gebruiken om hun af te leiden van hun thuissituatie. Voor uitwonende zou het kunnen zijn dat ze in een studentenhuis wonen waar het normaler is om alcohol te gebruiken en hier is het ook normaler om drugs te gebruiken. Het opleidingsjaar zou hier ook mee te maken kunnen hebben. Studenten in het eerste jaar zijn experimenteler dan de andere jaren en zijn vaker geneigd om nieuwe dingen uit te proberen dan de andere jaren hier onder valt drugs en alcohol. Deze dingen zouden kunnen bijdragen aan deze data.
 
-```{r, fig.asp=.75, out.width='50%', fig.align='center',fig.cap="vergelijking geluk en gebruik drugs en alcohol", echo=FALSE}
+```{r, fig.asp=.75, out.width='50%', fig.align='center',fig.cap="vergelijking geluk en gebruik drugs en alcohol", echo=FALSE, warning=FALSE, message=FALSE}
 #Hier is een barplot te zien waar de frequentie x is en geluks gevoel y is.
 ggplot(Drugs_gebruik_Sekse, aes(x=drugs_alc_geluk, y=Verd_mid_gebr)) +
   geom_bar(stat = "identity") +
@@ -616,7 +617,7 @@ Hier is te zien dat mannen gemiddeld in een betere financïele situatie zitten d
 
 ### cbs data
 
-```{r, fig.asp=.75, out.width='50%', fig.align='center', fig.cap="Gemiddeld geluk jong volwassenen",echo=FALSE}
+```{r, fig.asp=.75, out.width='50%', fig.align='center', fig.cap="Gemiddeld geluk jong volwassenen",echo=FALSE, warning=FALSE, message=FALSE}
 
 cbs_data_geluk <- read_csv("../raw_data/cbs_data_geluk.csv")
 
@@ -650,7 +651,7 @@ Door middel van een power-analyse is gebleken dat er voor elke groep minimaal 64
 
 De volgende keer moeten wij een betere manier verzinnen om de data te verzamelen. Wij hadden bijna, en voor Utrecht zelfs helemaal geen data. Door deze belemmering konden wij ons onderzoek niet goed uitvoeren. Dit zouden wij de volgende keer kunnen oplossen door directer naar de studenten te marketen. Wij kunnen dit oplossen door meerdere dagen per stad te besteden en fysiek studenten vragen om mee te doen met ons onderzoek.
 
-```{r wordcount, echo=FALSE}
+```{r wordcount, echo=FALSE, warning=FALSE, message=FALSE}
 #install.packages(devtools)
 #devtools::install_github("benmarwick/wordcountaddin", type = "source", dependencies = TRUE)
 wordcountaddin:::text_stats()
