@@ -9,7 +9,7 @@ author: |
 lang: nl # dit zorgt er voor dat "abstract" "samenvatting" gaat heten
 
 abstract: | 
-    Dit onderzoek gaat over het geluk van studenten in verschillende studentensteden. De steden die wij hebben onderzocht zijn: Amsterdam, Groningen, Leiden en Utrecht. We hebben in dit onderzoek een enquête gebruikt om data te verzamelen. Dit onderzoek is belangrijk omdat mentale gezondheid onder de studenten tegenwoordig veel in het nieuws is. Geluk is een groot deel van iemands mentale gezondheid daarom, is het interessant om te weten in welke stad voor de studenten geluk het hoogste ligt. De factoren die in dit onderzoek worden gebruikt gaan van persoonlijke tot omgevingsfactoren, zodat er een duidelijk beeld kan worden geschetst waarin ook langdurige problemen worden meegenomen die invloed hebben. 
+    Dit onderzoek gaat over het geluk van studenten in verschillende studentensteden. De steden die wij hebben onderzocht zijn: Amsterdam, Groningen, Leiden en Utrecht. Dit onderzoek heeft een enquête gebruikt om data te verzamelen. Dit onderzoek is belangrijk omdat mentale gezondheid onder de studenten tegenwoordig veel in het nieuws is. Geluk is een groot deel van iemands mentale gezondheid daarom, is het interessant om te weten in welke stad voor de studenten geluk het hoogste ligt. De factoren die in dit onderzoek worden gebruikt gaan van persoonlijke tot omgevingsfactoren, zodat er een duidelijk beeld kan worden geschetst waarin ook langdurige problemen worden meegenomen die invloed hebben. 
 
 
 bibliography: Geluk_template.bib # naam van je .bib file. Deze moet hetzelfde zijn als je Rmd bestandsnaam
@@ -37,7 +37,7 @@ library(dplyr)
 
 # Introductie
 
-Dit onderzoek is er om te kijken of er verschil zit in het geluk tussen verschillende studentensteden. Dit is belangrijk omdat het geluk van een persoon invloed kan hebben op verschillende factoren in zijn leven. Als we kijken naar geluk omvat, dit meerdere dingen. Een persoon kan heel gelukkig worden van een academische prestatie echter zijn er anderen die meer geluk halen uit een sociale ontmoeting. Deze verschillende factoren zijn in ons onderzoek meegenomen Hiervoor is literatuur gebruikt die diep ingaat op wat mensen door de jaren heen van geluk maakten. De paper van [@Veenhoven1991] kijkt naar geluk in verschillende tijdperken. Verder zijn er bepaalde factoren naar voren gekomen die belangrijk zijn voor een mens wanneer het gaat over het meten van geluk.\
+Dit onderzoek is er om te kijken of er verschil zit in het geluk tussen verschillende studentensteden. Dit is belangrijk omdat het geluk van een persoon invloed kan hebben op verschillende factoren in zijn leven. Een persoon kan heel gelukkig worden van een academische prestatie echter zijn er anderen die meer geluk halen uit een sociale ontmoeting. Deze verschillende factoren zijn in ons onderzoek meegenomen Hiervoor is literatuur gebruikt die diep ingaat op wat mensen door de jaren heen van geluk maakten. De paper van [@Veenhoven1991] kijkt naar geluk in verschillende tijdperken. Verder zijn er bepaalde factoren naar voren gekomen die belangrijk zijn voor een mens wanneer het gaat over het meten van geluk.\
 
 Sekse, als er gekeken wordt naar het menselijk lichaam is er te zien dat er een verschil is tussen de mannelijke en vrouwelijke sekse in specifiek de hormonen. Dit heeft invloed op hoe geluk wordt ervaart. Wanneer een vrouw haar menstruatie ervaart kan deze een kort effect hebben op hoe gelukkig deze zich voelt. Hier heeft een man echter geen last van.\
 
@@ -95,7 +95,7 @@ De hypothese: Er is geen significant verschil in het geluk niveau van studenten 
 
 ## Resultaten
 
-In de data die is verkregen bleek dat er niet genoeg data was uit elke stad. Dit bleek uit de poweranalyse, deze wordt gebruikt om te vinden hoeveel data nodig is per factor voor een antwoord om een fout negatief of fout positief te voorkomen. De shaprio wilcoxon test vertelde ook dat onze data niet voldoende was om de antwoorden hieruit te kunnen vertrouwen. Dit betekent dat de data die gepresenteerd wordt in dit onderzoek alleen uit Groningen komt. Deze data uit Groningen is ook niet betrouwbaar omdat er niet genoeg data is verzameld. Ondanks dit data tekort zijn de volgende dingen te zien. Mannen zijn gemiddeld het gelukkigste dit is in tabel 5 te zien hier is het gemiddelde geluk van de man en vrouw uitgerekend. De man heeft een gemiddeld geluk van ongeveer 6.45 / 10 de vrouw heeft een gemiddeld geluk van 6.25/10 wat betekend dat mannen gemiddeld het gelukkigste zijn. Het drugs gebruik van vrouwen is hoger en het geluk wat ze hieruit halen is ook hoger dat is
+In de data die is verkregen bleek dat er niet genoeg data was uit elke stad. Dit bleek uit de poweranalyse, deze wordt gebruikt om te vinden hoeveel data nodig is per factor voor een antwoord om een fout negatief of fout positief te voorkomen. De shaprio wilcoxon test vertelde ook dat de enquête data niet voldoende was om de antwoorden hieruit te kunnen vertrouwen. Dit betekent dat de data die gepresenteerd wordt in dit onderzoek alleen uit Groningen komt. Deze data uit Groningen is ook niet betrouwbaar omdat er niet genoeg data is verzameld. Ondanks dit data tekort zijn de volgende dingen te zien. Mannen zijn gemiddeld het gelukkigste dit is in tabel 5 te zien hier is het gemiddelde geluk van de man en vrouw uitgerekend. De man heeft een gemiddeld geluk van ongeveer 6.45 / 10 de vrouw heeft een gemiddeld geluk van 6.25/10 wat betekend dat mannen gemiddeld het gelukkigste zijn. Het drugs gebruik van vrouwen is hoger en het geluk wat ze hieruit halen is ook hoger dat is
 
 # Materialen en Methoden
 
@@ -108,7 +108,7 @@ Hier is een tabel met alle tools (programma's of websites of code-taal) de refer
 | Google forms              | <https://docs.google.com/forms/>                                                                   |                                      | Gebruikt om een enquête te maken die gebruikers vriendelijk is en een netjes csv bestand geeft als output.                                                                                   |
 | Git                       | <https://www.git-scm.com>                                                                          | git version 2.44.0                   | Git wordt gebruikt voor version control                                                                                                                                                      |
 | Github                    | <http://github.com>                                                                                |                                      | De gehele data set, logboeken en protocol staan op github omdat dit een netjese en goed navigeerbare omgeving maakt zodat iemand ook alles in 1 keer kan downloaden en bekijken.             |
-| RStudio                   | <https://posit.co/download/rstudio-desktop/>                                                       | Versie 2023.12.1+402 (2023.12.1+402) | Dit programma gebruiken we om ons RMarkdown document te maken wat uiteindelijk ons eindproduct is geworden.                                                                                  |
+| RStudio                   | <https://posit.co/download/rstudio-desktop/>                                                       | Versie 2023.12.1+402 (2023.12.1+402) | Dit programma is gebruikt om RMarkdown document te maken.                                                                                                                                    |
 | R                         | <https://www.r-project.org>                                                                        | R version 4.3.3 (2024-02-29)         | R staat mensen toe om vaardig grote hoeveelheden gegevens te verwerken, publicatie-waardige visualisaties te genereren, en een reeks statistische en analytische computertaken uit te voeren |
 | fmsb                      | <https://cran.r-project.org/web/packages/fmsb/index.html>                                          | 0.7.6 (03-06-2024)                   | Wij gebruiken deze voor het maken van radar plots                                                                                                                                            |
 | ggplot2                   | <https://ggplot2.tidyverse.org>                                                                    | 3.5.1 (03-06-2024)                   | Deze package wordt om plotjes in dit document duidelijker en netjeser te maken                                                                                                               |
@@ -165,11 +165,11 @@ Deze parameters zijn uit de volgende literatuur gehaald: [@Jacobsen2007], [@East
 
 *De 95 procent betrouwbaarheidsinterval*
 
-is belangrijk omdat het een bereik van waarden geeft waarbinnen we verwachten dat de ware populatieparameter met een zekerheid van 95 procent zit. Dit suggereert dat we 95% van de betrouwbaarheidsintervallen zouden bevatten van de werkelijke populatieparameter als we een groot aantal steekproeven zouden nemen en een betrouwbaarheidsinterval voor elke steekproef zouden berekenen. Het helpt ons te begrijpen hoe zeker we kunnen zijn over een geschat gemiddelde uit een geschatte waarde, net als het gemiddelde uit een steekproef, dus het is belangrijk. Hierdoor kunnen we bepalen of de informatie die we hebben verzameld betrouwbaar is.
+Het is belangrijk omdat het een bereik van waarden geeft waarbinnen de onderzoekers verwachten dat de ware populatieparameter met een zekerheid van 95 procent ligt. Dit suggereert dat 95% van de betrouwbaarheidsintervallen de werkelijke populatieparameter zouden bevatten als er een groot aantal steekproeven zouden worden genomen en een betrouwbaarheidsinterval voor elke steekproef zou worden berekend. Het helpt te begrijpen hoe zeker men kan zijn over een geschat gemiddelde uit een steekproef, dus het is belangrijk. Hierdoor kan worden bepaald of de verzamelde informatie betrouwbaar is.
 
 *Shapiro Wilcoxon Test*
 
-Deze test wordt gebruikt om te controleren of data normaal verdeeld is. Het test de hypothese of de gegevens afkomstig zijn van een normaal verdeelde populatie. De test berekent een W-statistiek op basis van de observaties; als de p-waarde die uit deze test komt groter is dan het gekozen significantie niveau dan concluderen we dat de data set normaal verdeeld is. een p-waarde kleiner dan het significantie niveau zegt dat de data set niet normaal verdeeld is, wat belangrijk is omdat veel statistische analyses gebaseerd zijn op de aanname van een normale verdeling
+Deze test wordt gebruikt om te controleren of data normaal verdeeld is. Het test de hypothese of de gegevens afkomstig zijn van een normaal verdeelde populatie. De test berekent een W-statistiek op basis van de observaties; als de p-waarde die uit deze test komt groter is dan het gekozen significantie niveau dan is te concluderen dat de data set normaal verdeeld is. een p-waarde kleiner dan het significantie niveau zegt dat de data set niet normaal verdeeld is, wat belangrijk is omdat veel statistische analyses gebaseerd zijn op de aanname van een normale verdeling
 
 *Power-analyse*
 
@@ -199,7 +199,7 @@ numerieke_data <- select(Student_awn_data, c(11:15, 17:21, 23:25))
 
 *De 95 procent betrouwbaarheidsinterval*
 
-in tabel 4 is voor elke factor het gemiddelde gegeven. De twee punten in de betrouwbaarheids interval en de SD staat voor standaarddeviatie. **De standaarddeviatie** geeft aan hoe verspreid de getallen zijn in onze dataset. Als de standaarddeviatie klein is, liggen de getallen dicht bij het gemiddelde, wat betekent dat de meeste waarden in deze meting ongeveer hetzelfde zijn of ongeveer hetzelfde zijn als het gemiddelde. Bovendien geeft dit aan dat er weinig afwijkingen zijn van het gemiddelde en dat er weinig uitschieters of extreme waarden zijn. Wanneer de standaarddeviatie groot is, betekent dit dat de waarden verder liggen van het gemiddelde en dat er veel extreme waarden en of uitschieters zijn. Dit is belangrijk om te weten om te kunnen beoordelen of de gemiddelden betrouwbaar en representatief zijn
+in tabel 4 is voor elke factor het gemiddelde gegeven. De twee punten in de betrouwbaarheids interval en de SD staat voor standaarddeviatie. **De standaarddeviatie** geeft aan hoe verspreid de getallen zijn in de dataset. Als de standaarddeviatie klein is, liggen de getallen dicht bij het gemiddelde, wat betekent dat de meeste waarden in deze meting ongeveer hetzelfde zijn of ongeveer hetzelfde zijn als het gemiddelde. Bovendien geeft dit aan dat er weinig afwijkingen zijn van het gemiddelde en dat er weinig uitschieters of extreme waarden zijn. Wanneer de standaarddeviatie groot is, betekent dit dat de waarden verder liggen van het gemiddelde en dat er veel extreme waarden en of uitschieters zijn. Dit is belangrijk om te weten om te kunnen beoordelen of de gemiddelden betrouwbaar en representatief zijn
 
 ```{r BI95, echo= FALSE}
 #Deze functie berekent het gemiddelde binnen de 95% betrouwbaarheidsinterval
@@ -244,9 +244,9 @@ Dit zijn de belangrijkste punten uit deze *95%* betrouwbaarheidsinterval
 
 **Laagste standaarddeviatie** komt uit Cont_buiten_school met een standaarddeviatie van 1.3, wat zegt dat er minder variatie is in deze ervaring.
 
-**De gemiddelde standaard** **deviatie** van de data is ongeveer 2. Dit is best hoog, omdat onze data op schaal van 1-10 is.
+**De gemiddelde standaard** **deviatie** van de data is ongeveer 2. Dit is best hoog, omdat de enquête data op schaal van 1-10 is.
 
-Om te kijken of onze data normaal verdeeld is, kunnen we een histogram maken:
+Om te kijken of de enquête data normaal verdeeld is kan er beter naar worden gekeken met een histogram :
 
 ```{r , fig.asp=.75, out.width='50%', fig.align='center',fig.cap="Algemeen Geluk Studenten",  echo=FALSE}
 
@@ -259,13 +259,13 @@ ggplot(numerieke_data,
       theme("minimal")
 ```
 
-Uit deze bar plot is te zien dat het grootste aantal van onze antwoorden rond de 6 ligt dit is dus niet normaal verdeeld. een normaal verdeling met een schaal van 0-10 zou het grootste aantal antwoorden moeten liggen rond de 5. Dit komt hoogstwaarschijnlijk vanwege een tekort aan respondenten.\
+Uit deze bar plot is te zien dat het grootste aantal van de enquête antwoorden rond de 6 ligt dit is dus niet normaal verdeeld. een normaal verdeling met een schaal van 0-10 zou het grootste aantal antwoorden moeten liggen rond de 5. Dit komt hoogstwaarschijnlijk vanwege een tekort aan respondenten.\
 
 ### Shapiro Wilcoxon Test
 
-Om goed te kijken of de data normaal verdeeld is wordt deze shapiro wilcoxon test uitgevoerd. Uit deze test krijgen we een p-waarde en een t-waarde. Als de p-waarde \>0.05 is, betekent dat dat onze data normaal verdeeld is.
+Om goed te kijken of de data normaal verdeeld is wordt deze shapiro wilcoxon test uitgevoerd. Uit deze test komt een p-waarde en een t-waarde. Als de p-waarde \>0.05 is, betekent dat de enquête data normaal verdeeld is.
 
-in tabel 5 zijn de resultaten van de Shapiro Wilcoxon Test te zien op alle numerieke data. Als alle kolommen in de rij van de p-waarde af gaat, is te zien dat geen enkele p-waarde \>0.05 is. Dit betekent dat onze data niet normaal verdeeld is. Dit dat onze data niet normaal verdeeld is. Deze p-waarden vertellen ons ook dat wij onze hypothese moeten afwijzen, wat betekent dat er geen effect is. Dit is jammer, maar we kunnen ondanks dit nog wel naar andere onderwerpen kijken.
+in tabel 5 zijn de resultaten van de Shapiro Wilcoxon Test te zien op alle numerieke data. Als alle kolommen in de rij van de p-waarde af gaat, is te zien dat geen enkele p-waarde \>0.05 is. Dit betekent dat de enquête data niet normaal verdeeld is. Dit dat de enquête data niet normaal verdeeld is. Deze p-waarden vertellen ons ook dat de hypothese moet worden afgewezen, wat betekent dat er geen effect is. Dit is jammer, maar ondanks dit kan er nog wel naar andere onderwerpen worden gekekn.
 
 ```{r shapiro test,  echo=FALSE}
 #Voer een shapiro test uit op alle kolommen in de dataframe
@@ -526,7 +526,7 @@ ggplot(Drugs_gebruik_Sekse, aes(x=Sekse, y=Verd_mid_gebr, fill = Sekse)) +
   ggtitle("Drugs en of alcohol gebruik per sekse") 
 ```
 
-in figuurn 7 is het drugs gebruik per sekse te zien. Het is duidelijk dat van de studenten uit onze data vrouwen de meeste drugs en of alcohol gebruiken van de seksen. Dit zou kunnen komen door verschillende dingen. thuissituatie zou hier invloed op kunnen hebben zowel bij thuiswonende als uitwonende, thuiswonende zouden dit kunnen gebruiken om hun af te leiden van hun thuissituatie. Voor uitwonende zou het kunnen zijn dat ze in een studentenhuis wonen waar het normaler is om alcohol te gebruiken en hier is het ook normaler om drugs te gebruiken. Het opleidingsjaar zou hier ook mee te maken kunnen hebben. Studenten in het eerste jaar zijn experimenteler dan de andere jaren en zijn vaker geneigd om nieuwe dingen uit te proberen dan de andere jaren hier onder valt drugs en alcohol. Deze dingen zouden kunnen bijdragen aan deze data.
+in figuurn 7 is het drugs gebruik per sekse te zien. Het is duidelijk dat van de studenten uit de enquête data vrouwen de meeste drugs en of alcohol gebruiken van de seksen. Dit zou kunnen komen door verschillende dingen. thuissituatie zou hier invloed op kunnen hebben zowel bij thuiswonende als uitwonende, thuiswonende zouden dit kunnen gebruiken om hun af te leiden van hun thuissituatie. Voor uitwonende zou het kunnen zijn dat ze in een studentenhuis wonen waar het normaler is om alcohol te gebruiken en hier is het ook normaler om drugs te gebruiken. Het opleidingsjaar zou hier ook mee te maken kunnen hebben. Studenten in het eerste jaar zijn experimenteler dan de andere jaren en zijn vaker geneigd om nieuwe dingen uit te proberen dan de andere jaren hier onder valt drugs en alcohol. Deze dingen zouden kunnen bijdragen aan deze data.
 
 ```{r, fig.asp=.75, out.width='50%', fig.align='center',fig.cap="vergelijking geluk en gebruik drugs en alcohol", echo=FALSE, warning=FALSE, message=FALSE}
 #Hier is een barplot te zien waar de frequentie x is en geluks gevoel y is.
@@ -687,17 +687,15 @@ p_cbs <- ggplot() +
 p_cbs
 ```
 
-in figuur 16 is het gemiddelde geluk in jong volwassenen tussen 18 en 25 jaar. Er is te zien dat er een neerwaartse trend begint vanaf 2010 deze wordt steeds groter en in 2020 (waar ook de corona periode begon) was het geluk van de jongvolwassenen gemiddeld het laagste. Als we dit met onze data vergelijken zien we dat uit onze data blijkt dat de studenten gemiddeld ongelukkiger zijn. met een gemiddelde score tussen de 6.3 en 6.7 terwijl deze van de jong volwassenen net onder 8.25 ligt.
+in figuur 16 is het gemiddelde geluk in jong volwassenen tussen 18 en 25 jaar. Er is te zien dat er een neerwaartse trend begint vanaf 2010 deze wordt steeds groter en in 2020 (waar ook de corona periode begon) was het geluk van de jongvolwassenen gemiddeld het laagste. Als deze data wordt vergeleken met de data uit de enquete blijkt dat de studenten gemiddeld ongelukkiger zijn. met een gemiddelde score tussen de 6.3 en 6.7 terwijl deze van de jong volwassenen net onder 8.25 ligt.
 
 # Discussie en Conclusies
 
 ## Conclusie
 
-Formuleer je conclusie door eerst in te zoomen op je eigen data en daarna uit te zoomen. Zoom in door je resultaten samen te vatten. Zoom uit om de waarde van je werk te beoordelen, door je bijvoorbeeld de volgende vragen te stellen: Kunnen mijn resultaten gebruikt worden in het werkveld? Wat betekenen ze voor het werkveld? en is mijn data betrouwbaar?\
+De onderzoeksvraag was: "in welke studentenstad zijn studenten het gelukkigst?" en De hypothese "Er is geen significant verschil in het geluksniveau van studenten afhankelijk van de stad waarin ze studeren."
 
-Onze onderzoeksvraag was: "in welke studentenstad zijn studenten het gelukkigst?" en onze hypothese "Er is geen significant verschil in het geluksniveau van studenten afhankelijk van de stad waarin ze studeren."
-
-Door middel van een power-analyse is gebleken dat er voor elke groep minimaal 64 antwoorden nodig zijn voor de door ons gekozen instellingen (deze instellingen zijn gebaseerd op de industrie standaard) in totaal zijn er 77 antwoorden verkregen waar de meeste uit Groningen komen. Dit betekent dat de data niet voldoet aan de minimale vereiste. Onze berekende p-waarde is 0.3307 is ook te hoog om statistisch significante conclusies te kunnen trekken. Een te hoge p-waarde geeft aan dat de resultaten niet significant zijn, wat zegt dat er onvoldoende bewijs is om een werkelijk verschil of effect aan te tonen. Daardoor is de verzamelde data niet betrouwbaar genoeg als basis voor conclusies. De conclusies en resultaten die in dit onderzoek te zien zijn het volgende. Mannelijke studenten zijn gemiddeld het gelukkigste deze studenten gebruiken ook minder drugs en alcohol dan hun vrouwelijke tegenhanger en de mannelijke studenten die dit wel doen halen hier minder van hun geluk geluk uit dan de vrouwelijke studenten die de verdovende middelen gebruiken. In figuur 4 is het gemiddelde geluk van alle studenten te zien verspreid over elke factor die invloed heeft op het geluk. Er is te zien in dat er weinig geluk wordt gehaald uit verdovende middelen wanneer er hier dieper naar wordt gekeken in figuur 8 is te zien dat vrouwelijke studenten wel meer geluk halen uit de verdovende middelen dan dat mannelijke studenten dat doen.
+Door middel van een power-analyse is gebleken dat er voor elke groep minimaal 64 antwoorden nodig zijn voor de door ons gekozen instellingen (deze instellingen zijn gebaseerd op de industrie standaard) in totaal zijn er 77 antwoorden verkregen waar de meeste uit Groningen komen. Dit betekent dat de data niet voldoet aan de minimale vereiste. De berekende p-waarde is 0.3307 is ook te hoog om statistisch significante conclusies te kunnen trekken. Een te hoge p-waarde geeft aan dat de resultaten niet significant zijn, wat zegt dat er onvoldoende bewijs is om een werkelijk verschil of effect aan te tonen. Daardoor is de verzamelde data niet betrouwbaar genoeg als basis voor conclusies. De conclusies en resultaten die in dit onderzoek te zien zijn het volgende. Mannelijke studenten zijn gemiddeld het gelukkigste deze studenten gebruiken ook minder drugs en alcohol dan hun vrouwelijke tegenhanger en de mannelijke studenten die dit wel doen halen hier minder van hun geluk geluk uit dan de vrouwelijke studenten die de verdovende middelen gebruiken. In figuur 4 is het gemiddelde geluk van alle studenten te zien verspreid over elke factor die invloed heeft op het geluk. Er is te zien in dat er weinig geluk wordt gehaald uit verdovende middelen wanneer er hier dieper naar wordt gekeken in figuur 8 is te zien dat vrouwelijke studenten wel meer geluk halen uit de verdovende middelen dan dat mannelijke studenten dat doen.
 
 in figuur 14 & 15 is er een correlatie te zien tussen de relatie met de ouders en het gemiddelde geluk, er is te zien dat de uitwonende die gemiddeld een betere relatie met hun ouders hebben gemiddeld gelukkiger zijn dan de studenten die thuiswonen en ook een slechtere relatie hebben met hun ouders het verdovende middelen gebruik bij de thuiswonende is wel dichtbij het verdovende middelen gebruik van de uitwonende dit is te zien in figuur 9.
 
