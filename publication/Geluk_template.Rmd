@@ -180,7 +180,7 @@ Deze test wordt gebruikt om te bepalen of er een significant verband is tussen t
 
 ### Analyse van de data
 
-De analyse van de data wordt gedaan door de statistische methoden toe te passen en hiermee een oordeel vormen of de data die verzameld is ook betrouwbaar is en voldoende. Een andere vorm van analyse die gebruikt wordt is een grafische methoden dit zijn grafieken. Verschillende grafieken laten verschillende opmerkelijke uitkomsten zien. De belangrijkste gebruikte plots zijn histogrammen, boxplots, radar charts en pie charts.
+De analyse van de data wordt gedaan door de eerder genoemde statistische methoden toe te passen en hiermee een oordeel vormen of de data die verzameld is ook betrouwbaar is en voldoende. Een andere vorm van analyse die gebruikt wordt is een grafische methoden dit zijn grafieken. Verschillende grafieken laten verschillende opmerkelijke uitkomsten zien. De belangrijkste gebruikte plots zijn histogrammen, boxplots, radar charts en pie charts.
 
 # Resultaten
 
