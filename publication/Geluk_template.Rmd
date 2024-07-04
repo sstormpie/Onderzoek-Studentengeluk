@@ -1,6 +1,6 @@
 ---
 title: | 
-    Welke studenten stad heeft de gelukkigste studenten?
+    Welke studentenstad heeft de gelukkigste studenten?
 
 author: |
   | Storm Steller $^1$, Jarno Jacob Duiker $^1$, 
@@ -9,7 +9,7 @@ author: |
 lang: nl # dit zorgt er voor dat "abstract" "samenvatting" gaat heten
 
 abstract: | 
-    Dit onderzoek gaat over het geluk van studenten in verschillende studenten steden. De steden die wij hebben onderzocht zijn: Amsterdam, Groningen, Leiden en Utrecht. We hebben in dit onderzoek een enquête gebruikt om data te verzamelen. Dit onderzoek is belangrijk omdat mentale gezondheid onder de studenten tegenwoordig veel in het nieuws is. Geluk is een groot deel van iemands mentale gezondheid daarom is het interessant om te weten in welke stad voor de studenten geluk het hoogste ligt. De factoren die in dit onderzoek worden gebruikt gaan van persoonlijk naar omgevingsfactoren zodat er een duidelijk beeld kan worden geschetst waarin ook langdurige problemen worden meegenomen die invloed hebben. 
+    Dit onderzoek gaat over het geluk van studenten in verschillende studentensteden. De steden die wij hebben onderzocht zijn: Amsterdam, Groningen, Leiden en Utrecht. We hebben in dit onderzoek een enquête gebruikt om data te verzamelen. Dit onderzoek is belangrijk omdat mentale gezondheid onder de studenten tegenwoordig veel in het nieuws is. Geluk is een groot deel van iemands mentale gezondheid daarom, is het interessant om te weten in welke stad voor de studenten geluk het hoogste ligt. De factoren die in dit onderzoek worden gebruikt gaan van persoonlijke tot omgevingsfactoren, zodat er een duidelijk beeld kan worden geschetst waarin ook langdurige problemen worden meegenomen die invloed hebben. 
 
 
 bibliography: Geluk_template.bib # naam van je .bib file. Deze moet hetzelfde zijn als je Rmd bestandsnaam
@@ -37,7 +37,7 @@ library(dplyr)
 
 # Introductie
 
-Dit onderzoek is er om te kijken of er verschil zit in het geluk tussen verschillende studenten steden. Dit is belangrijk omdat het geluk van een persoon invloed kan hebben op verschillende factoren in zijn leven. Als we kijken naar Geluk omvat dit meerdere dingen. Een persoon kan heel gelukkig worden van een academische prestatie echter zijn er anderen die meer geluk halen uit een sociale ontmoeting. Deze verschillende factoren zijn in ons onderzoek gemeten. Hiervoor is literatuur gebruikt die diep in gaat op wat mensen door de jaren heen van geluk maakten, De paper van [@Veenhoven1991]kijkt naar geluk in verschillende tijdperken. Verder zijn er bepaalde factoren naar boven gekomen die belangrijk zijn voor een mens wanneer het gaat over het meten van geluk.\
+Dit onderzoek is er om te kijken of er verschil zit in het geluk tussen verschillende studentensteden. Dit is belangrijk omdat het geluk van een persoon invloed kan hebben op verschillende factoren in zijn leven. Als we kijken naar geluk omvat, dit meerdere dingen. Een persoon kan heel gelukkig worden van een academische prestatie echter zijn er anderen die meer geluk halen uit een sociale ontmoeting. Deze verschillende factoren zijn in ons onderzoek meegenomen Hiervoor is literatuur gebruikt die diep ingaat op wat mensen door de jaren heen van geluk maakten. De paper van [@Veenhoven1991] kijkt naar geluk in verschillende tijdperken. Verder zijn er bepaalde factoren naar voren gekomen die belangrijk zijn voor een mens wanneer het gaat over het meten van geluk.\
 
 Sekse, als er gekeken wordt naar het menselijk lichaam is er te zien dat er een verschil is tussen de mannelijke en vrouwelijke sekse in specifiek de hormonen. Dit heeft invloed op hoe geluk wordt ervaart. Wanneer een vrouw haar menstruatie ervaart kan deze een kort effect hebben op hoe gelukkig deze zich voelt. Hier heeft een man echter geen last van.\
 
@@ -67,17 +67,15 @@ Geld / financiele situatie, Een goede financiele situatie zorgt voor minder stre
 
 Drugs en/of alcohol gebruik, Het gebruikt van drugs en of alcohol kan negatieve effecten hebben zowel kort als langdurig. Het kortdurige effect zal een kater zijn die na een paar dagen weg is en of spierpijn door verlies van water en mineralen. Een langdurig negatief effect zal voorkomen wanneer er verslaving is of overtollig gebruik. Deze negatieve effecten zullen slechte mentale gezondheid, slechte fysieke gezondheid, verslechterde sociale relaties en geld problemen. Deze hebben allemaal effect op het geluk. [@Farhud2014]
 
+[@Jiang2022] Kijkt naar welke hoofd factoren invloed hebben op een student zijn geluk, deze studie kijkt naar persoonlijke info familie info en sociale informatie deze zijn allemaal verkregen via een vragenlijst. Deze studie is gedaan in china in 2020 (Dit is ook het jaar dat covid begon wat externe invloed zou kunnen hebben). De resultaten in het kort waren dat gezondheid zowel fysiek als mentaal veel invloed had op het geluk en dat gezonde studenten gelukkiger zijn. Studenten met een goede relatie met hun ouders waren gelukkiger dan studenten die dit niet hadden. De studenten die academisch goed presenteren, vroeg slapen en in een liefdevolle relatie zaten waren gelukkiger dan de studenten die in de compleet andere situatie zaten. Ons onderzoek kijkt naar studenten in Nederland waar de cultuur anders is dan die in china, ook is ons onderzoek gedaan nadat de studenten corona hebben ervaren wat ook een andere inkijk is.
 
-[@Jiang2022] Kijkt naar welke hoofd factoren invloed hebben op een student zijn geluk, deze studie kijkt naar persoonlijke info familie info en sociale informatie deze zijn allemaal verkregen via een vragenlijst. Deze studie is gedaan in china in 2020 (Dit is ook het jaar dat covid begon wat externe invloed zou kunnen hebben). De resultaten in het kort waren dat gezondheid zowel fysiek als mentaal veel invloed had op het geluk en dat gezonde studenten gelukkiger zijn. Studenten met een goede relatie met hun ouders waren gelukkiger dan studenten die dit niet hadden. De studenten die academisch goed presenteren, vroeg slapen en in een liefdevolle relatie zaten waren gelukkiger dan de studenten die in de compleet andere situatie zaten. Ons onderzoek kijkt naar studenten in Nederland waar de cultuur anders is dan die in china, ook is ons onderzoek gedaan nadat de studenten corona hebben ervaren wat ook een andere inkijk is. 
-
-[@CBS2022] Kijkt naar geluk onder jong volwassenen van 1997 tot 2021 deze vroeg naar 2 onderwerpen deze waren geluk en tevreden met het leven. De vraag om het geluk te beoordelen was "In welke mate vindt u zichzelf een gelukkig mens?" Deze kon van 1997-2010 beantwoord worden met 1. Erg gelukkig, 2. Gelukkig, 3. Niet gelukkig en niet ongelukkig, 4. Niet zo gelukkig en 5. Ongelukkig. vanaf het jaar 2012  was deze te beantwoorden met een schaal van 1 tot 10 de vraag was ook veranderd naar "Kunt u op een schaal van 1 tot en met 10 aangeven in welke mate u zichzelf een gelukkig mens vindt. Een 1 staat voor volledig ongelukkig en 10 voor volledig gelukkig?". De tevreden met het leven onderwerp werd op de volgende manier gevraagd "In welke mate bent u tevreden met het leven dat u op dit moment leidt?" Deze werd in 1997-2010 beantwoord op de volgende manier  1. Buitengewoon tevreden, 2. Zeer tevreden, 3. Tevreden, 4. Tamelijk tevreden en 5. Niet zo tevreden. vanaf 2012 is de vraag naar "Kunt u op een schaal van 1 tot en met 10 aangeven in welke mate u tevreden bent met het leven dat u nu leidt. Een 1 staat voor volledig ontevreden en 10 voor volledig tevreden?" Deze werd toen ook beantwoord met 1 tot 10. Dit onderzoek kijkt heel oppervlakkig naar geluk en gaat niet zozeer in op de dingen die geluk beïnvloeden zoals sociale situatie, geld situatie en persoonlijke gezondheid. Hier kijkt ons onderzoek wel naar.
-
+[@CBS2022] Kijkt naar geluk onder jong volwassenen van 1997 tot 2021 deze vroeg naar 2 onderwerpen deze waren geluk en tevreden met het leven. De vraag om het geluk te beoordelen was "In welke mate vindt u zichzelf een gelukkig mens?" Deze kon van 1997-2010 beantwoord worden met 1. Erg gelukkig, 2. Gelukkig, 3. Niet gelukkig en niet ongelukkig, 4. Niet zo gelukkig en 5. Ongelukkig. vanaf het jaar 2012 was deze te beantwoorden met een schaal van 1 tot 10 de vraag was ook veranderd naar "Kunt u op een schaal van 1 tot en met 10 aangeven in welke mate u zichzelf een gelukkig mens vindt. Een 1 staat voor volledig ongelukkig en 10 voor volledig gelukkig?". De tevreden met het leven onderwerp werd op de volgende manier gevraagd "In welke mate bent u tevreden met het leven dat u op dit moment leidt?" Deze werd in 1997-2010 beantwoord op de volgende manier 1. Buitengewoon tevreden, 2. Zeer tevreden, 3. Tevreden, 4. Tamelijk tevreden en 5. Niet zo tevreden. vanaf 2012 is de vraag naar "Kunt u op een schaal van 1 tot en met 10 aangeven in welke mate u tevreden bent met het leven dat u nu leidt. Een 1 staat voor volledig ontevreden en 10 voor volledig tevreden?" Deze werd toen ook beantwoord met 1 tot 10. Dit onderzoek kijkt heel oppervlakkig naar geluk en gaat niet zozeer in op de dingen die geluk beïnvloeden zoals sociale situatie, geld situatie en persoonlijke gezondheid. Hier kijkt ons onderzoek wel naar.
 
 ## Doelstelling
 
 Doel 1 is het onderzoeken wat het gemiddelde geluks niveau is van studenten in verschillende steden.
 
-Doel 2 is in kaart brengen van de variatie in geluk tussen studenten steden op basis van verschillende factoren zoals geld, relatie met ouders, alcohol en of drugs gebruik en andere factoren.
+Doel 2 is in kaart brengen van de variatie in geluk tussen studentensteden op basis van verschillende factoren zoals geld, relatie met ouders, alcohol en of drugs gebruik en andere factoren.
 
 Doel 3: is het vergelijken van de geluks niveaus tussen groepen studenten in verschillende steden.
 
@@ -88,15 +86,16 @@ De hypothese: Er is geen significant verschil in het geluk niveau van studenten 
 ## Methodologie
 
 | Methode            | Uitleg                                                                                                                                                                    |
-|-------------------|-----------------------------------------------------|
-| Dataverzameling    | Een enquête zal worden verspreid onder studenten in verschillende studenten steden om gegevens te verzamelen over hun geluk                                               |
+|--------------------|----------------------------------------------------|
+| Dataverzameling    | Een enquête zal worden verspreid onder studenten in verschillende studentensteden om gegevens te verzamelen over hun geluk                                                |
 | Data-analyse       | De verzamelde data zal worden berwerkt en geanalyseerd worden met behulp van statistische software R en IDE R-studio                                                      |
 | Grafische weergave | Grafieken zullen worden gegenereerd om een visuele weergave te bieden van het gemiddelde geluk in verschillende steden en de verschillende vergelijkingen tussen groepen. |
 | Statistische tests | statistische tests zullen worden uitgevoerd om te bepalen of er genoeg data is, hoeveel data er nodig is en of deze data betrouwbaar is.                                  |
 | Conclusie          | Op basis van de resultaten zal worden bepaald of de hypothese wordt verworpen of geaccepteerd.                                                                            |
+
 ## Resultaten
-In de data die is verkregen bleek dat er niet genoeg data was uit elke stad. Dit bleek uit de poweranalyse, deze wordt gebruikt om te vinden hoeveel data nodig is per factor voor een antwoord om een fout negatief of fout positief te voorkomen. De shaprio wilcoxon test vertelde ook dat onze data niet voldoende was om de antwoorden hieruit te kunnen vertrouwen. 
-Dit betekent dat de data die gepresenteerd wordt in dit onderzoek alleen uit Groningen komt. Deze data uit Groningen is ook niet betrouwbaar omdat er niet genoeg data is verzameld. Ondanks dit data tekort zijn de volgende dingen te zien. Mannen zijn gemiddeld het gelukkigste dit is in tabel 5 te zien hier is het gemiddelde geluk van de man en vrouw uitgerekend. De man heeft een gemiddeld geluk van ongeveer 6.45 / 10 de vrouw heeft een gemiddeld geluk van 6.25/10 wat betekend dat mannen gemiddeld het gelukkigste zijn. Het drugs gebruik van vrouwen is hoger en het geluk wat ze hieruit halen is ook hoger dat is
+
+In de data die is verkregen bleek dat er niet genoeg data was uit elke stad. Dit bleek uit de poweranalyse, deze wordt gebruikt om te vinden hoeveel data nodig is per factor voor een antwoord om een fout negatief of fout positief te voorkomen. De shaprio wilcoxon test vertelde ook dat onze data niet voldoende was om de antwoorden hieruit te kunnen vertrouwen. Dit betekent dat de data die gepresenteerd wordt in dit onderzoek alleen uit Groningen komt. Deze data uit Groningen is ook niet betrouwbaar omdat er niet genoeg data is verzameld. Ondanks dit data tekort zijn de volgende dingen te zien. Mannen zijn gemiddeld het gelukkigste dit is in tabel 5 te zien hier is het gemiddelde geluk van de man en vrouw uitgerekend. De man heeft een gemiddeld geluk van ongeveer 6.45 / 10 de vrouw heeft een gemiddeld geluk van 6.25/10 wat betekend dat mannen gemiddeld het gelukkigste zijn. Het drugs gebruik van vrouwen is hoger en het geluk wat ze hieruit halen is ook hoger dat is
 
 # Materialen en Methoden
 
@@ -125,7 +124,7 @@ Hier is een tabel met alle tools (programma's of websites of code-taal) de refer
 
 ### Onderzoeksontwerp
 
-Dit onderzoek maakt gebruik van een kwantitatieve aanpak dit wordt gedaan met behulp van een vragenlijst dit om de factoren te identificeren die bijdragen en of wegnemen aan het geluk van studenten. Het onderzoek zelf richt zich specifiek op invloed van mentale gezondheid, thuissituatie, relatie met ouders, opleidingsniveau/ jaar en sociale integratie op de algemene ervaring van geluk van studenten.
+Dit onderzoek gebruikt een kwantitatieve techniek dit wordt gedaan met behulp van een enquête met verschillende factoren die geluk bijdragen en of wegnemen van de studenten. Het onderzoek zelf richt zich op de invloed van mentale gezondheid, relatie met ouders, opleidingsniveau/jaar, sociale interacties en geld op de algemene ervaring van geluk van studenten
 
 **Deelnemers**
 
@@ -133,7 +132,7 @@ De deelnemers aan dit onderzoek zijn studenten van verschillende opleidingsnivea
 
 **Procedures**
 
-De gegevens zijn verzameld via een (online-)vragenlijst deze is via email verspreid onder de studie-verenigingen, faculteiten van de studies en het algemene bestuur van de desbetreffende instellingen. De vragenlijst bevatte vragen over demografische gegevens, mentale gezondheid, thuissituatie, relatie status, fysieke gezondheid, financiële factoren, sociale factoren en geluk gevoel in het algemeen. De vragenlijst werd ook via posters verspreid op de HBO's & Universiteiten deze bleken echter niet veel antwoorden te werven
+De gegevens zijn verzameld via een online enquête deze is via email verspreid onder de studie-verenigingen, faculteiten van de studies en het algemene bestuur van de desbetreffende onderwijsinstellingen. De enquête bevatte vragen over mentale gezondheid, thuissituatie, relatie status, fysieke gezondheid, financiële factoren, sociale factoren en geluk gevoel in het algemeen. De enquête werd ook via posters verspreid op de HBO's & Universiteiten deze bleken echter niet veel antwoorden te werven
 
 **Dataverzameling**
 
@@ -231,8 +230,6 @@ for (col in names(numerieke_data)) {
 knitr::kable(tableresultaat, align = "c", caption = "De 95 procent betrouwbaarheidsinterval") 
 ```
 
-
-
 Dit zijn de belangrijkste punten uit deze *95%* betrouwbaarheidsinterval
 
 **Het hoogste gemiddelde** komt uit de Cont_buiten_school ook wel sociaal contact buiten school. deze heeft gemiddeld een 8 wat er op wijst dat mensen over het algemeen zeer tevreden zijn met hun contact buiten school.
@@ -268,7 +265,7 @@ Uit deze bar plot is te zien dat het grootste aantal van onze antwoorden rond de
 
 Om goed te kijken of de data normaal verdeeld is wordt deze shapiro wilcoxon test uitgevoerd. Uit deze test krijgen we een p-waarde en een t-waarde. Als de p-waarde \>0.05 is, betekent dat dat onze data normaal verdeeld is.
 
-in tabel 5 zijn de resultaten van de Shapiro Wilcoxon Test te zien  op alle numerieke data. Als alle kolommen in de rij van de p-waarde af gaat, is te zien dat geen enkele p-waarde \>0.05 is. Dit betekent dat onze data niet normaal verdeeld is. Dit dat onze data niet normaal verdeeld is. Deze p-waarden vertellen ons ook dat wij onze hypothese moeten afwijzen, wat betekent dat er geen effect is. Dit is jammer, maar we kunnen ondanks dit nog wel naar andere onderwerpen kijken.
+in tabel 5 zijn de resultaten van de Shapiro Wilcoxon Test te zien op alle numerieke data. Als alle kolommen in de rij van de p-waarde af gaat, is te zien dat geen enkele p-waarde \>0.05 is. Dit betekent dat onze data niet normaal verdeeld is. Dit dat onze data niet normaal verdeeld is. Deze p-waarden vertellen ons ook dat wij onze hypothese moeten afwijzen, wat betekent dat er geen effect is. Dit is jammer, maar we kunnen ondanks dit nog wel naar andere onderwerpen kijken.
 
 ```{r shapiro test,  echo=FALSE}
 #Voer een shapiro test uit op alle kolommen in de dataframe
@@ -313,7 +310,6 @@ knitr::kable(t_test_result, align = "c", caption = "Shapiro Wilcoxon Test")
 
 ```
 
-
 De t-statistic geeft ons ook een W waarde. Deze loop van 0 tot 1, waarbij 1 betekent dat de data perfect normaal verdeeld is. voor de W waarde wordt over het algemeen de ondergrens van 0.90 gehanteerd. als de test statistiek W grote dan 0.90 is dan kan de data als normaal verdeeld beschouwd worden. Er kan een kans zijn dat de W waarde en de P waarde hun resultaten elkaar tegen spreken.
 
 ```{r, fig.asp=.75, out.width='50%', fig.align='center', fig.cap="Antwoord per stad", echo=FALSE}
@@ -327,7 +323,7 @@ ggplot(Reactie_stad, aes(x = " ", y = "Antwoord per stad", fill = Stad)) +
     theme_void()
 ```
 
-In figuur 2 is te zien dat op 4 antwoorden na alle antwoorden uit Groningen komen. Hierdoor is het niet mogelijk om de hypothese te beantwoorden. Met deze reden worden verschillende factoren vergeleken met de data van de studenten in Groningen.De verzamelde data in Groningen komt neer op 73 studenten. In deze steekproef groep zitten ook verschillen. De steden Amsterdam, Leiden en Utrecht worden dus achterwegen gelaten. Groningen Als studenten stad heeft de Rijks Universiteit Groningen, Hanze (Hanze University of Aplied Sciences) en verschillende mbo-opleiding.
+In figuur 2 is te zien dat op 4 antwoorden na alle antwoorden uit Groningen komen. Hierdoor is het niet mogelijk om de hypothese te beantwoorden. Met deze reden worden verschillende factoren vergeleken met de data van de studenten in Groningen.De verzamelde data in Groningen komt neer op 73 studenten. In deze steekproef groep zitten ook verschillen. De steden Amsterdam, Leiden en Utrecht worden dus achterwegen gelaten. Groningen Als studentenstad heeft de Rijks Universiteit Groningen, Hanze (Hanze University of Aplied Sciences) en verschillende mbo-opleiding.
 
 ```{r, fig.asp=.75, out.width='50%', fig.align='center', fig.cap="Antwoord per Niveau", echo=FALSE, warning=FALSE, message=FALSE}
 
@@ -481,6 +477,7 @@ par(op)
 
 ```
 
+In figuur 4 zijn alle factoren te zien die belangrijk zijn voor het geluk van een student of er invloed op hebben op een indirecte manier. Er is te zien dat de studenten gemiddeld het meeste geluk halen uit sociale activiteiten en of ze zich thuis voelen in de stad waarin ze wonen. Er wordt gemiddeld het minste geluk gehaald uit verdovende middelen dit is goed, want het betekent dat de studenten niet afhankelijk zijn van verdovende middelen om zich gelukkig te voelen. Ook is te zien dat de studenten over het algemeen niet heel mentaal gelukkig zijn, oplossingen hiervoor zouden kunnen zijn begeleiding door therapeuten en of psychologen maar het kunnen ook andere factoren zijn die invloed hier op hebben die langdurig effect hebben.
 
 ```{r, fig.asp=.75, out.width='50%', fig.align='center',fig.cap="gem geluk per woonsituatie", echo=FALSE}
 gem_geluk_laatste_data <- Student_awn_data %>%
@@ -594,7 +591,7 @@ ggplot(Student_awn_data, aes(x = Woonsituatie, y = Mental_health, fill = Woonsit
   theme_minimal()
 ```
 
-in figuur 11 is te zien dat studenten die niet meer thuiswonen en dus in de stad Groningen wonen gemiddeld gelukkiger zijn dan mensen die bij hun ouders wonen. Dit kan komen door verschillende redenen zoals het gevoel van vrijheid of een slechte relatie met de ouders waardoor niet meer bij hun wonen het algemene geluk verbeterd.
+in figuur 11 is te zien dat studenten die niet meer thuiswonen en dus in de stad Groningen wonen gemiddeld gelukkiger zijn dan mensen die bij hun ouders wonen. Dit kan komen door verschillende redenen zoals het gevoel van vrijheid of een slechte relatie met de ouders waardoor niet meer bij hun wonen het algemene geluk verbeterd. In figuur 15 is te zien dat uitwonende ook een betere ouder relatie hebben deze kunnen zorgen voor steun en het geven van advies waardoor de student word geholpen.
 
 ```{r, fig.asp=.75, out.width='50%',fig.cap="mentale gezondheid per vakgebied", fig.align='center' , echo=FALSE}
 ggplot(Student_awn_data, aes(x = Vakgebied, y = Mental_health, fill = Vakgebied)) +
@@ -606,7 +603,7 @@ ggplot(Student_awn_data, aes(x = Vakgebied, y = Mental_health, fill = Vakgebied)
   theme(axis.text.x = element_blank()) 
 ```
 
-Ondanks dat de data oneven verdeeld is voor de groepen in vakgebied is het interessant om te zien hoe de mentale gezondheid is per vakgebied, er is namelijk te zien dat vergeleken met de andere vakgebieden studenten die kunst studeren mentaal veel ongelukkiger zijn. Dit is anders dan verwacht er was verwacht dat studenten van een technische studie ongelukkiger zouden zijn. 
+In figuur 12 is te zien dat ondanks de data oneven verdeeld is voor de groepen in vakgebied is het interessant om te zien hoe de mentale gezondheid is per vakgebied, er is namelijk te zien dat vergeleken met de andere vakgebieden studenten die kunst studeren mentaal veel ongelukkiger zijn. Dit is anders dan verwacht er was verwacht dat studenten van een technische studie ongelukkiger zouden zijn.
 
 ### Financiele situatie
 
@@ -620,11 +617,55 @@ ggplot(Student_awn_data, aes(x = Sekse, y = Financiele_sit, fill = Sekse)) +
   theme_minimal()
 ```
 
-in figuur 13 is te zien dat mannen gemiddeld in een betere financïele situatie zitten dan dat vrouwen dat zitten. Er zijn bij beide wel 2 uitschieters die in een zeer slechte financïele situatie zitten.
+in figuur 13 is te zien dat mannen gemiddeld in een betere financiële situatie zitten dan dat vrouwen dat zitten. Er zijn bij beide wel 2 uitschieters die in een zeer slechte financiële situatie zitten. Een goede financiële situatie is een basis voor gelukkig zijn hier wijzen [@Easterlin2003] & [@Farhud2014] ook op minder stress dus meer geluk.
+
+### Woonsituatie
+
+```{r, fig.asp=.75, out.width='50%', fig.align='center', fig.cap="Thuiswonend vs uitwonend geluk",echo=FALSE, warning=FALSE, message=FALSE}
 
 
 
-### cbs data
+woonsit_df <- select(Student_awn_data, c(Woonsituatie,
+                                        Happy_RN,
+                                        Thuis_in_stad,
+                                        Woonsituatie_geluk,
+                                        Happy_after_quest))
+
+
+woonsit_uit <- subset(woonsit_df, Woonsituatie == "Uitwonend (Away from home)")
+woonsit_thuis <- subset(woonsit_df, Woonsituatie == "Thuiswonend (At home)")
+p <- ggplot() + 
+    geom_jitter(data = woonsit_thuis, aes(x=Happy_RN, y=Happy_after_quest), color = "red", alpha = 0.6, width = 0.2, height = 0.2) +
+    geom_jitter(data = woonsit_uit, aes(x=Happy_RN, y=Happy_after_quest), color = "blue", alpha = 0.6, width = 0.2, height = 0.2) +
+    xlim(0, 10) +
+    ylim(0, 10) +
+    labs(color = "Woonsituatie") +
+    xlab("Geluk voor de enquête") +
+    ylab("Geluk na de enquête")+
+    geom_jitter(width = 0.2, alpha = 0.5) + 
+    facet_wrap(~Woonsituatie) +
+    ggtitle("Scatterplot Uit- vs Thuiswonende studenten geluk", subtitle = "Donkerder = meerdere zelfde antwoorden") +
+    theme_minimal()
+p
+```
+
+In figuur 14 is te zien dat studenten die uitwonen gelukkiger zijn dan de studenten die nog thuiswonen. Dit zou kunnen komen door meerdere factoren zoals de relatie met de ouders dit is in plot 15 ook te zien dat de uitwonende studenten ook een betere relatie met hun ouders hebben. Wat volgens het onderzoek van [@Jiang2022] ook zorgt voor meer geluk deze correlatie is inderdaad te zien.
+
+```{r, fig.asp=.75, out.width='50%', fig.align='center', fig.cap="Thuiswonend vs uitwonend ouder relatie",echo=FALSE, warning=FALSE, message=FALSE}
+
+ggplot(Student_awn_data, aes(x = Woonsituatie, y = Ouder_relatie, fill = Woonsituatie)) +
+      stat_boxplot(geom = "errorbar",
+               width = 0.25) +
+    ylim(0, 10) +
+  geom_boxplot() +
+  labs(title = "boxplot van relatie met ouders per woonsituatie", x = "Woonsituatie", y = "Relatie met ouders") +
+  theme(axis.text.x = element_blank()) 
+
+```
+
+In figuur 15 is een boxplot te zien die per woonsituatie laat zien hoe goed de relatie met de ouders is. Het gemiddelde laat zien dat uitwonende studenten gemiddeld een betere relatie hebben met hun ouders dan dat thuiswonende dit hebben. Dit zou kunnen door het gevoel van vrijheid dat uitwonende studenten hebben waardoor zij zich minder beperkt voelen. De thuiswonende studenten moeten nog de regels van hun ouders volgen en hebben door stress op school en andere factoren hierdoor minder tijd om de relatie in goede stand te houden. Uitwonende kunnen hun ouders bellen en of bezoeken om hun relatie instant te houden wat minder druk en stress geeft. 1 uitwonende student heeft een zeer slechte relatie met zijn ouders.
+
+### CBS data
 
 ```{r, fig.asp=.75, out.width='50%', fig.align='center', fig.cap="Gemiddeld geluk jong volwassenen",echo=FALSE, warning=FALSE, message=FALSE}
 
@@ -646,24 +687,38 @@ p_cbs <- ggplot() +
 p_cbs
 ```
 
-in figuur 14 is het gemiddelde geluk in jong volwassenen tussen 18 en 25 jaar. Er is te zien dat er een neerwaartse trend begint vanaf 2010 deze wordt steeds groter en in 2020 (waar ook de corona periode begon) was het geluk van de jongvolwassenen gemiddeld het laagste. Als we dit met onze data vergelijken zien we dat uit onze data blijkt dat de studenten gemideld ongelukkiger zijn. met een gemiddelde score tussen de 6.3 en 6.7 terwijl deze van de jong volwassenen net onder 8.25 ligt.
+in figuur 16 is het gemiddelde geluk in jong volwassenen tussen 18 en 25 jaar. Er is te zien dat er een neerwaartse trend begint vanaf 2010 deze wordt steeds groter en in 2020 (waar ook de corona periode begon) was het geluk van de jongvolwassenen gemiddeld het laagste. Als we dit met onze data vergelijken zien we dat uit onze data blijkt dat de studenten gemiddeld ongelukkiger zijn. met een gemiddelde score tussen de 6.3 en 6.7 terwijl deze van de jong volwassenen net onder 8.25 ligt.
 
 # Discussie en Conclusies
 
 ## Conclusie
 
-Onze onderzoeksvraag was: "in welke studentenstad zijn studenten het gelukkigst?" en onze hypothese "Er is geen significant verschil in het geluks niveau van studenten afhankelijk van de stad waarin ze studeren."
+Formuleer je conclusie door eerst in te zoomen op je eigen data en daarna uit te zoomen. Zoom in door je resultaten samen te vatten. Zoom uit om de waarde van je werk te beoordelen, door je bijvoorbeeld de volgende vragen te stellen: Kunnen mijn resultaten gebruikt worden in het werkveld? Wat betekenen ze voor het werkveld? en is mijn data betrouwbaar?\
 
-Door middel van een power-analyse is gebleken dat er voor elke groep minimaal 64 antwoorden nodig zijn voor de door ons gekozen instellingen (deze instellingen zijn gebaseerd op de industrie standaard) in totaal zijn er 77 antwoorden verkregen waar de meeste uit Groningen komen. Dit betekent dat de data niet voldoet aan de minimale vereiste. Onze berekende p-waarde is 0.3307 is ook te hoog om statistisch significante conclusies te kunnen trekken. Een te hoge p-waarde geeft aan dat de resultaten niet significant zijn, wat zegt dat er onvoldoende bewijs is om een werkelijk verschil of effect aan te tonen. Daardoor is de verzamelde data niet betrouwbaar genoeg als basis voor conclusies.
+Onze onderzoeksvraag was: "in welke studentenstad zijn studenten het gelukkigst?" en onze hypothese "Er is geen significant verschil in het geluksniveau van studenten afhankelijk van de stad waarin ze studeren."
+
+Door middel van een power-analyse is gebleken dat er voor elke groep minimaal 64 antwoorden nodig zijn voor de door ons gekozen instellingen (deze instellingen zijn gebaseerd op de industrie standaard) in totaal zijn er 77 antwoorden verkregen waar de meeste uit Groningen komen. Dit betekent dat de data niet voldoet aan de minimale vereiste. Onze berekende p-waarde is 0.3307 is ook te hoog om statistisch significante conclusies te kunnen trekken. Een te hoge p-waarde geeft aan dat de resultaten niet significant zijn, wat zegt dat er onvoldoende bewijs is om een werkelijk verschil of effect aan te tonen. Daardoor is de verzamelde data niet betrouwbaar genoeg als basis voor conclusies. De conclusies en resultaten die in dit onderzoek te zien zijn het volgende. Mannelijke studenten zijn gemiddeld het gelukkigste deze studenten gebruiken ook minder drugs en alcohol dan hun vrouwelijke tegenhanger en de mannelijke studenten die dit wel doen halen hier minder van hun geluk geluk uit dan de vrouwelijke studenten die de verdovende middelen gebruiken. In figuur 4 is het gemiddelde geluk van alle studenten te zien verspreid over elke factor die invloed heeft op het geluk. Er is te zien in dat er weinig geluk wordt gehaald uit verdovende middelen wanneer er hier dieper naar wordt gekeken in figuur 8 is te zien dat vrouwelijke studenten wel meer geluk halen uit de verdovende middelen dan dat mannelijke studenten dat doen.
+
+in figuur 14 & 15 is er een correlatie te zien tussen de relatie met de ouders en het gemiddelde geluk, er is te zien dat de uitwonende die gemiddeld een betere relatie met hun ouders hebben gemiddeld gelukkiger zijn dan de studenten die thuiswonen en ook een slechtere relatie hebben met hun ouders het verdovende middelen gebruik bij de thuiswonende is wel dichtbij het verdovende middelen gebruik van de uitwonende dit is te zien in figuur 9.
+
+Kunststudenten hebben de slechtste mentale gezondheid dit is opmerkelijk omdat een kunst studie over het algemeen creativiteit support en meer ruimdenkende ideeën waardoor er gedacht wordt dat hier ook meer support is voor de studenten. De technische studies hebben een betere mentale gezondheid deze studies zijn over het algemeen stressvol en hier wordt van gedacht dat deze studenten een slechte mentale gezondheid hebben dit is allemaal te zien in figuur 12.
+
+De data is niet te gebruiken in het werkveld dit zoals eerder te zien de data niet goed door de statische testen en analyses kwam. Het is niet betrouwbaar maar het kan wel gebruikt worden als een inspiratie bron voor volgende onderzoeken. Dit in de vorm van welke vragen er goed zijn om te gebruiken en welke factoren moeten worden bekeken.
 
 ## Discussie
 
-De volgende keer moeten wij een betere manier verzinnen om de data te verzamelen. Wij hadden bijna, en voor Utrecht zelfs helemaal geen data. Door deze belemmering konden wij ons onderzoek niet goed uitvoeren. Dit zullen wij de volgende keer kunnen oplossen door directer naar de studenten te marketen. Wij kunnen dit oplossen door meerdere dagen per stad te besteden en fysiek studenten vragen om mee te doen met ons onderzoek.
+De belangrijkste vindingen in dit onderzoek is dat in Groningen de studenten die uitwonen gelukkiger zijn, de mannelijke studenten in Groningen gelukkiger zijn dan andere sekse, de kunst studenten zijn het ongelukkigste, drugs en alcohol gebruik is het hoogste bij vrouwelijke studenten dit scheelt echter niet veel maar een paar personen verschil. Vrouwen halen hier wel meer geluk uit dan dat mannelijke studenten doen. De financiële situatie is het beste bij mannen en de mentale gezondheid is het laagste in het 2de jaar van de studie. De data is volgens de statistische testen ongelijk verdeeld en niet betrouwbaar. Er is ook te weinig data van Amsterdam, Utrecht en Leiden om überhaupt conclusies uit te halen en Groningen heeft te weinig data om betrouwbaar te zijn.
+
+De resultaten komen redelijk over een met de studie [@Jiang2022] deze zegt ook dat een goede relatie met de ouders zorgt voor meer geluk. Dit is ook te zien uit de data in dit onderzoek, verder is ook in beide te zien dat een betere geld situatie zorgt voor meer geluk.
+
+[@CBS2022] De resultaten van de cbs studie en het gemiddelde geluk vanuit de data uit dit onderzoek wijst erop dat studenten met ongeveer 2 punten ongelukkiger zijn geworden. In figuur 14 is te zien dat het geluk rond de 8.25 ligt dit is veel hoger dan de gelukken die per seksen zijn gemeten. Mannen ongeveer 6.45 en Vrouwen ongeveer 6.25 dat is een groot verschil. Deze vergelijking is echter niet heel betrouwbaar door het verschil in manier van meten. De cbs data maakt geen onderscheid tussen sekse en is gemeten over de periode van een jaar. De data uit dit onderzoek is gemeten van 29-04-2024 tot 30-05-2024. Deze meet perioden hebben ook invloed op de resultaten waardoor deze uitkomsten anders kunnen zijn.
+
+Voor een Toekomstig onderzoek zal het interessant zijn om dieper in te gaan op het drugs en alcohol gebruik. Dit zal dan zijn wat wordt er gebruikt hoe vaak en een diepere ingang op waarom. De onderzoeksvraag zou als volgt zijn "Welke verdovende middelen worden gebruikt door studenten en wat voor effect heeft deze op de algemene levenservaring?". De andere interessante onderwerpen zouden kunnen zijn de mentale gezondheid en het kijken naar de verschillende vakgebieden.
 
 ```{r wordcount, echo=FALSE, warning=FALSE, message=FALSE}
 #install.packages(devtools)
 #devtools::install_github("benmarwick/wordcountaddin", type = "source", dependencies = TRUE)
-wordcountaddin:::text_stats()
+#wordcountaddin:::text_stats()
 ```
 
 # Referenties
