@@ -10,66 +10,78 @@ knitr::opts_chunk$set(echo = TRUE)
 library(ggplot2)
 library(dplyr)
 library(fmsb)
+library(gt)
+library(pwr)
 ```
 
-# Logboek-Studentengeluk
-##### Storm Steller
+
+# 22-04-2024
+
+## Doel
+
+Opzetten onderzoek en beginnen met voorbereidingen
 
 
-## Inleiding
-
-(Moet er een inleiding in?)
-
-
-## Log
-
-### 22-04-2024
-
-**Doel van de dag**\
-Opzetten onderzoek + voorbereidingen\
-
-**Doelen**
+## Taken
 
 * Een groep vormen
 * Een onderwerp met hoofdvraag bedenken
 * De vraag laten goedkeuren door de docenten
 * Een plan van aanpak opstellen
 
-Vandaag vormde ik samen met Jarno een groepje om onderzoek te doen. Na eventjes nadenken hebben wij besloten dat wij het over het geluk (emotie) van studenten willen meten. Wij hebben besloten om dit in de 4 grootste studentensteden te meten. Na het raadplegen van een site,  https://www.hallmark.nl/magazine/huis/de-leukste-studentensteden-van-nederland/ (22-04-2024), zijn wij erop uitgekomen dat wij het geluk in Groningen, Leiden, Utrecht en Amsterdam willen meten, omdat deze steden bovenaan de lijst stonden.\
 
-Nadat wij de steden en het onderwerp hadden gekozen, begonnen we met het verzinnen met een hoofdvraag. Die hebben wij ongeveer kunnen formuleren. De vraag was alleen nog een beetje vaag
+## Log
+
+Vandaag vormde ik samen met Jarno een groepje om onderzoek te doen. Na eventjes nadenken hebben wij besloten dat wij het over het geluk (emotie) van studenten willen meten. Wij hebben besloten om dit in de 4 grootste studentensteden te meten. Toen zijn wij gaan onderzoeken welke studentensteden de 4 grootste studentensteden zijn. Na het intypen in de zoekbalk van de browser *"Meest populaire studentensteden"* kwamen we op deze site: <https://www.hallmark.nl/magazine/huis/de-leukste-studentensteden-van-nederland/> (22-04-2024).Op deze staat een lijst met de top 10 studentensteden in Nederland. Uit de lijst hebben wij Utrecht, Groningen en Leiden gehaald, omdat die bovenaa de lijst staan. Ook hebben wij voor Amsterdam gekozen. Amsterdam stond iets lager in de lijst dan de rest van de steden, maar we hebben er uiteindelijk toch voor gekozen om die in het onderzoek mee te nemen. Dat hebben wij gedaan, omdat Amsterdam wel heel veel studenten heeft. /
+
+Nadat wij de steden en het onderwerp hadden gekozen, begonnen we met het verzinnen met een hoofdvraag. We zijn met hele vage ideeën gekomen, maar die werken we de volgende les wel uit.
 
 
-### 23-04-2024
+# 23-04-2024
 
-**Doel van de dag**\
-Hoofdvraag uitwerken en protocol ontwikkelen\
+## Doel
 
-**Doelen**\
+Hoofdvraag uitwerken en protocol ontwikkelen
+
+
+## Taken
 
 * Onderzoeksvraag beter uitwerken
 * Verschillende manieren bekijken waarmee we geluk kunnen meten
-* Wat is nodig voor deze methoden
-* Wat is het einddoel?
+* Uitzoeken wat nodig is voor deze methoden
+* Ons einddoel verzinnen
 
-Vandaag hebben we de hoofdvraag uitgewerkt. Na een klein tijdje brainstormen zijn we op de vraag *"In welke studentenstad zijn studenten het gelukkigst?"* gekomen. Na het formuleren van de hoofdvraag hebben we meteen de nulhypothese en de hypothese bedacht. Onze hypothese werd uiteindelijk "Het maakt voor het geluk van de student niet uit in welke stad deze studeert". Dit hebben wij gekozen, omdat wij dachten dat het geluk gelijk ligt bij de studenten in de verschillende steden.\
 
-Toen zijn we begonnen met naar methoden om geluk te meten. Na het bekijken naar verschillende methodes op deze site: https://www.scribbr.nl/category/onderzoeksmethoden/ (23-04-2024) hebben wij besloten om een enquête te maken met verschillende vragen over het geluk van een individu.\
+## Log
+
+Vandaag hebben we de hoofdvraag uitgewerkt. We begonen met wat woorden, zoals "Studenten", "Geluk", en "Stad". Na een klein tijdje brainstormen zijn we op de vraag *"In welke studentenstad zijn studenten het gelukkigst?"* gekomen.\
+
+Na het formuleren van de hoofdvraag hebben we meteen de nulhypothese en de hypothese bedacht. Onze hypothese werd uiteindelijk *"Het maakt voor het geluk van de student niet uit in welke stad deze studeert"*. Dit hebben wij gekozen, omdat wij dachten dat het geluk gelijk ligt bij de studenten in de verschillende steden.\
+
+Toen zijn we begonnen met naar methoden om geluk te meten. Wij zijn naar deze website gegaan om te kijken naar de meest passende onderzoeksmethode: <https://www.scribbr.nl/category/onderzoeksmethoden/> (23-04-2024). Op deze website staat waarom een goede onderzoeksmethode belangrijk is, de verschillende soorten onderzoeksmethoden, soorten onderzoeksdata, soorten onderzoeksdoelen, en hoe je jouw onderzoeksmethode bepaalt.\
+
+Verder hebben wij aan onze docent gevraagd welke methode het meest past bij ons onderzoek. Uiteindelijk hebben wij op basis van de website en onze docent ervoor gekozen om een enquête te maken met verschillende vragen over geluk.\
 
 De enquete heeft een paar voorwaarden: De vragen moeten duidelijk zijn, de manier van antwoorden moet een datatype terug geven waarmee gemiddelden en grafieken etc. mee kunnen uitrekenen en maken. De manier van verspreiding van de enquête is ook een belangrijke beslissing.\ 
 
-De vragen die in de enquete zullen staan moeten de hoofdvraag *“In welke studenten stad zijn studenten het gelukkigst?“* kunnen beantwoorden. Dus moeten wij onderzoeken welke factoren geluk bepalen en welke er aan toevoegen of afnemen. Dit moeten wij doen door het lezen van literatuur over geluk, Situatie en geluk op moleculair niveau.
+De vragen die in de enquete zullen staan moeten de hoofdvraag *“In welke studenten stad zijn studenten het gelukkigst?“* kunnen beantwoorden. Dus moeten wij onderzoeken welke factoren geluk bepalen en welke eraan toevoegen of afnemen. Dit moeten wij doen door het lezen van literatuur over geluk, situatie en geluk op moleculair niveau.
 
 
-### 24-04-2024
+# 24-04-2024
 
-**Doel van de dag**\
-Literatuuronderzoek om onderzoeksvragen te beantwoorden\
+## Doel
 
-**Doelen**\
+Literatuuronderzoek om onderzoeksvragen te beantwoorden
+
+
+## Taken
 
 * Beantwoord de onderzoeksvragen door middel van literatuuronderzoek
-* Maak vragen van op basis van dat onderzoek
+* Maak vragen van op basis van het onderzoek
+* Maak een sammenvatting van de nuttige informatie
+
+
+## Log
 
 Vandaag zijn we begonnen met ons literatuuronderzoek. Met dit onderzoek willen wij 4 vragen beantwoorden die wij belangrijk vinden bij ons onderzoek:
 
@@ -80,29 +92,120 @@ Vandaag zijn we begonnen met ons literatuuronderzoek. Met dit onderzoek willen w
 
 Wij hebben de vragen opgedeeld zodat wij beide 2 vragen hoeven te beantwoorden. Ik heb de vragen *"Hoe belangrijk is geluk voor de functie van een persoon?"* en *"Hoe verschilt geluk per persoon?"* behandeld.\
 
-Na even zoeken op google scholar kwam ik de volgende bronnen tegen:
+Na de vragen *"How important is happiness for the function of a human"* en *"how does happiness differ between individuals"* intypen in de zoekbalk kwam ik uit op deze websites:
 
 * Cohn, M. A., Fredrickson, B. L., Brown, S. L., Mikels, J. A., & Conway, A. M. (2009). Happiness Unpacked: Positive Emotions Increase Life Satisfaction by Building Resilience. Emotion, 9(3), 361–368. https://doi.org/10.1037/a0015952
 
+    Op deze website staat een artikel over hoe positieve emoties de levenstevredenheid verhogen door onverschrokkenheid op te bouwen. Dit hebben ze gedaan door de emoties van 86 individuen een maand lang elke dag te meten. Ook beoordeelden ze de levenstevredenheid en de onverschrokkenheid aan het begin en het einde van de maand. Positieve emoties voorspelden een toename van zowel de onverschrokkenheid als de levenstevredenheid. Negatieve emoties hadden zwakke of nuleffecten en interfereerden niet met de voordelen van positieve emoties. Positieve emoties bemiddelden ook de relatie tussen onverschrokkenheid in het begin en uiteindelijke onverschrokkenheid, maar levenstevredenheid niet. Dit suggereert dat het positieve emoties van het moment zijn, en niet meer algemene positieve evaluaties van iemands leven, die de link vormen tussen geluk en wenselijke levensresultaten. Verandering in onverschrokkenheid bemiddelde de relatie tussen positieve emoties en verhoogde levenstevredenheid, wat erop wijst dat gelukkige mensen niet alleen tevredener worden omdat ze zich beter voelen, maar ook omdat ze middelen ontwikkelen om goed te leven.
+
 * Farhud, D. D., Malmir, M., & Khanahmadi, M. (2014). Happiness & Health: The Biological Factors-Systematic Review Article. In Iranian J Publ Health (Vol. 43, Issue 11). http://ijph.tums.ac.ir
+
+    Op deze website staat een artikel over een onderzoek waarin ze biologische factoren overwegen die ten grondslag liggen aan geluk. Dit is gedaan door middel van een literatuuronderzoek. In eerste instantie werden alle biologische factoren die verband houden met geluk doorzocht op de volgende websites: PubMed, Wiley & Sons, Science direct (1990-2014). Vervolgens zijn de artikelen onderverdeeld in vijf subgroepen (genetisch, hersenen en neurotransmitters, endocrinologie en hormonen, lichamelijke gezondheid, morfologie en fysieke aantrekkelijkheid). Tenslotte is er een systematische review uitgevoerd op basis van bestaande informatie. Resultaten van onderzoeken naar genetische factoren wezen op een gemiddelde effectiviteit van genetische factoren van ongeveer 35 tot 50 procent op geluk. Ondanks moeilijkheden bij het vinden van speciale genen, zijn verschillende genen gedistribueerd naar emotie en stemming. Neurowetenschappelijke onderzoeken hebben aangetoond dat een deel van de hersenen (bijvoorbeeld de amygdala, de hipocampus en het limbisch systeem) en neurotransmitters (bijvoorbeeld dopamine, serotonine, norepinefrine en endorfine) een rol spelen bij de controle van geluk. Enkele onderzoeken wezen op de rol van cortisol en adrenaline (bijnier) en oxitocine (hypofyse) bij het beheersen van geluk. Uit de meeste gerelateerde onderzoeken blijkt ook dat lichamelijke gezondheid en typologie een belangrijke rol spelen in geluk. Daarom kan er, volgens eerder onderzoek, worden gezegd dat biologische en gezondheidsfactoren van cruciaal belang zijn voor het onderliggende geluk en dat de rol ervan in geluk onmiskenbaar is.
 
 * Wink, P. M. (2014). George E. Vaillant, Triumphs of Experience: The Men of the Harvard Grant Study. Society, 51(2), 184–187. https://doi.org/10.1007/s12115-014-9760-7
 
-Na het literatuuronderzoek hebben wij besloten dat wij Google forms gaan gebruiken om onze enquête te maken. Hiervoor hebben wij gekozen, omdat het dan heel makkelijk is om de antwoorden in .csv format te krijgen. 
+    Op deze website staat een pdf naar een boek over "The Grant Study". De Grant Study is een 85 jaar durend onderzoek van de Study of Adult Development aan de Harvard Medical School, gestart in 1938. Het heeft 268 aan Harvard opgeleide mannen gevolgd, van wie de meerderheid lid was van de bachelorklassen van 1942, 1943 en 1944. Het liep parallel met een onderzoek genaamd "The Glueck Study", dat een tweede cohort van 456 kansarmen omvatte. Niet-delinquente jongeren uit de binnenstad die tussen 1940 en 1945 opgroeiden in de wijken van Boston. De proefpersonen waren allemaal blanke mannen en hadden de Amerikaanse nationaliteit. Zelfs in 2024 worden de mannen verder onderzocht. Ze werden minstens om de twee jaar geëvalueerd door middel van vragenlijsten, informatie van hun artsen en persoonlijke interviews. Er werd informatie verzameld over hun geestelijke en lichamelijke gezondheid, loopbaanplezier, pensioenervaring en huwelijkskwaliteit. Het doel van de studie was om voorspellers van gezond ouder worden te identificeren.
+
+Na het literatuuronderzoek hebben wij besloten dat wij Google forms gaan gebruiken om onze enquête te maken. Hiervoor hebben wij gekozen, omdat het dan heel makkelijk is om de antwoorden in .csv format te krijgen. Ook omdat de studenten anoniem blijven.
 
 
-### 26-04-2024
+# 26-04-2024
 
-**Doel van de dag**\
-Enquete vragen maken en structuur van de enquete bepalen
+## Doel
 
-**Doelen**
+Enquêtevragen maken en de structuur van de enquête bepalen
 
-* Door middel van het kijken naar de gevonden literatuur vragen maken
-* Enquête structuur bedenken
+
+## Taken
+
+* Vragen maken op basis van het literatuuronderzoek
+* Enquêtevstructuur bedenken
 * Protocol schrijven
 
+
+## Log
+
 Na het literatuuronderzoek hebben wij vandaag een eerste draft van onze enquêtevragen gemaakt. Uit het literatuuronderzoek concludeerden wij dat financiële status, sociale omgeving, fysieke gezondheid, gebruik van (verdovende) middelen, relatiestatus, woonsituatie, geloof, sexe, opleidingsniveau, jaarlaag, het vakgebied waarin ze studeren, of ze nationaal of internationaal zijn, en de stad waarin ze studeren impact kan hebben op het geluk van een persoon. Dit hebben wij meteen verwerkt in de enquête.\
+
+De vragen die we hebben verzonnen zijn:
+
+**Parameters** \
+Dit zijn de parameter vragen. Deze vragen hebben elk een andere schaal van antwoorden. Deze vragen zijn er zodat wij later naar verbanden tussen de parameters en het geluk kunnen kijken.
+
+* Welke sexe ben je?
+    Deze parameter vonden wij belangrijk, omdat wij later kunnen kijken of er ergens een verband zit tussen sexe en een andere parameter. Deze hebben wij opgedeeld in man, vrouw en anders, omdat wij een hele grote lijst zouden hebben als wij alle genders in het lijstje zouden zetten en anders een goede manier is om ze allemaal in een aparte groep te zetten.
+    
+* Welk niveau opleiding doe je?
+    Deze vonden wij ook belangrijk vanwege mogelijke verbanden. Net als de volgende parameters. Deze hebben wij opgedeeld in MBO, HBO, Universiteit en Masters. Wij hebben voor deze gekozen, omdat wij de mensen die deze niveaus doen studenten vinden.
+    
+* In welk jaar zit je?
+    Deze hebben wij opgedeeld in 1e, 2e, 3e en 4e.
+
+* Welk vakgebied studeer je?
+    Deze hebben wij opgedeeld in sociaal, technisch, kunst, lifesciences, economisch en anders.
+    
+* Wat is jouw huidige woonsituatie?
+    Deze hebben wij opgedeeld in thuiswonend en uitwonend. Wij hebben hiervoor gekozen, omdat wij wederom kunnen kijken of er een verband zit tussen het geluk van uitwonende en thuiswonende studenten.
+    
+* In welke stad studeer je?
+    Deze hebben wij opgedeeld in Groningen, Amsterdam, Utrecht en Leiden op basis van het kleine onderzoek dat wij eerder hebben uitgevoerd. Deze vraag is er zodat wij onze hoofdvraag uiteindelijk kunnen beantwoorden.
+    
+* Ben je een nationale- of internationale student?
+     Deze hebben wij opgedeeld in nationaal en internationaal.
+
+* Ben je gelovig?
+    Deze hebben wij opgedeeld in ja en nee. Deze vraag heb ik bedacht, omdat ik nieuwschierig was of er een verband is tussen geloof en geluk.
+    
+* Heb je een relatie?
+    Deze hebben wij opgedeeld in ja en nee.
+    
+* Ik gebruik (verdovende-) middelen, Zoals wiet, alcohol of anders.
+    Deze hebben wij opgedeeld in ja, nee en zeg ik liever niet. Dit is de enige vraag waarbij wij de optie toevoegen om het anoniem te houden, omdat wij begrijpen dat niet iedereen dat niet zomaar wilt vertellen.
+    
+**Cijfer Vragen** \
+Deze vragen worden beantwoord met een cijfer van 0 tot en met 10. Met deze vragen kunnen wij meten hoe gelukkig een persoon is. Ook met deze vragen kunnen we verbanden leggen tussen groepen.
+
+* Hoe gelukkig voel je je nu?
+    Deze vraag hebben wij erin gezet om te kijken of het perspectief van het geluk van degene die de enquête maakt veranderd tijdens de enquête. 
+
+* Ben je gelukkig met je fysieke gesteldheid?
+    Deze vraag hebben wij in de enquête gezet, omdat het invloed van de fysieke gesteldheid op geluk verschilt per persoon. Met deze vraag kunnen we kijken of er een verband zit tussen hoe belangrijk iemand zijn fysieke toestand vindt en hoe gelukkig het persoon is met zijn fysieke toestand.
+    
+* Hoe belangrijk is je (fysieke-) gezondheid voor je geluk? 
+    Deze vraag zit in de enquête om te combineren met de vorige vraag.
+    
+* Hoe belangrijk is contact buiten school met andere voor jouw geluk? 
+    Uit het literatuuronderzoek hebben wij gevonden dat andere mensen belangrijk zijn voor het geluk van een individu. Dit is terug te vinden in het artikel van Veenhoven, R. (1991, 1 januari) hoofdstuk - Can happiness be learned? Hier wordt verteld dat er in een exiperiment waar mensen worden opgeleid op het sociaal vlak om better te kunnen socialiseren met anderen, er een positieve verandering in het geluk van het proefpersoon plaatsvindt. Daarom hebben wij ervoor gekozen deze vraag in de enquête te stoppen.
+    
+* Ik vind het belangrijk om buiten school sociale activiteiten te doen. 
+    Deze vraag zit in de enquête om met de vorige vraag te combineren. Met deze vraag kunnen wij kijken of het persoon of dit persoon het belangrijk vindt om dingen te doen. 
+    
+* Ik heb een goede relatie met mijn ouders. 
+    Deze vraag hebben wij in de enquête verwerkt, omdat in het artikel van Easterlin, R. A. (2003). Explaining happiness. in het hoofdstuk "Explaining Happiness" vaak famillie wordt genoemd als bron van geluk.
+
+* Ik ben gelukkig met mijn woonsituatie. 
+    Deze vraag hebben wij in de enquête gestopt zodat we kunnen kijken of er een mogelijk verband is tussen uitwonende- en thuiswonende studenten en hoe gelukkig ze zijn met hun woonsituatie.
+    
+* Ik voel me thuis in de stad waar ik woon. 
+    Deze vraag zit in de enquête zodat we kunnen kijken of mensen die uitwonend zijn zich thuisvoelen in de stad waar ze wonen.
+    
+* Mijn academische prestaties hebben veel invloed op hoe gelukkig ik ben.
+    Deze vraag zit in de enquête, omdat de invloed van academische prestaties op geluk verschilt per persoon. Dit hebben wij eerst bij onszelf gemerkt. Toen besloten wij het in de enquête te doen.
+    
+* Ik zit in een goede financiële situatie. 
+    Deze vraag zit in e enquête om te kijken of er een eventuele verband is tussen de financiële situatie en geluk.
+    
+* Geld is belangrijk voor mij om gelukkig te zijn.
+    Deze vraag zit in de enquête om te kijken of er een verband is tussen mensen die geld hebben en het belang van geld voor het geluk van een persoon is.
+    
+* Deze middelen gebruik ik om mijzelf gelukkiger te maken. 
+    Deze vraag is om te kijken of de personen die verdovende middelen gebruikt het gebruikt voor hun eigen geluk.
+    
+* Ik zit lekker in mijn vel. 
+
+* Hoe gelukkig ben jij na deze enquête? 
+    Deze vraag is om te kijken of het perspectief van geluk is veranderd bij de mensen die de enquête hebben gemaakt.
+
 
 Daarna zijn we bezig geweest met een protocol. Dit is het protocol dat wij hebben ontwikkeld: 
 
@@ -111,62 +214,83 @@ Door middel van een poster met QR-code kan de student deze scannen en een Google
 De enquête wordt ook op plekken rond de campus opgehangen. Dezelfde posters als die we aan de studenten laten zien. De poster wordt ook via de e-mail verspreid over de schoolorganisaties en alle studieverenigingen in de verschillende steden. Dit doen wij, omdat wij zo genoeg bereik hebben en veel respondenten kunnen krijgen. Ook om te zorgen dat de populatie willekeurig is en niet zwaar wordt beïnvloed door 1 bepaalde groep. 
 
 
-### 28-04-2024
+# 28-04-2024
 
-**Doel van de dag**\
+## Doel van de dag
+
 Maak de enquête en poster af
 
-**Doelen**
 
-* Maak alle voorbereidingen af voor het bezoek in Leiden
+## Taken 
+
+* Maak de poster af
+* Kijk de enquête na
+
+
+## Log
 
 Vandaag heb ik de poster gemaakt met een qr code die naar onze enquête leidt. Op deze poster staat ook wat informatie over de enquête en het onderwerp van het onderzoek. Daarnaast heb ik nog kleine voorbereidingen gedaan voor ons bezoek in Leiden morgen. Ik heb samen met Jarno nog even naar de enquête gekeken. Die leek goed. Verder heb ik nog gekeken hoe wij naar de campus in Leiden moeten.\
 
 <img src="Afbeeldingen/poster-engels.png" alt="Poster Engels" width="200" height="270">
 <img src="Afbeeldingen/poster-nederlands.png" alt="Poster Nederlands" width="200" height="270">
 
-Hierboven zie je de poster die is gemaakt. We hebben besloten om ze in het Engels en Nederlands te maken, omdat internationale studenten ook binnen onze doelgroep vallen.\
+Hierboven zie je de poster die is gemaakt. We hebben besloten om ze in het Engels en Nederlands te maken, omdat internationale studenten ook binnen onze doelgroep vallen. Die spreken meestal geen Nederlands, maar wel Engels.
 
 
-### 29-04-2024
+# 29-04-2024
 
-**Doel**\
+## Doel
+
 Naar Leiden om de enquête te verspreiden
 
-**Doelen**
+
+## Taken
 
 * Verspreid posters in verschillende gebouwen
 * Benader mensen met de vraag of ze de enquête willen invullen
 
-Om zoveel mogelijk data te krijgen zijn wij zo snel mogelijk naar de gekozen steden gegaan. Leiden was het verste weg, dus deze gaan wij als eerste heen. Wij begonnen met posters ophangen om 13:30. Dit was in het lipsius gebouw, we gingen elk gebouw af en hingen er 2-3 posters op. Dit deden we in de meivakantie. Wij denken echter dat dit niet een enorme invloed zou moeten hebben op hoeveel data we kunnen verzamelen. Dit komt omdat de universiteiten niet geen meivakantie hebben en het dus aanwezig waren op school. Het MBO en HBO hebben wel meivakantie, maar ondanks dat zijn we wel binnengelaten in het HBO gebouw en hebben wij hier ook 3 posters opgehangen.\
+
+## Log
+
+Om zoveel mogelijk data te krijgen zijn wij zo snel mogelijk naar de gekozen steden gegaan. Leiden was het verste weg, dus deze gaan wij als eerste heen. Wij begonnen met posters ophangen om 13:30. Dit was in het lipsius gebouw, we gingen elk gebouw af en hingen er 2-3 posters op. Dit deden we in de meivakantie. Wij denken echter dat dit niet een enorme invloed zou moeten hebben op hoeveel data we kunnen verzamelen. Dit komt omdat de universiteiten niet geen meivakantie hebben en het dus aanwezig waren op school. Het MBO en HBO hebben wel meivakantie, maar ondanks dat zijn we wel binnengelaten in het HBO gebouw en hebben wij hier ook 3 posters opgehangen.
 
 Tijdens het proces van posters ophangen hebben wij ook geprobeerd een aantal studenten te benaderen, vragen of zij onze enquête willen maken. Met weinig succes. Geen enkele student die wij benaderden wou meedoen aan het onderzoek. Om deze reden hebben wij besloten om het protocol te wijzigen: Wij benaderen geen studenten meer, omdat de grootste kans is dat ze niet mee willen werken. Dan is het vooral een tijdverspilling.
 
 
-### 07-05-2024
+# 07-05-2024
 
-**Doel**\
+## Doel
+
 Posters ophangen in Utrecht
 
-**Doelen**
+
+## Taken
 
 * In de gebouwen van Universiteit Utrecht & Hogeschool Utrecht posters ophangen
-* Emails verzamelen 
+* E-mail adressen verzamelen 
+
+
+## Log
 
 Vandaag zijn Jarno en ik naar Utrecht gegaan voor ons onderzoek. Hier gingen wij heen, net als in Leiden, om onze poster te verspreiden. Utrecht heeft een groot campus waar alle HBO scholen en universiteiten staan. Daar zijn wij heen gegaan en hebben wij in elk gebouw weer posters gehangen op poster borden. Ook zijn wij naar de bibliotheek geweest waar wij, in tegenstelling tot in Leiden, wel posters konden neerleggen. Ook zijn wij in een paar studentencafés geweest op de campus. Daar hebben wij ook posters op de behorende plekken gehangen. Die hebben wij daar opgehangen, omdat daar veel studenten komen.
 
 
-### 08-05-2024
+# 08-05-2024
 
-**Doel**\
-Verzamel emailadressen van studieverenigingen en schoolorganisaties
+## Doel
 
-**Doelen**
+Verzamel e-mail adressen van studieverenigingen en schoolorganisaties
+
+
+## Taken
 
 * Stel een e-mail op
 * Verzamel emailadressen
 
-Vandaag ben ik in de les begonnen met het verzamelen van alle emailadressen van de scholen en studieverenigingen. Ik heb die van Leiden kunnen verzamelen. Die van Utrecht ook voor de helft. Dit proces duurt best lang, omdat er heel veel studieverenigingen zijn. De e-mails van de studieverenigingen heb ik op de volgende websites gevonden:
+
+## Log
+
+Vandaag ben ik in de les begonnen met het verzamelen van alle e-mail adressen van de scholen en studieverenigingen. Ik heb de e-mail adressen van Leiden kunnen verzamelen. Die van Utrecht ook voor de helft. Dit proces duurt best lang, omdat er heel veel studieverenigingen zijn. De e-mails van de studieverenigingen heb ik op de volgende websites gevonden:
 
 * https://utrechtstudentenstad.nl/studentenverenigingen
 * https://students.uu.nl/naast-de-studie/vrije-tijd-en-studentenleven/studentenorganisaties
@@ -187,16 +311,29 @@ Storm & Jarno, studenten Hanzehogeschool
 
 Deze e-mail wordt ook in het Engels verstuurd. Hiermee verwijzen we met een dikgedrukte zin **For english look below**. Dit doen wij, omdat het bestuur van sommige studieverenigingen alleen maar bestaat uit internationals.
 
+De e-mail stond eerst niet in het protocol. Dit hebben wij gewijzigd. Het protocol ziet er nu zo uit:
 
-### 13-05-2024
+Door middel van een poster met QR-code kan de student deze scannen en een Google form invullen met de vragen. De vragen hebben een schaal van 0-10 waarbij 0 het slechtste is en 10 het beste. De posters nemen de meters mee naar de Universitaire bibliotheken van de studenten campussen om op te hangen en zoveel mogelijk verschillende studenten te benaderen en ondervragen.
 
-**Doel**\
+De enquête wordt ook op plekken rond de campus opgehangen. Dezelfde posters als die we aan de studenten laten zien. De poster wordt ook via de e-mail verspreid over de schoolorganisaties en alle studieverenigingen in de verschillende steden. Dit doen wij, omdat wij zo genoeg bereik hebben en veel respondenten kunnen krijgen. Ook om te zorgen dat de populatie willekeurig is en niet zwaar wordt beïnvloed door 1 bepaalde groep.
+
+Om extra mensen aan te spreken en zorgen dat de enquête nog verder wordt verspreidt. Dit doen we door e-mails te sturen naar verschillende studieverenigingen en schoolorganisaties met een link en een nette email waarin staat wat dit onderzoek is, waarvoor en door wie. Daarnaast sturen we de e-mail ook naar de mbo-scholen en de algemene kanalen van de hbo’s en de universiteiten. De email is hier onder te vinden.
+
+
+# 13-05-2024
+
+## Doel
+
 Opzetten Algemene document en e-mails verzamelen
 
-**Doelen**
 
-* Verzamel emailadressen van schoolorganisaties en studievereniging
+## Taken
+
+* Verzamel emailadressen van schoolorganisaties en studieverenigingen
 * Structuur van R markdown document maken
+
+
+## Log
 
 Vandaag ben ik verder gegaan met het verzamelen van de emailadressen. Ik heb vandaag alle emailadressen van Utrecht en Leiden verzameld en heb naar die scholen en studieverenigingen een e-mail gestuurd. Verder ben ik de dag verder bezig geweest met het verzamelen van de e-mails uit Amsterdam en Groningen. De e-mails heb ik verzameld op deze websites:
 
@@ -204,158 +341,323 @@ Vandaag ben ik verder gegaan met het verzamelen van de emailadressen. Ik heb van
 * https://www.rug.nl/let/onze-faculteit/organisatie/studentenorganisaties-en-verenigingen/lijst-studieverenigingen
 * https://vu.nl/nl/student/verenigingen/studieverenigingen
 * https://amsterdamstudentenstad.nl/studentenverenigingen
-*https://student.uva.nl/onderwerpen/studieverenigingen
+* https://student.uva.nl/onderwerpen/studieverenigingen
 
-Ook hebben we de algemene structuur van ons eindproduct gemaakt. De structuur die wij gaan volgen is de structuur die gebruikt wordt op ncbi. Dat is als volgt:
+Ook hebben we de algemene structuur van ons eindproduct gemaakt. Onze docent heeft ons voorzien van een template dat moet worden gevolgd. Deze heeft verschillende dingen nodig
 
-* Pakkende titel die ook goed beschrijft waar het over gaat
-* Een abstract
-* Een introductie met de hyptothese en relevantie
-* De literatuur die relevant is met uitleg waarom voor dit onderzoek
-* De vragen en factoren waarom deze moeten worden gebruikt
-* Onze methoden en materialen - Protocol
+* Introductie
+    
+    Hier moet de waarom in staan. Leg uit waarom dit onderzoek belangrijk is en wat het toevoegt. Het moet de achtergrond van je onderzoek uitleggen, Wat er al eerder onderzocht is op dit vlak en wat er juist nog mist en welke speciale technieken wij gebruikt hebben. Het einde van de introductie bevat de doelstelling(en) van ons onderzoek, hoe wij deze denken te gaan behalen en de aanpak. Eventueel kan je hier ook de hypothese geven.
+
+* Materialen & Methoden
+    
+    Materialen: Hier moet instaan wat je hebt gebruikt, welke versie je hebt gebruikt, een link waar dit is te downloaden of te gebruiken, wat het doet en waarvoor wij het hebben gebruikt. Dit zijn alle software tools, gebruikte bibliotheken/plugs en externe programma's.
+    
+    Methoden: Welke methodologieën met relevantie voor je project je hebt gebruikt. het doel, de toepassing en welke software en parameters zijn gebruikt. Eventueel kan er een flowchart worden gemaakt. De statistische methoden zijn gebruikt zet je hier ook neer. Wat heb je zelf in het kader van dit onderzoek ontwikkeld aan methodologieën. Hier moeten de namen van de scripts en programma's en waar deze te vinden zijn in repo staan.
+
 * Resultaten
-* Samenvatting
-* Conclusie
-* Bedankjes en Honorable mentions
 
-Wij maken gebruik van deze template omdat wij een profesionele structuur willen weer geven in ons eindproduct.
+    Hier worden de resultaten in logische volgorde gepresenteerd. er oet een beschrijving zijn wat er te zien is en deze moet naar het beantwoorden van de doelstelling toe werken. beschrijf wanneer dit mogelijk is de logica van de keuze voor de experimenten. In elke paragraaf worden de feitelijke conclusies gegeven. Gebruik zo veel mogelijk figuren om je informatie uit je resultaten over te brengen. Gebruik tabellen wanneer figuren minder geschikt zijn. Deze worden in de tekst besproken en de belangrijkste aspecten worden hier toegelicht. Geef tabellen bovenaan een titel en bijschrift die de inhoud beschrijft en onderaan voetnoten die kolomnamen of specifieke waardes verklaren.
+
+* Discussie en Conclusies
+
+    Formuleer je conclusie door eerst in te zoomen op je eigen data en daarna uit te zoomen. Zoom in door je resultaten samen te vatten. Zoom uit om de waarde van je werk te beoordelen, door je bijvoorbeeld de volgende vragen te stellen: Kunnen mijn resultaten gebruikt worden in het werkveld? Wat betekenen ze voor het werkveld? en is mijn data betrouwbaar? Bespreek de resultaten zodanig dat je ze ter discussie stelt, wees kritisch. Vergelijk je resultaten met de literatuur of eerder ontwikkelde data. Geef aanbevelingen voor een vervolg en staaf je aanbevelingen door de impact op wetenschappelijk of maatschappelijk vlak te beschrijven. Kom ten slotte altijd terug op de doelstelling (en hypothesen).
+
+* Referenties
+
+    Deze worden in een bib file toegevoegd waardoor ze automatisch in het document worden toegevoegd.
+
+Natuurlijk moet hier ook worden gelet op het taalgebruik. Dit moet op
+een wetenschappelijke manier. Er moet een woordentelling gedaan dat
+wordt gedaan met behulp van de package devtools. Hieronder de code.
+
+```{r wordcount, message=FALSE}
+#Om de package te installeren
+#install.packages("devtools")
+#devtools::install_github("benmarwick/wordcountaddin", type = "source", dependencies = TRUE)
+
+#Geeft een telling van regels, woorden, karakters en leestijd weer
+wordcountaddin:::text_stats()
+```
 
 
-### 14-05-2024
+# 14-05-2024
 
-**Doel**\
+## Doel
+
 Data bekijken
 
-**Doelen**
+
+## Taken
 
 * Verspreid de enquête meer
 * Bekijk de al verzamelde data
 
-Vandaag heb ik alle emailadressen verzameld van de scholen en studieverenigingen uit Amsterdam en Groningen. Daar heb ik dan ook meteen dezelfde mail naar verstuurd als de scholen en verenigingen in Utrecht en Leiden. Verder hebben wij al een aantal antwoorden gekregen van de scholen en verenigingen uit Utrecht en Leiden. Tot nu toe werken de meeste niet mee. Alleen hogeschool Utrecht die gaat kijken wat ze voor ons kunnen doen en MBO Utrecht die onze posters in hun scholen gaan hangen.\
 
-Tot nu toe hebben wij 7 antwoorden. Die zijn van mensen uit de klas. Samen met Jarno hebben we de .csv ingeladen en bekeken.
+## Log
+
+Vandaag heb ik alle emailadressen verzameld van de scholen en studieverenigingen uit Amsterdam en Groningen. Daar heb ik dan ook meteen dezelfde mail naar verstuurd als de scholen en verenigingen in Utrecht en Leiden. Verder hebben wij al een aantal antwoorden gekregen van de scholen en verenigingen uit Utrecht en Leiden. Tot nu toe werken de meeste niet mee. Alleen hogeschool Utrecht die gaat kijken wat ze voor ons kunnen doen en MBO Utrecht die onze posters in hun scholen gaan hangen.
+
+Tot nu toe hebben wij 7 antwoorden. Die zijn van mensen uit de klas. Om de die antwoorden in een csv te krijgen is heel simpel. Je gaat naar Google forms, drukt op de 3 bolletjes naast de knop "Bekijken in Spreadsheets", vervolgens klik je op de knop "Antwoorden downloaden (.csv)" en je hebt de .csv. 
+
+Nu kunnen we de antwoorden van onze eerste 7 respondenten bekijken.
+
+```{r}
+#Lees de .csv in
+data <- read.csv("Student-Happiness.csv", encoding= "UTF-8")
+
+```
+
+Nu ik de data heb ingelezen verander ik de kolomnamen, omdat die heel lang zijn. De kolomnamen die in de .csv zijn de vragen, en omdat wij de vragen in het Nederlands en Engels hebben is dat veel tekst. Dus korten we die wat in.
+
+```{r}
+#Verander de namen van de kolommen
+colnames(data) <- c("Tijdstempel", "Sexe", "Niveau", "Jaar", "Vakgebied", "Woonsituatie", "Stad", "Nationaal_Internationaal", "Gelovig", "Relatie", "Algemeen_Geluk", "Fysiek_Geluk", "Belang_Fysieke_Gezondheid", "Belang_Buitenschools_Contact", "Belang_Sociale_Activiteiten", "Band_Ouders", "Geluk_Woonsituatie", "Thuisgevoel", "Belang_Academische_Prestaties", "Financiele_Situatie", "Belang_Geld", "Gebruik_Verdovende_Middelen", "Belang_Verdovende_Middelen", "Lekker_In_Vel", "Geluk_Na_Enquete")
+
+```
+
+Ook zijn de waarden in de kolommen onhandig lang. Dit is ook omdat deze in zowel het Nederlands als Engels zijn gemaakt voor de enquête. Deze korten we voor gemak ook wat in.
+
+```{r}
+data$Sexe[data$Sexe == "Vrouw (Female)"] <- "Vrouw"
+data$Sexe[data$Sexe == "Man (Male)"] <- "Man"
+data$Sexe[data$Sexe == "Anders (Other)"] <- "Anders"
+
+data$Niveau[data$Niveau == "Universiteit (University) Bachelor"] <- "Universiteit"
+
+data$Jaar[data$Jaar == "1e (1st)"] <- "1e"
+data$Jaar[data$Jaar == "2e (2nd)"] <- "2e"
+data$Jaar[data$Jaar == "3e (3rd)"] <- "3e"
+data$Jaar[data$Jaar == "4e (4th)"] <- "4e"
+
+data$Vakgebied[data$Vakgebied == "Technisch (Technical)"] <- "Technisch"
+data$Vakgebied[data$Vakgebied == "Anders (Other)"] <- "Anders"
+data$Vakgebied[data$Vakgebied == "Sociaal (Social)"] <- "Sociaal"
+data$Vakgebied[data$Vakgebied == "Economisch (Economical)"] <- "Economisch"
+data$Vakgebied[data$Vakgebied == "Kunst (Art)"] <- "Kunst"
+
+data$Woonsituatie[data$Woonsituatie == "Thuiswonend (At home)"] <- "Thuiswonend"
+data$Woonsituatie[data$Woonsituatie == "Uitwonend (Away from home)"] <- "Uitwonend"
+
+data$Nationaal_Internationaal[data$Nationaal_Internationaal == "Nationaal (National)"] <- "Nationaal"
+data$Nationaal_Internationaal[data$Nationaal_Internationaal == "Internationaal (International)"] <- "Internationaal"
+
+data$Gelovig[data$Gelovig == "Ja (Yes)"] <- "Ja"
+data$Gelovig[data$Gelovig == "Nee (No)"] <- "Nee"
+
+data$Relatie[data$Relatie == "Ja (Yes)"] <- "Ja"
+data$Relatie[data$Relatie == "Nee (No)"] <- "Nee"
+
+data$Belang_Verdovende_Middelen[data$Belang_Verdovende_Middelen == "Ja (Yes)"] <- "Ja"
+data$Belang_Verdovende_Middelen[data$Belang_Verdovende_Middelen == "Nee (No)	"] <- "Nee"
+
+```
 
 
-### 15-05-2024
+Nu de dataframe er wat netter uitziet, kunnen we er naar kijken.
 
-**Doel**\
+```{r}
+tabel <- gt(data)
+
+tabel %>%
+    tab_options(
+        container.width= 1000,
+        container.height= 500,
+        table.border.right.width= 30) %>%
+    tab_header(title= "Antwoorden Enquete") %>%
+    tab_style(style= cell_borders(
+                        sides = "all", 
+                         color = "#000000", 
+                         style = "solid", 
+                        weight = px(1)),
+                locations = cells_body())
+    
+
+```
+
+Hier zie je de data in de vorm van een tabel. Dit is niet het meest overzichtelijk, omdat de tabel te groot voor het scherm is. Je moet constant in de tabel scrollen. Hiervoor kunnen we wel andere soorten grafieken maken.
+
+
+### Cirkeldiagrammen
+
+```{r, fig.asp=.75, out.width='50%', fig.align='center'}
+#Een functie die een piechart maakt
+js_piechart <- function(data,
+                        y= "",
+                        x= "",
+                        fill,
+                        title= "",
+                        subtitle= "",
+                        legend_title= "",
+                        caption= "",
+                        color= scale_fill_brewer(),
+                        theme= theme_void()){
+    ggplot(data,
+           aes(x= "", y= y, fill= fill)) +
+           geom_col() +
+           coord_polar(theta= "y") +
+           color +
+           theme +
+           ggtitle(title, subtitle= subtitle) +
+           labs(fill= legend_title, caption= caption)
+}
+
+js_piechart(data= data, fill= data$Stad, title= "Antwoorden Gesplitst Op Stad", caption= "Figuur 1: Antwoorden gesplitst op stad", legend_title= "Stad")
+
+```
+
+Hierboven zie je een cirkeldiagram met de respondenten uit de verschillende steden. Wat hier opvalt is dat er weinig respondenten zijn uit Amsterdam en Leiden, en er zijn geen respondenten uit Utrecht. Dit betekent dat onze posters in de scholen weinig effect hebben. Hopelijk krijgen wij meer respondenten door de e-mail. Als het aantal respondenten uit Utrecht, Leiden en Amsterdam niet groter wordt, kunnen wij onze vraag niet beantwoorden.
+
+
+```{r, fig.asp=.75, out.width='50%', fig.align='center'}
+js_piechart(data= data, fill= data$Sexe, title= "Antwoorden Gesplitst Op Sekse", caption= "Figuur 2: Antwoorden gesplitst op sekse", legend_title= "Sekse")
+```
+
+Hierboven zie je een cirkeldiagram gesplitst op sekse. Het valt op dat de mannen en vrouwen bijna evenveel antwoorden hebben, maar de groep anders veel minder antwoorden heeft. Dat was wel te verwachten, omdat de groep mensen die zich anders identificeren dan man of vrouw enorm in de minderheid is. Dit betekent echter wel dat wij waarschijnlijk minder goed verbanden kunnen leggen tussen de groep anders en andere factoren. Toch gaan wij dit waarschijnlijk gebruiken in ons eindproduct.
+
+
+```{r, fig.asp=.75, out.width='50%', fig.align='center'}
+js_piechart(data = data, fill = data$Vakgebied, title = "Antwoorden Gesplitst Op Vakgebied", caption = "Figuur 3: Antwoorden gesplitst op vakgebied", legend_title = "Vakgebied", color = scale_fill_viridis_d())
+```
+
+Hierboven zie je een cirkeldiagram van de antwoorden gesplitst op vakgebied. Hier is veel variatie, daarom ook de andere kleuren. Het vakgebied lifesciences is duidelijk het grootst. Meer dan de helft zelfs. Daarnaast zijn technisch en andere vakgebieden het grootst. Dit is mooi, omdat we hier veel vergelijkingen kunnen maken en mogelijke verbanden kunnen ontdekken. Dit gaan wij waarschijnlijk gebruiken in ons eindproduct.
+
+
+```{r, fig.asp=.75, out.width='50%', fig.align='center'}
+js_piechart(data = data, fill = data$Woonsituatie, title = "Antwoord Gesplitst Op Woonsituatie", legend_title = "Woonsituatie", caption = "Figuur 4: Antwoorden gesplitst op woonsituatie")
+```
+
+Hierboven zie je een cirkeldiagram van de antwoorden gesplitst op woonsituatie. Het valt op dat het heel goed is verdeeld. Bijna door de helft. Dit is goed, omdat we zo goed kunnen kijken of er mogelijke verbanden zijn tussen de woonsituatie en andere factoren en gaan wij waarschijnlijk meenemen in ons eindproduct.
+
+
+```{r, fig.asp=.75, out.width='50%', fig.align='center'}
+js_piechart(data = data, fill = data$Nationaal_Internationaal, title = "Antwoorden Gesplitst Op Nationaal Of Internationaal", legend_title = "Nationaal/Internationaal", caption = "Figuur 5: Antwoorden gesplitst op nationaal of internationaal")
+```
+
+Hierboven zie je een cirkeldiagram van de antwoorden gesplitst op nationaal of internationaal. Het valt op dat er bijna geen internationale respondenten zijn. Dit betekent dat we niet goed naar mogelijke verbanden kunnen kijken of de twee met elkaar kunnen vergelijken. Hopelijk krijgen wij er meer internationale respondenten bij. 
+
+
+```{r, fig.asp=.75, out.width='50%', fig.align='center'}
+js_piechart(data = data, fill = data$Gelovig, title = "Antwoorden Gesplitst Op Geloof", legend_title = "Gelovig", caption = "Figuur 6: Antwoorden gesplitst op geloof")
+```
+
+Hierboven zie je een cirkeldiagram van de antwoorden gesplitst op geloof. Het valt op dat er weinig gelovige respondenten zijn. Hier kunnen wij dus lastig mogelijke verbanden ontdekken of vergelijken.
+
+
+```{r, fig.asp=.75, out.width='50%', fig.align='center'}
+js_piechart(data = data, fill = data$Relatie, title = "Antwoorden Gesplitst Op Relatiestatus", legend_title = "Relatiestatus", caption = "Figuur 7: Antwoorden gesplitst op relatiestatus")
+```
+
+Hierboven zie je een cirkeldiagram van de antwoorden gesplitst op relatiestatus. Het valt op dat er meer respondenten zijn die niet in een relatie zitten, maar het is nog verdeeld genoeg om mogelijke verbanden te kunnen ontdekken en de twee met elkaar te kunnen vergelijken. Waarschijnlijk nemen wij deze mee in ons eindproduct.
+
+
+```{r, fig.asp=.75, out.width='50%', fig.align='center'}
+js_piechart(data = data, fill = data$Niveau, title = "Antwoorden Gesplitst Op Niveau", legend_title = "Niveau", caption = "Figuur 8: Antwoorden gesplitst op niveau")
+```
+
+Hierboven zie je een cirkeldiagram van de antwoorden gesplitst op niveau. Wat opvalt is dat het aantal HBO studenten in de grote meerderheid is. De kleinste groep is de groep MBO studenten. Dit verschil is zo groot dat het misschien moeilijk gaat zijn om mogelijke verbanden te kunnen ontdekken of de groepen met elkaar te kunnen vergelijken.
+
+
+```{r, fig.asp=.75, out.width='50%', fig.align='center'}
+js_piechart(data = data, fill = data$Jaar, title = "Antwoorden Gesplitst Op Opleidingsjaar", legend_title = "Jaar", caption = "Figuur 9: Antwoorden gesplitst op opleidingsjaar")
+```
+
+Hierboven zie je een cirkeldiagram van de antwoorden gesplitst op opleidingsjaar. Het valt op dat de antwooren best verdeeld zijn. De grootste groep is de groep eerstejaars.
+
+
+```{r, fig.asp=.75, out.width='50%', fig.align='center'}
+js_piechart(data = data, fill = data$Gebruik_Verdovende_Middelen, title = "Antwoorden Gesplitst Op Gebruik Van Verdovende Middelen", legend_title = "Gebruikt", caption = "Figuur 10: Antwoorden gesplitst op gebruik van verdovende middelen")
+```
+
+Hierboven zie je een cirkeldiagram van het aantal antwoorden gesplitst op gebruik van verdovende middelen. Hier valt op dat de meerderheid van de respondenten wel gebruik maakt van verdovende middelen. Dat verbaast mij niet heel veel, want het zijn studenten. Het is echter niet heel goed verdeeld, maar misschien nog net genoeg om mogelijke verbanden te kunnen ontdekken en de twee groepen met elkaar te vergelijken.
+
+
+### Power Analyse
+
+Verder heeft Jarno vandaag een power analyse uitgevoerd. Die is belangrijk, dus zet ik de resultaten daarvan ook hier neer. Maar eerst een beetje over de power analyse.
+
+De Power analyse is een statistische methode die gebruikt wordt om verschillende aspecten van een onderzoek te bepalen. Het kan onder andere de steekproefgrootte bepalen. Het beperken van type 1 en type 2 fouten. Een type 1 fout is er wanneer er sprake is van een effect dat niet bestaat, vals positief. Een type 2 fout is er wanneer er sprake is van het niet vinden van een effect dat wel bestaat, vals negatief. Door deze analyse uit te voeren bevorderen bij de betrouwbaarheid van ons onderzoek.
+
+Om een power analyse uit te voeren, heb je verschillende dingen nodig. Een sigma level: die geeft de waarschijnlijkheid op het afwijzen van de nul-hypothese aan wanneer het waar is. Hierbij is 0.05 de meest gebruikte waarde.
+
+Power is de kans van het correct afwijzen van de nul-hypothese wanner het niet waar is. Hoe hoger de power, hoe minder groot het kans op een type 2 fout. Hierbij is 0.8 de meest gebruikte waarde. Voor hele kritische onderzoeken wordt zelfs 0.9 gebruikt.
+
+d is een maat die aangeeft hoe groot het verschil is tussen de gemiddelden van de twee groepen. Dit gebeurt door het verschil te meten in de standaarddeviaties. Met d kunnen wij begrijpen hoe groot het waargenomen effect is. Als d <5 is is er sprake van een gering verchil, als d >5 en 8< is is er sprake van een middelmatig verschil, en als d >8 is is er sprake van een significant verschil.
+
+N is de steekproefgrootte.
+
+```{r}
+n <- as.integer(nrow(data) / 2)
+
+#Power analyse met zelf ingevulde N
+power1 <- pwr.t.test(sig.level = 0.05, power = 0.8, n = n, alternative = "two.sided")
+
+#Power analyse om te kijken wat N had moeten zijn per groep
+power2 <-  pwr.t.test(d = 0.5, sig.level = 0.05, power = 0.8 , alternative = "two.sided")
+power1
+power2
+```
+
+In de eerste power test heb ik de helft van het aantal respondenten ingevuld. Dit is omdat we 2 groepen hebben van ongeveer de helft.
+
+Uit de tweede power test kunnen we zien dat wij voor een middelmatig verschil een steekproefgrootte van 64 nodig zullen hebben. Dat is 128 in totaal. Om dat te halen hebben wij wat meer respondenten nodig.
+
+
+# 15-05-2024
+
+## Doel
+
 Posters ophangen op campus Groningen
 
-**Doelen**
+## Taken
 
 * Posters verspreiden
 * Plan opnieuw bekijken
 
-Vandaag zijn Jarno en ik over de campus in Groningen gegaan om onze posters daar op te hangen. Wij zijn naar alle gebouwen van de Hanze geweest om de posters te hangen. Wij hebben ervoor gekozen om de posters een andere keer in de RUG gebouwen te hangen omdat wij niet genoeg tijd hadden om ze daar nog op te hangen. Wij hebben wederom in elk gebouw van de Hanze een aantal posters gehangen.\
+Vandaag zijn Jarno en ik over de campus in Groningen gegaan om onze posters daar op te hangen. Wij zijn naar alle gebouwen van de Hanze geweest om de posters te hangen. Wij hebben ervoor gekozen om de posters een andere keer in de RUG gebouwen te hangen omdat wij niet genoeg tijd hadden om ze daar nog op te hangen. Wij hebben wederom in elk gebouw van de Hanze een aantal posters gehangen.
 
-Vandaag hebben wij ook besloten om de posters te verspreiden via Linkedin. Dit hebben wij besloten, omdat wij vrij weinig antwoorden via e-mail terug krijgen. Wij hopen meer reacties te krijgen via Linkedin.\
+Vandaag hebben wij ook besloten om de posters te verspreiden via Linkedin. Dit hebben wij besloten, omdat wij vrij weinig antwoorden via e-mail terug krijgen. Wij hopen meer reacties te krijgen via Linkedin.
 
 Aan het einde van de dag hadden we 26 antwoorden op de enquête.
 
 
-### 21-05-2024
+# 21-05-2024
 
-**Doel van de dag**\
-Kijk welke data het belangrijkste is
+## Doel
 
-**Doelen**
+Bepaal welke data het belangrijkste is
+
+
+## Taken
 
 * Data bekijken 
 * Welke grafieksoorten willen wij gebruiken
-* Hoe gaat het eindproduct eruit zien
+* Bepalen structuur eindproduct
+
+
+## Log
 
 Als we onze data vandaag bekijken is te zien dat we op 29 antwoorden zitten.
-```{r}
-#Lees de data in
-data <- read.csv("../../raw_data/Student_hap_awn_30_05.csv")
-```
-
-```{r}
-#Verander de namen van de kolommen
-colnames(data) <- c("Tijdstempel", "Sexe", "Niveau", "Jaar", "Vakgebied", "Woonsituatie", "Stad", "Nationaal_Internationaal", "Gelovig", "Relatie", "Algemeen_Geluk", "Fysiek_Geluk", "Belang_Fysieke_Gezondheid", "Belang_Buitenschools_Contact", "Belang_Sociale_Activiteiten", "Band_Ouders", "Geluk_Woonsituatie", "Thuisgevoel", "Belang_Academische_Prestaties", "Financiele_Situatie", "Belang_Geld", "Gebruik_Verdovende_Middelen", "Belang_Verdovende_Middelen", "Lekker_In_Vel", "Geluk_Na_Enquête")
-
-```
-
-```{r}
-head(data)
-```
 
 
 ```{r}
 #Maak een aparte vector met alle numerieke data
-numerieke_data <- select(data, c(11:15, 17:21, 23:25))
+numerieke_data <- select(data, c(11:21, 23:25))
 
+#Verander het datatype van de kolom "Belang_Verdovende_Middelen" naar numeric
+numerieke_data <- transform(numerieke_data, Belang_Verdovende_Middelen = as.numeric(Belang_Verdovende_Middelen))
 #head(numerieke_data)
 ```
 
-Wij keken naar welke grafieksoorten wij willen om onze data te laten zien in ons eindproduct. de grafieken die wij waarschijnlijk gaan gebruiken zijn.
+Wij keken naar welke grafieksoorten wij willen om onze data te laten zien in ons eindproduct. De grafieken die wij waarschijnlijk gaan gebruiken zijn:
 
-* Radar chart, omdat deze goed multivariate data over verschillende groepen kan laten zien.
-* Scatterplot, Het scatter plot is handig om 2 groepen te vergelijken. In ons eindproduct willen we graag meerdere groepen met elkaar vergelijken. Dan is deze plot erg geschikt
-
-```{r, fig.asp=.75, out.width='50%', fig.align='center', fig.cap='Selecting untidy data'}
-ggplot(data, aes(x = " ", y = "Antwoord per stad", fill = Stad)) +
-    geom_col() + 
-    coord_polar(theta = "y") +
-    scale_fill_brewer() +
-    theme_void() +
-    ggtitle("Antwoorden per stad")
-
-```
-
-Hier is te zien dat de ratio tussen de verschillende steden groot is. Amsterdam en leiden hebben 3 en 1 antwoord. Utrecht heeft echter geen enkele respndent\ 
-
-De mails die wij hebben verstuurd zijn aangekomen en wij hebben op bepaalde ook antwoorden gekregen dat deze zouden worden doorgestuurd en de correcte link en qr codes zouden worden verspreid.
-
-
-### 25-02-024
-
-**Doel**\
-Maak radar charts
-
-**Doelen**\
-
-* Maak radar charts voor de journal club
-* Maak radar charts voor het eindproduct
-
-Vandaag ben ik bezig geweest met het maken van verschillende radar charts met onze data. Ik heb ze volgende charts gemaakt:
-
-```{r, echo=FALSE}
-#Een functie die het gemiddelde van data in een dataframe berekent en er een nieuwe dataframe van maakt
-mean_frame <- function(data){
-  as.data.frame(t(colMeans(data)))
-}
-
-#Bereken het gemiddelde van alle numerieke gegevens en zet ze in een apart dataframe
-df_means <- mean_frame(numerieke_data)
-
-#Maak een naam voor de regel
-row.names(df_means) <- "Gemiddeld"
-
-#df_means
-```
-
-```{r, echo=FALSE}
-#Een functie die data afrond
-round_data <- function(data, digits) {
-  nums <- vapply(data, is.numeric, FUN.VALUE = logical(1))
-
-  data[,nums] <- round(data[,nums], digits = digits)
-
-  (data)
-}
-
-round_data(df_means, 1)
-
-```
-
-```{r, echo=FALSE}
+* **Radar chart** - Een radar chart kan goed multivariate data over verschillende groepen laten zien.
+```{r}
 #Deze functie maakt een mooie radar chart, als parameters neemt de functie data, een kleur en een titel
 js_radarchart <- function(data, 
                              color,
                              vlabels = colnames(data),
-                             title) {
+                             title = "") {
     radarchart(
         data, axistype = 1,
         
@@ -374,20 +676,22 @@ js_radarchart <- function(data,
         
         #Hier wordt de kleur en grootte van de as labels bepaald
         axislabcol = "black",
-        vlcex = .80, 
+        vlcex = .60, 
         vlabels = vlabels,
-        title = title,
+        title = title
     )
 }
+
 ```
 
-```{r, echo= FALSE}
+```{r}
 #Zet een maximum- en minimum waarde in voor de grafiek
 max_min <- data.frame( Algemeen_Geluk = c(10,0),
                        Fysiek_Geluk = c(10,0),
                        Belang_Fysieke_Gezondheid = c(10,0),
                        Belang_Buitenschools_Contact = c(10,0),
                        Belang_Sociale_Activiteiten = c(10,0),
+                       Band_Ouders = c(10,0),
                        Geluk_Woonsituatie = c(10,0),
                        Thuisgevoel = c(10,0),
                        Belang_Academische_Prestaties = c(10,0),
@@ -395,40 +699,212 @@ max_min <- data.frame( Algemeen_Geluk = c(10,0),
                        Belang_Geld = c(10,0),
                        Belang_Verdovende_Middelen = c(10,0),
                        Lekker_In_Vel = c(10,0),
-                       Geluk_Na_Enquête = c(10,0)
+                       Geluk_Na_Enquete = c(10,0)
                       )
 
 row.names(max_min) <- c("Max", "Min")
 
+```
+
+```{r}
+#Een functie die het gemiddelde van data in een dataframe berekent en er een nieuwe dataframe van maakt
+mean_frame <- function(data){
+  as.data.frame(t(colMeans(data)))
+}
+
+#Bereken het gemiddelde van alle numerieke gegevens en zet ze in een apart dataframe
+df_means <- mean_frame(numerieke_data)
+
+#Maak een naam voor de regel
+row.names(df_means) <- "Gemiddeld"
+
+#df_means
+```
+
+```{r}
+#Een functie die data afrond
+round_data <- function(data, digits) {
+  nums <- vapply(data, is.numeric, FUN.VALUE = logical(1))
+
+  data[,nums] <- round(data[,nums], digits = digits)
+
+  (data)
+}
+
+round_data(df_means, 1)
+```
+
+```{r}
 #Bind de max en min aan data en zet het in een dataframe
-df <- rbind(max_min, numerieke_data)
 radar_means <- rbind(max_min, df_means)
 
 #Zet grafische parameters
 op <- par(mar = c(1, 1, 1, 1))
 
 #Maak een plot van het gemiddelde geluk van alle studenten
-js_radarchart(data= radar_means, color= "blue", title= "Gemiddeld geluk van alle studenten")
+js_radarchart(data= radar_means, color= "#69f5bf", title= "Gemiddeld geluk van alle studenten")
+
+par(op)
+```
+    
+    Dit is een voorbeeld van een radar chart. Met deze plot kan je meerdere factoren over meerdere groepen vergelijken. Dit wordt veel gebruikt in onderzoeken vergelijkbaar met die van ons en is voor ons dus heel handig.
+
+* **Spreidingsdiagram** - Een spreidingsdiagram is handig om 2 groepen te vergelijken en om mogelijke verbanden te ontdekken. In ons eindproduct willen we graag meerdere groepen met elkaar vergelijken. Dan is deze plot erg geschikt
+
+```{r, fig.asp=.75, out.width='50%', fig.align='center'}
+js_scatterplot <- function(data,
+                        y= "",
+                        x= "",
+                        fill= "",
+                        facet_wrap= "",
+                        title= "",
+                        subtitle= "",
+                        xlab= "",
+                        ylab= "",
+                        legend_title= "",
+                        caption= "",
+                        colors= scale_fill_brewer(),
+                        theme= theme_minimal()){
+    ggplot(data,
+           aes(x= x, y= y, color= fill)) +
+           geom_point() +
+          geom_jitter(width = 0.2, size = 2) +
+           colors +
+           theme +
+           xlab(xlab) +
+           ylab(ylab) +
+           ggtitle(title, subtitle= subtitle) +
+           labs(color= legend_title, caption= caption)+
+           if(missing(facet_wrap)) {
+                
+            } else {
+                facet_wrap(facet_wrap)
+            }
+}
+
+js_scatterplot(data= data, y = data$Algemeen_Geluk, x= data$Sexe, fill = data$Sexe,  xlab = "Sexe", ylab = "Algemeen Geluk", legend_title = "Sexe", title = "Algemeen Geluk Gespltst Op Sexe", caption = "Figuur 12: Algemeen geluk gesplitst op sekse")
+```
+
+    Dit is een voorbeeld van een spreidingsdiagram. Zoals je kan zien is het makkelijk om uitschieters te zien. Het nadeel is wel dat de stippen elkaar kunnen overlappen. Gelukkig is er een optie om dat te verhelpen. Met de jitter functie kan je de stippen een beetje uit elkaar zweven. Op deze manier zijn alle stippen beter te zien.
+
+* **Boxplot** - Een boxplot is handig, omdat het meerdere dingen kan laten zien. Het laat de mediaan, 1e en 3e kwartiel, maximum en minimum, en uitschieters zien.
+
+```{r, fig.asp=.75, out.width='50%', fig.align='center'}
+js_boxplot <- function(data,
+                        y= "",
+                        x= "",
+                        fill= "",
+                        title= "",
+                        subtitle= "",
+                        xlab= "",
+                        ylab= "",
+                        legend_title= "",
+                        caption= "",
+                        color= scale_color_viridis_c(),
+                        theme= theme_minimal()){
+    ggplot(data,
+           aes(x= x, y= y, fill= fill)) +
+           geom_point() +
+           stat_boxplot(geom = "errorbar",
+                        width= 0.25) +
+           color +
+           theme +
+           xlab(xlab) +
+           ylab(ylab) +
+           ggtitle(title, subtitle= subtitle) +
+           labs(fill= legend_title, caption= caption) +
+           geom_boxplot()
+}
+
+js_boxplot(data = data, x= data$Sexe, y= data$Algemeen_Geluk, fill = data$Sexe, title = "Algemeen Geluk Gesplitst Op Sekse", xlab = "Sekse", ylab = "Algemeen Geluk", legend_title = "Sekse", caption = "Figuur 13: Algemeen geluk gesplitst op sekse")
+```
+
+    Dit is een voorbeeld van een boxplot. Hier zie je het algemeen geluk gesplitst op sekse. Wat handig is aan een boxplot is dat je makkelijk uitschieters kan zien. Zo kan je in het voorbeeld hierboven zien dat er bij de mannen een uitschieter is die helemaal onderin is en bij de vrouwen een die helemaal bovenin is. Ook laat de boxplot heel handig het gemiddelde zien door middel van een dikke zwarte lijn te trekken. Zo kan je zien dat de mannen het meest en de groep anders het minst gelukkig is. Je kan ook nog heel handig zien hoe verspreid de datapunten zijn. Zo is te zien dat de data van de mannen veel meer verspreid is dan die van de vrouwen.
+
+
+* **Cirkeldiagram** - Een cirkeldiagram kan makkelijk laten zien hoe de antwoorden verdeeld zijn
+
+```{r, fig.asp=.75, out.width='50%', fig.align='center'}
+js_piechart(data = data, fill = data$Sexe, title = "Antwoorden Gesplitst Op Sekse", legend_title = "Sekse", caption = "Figuur 15: Antwoorden gesplitst op sekse")
+```
+
+    Dit is een voorbeeld van een cirkeldiagram. Het is een simpele, maar handige diagram. Het is heel makkelijk te zien hoe de antwoorden verdeeld zijn. Zo kan je in het voorbeeld hierboven zien dat de groep anders in de grote minderheid is.
+
+* **Staafdiagram** _ Een staafdiagram is handig, omdat die heel duidelijk kan laten ziek hoeveel er van elke groep is.
+
+```{r, fig.asp=.75, out.width='50%', fig.align='center'}
+js_barchart <- function(data,
+                        y= "",
+                        x= "",
+                        fill= "",
+                        title= "",
+                        subtitle= "",
+                        xlab= "",
+                        ylab= "",
+                        legend_title= "",
+                        caption= "",
+                        color= scale_color_viridis_c(),
+                        theme= theme_minimal()){
+    ggplot(data,
+           aes(x= x, y= y, fill= fill)) +
+           geom_bar(stat = "identity") +
+           color +
+           theme +
+           xlab(xlab) +
+           ylab(ylab) +
+           ggtitle(title, subtitle= subtitle) +
+           labs(fill= legend_title, caption= caption)
+}
+
+js_barchart(data = data, x= data$Sexe, y= data$Algemeen_Geluk, fill = data$Sexe, title = "Algemeen Geluk Gesplitst Op Sekse", xlab = "Sekse", ylab = "Algemeen Geluk", caption = "Figuur 16: Algemeen geluk gesplitst op sekse", legend_title = "Sekse")
+```
+
+    Hierboven zie je een voorbeeld van een staafdiagram. Hieruit is te zien dat de vrouwen het meest gelukkig zijn van de sekses. Deze grafiek is echter niet heel betrouwbaar, omdat de staafdiagram wordt beïnvloedt door de hoeveelheid respondenten per groep. 
+
+De mails die wij hebben verstuurd zijn aangekomen en wij hebben op bepaalde ook antwoorden gekregen dat deze zouden worden doorgestuurd en de correcte link en qr codes zouden worden verspreid.
+
+
+# 25-02-024
+
+## Doel
+
+Maak radar charts voor journal club en onderzoek
+
+
+## Doelen
+
+* Maak radar charts voor de journal club
+* Maak radar charts voor het eindproduct
+
+
+## Log
+
+Vandaag ben ik bezig geweest met het maken van verschillende radar charts met onze data. Ik heb ze volgende charts gemaakt:
+
+
+### Radar charts
+```{r}
+#Zet grafische parameters
+op <- par(mar = c(1, 1, 1, 1))
+
+#Maak een plot van het gemiddelde geluk van alle studenten
+js_radarchart(data= radar_means, color= "#69f5bf", title= "Gemiddeld geluk van alle studenten")
 
 par(op)
 ```
 
-Hier zie je een radar chart van het gemiddelde van alle studenten.
+Hier zie je een radar chart van het gemiddelde van alle studenten. Het valt op dat elk onderdeel boven de 5.5 zit, voldoende dus. Op het belang van verdovende middelen na, maar dat is juist goed dat die laag is. We kunnen dus zeggen dat de gemiddelde student gelukkig is zonder verdovende middelen te gebruiken.
 
-```{r, echo=FALSE}
+
+```{r}
 #Voeg de sexe kolom terug aan de dataframe
 numerieke_data$Sexe <- data$Sexe
 
-#Verander de namen van de waarden om het later makkelijker te maken
-numerieke_data$Sexe[numerieke_data$Sexe == 'Vrouw (Female)'] <- "Vrouw"
-numerieke_data$Sexe[numerieke_data$Sexe == 'Man (Male)'] <- "Man"
-numerieke_data$Sexe[numerieke_data$Sexe == 'Anders (Other)'] <- "Anders"
-
 #Reken de gemiddelden van de individuen gesplitst op sexe
-mean_man <- mean_frame(numerieke_data[numerieke_data$Sexe == 'Man', 1:13])
-mean_vrouw <- mean_frame(numerieke_data[numerieke_data$Sexe == 'Vrouw', 1:13])
-mean_anders <- mean_frame(numerieke_data[numerieke_data$Sexe == 'Anders', 1:13])
-
+mean_man <- mean_frame(numerieke_data[numerieke_data$Sexe == 'Man', 1:14])
+mean_vrouw <- mean_frame(numerieke_data[numerieke_data$Sexe == 'Vrouw', 1:14])
+mean_anders <- mean_frame(numerieke_data[numerieke_data$Sexe == 'Anders', 1:14])
+                          
 #Zet alle gemiddelden in een dataframe met de maximale- en minimale grens
 df_mean_sexe <- rbind(max_min, mean_man, mean_vrouw, mean_anders)
 
@@ -438,19 +914,19 @@ rownames(df_mean_sexe) <- c("Max", "Min", "Man", "Vrouw", "Anders")
 #Rond de waarden in de dataframe af
 df_mean_sexe <- round_data(df_mean_sexe, 1)
 
-#Verwijder de sexe kolom weer
-numerieke_data <- numerieke_data[1:13]
 
 #head(df_mean_sexe)
 ```
-```{r, echo= FALSE}
+
+```{r}
 op <- par(mar = c(1, 1, 1, 1))
 
-js_radarchart(data= df_mean_sexe, color= c("#4dd5ff", "#f5c2ff", "#e3e655"), title= "Gemiddeld Geluk Gesplitst Op Sexe")
+js_radarchart(data= df_mean_sexe, color= c("#4dd5ff", "#f5c2ff", "#e3e655"), title= "Gemiddeld Geluk Gesplitst Op Sekse")
 
 #Maak een legenda voor de grafiek
 legend(
   x = "right", 
+  title = "Sekse",
   legend = c("Man", "Vrouw", "Anders"), 
   horiz = FALSE,
   bty = "n", 
@@ -464,16 +940,22 @@ legend(
 par(op)
 ```
 
-Hier is een radarchart van het gemiddeld geluk gesplitst op sexe. Wat opvalt is dat de groep "Anders" veel minder gelukkig is dan de rest. Ook dat ze meer drugs en alchohol consumeren dan de andere groepen.
+Hier is een radarchart van het gemiddeld geluk gesplitst op sexe. Wat opvalt is dat de groep anders veel minder gelukkig is dan de rest. Ook dat ze verdovende middelen meer nodig hebben voor hun geluk. Misschien is hier sprake van een verband tussen het geluk en belang van verdovende middelen bij de groep anders.
 
-```{r, echo= FALSE}
+```{r}
+js_scatterplot(data = data, x=data$Belang_Verdovende_Middelen, y= data$Algemeen_Geluk, fill = data$Sexe, facet_wrap = "~data$Sexe", xlab = "Belang Verdovende Middelen", ylab= "Algemeen Geluk", legend_title = "Sekse", title = "Belang Verdovende Middelen Tegenover Algemeen Geluk Gesplitst Op Sekse", caption = "Figuur 19: Belang verdovende middelen tegenover algemeen geluk gesplitst op sekse")
+```
+
+Hierboven zie je een spreidingsdiagram van het algemeen geluk tegenover het belang van verdovende middelen voor het geluk gesplitst op sekse. Hierin valt op dat er bij de groep anders maar 6 grafiekpunten zijn. Er zijn 2 op 0, 2 op 7 en 7 op de 10 van de x as. Omdat de groep zo klein is kunnen we niet zeggen of er een verband zit tussen het algemeen geluk en het belang van gebruik van verdovende middelen bij de groep anders. Verder valt er niets bijzonders op.
+
+```{r}
 #Voeg de Stad kolom terug aan de dataframe
 numerieke_data$Stad <- data$Stad
 
 #Reken de gemiddelden van de individuen gesplitst op stad
-mean_Groningen <- mean_frame(numerieke_data[numerieke_data$Stad == "Groningen", 1:13])
-mean_Amsterdam <- mean_frame(numerieke_data[numerieke_data$Stad == "Amsterdam", 1:13])
-mean_Leiden <- mean_frame(numerieke_data[numerieke_data$Stad == "Leiden", 1:13])
+mean_Groningen <- mean_frame(numerieke_data[numerieke_data$Stad == "Groningen", 1:14])
+mean_Amsterdam <- mean_frame(numerieke_data[numerieke_data$Stad == "Amsterdam", 1:14])
+mean_Leiden <- mean_frame(numerieke_data[numerieke_data$Stad == "Leiden", 1:14])
 
 #Zet alle gemiddelden in een dataframe met de maximale- en minimale grens
 df_mean_stad <- rbind(max_min, mean_Groningen, mean_Amsterdam, mean_Leiden)
@@ -490,13 +972,13 @@ rownames(df_mean_stad) <- c("Max",
 df_mean_stad <- round_data(df_mean_stad, 1)
 
 #Verwijder de Woonsituatie kolom weer
-numerieke_data <- numerieke_data[1:13]
+numerieke_data <- numerieke_data[1:14]
 
 #head(df_mean_stad)
 
 op <- par(mar = c(1, 1, 1, 1))
 
-js_radarchart(data= df_mean_stad, color= c("cyan", "violet", "green"), title= "Gemiddeld Geluk Gesplitst Op Stad")
+js_radarchart(data= df_mean_stad, color= c("#4dd5ff", "#f5c2ff", "#e3e655"), title= "Gemiddeld Geluk Gesplitst Op Stad")
 
 #Maak een legenda voor de grafiek
 legend(
@@ -504,8 +986,9 @@ legend(
   legend = c("Groningen", "Amsterdam", "Leiden"), 
   horiz = FALSE,
   bty = "n", 
+  title = "Stad",
   pch = 20 , 
-  col = c("cyan", "violet", "green"),
+  col = c("#4dd5ff", "#f5c2ff", "#e3e655"),
   text.col = "black", 
   cex = 1, 
   pt.cex = 1.5
@@ -514,38 +997,684 @@ legend(
 par(op)
 ```
 
-Hier is een radar chart van het gemiddeld geluk gesplitst op de steden. Hier valt op dat de studenten uit Leiden veel minder belang bij academische prestaties hebben dan de andere groepen.
+Hierboven zie je een radar chart van het gemiddeld geluk gesplitst op de stad. Uit deze grafiek kan ik trekken dat de Amsterdammers gemiddeld meer tevreden zijn over hun fysieke gesteldheid, in een betere financiële situatie zitten en meer belang hebben bij academische prestaties dan de andere groepen. Verder kan ik zien dat de respondenten uit Leiden het meest gelukkig zijn met hun woonsituatie, buitenschools contact het belangrijkst vinden, en de beste band met hun ouders hebben. Verder valt er niets speciaals op uit de grafiek.
 
-### 28-05-2024
 
-**Doel van de dag**\
+```{r}
+#Voeg de Niveau kolom terug aan de dataframe
+numerieke_data$Niveau <- data$Niveau
+
+#Reken de gemiddelden van de individuen gesplitst op stad
+mean_MBO <- mean_frame(numerieke_data[numerieke_data$Niveau == "MBO", 1:14])
+mean_HBO <- mean_frame(numerieke_data[numerieke_data$Niveau == "HBO", 1:14])
+mean_Universiteit <- mean_frame(numerieke_data[numerieke_data$Niveau == "Universiteit", 1:14])
+mean_Masters <- mean_frame(numerieke_data[numerieke_data$Niveau == "Masters", 1:14])
+
+
+#Zet alle gemiddelden in een dataframe met de maximale- en minimale grens
+df_mean_niveau <- rbind(max_min, mean_MBO, mean_HBO, mean_Universiteit, mean_Masters)
+
+#Zet de correcte titels voor de rijen in de dataframe
+rownames(df_mean_niveau) <- c("Max", 
+                            "Min", 
+                            "MBO", 
+                            "HBO",
+                            "Universiteit",
+                            "Masters"
+                            )
+
+#Rond de waarden in de dataframe af
+df_mean_niveau <- round_data(df_mean_niveau, 1)
+
+#Verwijder de Niveau kolom weer
+numerieke_data <- numerieke_data[1:14]
+
+#head(df_mean_stad)
+
+op <- par(mar = c(1, 1, 1, 1))
+
+js_radarchart(data= df_mean_niveau, color= c("#4dd5ff", "#f56969", "#e3e655", "#69f5bf"), title= "Gemiddeld Geluk Gesplitst Op Niveau")
+
+#Maak een legenda voor de grafiek
+legend(
+  x = "right", 
+  legend = c("MBO", "HBO", "Universiteit", "Masters"), 
+  horiz = FALSE,
+  bty = "n", 
+  pch = 20 , 
+  title = "Niveau",
+  col = c("#4dd5ff", "#f56969", "#e3e655", "#69f5bf"),
+  text.col = "black", 
+  cex = 1, 
+  pt.cex = 1.5
+  )
+
+par(op)
+```
+
+Hierboven zie je een radar chart van het gemiddeld geluk gesplitst op niveau. Uit deze grafiek kan ik trekken dat de respondenten die op het MBO zitten buitenschools contact het belangrijkst vinden en dat ze zich het meest thuis voelen op de plek waar ze studeren. Ook kan ik zien dat de respondenten die aan de universiteit studeren de beste band met hun ouders hebben en het meest gelukkig zijn met hun fysieke gesteldheid. Verder valt er niets bijzonders op aan de grafiek.
+
+
+```{r}
+#Voeg de Jaar kolom terug aan de dataframe
+numerieke_data$Jaar <- data$Jaar
+
+#Reken de gemiddelden van de individuen gesplitst op stad
+mean_1e <- mean_frame(numerieke_data[numerieke_data$Jaar == "1e", 1:14])
+mean_2e <- mean_frame(numerieke_data[numerieke_data$Jaar == "2e", 1:14])
+mean_3e <- mean_frame(numerieke_data[numerieke_data$Jaar == "3e", 1:14])
+mean_4e <- mean_frame(numerieke_data[numerieke_data$Jaar == "4e", 1:14])
+
+
+#Zet alle gemiddelden in een dataframe met de maximale- en minimale grens
+df_mean_jaar <- rbind(max_min, mean_1e, mean_2e, mean_3e, mean_4e)
+
+#Zet de correcte titels voor de rijen in de dataframe
+rownames(df_mean_jaar) <- c("Max", 
+                            "Min", 
+                            "MBO", 
+                            "HBO",
+                            "Universiteit",
+                            "Masters"
+                            )
+
+#Rond de waarden in de dataframe af
+df_mean_jaar <- round_data(df_mean_jaar, 1)
+
+#Verwijder de Jaar kolom weer
+numerieke_data <- numerieke_data[1:14]
+
+#head(df_mean_jaar)
+
+op <- par(mar = c(1, 1, 1, 1))
+
+js_radarchart(data= df_mean_jaar, color= c("#4dd5ff", "#f56969", "#e3e655", "#69f5bf"), title= "Gemiddeld Geluk Gesplitst Op Jaar")
+
+#Maak een legenda voor de grafiek
+legend(
+  x = "right", 
+  legend = c("1e", "2e", "3e", "4e"), 
+  horiz = FALSE,
+  bty = "n", 
+  pch = 20 , 
+  col = c("#4dd5ff", "#f56969", "#e3e655", "#69f5bf"),
+  text.col = "black", 
+  cex = 1, 
+  title = "Jaar",
+  pt.cex = 1.5
+  )
+
+par(op)
+```
+
+Hierboven zie je een radar chart van het gemiddelde geluk gesplitst op opleidingssjaar. Uit deze grafiek kan ik trekken dat de derdejaars het meest gelukkig zijn met hun fysieke gesteldheid, zich het meest thuis voelen, buitenschools contact het belangrijkst vinden en sociale activiteiten het belangrijkst vinden. Verder kan ik nog zien dat de vierdejaars de beste band met hun ouders heeft. Verder is er niets opvallends in deze grafiek.
+
+
+```{r}
+#Voeg de Vakgebied kolom terug aan de dataframe
+numerieke_data$Vakgebied <- data$Vakgebied
+
+#Reken de gemiddelden van de individuen gesplitst op stad
+mean_sociaal <- mean_frame(numerieke_data[numerieke_data$Vakgebied == "Sociaal", 1:14])
+mean_technisch <- mean_frame(numerieke_data[numerieke_data$Vakgebied == "Technisch", 1:14])
+mean_kunst <- mean_frame(numerieke_data[numerieke_data$Vakgebied == "Kunst", 1:14])
+mean_lifesciences <- mean_frame(numerieke_data[numerieke_data$Vakgebied == "Lifesciences", 1:14])
+mean_economisch <- mean_frame(numerieke_data[numerieke_data$Vakgebied == "Economisch", 1:14])
+mean_anders <- mean_frame(numerieke_data[numerieke_data$Vakgebied == "Anders", 1:14])
+
+
+
+#Zet alle gemiddelden in een dataframe met de maximale- en minimale grens
+df_mean_vakgebied <- rbind(max_min, mean_sociaal, mean_technisch, mean_kunst, mean_lifesciences, mean_economisch, mean_anders)
+
+#Zet de correcte titels voor de rijen in de dataframe
+rownames(df_mean_vakgebied) <- c("Max", 
+                            "Min", 
+                            "Sociaal", 
+                            "Technisch",
+                            "Kunst",
+                            "Lifesciences",
+                            "Economisch",
+                            "Anders"
+                            )
+
+#Rond de waarden in de dataframe af
+df_mean_vakgebied <- round_data(df_mean_vakgebied, 1)
+
+#Verwijder de Vakgebied kolom weer
+numerieke_data <- numerieke_data[1:14]
+
+#head(df_mean_vakgebied)
+
+op <- par(mar = c(1, 1, 1, 1))
+
+js_radarchart(data= df_mean_vakgebied, color= c("#4dd5ff", "#f56969", "#e3e655", "#69f5bf", "orange", "white"), title= "Gemiddeld Geluk Gesplitst Op Vakgebied")
+
+#Maak een legenda voor de grafiek
+legend(
+  x = "right", 
+  legend = c("Sociaal", 
+                            "Technisch",
+                            "Kunst",
+                            "Lifesciences",
+                            "Economisch",
+                            "Anders"), 
+  horiz = FALSE,
+  bty = "n", 
+  pch = 20 , 
+  col = c("#4dd5ff", "#f56969", "#e3e655", "#69f5bf", "orange", "white"),
+  text.col = "black", 
+  cex = 1, 
+  title = "Vakgebied",
+  pt.cex = 1.5
+  )
+
+par(op)
+```
+
+Hierboven zie je een radar chart van het gemiddeld geluk gesplitst op vakgebied. Er zijn 6 verschillende vakgebieden, dus de grafiek ziet er een beetje vol en onoverzichtelijk uit. Dit gaat niet in het eindproduct. Wel kan ik zien dat de respondenten die aan de sociale kant studeren het gelukkigst waren na de enquête en het gelukkigst zijn met hun fysieke gesteldheid. Het enige andere wat mij nog opvalt is dat de mensen die in de kunst sector studeren verdovende middelen belangrijker vinden voor hun geluk. Dit lijkt net op de anders groep in de radar chart van het gemiddeld geluk gesplitst op sekse. Misschien is hier wel sprake van een verband.
+
+
+```{r}
+js_scatterplot(data = data, x= data$Vakgebied, y= data$Belang_Verdovende_Middelen, fill = data$Sexe, title = "Belang Verdovende Middelen Gesplitst Op Sekse En Vakgebied", caption = "Figuur 24: Belang verdovende middelen gesplitst op sekse en vakgebied", legend_title = "Sekse", ylab = "Belang Verdovende Middelen", xlab = "Vakgebied")
+```
+
+Hierboven zie je een spreidingsdiagram van het belang van verdovende middelen voor geluk gesplitst op sekse en vakgebied. Hieruit is te zien dat 4 van de 6 mensen uit de groep anders in de kunst sector studeert, dat is 2/3 van de groep anders. Als de groep groter was hadden we kunnen zeggen dat er een verband is tussen de groep anders en de kunst sector. Maar er is dus geen verband. 
+
+
+```{r}
+#Voeg de Woonsituatie kolom terug aan de dataframe
+numerieke_data$Woonsituatie <- data$Woonsituatie
+
+#Reken de gemiddelden van de individuen gesplitst op stad
+mean_thuiswonend <- mean_frame(numerieke_data[numerieke_data$Woonsituatie == "Thuiswonend", 1:14])
+mean_uitwonend <- mean_frame(numerieke_data[numerieke_data$Woonsituatie == "Uitwonend", 1:14])
+
+#Zet alle gemiddelden in een dataframe met de maximale- en minimale grens
+df_mean_woonsituatie <- rbind(max_min, mean_thuiswonend, mean_uitwonend)
+
+#Zet de correcte titels voor de rijen in de dataframe
+rownames(df_mean_woonsituatie) <- c("Max", 
+                            "Min", 
+                            "Thuiswonend", 
+                            "Uitwonend"
+                            )
+
+#Rond de waarden in de dataframe af
+df_mean_woonsituatie <- round_data(df_mean_woonsituatie, 1)
+
+#Verwijder de Woonsituatie kolom weer
+numerieke_data <- numerieke_data[1:14]
+
+#head(df_mean_woonsituatie)
+
+op <- par(mar = c(1, 1, 1, 1))
+
+js_radarchart(data= df_mean_woonsituatie, color= c("#4dd5ff", "#f56969"), title= "Gemiddeld Geluk Gesplitst Op Woonsituatie")
+
+#Maak een legenda voor de grafiek
+legend(
+  x = "right", 
+  legend = c("Thuiswonend", "Uitwonend"), 
+  horiz = FALSE,
+  bty = "n", 
+  pch = 20 , 
+  col = c("#4dd5ff", "#f56969"),
+  text.col = "black", 
+  cex = 1, 
+  title = "Woonsituatie",
+  pt.cex = 1.5
+  )
+
+par(op)
+```
+
+Hier zie je een radar chart van het gemiddeld geluk gesplitst op de woonsituatie. Uit deze grafiek kan ik trekken dat de uitwonende studenten over het algemeen gelukkiger zijn. Verder is er niets speciaals te zien aan deze grafiek.
+
+
+```{r}
+#Voeg de Nationaal_Internationaal kolom terug aan de dataframe
+numerieke_data$Nationaal_Internationaal <- data$Nationaal_Internationaal
+
+#Reken de gemiddelden van de individuen gesplitst op stad
+mean_nationaal <- mean_frame(numerieke_data[numerieke_data$Nationaal_Internationaal == "Nationaal", 1:14])
+mean_Internationaal <- mean_frame(numerieke_data[numerieke_data$Nationaal_Internationaal == "Internationaal", 1:14])
+
+#Zet alle gemiddelden in een dataframe met de maximale- en minimale grens
+df_mean_nationaal_internationaal <- rbind(max_min, mean_nationaal, mean_Internationaal)
+
+#Zet de correcte titels voor de rijen in de dataframe
+rownames(df_mean_nationaal_internationaal) <- c("Max", 
+                            "Min", 
+                            "Nationaal", 
+                            "Internationaal"
+                            )
+
+#Rond de waarden in de dataframe af
+df_mean_nationaal_internationaal <- round_data(df_mean_nationaal_internationaal, 1)
+
+#Verwijder de Woonsituatie kolom weer
+numerieke_data <- numerieke_data[1:14]
+
+#head(df_mean_nationaal_internationaal)
+
+op <- par(mar = c(1, 1, 1, 1))
+
+js_radarchart(data= df_mean_nationaal_internationaal, color= c("#4dd5ff", "#f56969"), title= "Gemiddeld Geluk Gesplitst Op Nationaal/Internationaal")
+
+#Maak een legenda voor de grafiek
+legend(
+  x = "right", 
+  legend = c("Nationaal", "Internationaal"), 
+  horiz = FALSE,
+  bty = "n", 
+  pch = 20 , 
+  col = c("#4dd5ff", "#f56969"),
+  text.col = "black", 
+  cex = 1, 
+  title = "Nationaal/Internationaal",
+  pt.cex = 1.5
+  )
+
+par(op)
+```
+
+Hierboven zie je een radar chart van het gemiddeld geluk gesplitst op of de respondent een nationale- of internationale student is. Uit deze grafiek kan ik trekken dat de internationale studenten bijna overal hoger op scoren. De nationale studenten scoren alleen hoger op de band met hun ouders, hoe gelukkig ze zijn met hun woonsituatie, hoe belangrijk geld is voor hun geluk en hoe belangrijk verdovende middelen zijn voor hun geluk. Verder is er niets bijzonders te zien uit de grafiek.
+
+
+```{r}
+#Voeg de Geloof kolom terug aan de dataframe
+numerieke_data$Geloof <- data$Gelovig
+
+#Reken de gemiddelden van de individuen gesplitst op stad
+mean_gelovig <- mean_frame(numerieke_data[numerieke_data$Geloof == "Ja", 1:14])
+mean_niet_gelovig <- mean_frame(numerieke_data[numerieke_data$Geloof == "Nee", 1:14])
+
+#Zet alle gemiddelden in een dataframe met de maximale- en minimale grens
+df_mean_geloof <- rbind(max_min, mean_gelovig, mean_niet_gelovig)
+
+#Zet de correcte titels voor de rijen in de dataframe
+rownames(df_mean_geloof) <- c("Max", 
+                            "Min", 
+                            "Gelovig", 
+                            "Niet_Gelovig"
+                            )
+
+#Rond de waarden in de dataframe af
+df_mean_geloof <- round_data(df_mean_geloof, 1)
+
+#Verwijder de Geloof kolom weer
+numerieke_data <- numerieke_data[1:14]
+
+#head(df_mean_nationaal_internationaal)
+op <- par(mar = c(1, 1, 1, 1))
+
+js_radarchart(data= df_mean_geloof, color= c("#4dd5ff", "#f56969"), title= "Gemiddeld Geluk Gesplitst Op Geloof")
+
+#Maak een legenda voor de grafiek
+legend(
+  x = "right", 
+  legend = c("Ja", "Nee"), 
+  horiz = FALSE,
+  bty = "n", 
+  pch = 20 , 
+  col = c("#4dd5ff", "#f56969"),
+  text.col = "black", 
+  cex = 1, 
+  title = "Gelovig",
+  pt.cex = 1.5
+  )
+
+par(op)
+```
+
+Hierboven zie je een radar chart van het gemiddeld geluk gepsplitst op geloof. Uit deze grafiek kan ik trekken dat gelovige mensen sociale activiteiten belangrijker vinden en in een betere financiële situatie zitten. Voor de rest is er niets speciaals uit deze grafiek te zien.
+
+
+```{r}
+#Voeg de Relatie kolom terug aan de dataframe
+numerieke_data$Relatie <- data$Relatie
+
+#Reken de gemiddelden van de individuen gesplitst op stad
+mean_relatie <- mean_frame(numerieke_data[numerieke_data$Relatie == "Ja", 1:14])
+mean_single <- mean_frame(numerieke_data[numerieke_data$Relatie == "Nee", 1:14])
+
+#Zet alle gemiddelden in een dataframe met de maximale- en minimale grens
+df_mean_relatie <- rbind(max_min, mean_relatie, mean_single)
+
+#Zet de correcte titels voor de rijen in de dataframe
+rownames(df_mean_relatie) <- c("Max", 
+                            "Min", 
+                            "Relatie", 
+                            "Single"
+                            )
+
+#Rond de waarden in de dataframe af
+df_mean_relatie <- round_data(df_mean_relatie, 1)
+
+#Verwijder de Relatie kolom weer
+numerieke_data <- numerieke_data[1:14]
+
+#head(df_mean_relatie)
+op <- par(mar = c(1, 1, 1, 1))
+
+js_radarchart(data= df_mean_relatie, color= c("#4dd5ff", "#f56969"), title= "Gemiddeld Geluk Gesplitst Op Relatiestatus")
+
+#Maak een legenda voor de grafiek
+legend(
+  x = "right", 
+  legend = c("Ja", "Nee"), 
+  horiz = FALSE,
+  bty = "n", 
+  pch = 20 , 
+  col = c("#4dd5ff", "#f56969"),
+  text.col = "black", 
+  cex = 1, 
+  title = "Relatie",
+  pt.cex = 1.5
+  )
+
+par(op)
+```
+
+Hierboven zie je een radar chart van het gemiddeld geluk gesplitst op relateistatus. Uit deze grafiek kan ik trekken dat de mensen die wel in een relatie zitten iets gelukkiger zijn met hun woonsituatie en dat ze sociale activiteiten iets belangrijker vinden. Verder is er niets speciaals te zien in deze grafiek. 
+
+
+```{r}
+#Voeg de Gebruik_Verdovende_Middelen kolom terug aan de dataframe
+numerieke_data$Gebruik_Verdovende_Middelen <- data$Gebruik_Verdovende_Middelen
+
+#Reken de gemiddelden van de individuen gesplitst op stad
+mean_gebruikt <- mean_frame(numerieke_data[numerieke_data$Gebruik_Verdovende_Middelen == "Ja", 1:14])
+mean_clean <- mean_frame(numerieke_data[numerieke_data$Gebruik_Verdovende_Middelen == "Nee", 1:14])
+
+
+#Zet alle gemiddelden in een dataframe met de maximale- en minimale grens
+df_mean_gebruik_verdovende_middelen <- rbind(max_min, mean_gebruikt, mean_clean)
+
+#Zet de correcte titels voor de rijen in de dataframe
+rownames(df_mean_gebruik_verdovende_middelen) <- c("Max", 
+                            "Min", 
+                            "Gebruikt", 
+                            "Clean"
+                            )
+
+#Rond de waarden in de dataframe af
+df_mean_gebruik_verdovende_middelen <- round_data(df_mean_gebruik_verdovende_middelen, 1)
+
+#Verwijder de Gebruik_verdovende_middelen kolom weer
+numerieke_data <- numerieke_data[1:14]
+
+#head(df_mean_gebruik_verdovende_middelen)
+op <- par(mar = c(1, 1, 1, 1))
+
+js_radarchart(data= df_mean_gebruik_verdovende_middelen, color= c("#4dd5ff", "#f56969"), title= "Gemiddeld Geluk Gesplitst Op Gebruik Verdovende Middelen")
+
+#Maak een legenda voor de grafiek
+legend(
+  x = "right", 
+  legend = c("Ja", "Nee", "Anoniem"), 
+  horiz = FALSE,
+  bty = "n", 
+  pch = 20 , 
+  col = c("#4dd5ff", "#f56969"),
+  text.col = "black", 
+  cex = 1, 
+  title = "Gebruik Verdovende Middelen",
+  pt.cex = 1.5
+  )
+
+par(op)
+```
+
+Dit zijn radar charts gemaakt met alle verschillende factoren. Zoals misschien wel te zien is zijn radar charts ideaal om verschillende factoren met meerdere groepen te vergelijken.
+
+
+# 28-05-2024
+
+## Doel
+
 Herzien nieuwe data
 
-**Doelen**
+
+## Taken
 
 * Data bekijken 
 * Data bouwen voor het eind product
+* Analyse doen
+* Stukje methoden schrijven
 
-Vandaag kregen we het idee om een e-mail te sturen naar de teamleider van ons instituut om de poster te verspreiden. Dat was een goed idee. We kregen meteen veel meer antwoorden bij.\
 
-Verder heb ik niet veel kunnen doen.
+## Log
+
+Vandaag kregen we het idee om een e-mail te sturen naar de teamleider van ons instituut om de poster te verspreiden. Dit idee kregen wij, omdat wij nu nog veel te weinig respondenten hebben op onze enquête. Met eze e-mail hpen wij dat snel te vermenigvuldigen.
+
+Voor de rest heb ik nog naar de data gekeken en 2 analyses uitgevoerd. 
+
+### Shapiro Wilcoxon Test
+
+De Shapiro Wilcoxon test is een test die je kan uitvoeren om te kijken of de data die je hebt normaal verdeeld is. Uit deze test krijgen we een p-waarde en een t-waarde. Als de p-waarde >0.05 is, is onze data normaal verdeeld.
+
+```{r}
+#Voer een shapiro test uit op alle kolommen in de dataframe
+shapiro_test_data <- as.character(sapply(numerieke_data, shapiro.test))
+
+#Haal de onnodige informatie uit de vector
+shapiro_test_data <- shapiro_test_data[! shapiro_test_data%in% c("Shapiro-Wilk normality test",  "X[[i]]")]
+
+#Maak een nieuwe dataframe aan
+df_shapiro = data.frame(
+  col1= character(), 
+  col2= character(), 
+  stringsAsFactors = FALSE)
+ 
+#Een counter voor de indexing
+c <- 1
+
+#Voeg rijen toe aan de dataframe
+for(i in 1:14) {                       
+   
+  #Maak een vector aan die in het dataframe komt
+  vec <- c(shapiro_test_data[c], shapiro_test_data[c+1])     
+  
+  #Voeg de vector toe aan de rij
+  df_shapiro[i, ] <- vec
+  
+  #Voeg 2 toe aan de counter
+  c <- c +2
+}
+
+df_shapiro <- data.frame(t(df_shapiro))
+
+rownames(df_shapiro) <- c("t-statistic", "p-waarde")
+
+colnames(df_shapiro) <- colnames(numerieke_data)
+
+```
+
+```{r}
+tabel_pt <- gt(df_shapiro)
+
+tabel_pt %>%
+    tab_options(
+        container.width= 1000,
+        container.height= 500,
+        table.border.right.width= 30) %>%
+    tab_header(title= "Resultaten Wilk Test") %>%
+    tab_style(style= cell_borders(
+                        sides = "all", 
+                         color = "#000000", 
+                         style = "solid", 
+                        weight = px(1)),
+                locations = cells_body())
+```
+
+Hierboven zie je een tabel met de resultaten van de Wilk test op alle numerieke data. Wat opvalt is dat geen enkele p-waarde in de hele tabel >0.05 is. Dit betekent dat niets normaal verdeeld is. De p-waarden vertellen ons ook dat wij onze hypothese moeten afwijzen, wat betekent dat er geen effect is. Dit is jammer, maar we kunnen altijd nog kijken of er andere interessante dingen zijn.
+
+De t-statistic geeft ons ook een W waarde. Deze loopt van 0 tot 1,
+waarbij 1 betekent dat de data perfect normaal verdeeld is. voor de W
+waarde wordt over het algemeen de ondergrens van 0.90 gehanteerd. als de
+test statistiek W >0.90 is dan kan de data als normaal verdeeld
+beschouwd worden. Er kan een kans zijn dat de W waarde en de P waarde
+hun resultaten elkaar tegen spreken.
+
+
+### Methoden
+
+#### .1 Het meten van geluk
+Om het geluk van de studenten te meten hebben wij een enquête gemaakt met verschillende vragen over geluk. Dit hebben wij gekozen, omdat het na een literatuuronderzoek ons het meest geschikt leek voor het meten van geluk. In deze enquête worden er naar meerdere onderwerpen gevraagd: sexe, de stad waarin de persoon studeert, financiele situatie, gebruik van verdovende middelen, geloof, de band tussen de student en hun ouders, of de student thuis woont of op hunzelf, of ze in een relatie zitten, fysieke gezondheid, contact buiten school en academische prestaties. Deze zijn op te delen in parameters en factoren. De parameters in dit geval zijn: 
+
+* Sexe
+* Niveau van de opleiding
+* Welk jaar de studenten in zitten
+* Vakgebied
+* Woonsituatie
+* Welke stad ze studeren
+* Gelovig
+* Relatie
+* Gebruik van verdovende middelen
+* Of ze nationaal- of internationale student zijn
+
+Dit zijn de gekozen parameters, omdat wij vinden dat deze allemaal invloed op het geluk kunnen hebben. De rest van de vragen zijn de factoren waarbij we het geluk meten.
+
+Om de enquête zelf te maken hebben wij Google forms gebruikt, omdat het makkelijk is om de data in een .csv formaat te krijgen vanuit Google forms.
+
+#### .2 Het verzamelen van de data
+Om onze enquête te verspreiden hebben wij ervoor gekozen om een poster met een Qr code te maken. Deze poster hebben wij gemaakt met Canva, omdat het makkelijk te gebruiken is. Op de poster staat er of de persoon die deze leest de enquête wilt invullen. Omdat wij zowel nationale- als internationale studenten willen meenemen, hebben wij een Nederlandstalige en een Engelstalige poster gemaakt. Op die manier kan iedereen de poster lezen.
+
+Deze poster zouden wij vervolgens verspreiden door verschillende schoolgebouwen rondom de campussen van de verschillende steden. Op deze manier kunnen de studenten die de poster tegenkomen makkelijk bij de enquête komen en die invullen.
+
+Naast het ophangen van de posters hebben wij ook besloten om de poster te verspreiden via e-mail. Wij stuurden een e-mail naar alle MBO scholen, HBO scholen, Universiteiten, en alle studieverenigingen in de verschillende steden met de vraag of ze onze enquête willen invullen en verspreiden. In de mail werd een pdf bestand in de bijlage gezet met de poster en werd een link in de mail gezet die naar de enquête leidt. Hier hebben wij voor gekozen, omdat wij vonden dat wij op deze manier veel meer studenten konden bereiken.
+
+Als laatst hebben wij de enquête ook verspreid over verschillende LinkedIn groepen die horen bij de schoolorganisaties. In de groepen werd een bericht gestuurd die hetzelfde is als de e-mails die we hebben verstuurd. Ook hiervoor hebben we gekozen, omdat we vonden dat wij op dez manier meer studenten konden bereiken.
 
 
 ### 03-06-2024
 
-**Doel**\
+## Doel
+
 Het afmaken eindproduct
 
-**Doelen**
 
-* Na aanleiding van de feedback problemen fixen in het eind document
+## Taken
+
+* Naar aanleiding van de feedback het einddocument verbeteren
 
 
-Wij hebben naar feedback gevraagd aan de docent. Aan de hand daarvan hebben wij aanpassingen gemaakt op ons eindproduct.
+## Log
 
-### 04-06-2024
+Wij hebben naar feedback gevraagd aan de docent. Aan de hand daarvan hebben wij aanpassingen gemaakt op ons eindproduct. Hebben onder andere het kopje methoden herschreven. Die ziet er nu zo uit:
 
-**Doel**\
+### Methoden
+
+#### Onderzoeksontwerp
+
+Dit onderzoek gebruikt een kwantitatieve techniek dit wordt gedaan met behulp van een enquête met verschillende factoren die geluk bijdragen en of wegnemen van de studenten. Het onderzoek zelf richt zich op de invloed van mentale gezondheid, relatie met ouders, opleidingsniveau/jaar, sociale interacties en geld op de algemene ervaring van geluk van studenten
+
+**Deelnemers**
+
+De deelnemers aan dit onderzoek zijn studenten van verschillende opleidingsniveaus en jaren. De niveaus zijn: MBO, HBO & Universitair onderwijs (Ook master studenten zijn als aparte groep meegenomen) De steekproef neemt studenten van verschillende factoren dit zijn onder andere: sekse, woonsituatie en andere factoren. Er is geen specifieke uitsluiting op basis van leeftijd of geslacht.
+
+**Procedures**
+
+De gegevens zijn verzameld via een online enquête deze is via email verspreid onder de studie-verenigingen, faculteiten van de studies en het algemene bestuur van de desbetreffende onderwijsinstellingen. De enquête bevatte vragen over mentale gezondheid, thuissituatie, relatie status, fysieke gezondheid, financiële factoren, sociale factoren en geluk gevoel in het algemeen. De enquête werd ook via posters verspreid op de HBO's & Universiteiten deze bleken echter niet veel antwoorden te werven
+
+**Dataverzameling**
+
+De data verzameling vond plaats in de periode van 29-04-2024 tot en met 30-05-2024. De deelnemers werden via de posters en email geïnformeerd wat het doel was en dat de antwoorden anoniem waren. De deelname was vrijwillig.
+
+**Data-analyse**
+
+De data die verzameld is word met behulp van R een statistische software en R-studio een geïntegreerde ontwikkel omgeving waar data kan worden ingelezen en met behulp van code kan deze data naar grafieken omgezet worden en er kan statistische analyse op worden uitgevoerd. De analyses die op de data zijn uitgevoerd zijn: chi-kwadraattoets dit is een toets die kijkt of data significant afwijkt dan verwacht, power t test deze test kijkt welke parameters nodig zijn om de gewilde power te krijgen.
+
+**Parameters**
+
+Hier zijn de parameters te zien en hoe de verdeling is.
+
+| Parameter                                       | Verdeling                                                                 |
+|-----------------------------|-------------------------------------------|
+| Sekse                                           | Opgedeeld in Man, Vrouw en Anders                                         |
+| Niveau van de opleiding                         | Opgedeeld in MBO, HBO, Masters en Universiteit                            |
+| Welk jaar de studenten in zitten                | Opgedeeld in jaar 1, 2, 3 en 4                                            |
+| Vakgebied                                       | Opgedeeld in sociaal, technisch, kunst, lifeciences, economisch en anders |
+| Woonsituatie                                    | Opgedeeld in uitwonend of thuiswonend                                     |
+| Welke stad ze studeren                          | Opgedeeld in Groningen, Leiden, Utrecht en Amsterdam                      |
+| Gelovig                                         | Opgedeeld in gelovig en niet gelovig                                      |
+| Relatie                                         | Opgedeeld in relatie en single                                            |
+| Of ze nationaal- of internationale student zijn | Opgedeeld in nationaal en internationaal                                  |
+
+Deze parameters zijn uit de volgende literatuur gehaald: [@Jacobsen2007], [@Easterlin2003],[@Veenhoven1991],[@Cohn2009],[@Farhud2014],[@Wink2014].\
+
+**Statistische methoden**
+
+*De 95 procent betrouwbaarheidsinterval*
+
+Het is belangrijk omdat het een bereik van waarden geeft waarbinnen de onderzoekers verwachten dat de ware populatieparameter met een zekerheid van 95 procent ligt. Dit suggereert dat 95% van de betrouwbaarheidsintervallen de werkelijke populatieparameter zouden bevatten als er een groot aantal steekproeven zouden worden genomen en een betrouwbaarheidsinterval voor elke steekproef zou worden berekend. Het helpt te begrijpen hoe zeker men kan zijn over een geschat gemiddelde uit een steekproef, dus het is belangrijk. Hierdoor kan worden bepaald of de verzamelde informatie betrouwbaar is.
+
+*Shapiro Wilcoxon Test*
+
+Deze test wordt gebruikt om te controleren of data normaal verdeeld is. Het test de hypothese of de gegevens afkomstig zijn van een normaal verdeelde populatie. De test berekent een W-statistiek op basis van de observaties; als de p-waarde die uit deze test komt groter is dan het gekozen significantie niveau dan is te concluderen dat de data set normaal verdeeld is. een p-waarde kleiner dan het significantie niveau zegt dat de data set niet normaal verdeeld is, wat belangrijk is omdat veel statistische analyses gebaseerd zijn op de aanname van een normale verdeling
+
+*Power-analyse*
+
+Een power-analyse is een statistische methode die gebruikt wordt om verschillende aspecten van een onderzoek te bepalen die belangrijk zijn. Het kan bijvoorbeeld gebruikt worden om de steekproef grote te bepalen. Het beperken van type 1 en type 2 fouten. Een type 1 fout is het vinden van een onterecht effect, een type 2 fout is het niet vinden van een echt effect. Dus het draagt bij aan de betrouwbaarheid en validiteit van de onderzoeksresultaten.
+
+*Chi-kwadraattest*
+
+Deze test wordt gebruikt om te bepalen of er een significant verband is tussen twee categorische variabelen. Het test of de waargenomen frequenties van gegevens significant verschillen van de verwachte frequenties onder de veronderstelling van geen verband tussen de variabelen. Door de Chi-kwadraatwaarde te vergelijken met een kritieke waarde uit de chi-kwadraatverdeling, kunnen onderzoekers bepalen of ze de nulhypothese van onafhankelijkheid tussen de variabelen moeten verwerpen. Een significant resultaat zegt dat een verband is tussen de variabelen, terwijl het niet significante resultaat aangeeft dat er geen significant verband is gevonden.
+
+#### Analyse van de data
+
+De analyse van de data wordt gedaan door de eerder genoemde statistische methoden toe te passen en hiermee een oordeel vormen of de data die verzameld is ook betrouwbaar is en voldoende. Een andere vorm van analyse die gebruikt wordt is een grafische methoden dit zijn grafieken. Verschillende grafieken laten verschillende opmerkelijke uitkomsten zien. De belangrijkste gebruikte plots zijn histogrammen, boxplots, radar charts en pie charts.
+
+
+### Bekijken Data
+
+Ook ga ik wat meer naar de data kijken. Er zijn nog een paar dingen die ik mij afvraag.
+
+De eerste vraag is of er een verband zit tussen de mensen die hun fysieke gesteldheid belangrijk vinden en hoe blij ze zijn met hun fysieke gesteldheid.
+
+```{r}
+js_scatterplot(data = numerieke_data, x= numerieke_data$Belang_Fysieke_Gezondheid, y= numerieke_data$Fysiek_Geluk, fill = data$Sexe, facet_wrap = "~data$Sexe",title = "Belang Fysieke Gezondheid Tegenover Fysiek Geluk Gesplitst Op Sekse", legend_title = "Sekse", xlab= "Belang Fysieke Gezondheid", ylab= "Fysiek geluk", caption = "Figuur 30: Belang fysieke gezondheid tegenover fysiek geluk gesplitst op sekse")
+```
+
+Hierboven zie je een spreidingsdiagram van het belang van de fysieke gezondheid voor het geluk tegenover fysiek geluk gesplitst op sekse. Wat opvalt is dat bij de vrouwen de punten heel erg verspreid zijn. Dus daar zit zeker geen correlatie tussen de twee variabelen. Wat ook opvalt is dat de groep anders te klein is om er iets uit te kunnen trekken. De mannen daarentegen lijken steeds gelukkiger te zijn met hun lichaam hoe belangrijker ze fysieke gezondheid vinden.
+
+
+Het tweede wat ik mij afvraag is hoe de verdeling van de seske over de vakgebieden is.
+
+```{r}
+js_barchart(data = data, x= data$Vakgebied, fill = data$Sexe, title = "Vakgebied Gesplitst Op Sekse", ylab= "Aantal", xlab="Vakgebied", legend_title = "Sexe", caption = "Figuur 31: Vakgebied gesplitst op sekse")
+```
+
+Hierboven zie je een staafdiagram van de vakgebieden gesplitst op sekse. Wat opvalt is dat de groep anders de enige sekse in de kunst sector is. Wat ook opvalt is dat de vrouwen in de grote meerderheid zijn bij de sociale- en andere sectoren. Verder zijn ze ook de meerderheid in lifesciences, maar dat scheelt niet veel. De mannen zijn allen in de grote meerderheid in de technische sector.
+
+
+Het laatste wat ik mij afvraag is of uitwonende- of thuiswonende studenten gelukkiger zijn met hun woonsituatie.
+
+```{r}
+js_boxplot(data = data, x= data$Woonsituatie, y= data$Geluk_Woonsituatie, fill= data$Woonsituatie, title = "Geluk Woonsituatie Gesplitst Op Woonsituatie", legend_title = "Woonsituatie", xlab= "Woonsituatie", ylab= "Geluk Woonsituatie", caption = "Figuur 32: Geluk woonsituatie gesplists op woonsituatie")
+```
+
+Hierboven zie je een boxplot van het geluk met de woonsituatie gesplitst op de woonsituatie. Het is te zien dat de uitwonende studenten gemiddeld gelukkiger zijn met hun woonsituatie dan de thuiswonende studenten. Ook is de data van de uitwonende studenten minder verspreid. De minst gelukkige zijn een uitwonende en een thuiswonende student, die hun woonsituatie een 0 gaf. 
+
+
+# 04-06-2024
+
+## Doel
+
 Inleveren eindproduct
 
-Vandaag hebben we puntjes op de i gezet en het product ingeleverd.
+
+## Taken
+
+* Lees alle documenten door
+* Verbeter kleine foutjes
+* Lever alles in
+
+
+## Log
+
+Vandaag hoef ik geen verwerking van data meer te doen. Dat is gisteren allemaal afgemaakt, dus lees ik nog alle documenten door om te kijken of ze klaar zijn om in te leveren. 
+
+Na het doorlezen van het document heb ik alleen wat spelling- en grammaticafoutjes verbeterd en nog stukjes van de template uit ons einddocument gehaald. In mijn logboek zaten ook een paar spellings- en grammaticafoutjes die ik heb verbeterd. Maar nu ziet alles er goed genoeg uit om in te kunnen leveren.
